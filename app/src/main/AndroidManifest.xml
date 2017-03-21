@@ -9,13 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="edu.aku.hassannaqvi.cbt_child_recruitment.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SectionBActivity" />
+        <activity android:name=".SectionFActivity" />
+        <activity android:name=".SectionGActivity" />
+        <activity android:name=".SectionHActivity" />
+        <activity android:name=".SectionKActivity" />
+        <activity android:name=".SectionLActivity" />
+        <activity android:name=".SectionMActivity"></activity>
     </application>
 
 </manifest>
