@@ -2,18 +2,19 @@
     <string name="app_name">CBT: Child Recruitment</string>
     <string name="section_A"> سیکشن \'اے\': گھر کی شناخت </string>
 
-    <string name="mnDob">تاریخ پیدائش</string>
-    <string name="mnAge">عمر</string>
-    <string name="mnMonths">ماہ</string>
-    <string name="mnDays">دن</string>
+    <string name="Dob">تاریخ پیدائش</string>
+    <string name="Age">عمر</string>
+    <string name="Months">ماہ</string>
+    <string name="Days">دن</string>
     <string name="mnSex">جنس</string>
-    <string name="mnMale">مرد</string>
-    <string name="mnFemale">عورت</string>
-    <string name="mnYES">ہاں</string>
-    <string name="mnNO">نہیں</string>
-    <string name="mnDNK">معلوم نہیں</string>
+    <string name="Male">مرد</string>
+    <string name="Female">عورت</string>
+    <string name="YES">ہاں</string>
+    <string name="NO">نہیں</string>
+    <string name="DNK">معلوم نہیں</string>
+    <string name="weeks"></string>
 
-    <string name="mnOther">کوئی اور (وضاحت کریں)۔</string>
+    <string name="Other">کوئی اور (وضاحت کریں)۔</string>
 
     <string name="nextSection">اگلا سیکشن</string>
     <string name="endForm">اختتام</string>

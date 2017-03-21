@@ -1,8 +1,680 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_section_b"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="72dp"
     tools:context="edu.aku.hassannaqvi.cbt_child_recruitment.SectionBActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorHeading"
+            android:text="@string/section_B"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crb01" />
+
+        <EditText
+
+            android:id="@+id/crb01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/crb01"
+            android:inputType="number"
+            android:maxLength="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crb02" />
+
+
+        <RadioGroup
+            android:id="@+id/crb02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/crb0201"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/Male" />
+
+            <RadioButton
+                android:id="@+id/crb0202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/Female" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crbDob" />
+
+        <DatePicker
+            android:id="@+id/crb03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crb04" />
+
+        <EditText
+            android:id="@+id/crb0401"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Months"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <EditText
+            android:id="@+id/crb0402"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Days"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crb05" />
+
+
+        <RadioGroup
+            android:id="@+id/crb05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/crb0501"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/YES" />
+
+            <RadioButton
+                android:id="@+id/crb0502"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/NO" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crb06" />
+
+        <EditText
+            android:id="@+id/crb0601"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/weeks"
+            android:inputType="number"
+            android:maxLength="2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crb07" />
+
+        <RadioGroup
+            android:id="@+id/crb07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/crb0701"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/YES" />
+
+            <RadioButton
+                android:id="@+id/crb0702"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/NO" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crb08" />
+
+        <EditText
+            android:id="@+id/crb0801"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/kg"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorHeading"
+            android:text="@string/section_c"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crc01" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#efefef"
+            android:padding="2dp"
+            android:text="@string/crcsubM1"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/crc01m1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cm"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#efefef"
+            android:padding="2dp"
+            android:text="@string/crcsubM2"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/crc01m2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cm"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#efefef"
+            android:padding="2dp"
+            android:text="@string/crcsubM3"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/crc01m3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cm"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crc02" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#efefef"
+            android:padding="2dp"
+            android:text="@string/crcsubM1"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/crc02m1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/kg"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#efefef"
+            android:padding="2dp"
+            android:text="@string/crcsubM2"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/crc02m2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/kg"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#efefef"
+            android:padding="2dp"
+            android:text="@string/crcsubM3"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/crc02m3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/kg"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crc03" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#efefef"
+            android:padding="2dp"
+            android:text="@string/crcsubM1"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/crc03m1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cm"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#efefef"
+            android:padding="2dp"
+            android:text="@string/crcsubM2"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/crc03m2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cm"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#efefef"
+            android:padding="2dp"
+            android:text="@string/crcsubM3"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/crc03m3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cm"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorHeading"
+            android:text="@string/section_d"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crd01" />
+
+        <CheckBox
+            android:id="@+id/crd0101"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crd0101" />
+
+        <CheckBox
+            android:id="@+id/crd0102"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crd0102" />
+
+        <CheckBox
+            android:id="@+id/crd0103"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crd0103" />
+
+        <CheckBox
+            android:id="@+id/crd0104"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crd0104" />
+
+        <CheckBox
+            android:id="@+id/crd0105"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crd0105" />
+
+        <CheckBox
+            android:id="@+id/crd0106"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crd0106" />
+
+        <CheckBox
+            android:id="@+id/crd0107"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crd0107" />
+
+        <CheckBox
+            android:id="@+id/crd0108"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crd0108" />
+
+        <CheckBox
+            android:id="@+id/crd0109"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crd0109" />
+
+        <CheckBox
+            android:id="@+id/crd0188"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/other" />
+
+        <EditText
+            android:id="@+id/crd0188x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/Other"
+            android:maxLength="30"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crd02" />
+
+
+        <RadioGroup
+            android:id="@+id/crd02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/crd0201"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/YES" />
+
+            <RadioButton
+                android:id="@+id/crd0202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/NO" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crd03" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#efefef"
+            android:padding="2dp"
+            android:text="@string/crdsub1"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/crd03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/crd0301"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crd0301" />
+
+            <RadioButton
+                android:id="@+id/crd0302"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crd0302" />
+
+            <RadioButton
+                android:id="@+id/crd0303"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crd0303" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="#efefef"
+                android:padding="2dp"
+                android:text="@string/crdsub2"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/crd0304"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crd0304" />
+
+            <RadioButton
+                android:id="@+id/crd0305"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crd0305" />
+
+            <RadioButton
+                android:id="@+id/crd0306"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crd0306" />
+
+            <RadioButton
+                android:id="@+id/crd0307"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crd0307" />
+
+            <RadioButton
+                android:id="@+id/crd0308"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crd0308" />
+
+            <RadioButton
+                android:id="@+id/crd0388"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Other" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/crd0388x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/Other"
+            android:maxLength="30"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorHeading"
+            android:text="@string/section_e"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cre01" />
+
+
+        <RadioGroup
+            android:id="@+id/cre01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/cre0101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/YES" />
+
+            <RadioButton
+                android:id="@+id/cre0102"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/NO" />
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+</ScrollView>
