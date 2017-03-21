@@ -21,8 +21,8 @@ public class EndingActivity extends Activity {
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
-    @BindView(R.id.mna7)
-    RadioGroup mna7;
+    @BindView(R.id.iStatus)
+    RadioGroup iStatus;
     @BindView(R.id.mna7a)
     RadioButton mna7a;
     @BindView(R.id.mna7b)
