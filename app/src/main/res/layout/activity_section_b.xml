@@ -433,13 +433,13 @@
             android:text="@string/crd0109" />
 
         <CheckBox
-            android:id="@+id/crd0188"
+            android:id="@+id/crd0196"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/other" />
 
         <EditText
-            android:id="@+id/crd0188x"
+            android:id="@+id/crd0196x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
@@ -552,7 +552,7 @@
                 android:text="@string/crd0308" />
 
             <RadioButton
-                android:id="@+id/crd0388"
+                android:id="@+id/crd0396"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/other" />
@@ -560,7 +560,7 @@
         </RadioGroup>
 
         <EditText
-            android:id="@+id/crd0388x"
+            android:id="@+id/crd0396x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
@@ -653,7 +653,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre02bcg" />
+            android:text="@string/cre02bcg"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -747,7 +748,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre02polio" />
+            android:text="@string/cre02polio"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -853,7 +855,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre03penta1" />
+            android:text="@string/cre03penta1"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1147,7 +1150,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre04penta2" />
+            android:text="@string/cre04penta2"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1241,7 +1245,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre04pcv2" />
+            android:text="@string/cre04pcv2"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1335,7 +1340,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre04op2" />
+            android:text="@string/cre04op2"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1441,7 +1447,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre05penta3" />
+            android:text="@string/cre05penta3"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1535,7 +1542,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre05pcv3" />
+            android:text="@string/cre05pcv3"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1629,7 +1637,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre05opv3" />
+            android:text="@string/cre05opv3"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1723,7 +1732,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre05ipv" />
+            android:text="@string/cre05ipv"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
