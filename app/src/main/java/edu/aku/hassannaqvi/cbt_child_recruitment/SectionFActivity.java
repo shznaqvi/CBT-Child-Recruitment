@@ -454,11 +454,6 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
 
 
 
-
-
-
-
-
     }
 
     @OnClick(R.id.btnNext)
@@ -536,8 +531,54 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        JSONObject sa = new JSONObject();
+        JSONObject sf = new JSONObject();
 
+        sf.put("crf01", crf0101.isChecked() ? "1" : crf0102.isChecked() ? "2" : crf0199.isChecked() ? "99" : "0");
+        sf.put("crf01a", crf01a01.isChecked() ? "1" : crf01a02.isChecked() ? "2" : crf01a99.isChecked() ? "99" : "0");
+        sf.put("crf02h", crf02h.getText().toString());
+        sf.put("crf02d", crf02d.getText().toString());
+        sf.put("crf02i", crf02i.isChecked() ? "00" : "0");
+        sf.put("crf03", crf0301.isChecked() ? "1" : crf0302.isChecked() ? "2" : crf0399.isChecked() ? "99" : "0");
+        sf.put("crf04", crf0401.isChecked() ? "1" : crf0402.isChecked() ? "2" : crf0499.isChecked() ? "99" : "0");
+        sf.put("crf05", crf0501.isChecked() ? "1" : crf0502.isChecked() ? "2" : crf0599.isChecked() ? "99" : "0");
+        sf.put("crf06a", crf06a01.isChecked() ? "1" : crf06a02.isChecked() ? "2" : crf06a99.isChecked() ? "99" : "0");
+        sf.put("crf06b", crf06b01.isChecked() ? "1" : crf06b02.isChecked() ? "2" : crf06b99.isChecked() ? "99" : "0");
+        sf.put("crf06btime", crf06btime.getText().toString());
+        sf.put("crf06c", crf06c01.isChecked() ? "1" : crf06c02.isChecked() ? "2" : crf06c99.isChecked() ? "99" : "0");
+        sf.put("crf06ctime", crf06ctime.getText().toString());
+        sf.put("crf06d", crf06d01.isChecked() ? "1" : crf06d02.isChecked() ? "2" : crf06d99.isChecked() ? "99" : "0");
+        sf.put("crf06e", crf06e01.isChecked() ? "1" : crf06e02.isChecked() ? "2" : crf06e99.isChecked() ? "99" : "0");
+        sf.put("crf06f", crf06f01.isChecked() ? "1" : crf06f02.isChecked() ? "2" : crf06f99.isChecked() ? "99" : "0");
+        sf.put("crf06ftime", crf06ftime.getText().toString());
+        sf.put("crf06g", crf06g01.isChecked() ? "1" : crf06g02.isChecked() ? "2" : crf06g99.isChecked() ? "99" : "0");
+        sf.put("crf06h", crf06h01.isChecked() ? "1" : crf06h02.isChecked() ? "2" : crf06h99.isChecked() ? "99" : "0");
+        sf.put("crf06f", crf06i01.isChecked() ? "1" : crf06i02.isChecked() ? "2" : crf06i99.isChecked() ? "99" : "0");
+        sf.put("crf07a", crf07a01.isChecked() ? "1" : crf07a02.isChecked() ? "2" : crf07a99.isChecked() ? "99" : "0");
+        sf.put("crf07b", crf07b01.isChecked() ? "1" : crf07b02.isChecked() ? "2" : crf07b99.isChecked() ? "99" : "0");
+        sf.put("crf07c", crf07c01.isChecked() ? "1" : crf07c02.isChecked() ? "2" : crf07c99.isChecked() ? "99" : "0");
+        sf.put("crf07d", crf07d01.isChecked() ? "1" : crf07d02.isChecked() ? "2" : crf07d99.isChecked() ? "99" : "0");
+        sf.put("crf07e", crf07e01.isChecked() ? "1" : crf07e02.isChecked() ? "2" : crf07e99.isChecked() ? "99" : "0");
+        sf.put("crf07f", crf07f01.isChecked() ? "1" : crf07f02.isChecked() ? "2" : crf07f99.isChecked() ? "99" : "0");
+        sf.put("crf07g", crf07g01.isChecked() ? "1" : crf07g02.isChecked() ? "2" : crf07g99.isChecked() ? "99" : "0");
+        sf.put("crf07h", crf07h01.isChecked() ? "1" : crf07h02.isChecked() ? "2" : crf07h99.isChecked() ? "99" : "0");
+        sf.put("crf07i", crf07i01.isChecked() ? "1" : crf07i02.isChecked() ? "2" : crf07i99.isChecked() ? "99" : "0");
+        sf.put("crf07j", crf07j01.isChecked() ? "1" : crf07j02.isChecked() ? "2" : crf07j99.isChecked() ? "99" : "0");
+        sf.put("crf07k", crf07k01.isChecked() ? "1" : crf07k02.isChecked() ? "2" : crf07k99.isChecked() ? "99" : "0");
+        sf.put("crf07l", crf07l01.isChecked() ? "1" : crf07l02.isChecked() ? "2" : crf07l99.isChecked() ? "99" : "0");
+        sf.put("crf07m", crf07m01.isChecked() ? "1" : crf07m02.isChecked() ? "2" : crf07m99.isChecked() ? "99" : "0");
+        sf.put("crf07n", crf07n01.isChecked() ? "1" : crf07n02.isChecked() ? "2" : crf07n99.isChecked() ? "99" : "0");
+        sf.put("crf07o", crf07o01.isChecked() ? "1" : crf07o02.isChecked() ? "2" : crf07o99.isChecked() ? "99" : "0");
+        sf.put("crf07p", crf07p01.isChecked() ? "1" : crf07p02.isChecked() ? "2" : crf07p99.isChecked() ? "99" : "0");
+        sf.put("crf07q", crf07q01.isChecked() ? "1" : crf07q02.isChecked() ? "2" : crf07q99.isChecked() ? "99" : "0");
+        sf.put("crf08", crf0801.isChecked() ? "1" : crf0802.isChecked() ? "2" : crf0899.isChecked() ? "99" : "0");
+        sf.put("crf09num", crf09num.getText().toString());
+        sf.put("crf0999", crf0999.isChecked() ? "99" : "0");
+        sf.put("crf10", crf1001.isChecked() ? "1" : crf1002.isChecked() ? "2" : crf1099.isChecked() ? "99" : "0");
+        sf.put("crf11", crf1101.isChecked() ? "1" : crf1102.isChecked() ? "2" : crf1199.isChecked() ? "99" : "0");
+        sf.put("crf12", crf1201.isChecked() ? "1" : crf1202.isChecked() ? "2" : crf1299.isChecked() ? "99" : "0");
+        sf.put("crf13", crf1301.isChecked() ? "1" : crf1302.isChecked() ? "2" : crf1399.isChecked() ? "99" : "0");
+        sf.put("crf14", crf1401.isChecked() ? "1" : crf1402.isChecked() ? "2" : crf1499.isChecked() ? "99" : "0");
+        sf.put("crf15", crf15.getText().toString());
 
         //DCEApp.fc.setROW_Sa(String.valueOf(sa));
 
