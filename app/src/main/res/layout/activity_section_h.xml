@@ -1461,7 +1461,5 @@
             android:text="@string/endForm"
             android:textColor="#000" />
 
-        
-
     </LinearLayout>
 </ScrollView>
