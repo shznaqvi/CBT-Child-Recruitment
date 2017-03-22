@@ -40,9 +40,8 @@
             android:id="@+id/crb01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/crb01"
-            android:inputType="number"
-            android:maxLength="5" />
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/crb01" />
 
         <TextView
             android:layout_width="match_parent"
@@ -179,6 +178,12 @@
 
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/crbGrp01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -192,6 +197,8 @@
             android:hint="@string/kg"
             android:inputType="numberDecimal"
             android:maxLength="5" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"

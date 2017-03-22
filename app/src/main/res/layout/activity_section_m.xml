@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="72dp"
-    tools:context="edu.aku.hassannaqvi.cbt_child_recruitment.SectionAActivity">
+    tools:context="edu.aku.hassannaqvi.cbt_child_recruitment.SectionMActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -307,10 +307,6 @@
                 android:text="@string/crm03b08" />
 
         </RadioGroup>
-
-
-
-
 
 
         <TextView
@@ -687,7 +683,7 @@
         </RadioGroup>
 
 
- <TextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -874,7 +870,6 @@
                 android:text="@string/crm05b08" />
 
         </RadioGroup>
-
 
 
         <TextView
@@ -1159,7 +1154,6 @@
         </RadioGroup>
 
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1347,7 +1341,7 @@
         </RadioGroup>
 
 
- <TextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -1439,7 +1433,7 @@
                 android:text="@string/crm08b08" />
         </RadioGroup>
 
-<TextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -1532,7 +1526,6 @@
         </RadioGroup>
 
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1545,6 +1538,503 @@
             android:textStyle="bold"
             tools:typeface="serif" />
 
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crn01" />
+
+        <EditText
+            android:id="@+id/crn01s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="123456789"
+            android:hint="@string/stats"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dod"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+        <DatePicker
+            android:id="@+id/crn01dod1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn01dod2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crn02" />
+
+        <EditText
+            android:id="@+id/crn02s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="123456789"
+            android:hint="@string/stats"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dod"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+        <DatePicker
+            android:id="@+id/crn02dod1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn02dod2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crn03" />
+
+        <EditText
+            android:id="@+id/crn03s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="123456789"
+            android:hint="@string/stats"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dob"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+        <DatePicker
+            android:id="@+id/crn03dob1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn03dob2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn03dob3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crn04" />
+
+        <EditText
+            android:id="@+id/crn04s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="123456789"
+            android:hint="@string/stats"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dob"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+        <DatePicker
+            android:id="@+id/crn04dob1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn04dob2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dod"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <DatePicker
+            android:id="@+id/crn04dod1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn04dod2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+
+
+<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crn05" />
+
+        <EditText
+            android:id="@+id/crn05s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="123456789"
+            android:hint="@string/stats"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dob"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+        <DatePicker
+            android:id="@+id/crn05dob1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn05dob2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dod"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <DatePicker
+            android:id="@+id/crn05dod1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn05dod2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+
+
+<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crn06" />
+
+        <EditText
+            android:id="@+id/crn06s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="123456789"
+            android:hint="@string/stats"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dob"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+        <DatePicker
+            android:id="@+id/crn06dob1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn06dob2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dod"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <DatePicker
+            android:id="@+id/crn06dod1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn06dod2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crn07" />
+
+        <EditText
+            android:id="@+id/crn07s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="123456789"
+            android:hint="@string/stats"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dob"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+        <DatePicker
+            android:id="@+id/crn07dob1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn07dob2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dod"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <DatePicker
+            android:id="@+id/crn07dod1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn07dod2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+
+<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crn08" />
+
+        <EditText
+            android:id="@+id/crn08s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="123456789"
+            android:hint="@string/stats"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dob"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+        <DatePicker
+            android:id="@+id/crn08dob1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn08dob2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/dod"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <DatePicker
+            android:id="@+id/crn08dod1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
+
+        <DatePicker
+            android:id="@+id/crn08dod2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:ems="10"
+            android:spinnersShown="true" />
 
         <LinearLayout
             android:id="@+id/fldGrpbtn"
@@ -1574,6 +2064,13 @@
                 android:textColor="#000" />
 
         </LinearLayout>
+
+
+
+
+
+
+
 
 
     </LinearLayout>
