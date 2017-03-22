@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -309,8 +310,12 @@ public class SectionBActivity extends Activity {
     RadioButton cre0504a02;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
-    @BindView(R.id.crbGrp01)
-    LinearLayout crbGrp01;
+    @BindView(R.id.crbGrp07)
+    LinearLayout crbGrp07;
+    @BindView(R.id.crdGrp01)
+    LinearLayout crdGrp01;
+    @BindView(R.id.crdGrp02)
+    LinearLayout crdGrp02;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -318,16 +323,114 @@ public class SectionBActivity extends Activity {
         setContentView(R.layout.activity_section_b);
         ButterKnife.bind(this);
 
-        // ====================== Q 7 Skip Pattern =========================
+        // ===================Section-B ====================
 
+        // ====================== Q7 Skip Pattern =========================
         crb07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (crb0701.isChecked()) {
-                    crbGrp01.setVisibility(View.VISIBLE);
+                    crbGrp07.setVisibility(View.VISIBLE);
                 } else {
-                    crbGrp01.setVisibility(View.GONE);
+                    crbGrp07.setVisibility(View.GONE);
                     crb0801.setText(null);
+
+                }
+            }
+        });
+
+        // ===================Section-D ====================
+
+        // =================== Q1 Others ====================
+
+        crd0196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crd0196x.setVisibility(View.VISIBLE);
+                } else {
+                    crd0196x.setVisibility(View.GONE);
+                    crd0196x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q3 Others ====================
+
+        crd0396.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crd0396x.setVisibility(View.VISIBLE);
+                } else {
+                    crd0396x.setVisibility(View.GONE);
+                    crd0396x.setText(null);
+                }
+            }
+        });
+
+        // ====================== Q 1 Skip Pattern =========================
+
+        crd0109.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crdGrp01.setVisibility(View.GONE);
+                    crd02.clearCheck();
+                    crd03.clearCheck();
+                    crdGrp02.setVisibility(View.GONE);
+                    crd0196x.setText(null);
+                    crd0396x.setText(null);
+                    crd0101.setEnabled(false);
+                    crd0101.setChecked(false);
+                    crd0102.setEnabled(false);
+                    crd0102.setChecked(false);
+                    crd0103.setEnabled(false);
+                    crd0103.setChecked(false);
+                    crd0104.setEnabled(false);
+                    crd0104.setChecked(false);
+                    crd0105.setEnabled(false);
+                    crd0105.setChecked(false);
+                    crd0106.setEnabled(false);
+                    crd0106.setChecked(false);
+                    crd0107.setEnabled(false);
+                    crd0107.setChecked(false);
+                    crd0108.setEnabled(false);
+                    crd0108.setChecked(false);
+                    crd0196.setEnabled(false);
+                    crd0196.setChecked(false);
+                    crd0196x.setText(null);
+
+                } else {
+                    crdGrp01.setVisibility(View.VISIBLE);
+                    crdGrp02.setVisibility(View.VISIBLE);
+                    crd0101.setEnabled(true);
+                    crd0102.setEnabled(true);
+                    crd0103.setEnabled(true);
+                    crd0104.setEnabled(true);
+                    crd0105.setEnabled(true);
+                    crd0106.setEnabled(true);
+                    crd0107.setEnabled(true);
+                    crd0108.setEnabled(true);
+                    crd0196.setEnabled(true);
+
+                }
+            }
+        });
+
+        // ====================== Q 2 Skip Pattern =========================
+
+        crd0202.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+                    crdGrp02.setVisibility(View.GONE);
+                    crd03.clearCheck();
+                    crd0396x.setText(null);
+
+                } else {
+                    crdGrp02.setVisibility(View.VISIBLE);
 
                 }
             }
@@ -397,6 +500,20 @@ public class SectionBActivity extends Activity {
         sb.put("crc03m1 ", crc03m1.getText().toString());
         sb.put("crc03m2 ", crc03m2.getText().toString());
         sb.put("crc03m3 ", crc03m3.getText().toString());
+        sb.put("crd0101", crd0101.isChecked() ? "1" : "0");
+        sb.put("crd0102", crd0102.isChecked() ? "2" : "0");
+        sb.put("crd0103", crd0103.isChecked() ? "3" : "0");
+        sb.put("crd0104", crd0104.isChecked() ? "4" : "0");
+        sb.put("crd0105", crd0105.isChecked() ? "5" : "0");
+        sb.put("crd0106", crd0106.isChecked() ? "6" : "0");
+        sb.put("crd0107", crd0107.isChecked() ? "7" : "0");
+        sb.put("crd0108", crd0108.isChecked() ? "8" : "0");
+        sb.put("crd0109", crd0109.isChecked() ? "9" : "0");
+        sb.put("crd0196", crd0196.isChecked() ? "88" : "0");
+        sb.put("crd0196x", crd0196x.getText().toString());
+        sb.put("crd02", crd0201.isChecked() ? "1" : crd0202.isChecked() ? "2" : "0");
+        sb.put("crd03", crd0301.isChecked() ? "1" : crd0302.isChecked() ? "2" : crd0303.isChecked() ? "3" : crd0304.isChecked() ? "4" : crd0305.isChecked() ? "5" : crd0306.isChecked() ? "6" : crd0307.isChecked() ? "7" : crd0308.isChecked() ? "8" : crd0396.isChecked() ? "96" : "0");
+        sb.put("crd0396x", crd0396x.getText().toString());
 
 
         Toast.makeText(this, "Validation Succecful", Toast.LENGTH_SHORT).show();
@@ -835,6 +952,62 @@ public class SectionBActivity extends Activity {
         }
 
         // =================== Section-D ====================
+
+        // ====================== Q1 ===================
+        if (!(crd0101.isChecked() || crd0102.isChecked() || crd0103.isChecked() || crd0104.isChecked()
+                || crd0105.isChecked() || crd0106.isChecked() || crd0107.isChecked() || crd0108.isChecked() || crd0109.isChecked() || crd0196.isChecked())) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crd01), Toast.LENGTH_LONG).show();
+            crd0196.setError("This data is Required!");    // Set Error on last radio button
+            Log.i(TAG, "crd01: This data is Required!");
+            return false;
+        } else {
+            crd0196.setError(null);
+        }
+
+        if (crd0196.isChecked() && crd0196x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crd01) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+            crd0196x.setError("This data is Required!");    // Set Error on last radio button
+            Log.d(TAG, "crd0196: This data is Required!");
+            return false;
+        } else {
+            crd0196x.setError(null);
+        }
+        if (!(crd0109.isChecked())) {
+
+            // ====================== Q 2 ===================
+            if (crd02.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "" + getString(R.string.crd02), Toast.LENGTH_SHORT).show();
+                crd0202.setError("This Data is required");
+                Log.d(TAG, "not selected: crd02 ");
+                return false;
+            } else {
+                crd0202.setError(null);
+            }
+
+            if (crd0201.isChecked()) {
+                // ====================== Q 3 ===================
+                if (crd03.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "" + getString(R.string.crd03), Toast.LENGTH_SHORT).show();
+                    crd0396.setError("This Data is required");
+                    Log.d(TAG, "not selected: crd03 ");
+                    return false;
+                } else {
+                    crd0396.setError(null);
+                }
+
+                if (crd0396.isChecked() && crd0396x.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crd03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    crd0396x.setError("This data is Required!");    // Set Error on last radio button
+                    Log.d(TAG, "crd0396: This data is Required!");
+                    return false;
+                } else {
+                    crd0396x.setError(null);
+                }
+            }
+
+        }
+        // =================== Section-E ====================
+
 
 
         return true;
