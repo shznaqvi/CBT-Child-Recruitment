@@ -103,6 +103,14 @@
                         android:layout_marginTop="16dp"
                         android:text="@string/cra03" />
 
+                    <EditText
+                        android:id="@+id/cra03"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789:"
+                        android:hint="@string/cra03"
+                        android:maxLength="5" />
+
 
                     <TextView
                         android:layout_width="match_parent"
