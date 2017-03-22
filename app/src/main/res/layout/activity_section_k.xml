@@ -1033,7 +1033,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
                 android:layout_weight="1"
-                android:onClick="submitSecA"
+                android:onClick="submitSecK"
                 android:text="@string/nextSection"
                 android:textColor="#00ef00" />
 
