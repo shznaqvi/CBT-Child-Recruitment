@@ -403,6 +403,7 @@
         </RadioGroup>
 
 
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -589,7 +590,7 @@
                 android:text="@string/crm042b08" />
         </RadioGroup>
 
-        <TextView
+  <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -773,6 +774,8 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/crm044b08" />
         </RadioGroup>
+
+
 
 
         <TextView
@@ -963,7 +966,7 @@
         </RadioGroup>
 
 
-        <TextView
+ <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -1536,6 +1539,7 @@
             tools:typeface="serif" />
 
 
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -2032,27 +2036,38 @@
             android:ems="10"
             android:spinnersShown="true" />
 
-
-
-        <Button
-            android:id="@+id/btnNext"
+        <LinearLayout
+            android:id="@+id/fldGrpbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_weight="1"
-            android:onClick="submitSecM"
-            android:text="@string/nextSection"
-            android:textColor="#00ef00" />
+            android:orientation="vertical"
+            android:visibility="visible">
 
-        <Button
-            android:id="@+id/btnEnd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_weight="1"
-            android:onClick="endForm"
-            android:text="@string/endForm"
-            android:textColor="#000" />
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_weight="1"
+                android:onClick="submitSecM"
+                android:text="@string/nextSection"
+                android:textColor="#00ef00" />
+
+            <Button
+                android:id="@+id/btnEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_weight="1"
+                android:onClick="endForm"
+                android:text="@string/endForm"
+                android:textColor="#000" />
+
+        </LinearLayout>
+
+
+
+
 
 
 

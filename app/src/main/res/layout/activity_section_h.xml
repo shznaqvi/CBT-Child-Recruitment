@@ -82,7 +82,9 @@
             android:id="@+id/crh0196x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/other" />
+            android:hint="@string/other"
+            />
+
 
 
         <TextView
@@ -338,7 +340,8 @@
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
-            tools:typeface="serif" />
+            tools:typeface="serif"
+            />
 
         <TextView
 
@@ -360,7 +363,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01a"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -376,7 +380,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01b"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -390,7 +395,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01c"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -404,7 +410,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01d"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -418,7 +425,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01e"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
 
         <TextView
@@ -433,7 +441,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01f"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -447,7 +456,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01g"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -461,7 +471,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01h"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -475,7 +486,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01i"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -489,7 +501,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01j"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -503,7 +516,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01k"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
 
         <TextView
@@ -518,7 +532,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01l"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
 
         <TextView
@@ -533,7 +548,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri01m"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
 
         <TextView
@@ -556,7 +572,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02a"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
 
         <TextView
@@ -571,7 +588,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02b"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
 
         <TextView
@@ -586,7 +604,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02c"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -600,7 +619,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02d"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
 
         <TextView
@@ -615,7 +635,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02e"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -629,7 +650,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02f"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -643,7 +665,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02g"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -657,7 +680,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02h"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -671,7 +695,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02i"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
 
         <TextView
@@ -688,7 +713,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02j"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
 
         <TextView
@@ -703,7 +729,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/cri02k"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -717,7 +744,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hitn="@string/cri02l"
-            android:inputType="number" />
+            android:inputType="number"
+            />
 
 
         <TextView
@@ -785,7 +813,8 @@
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
-            tools:typeface="serif" />
+            tools:typeface="serif"
+            />
 
 
         <TextView
@@ -1410,25 +1439,33 @@
             android:textSize="24sp" />
 
 
-        <Button
-            android:id="@+id/btnNext"
+        <LinearLayout
+            android:id="@+id/fldGrpbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_weight="1"
-            android:onClick="submitSecH"
-            android:text="@string/nextSection"
-            android:textColor="#00ef00" />
+            android:orientation="vertical"
+            android:visibility="visible">
 
-        <Button
-            android:id="@+id/btnEnd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_weight="1"
-            android:onClick="endForm"
-            android:text="@string/endForm"
-            android:textColor="#000" />
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_weight="1"
+                android:onClick="submitSecH"
+                android:text="@string/nextSection"
+                android:textColor="#00ef00" />
 
+            <Button
+                android:id="@+id/btnEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_weight="1"
+                android:onClick="endForm"
+                android:text="@string/endForm"
+                android:textColor="#000" />
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -61,7 +61,14 @@
 
         </RadioGroup>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrf01a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -94,6 +101,8 @@
                 android:text="@string/dkn" />
 
         </RadioGroup>
+
+        </LinearLayout>
 
 
         <TextView
@@ -313,19 +322,31 @@
 
         </RadioGroup>
 
-
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrp06b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/crf06btime" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <EditText
-            android:id="@+id/crf06btime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/times"
-            android:inputType="number" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/hint"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/crf06btime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/times"
+                android:inputType="number" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -362,19 +383,30 @@
 
         </RadioGroup>
 
-
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrp06c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/crf06ctime" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <EditText
-            android:id="@+id/crf06ctime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/times"
-            android:inputType="number" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/hint"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/crf06ctime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/times"
+                android:inputType="number" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -478,18 +510,31 @@
 
         </RadioGroup>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrp06f"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/times" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <EditText
-            android:id="@+id/crf06ftime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:inputType="number"
-            android:text="@string/times" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/hint"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/crf06ftime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:text="@string/times" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1217,6 +1262,13 @@
 
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/fldGrpcrf09"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1236,6 +1288,8 @@
             android:digits="0123456789"
             android:hint="@string/crf09num"
             android:inputType="number" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -1425,26 +1479,34 @@
             android:hint="@string/crf15"
             android:inputType="number" />
 
-        <Button
-            android:id="@+id/btnNext"
+        <LinearLayout
+            android:id="@+id/fldGrpbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_weight="1"
-            android:onClick="submitSecF"
-            android:text="@string/nextSection"
-            android:textColor="#00ef00" />
+            android:orientation="vertical"
+            android:visibility="visible">
 
-        <Button
-            android:id="@+id/btnEnd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_weight="1"
-            android:onClick="endForm"
-            android:text="@string/endForm"
-            android:textColor="#000" />
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_weight="1"
+                android:onClick="submitSecF"
+                android:text="@string/nextSection"
+                android:textColor="#00ef00" />
 
+            <Button
+                android:id="@+id/btnEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_weight="1"
+                android:onClick="endForm"
+                android:text="@string/endForm"
+                android:textColor="#000" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>
