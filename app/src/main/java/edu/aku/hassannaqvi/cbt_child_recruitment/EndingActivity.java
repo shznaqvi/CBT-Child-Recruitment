@@ -3,9 +3,6 @@ package edu.aku.hassannaqvi.cbt_child_recruitment;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -21,7 +18,8 @@ public class EndingActivity extends Activity {
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
-    @BindView(R.id.iStatus)
+
+    /*@BindView(R.id.iStatus)
     RadioGroup iStatus;
     @BindView(R.id.mna7a)
     RadioButton mna7a;
@@ -31,14 +29,14 @@ public class EndingActivity extends Activity {
     RadioButton mna7c;
     @BindView(R.id.mna7d)
     RadioButton mna7d;
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ending);
         ButterKnife.bind(this);
 
-        mna7a.setEnabled(getIntent().getBooleanExtra("complete", true));
+        //mna7a.setEnabled(getIntent().getBooleanExtra("complete", true));
 
     }
 
@@ -54,7 +52,7 @@ public class EndingActivity extends Activity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Closing Form!", Toast.LENGTH_SHORT).show();
                 Intent endSec = new Intent(this, MainActivity.class);
-                AppMain.mnb1 = "TEST";
+                //AppMain.mnb1 = "TEST";
                 startActivity(endSec);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -63,7 +61,7 @@ public class EndingActivity extends Activity {
     }
 
     private boolean UpdateDB() {
-        DatabaseHelper db = new DatabaseHelper(this);
+        /*DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateEnd();
 
@@ -73,13 +71,13 @@ public class EndingActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
     }
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
-        switch (mna7.getCheckedRadioButtonId()) {
+        /*switch (mna7.getCheckedRadioButtonId()) {
             case R.id.mna7a:
                 AppMain.fc.setiStatus("1");
                 break;
@@ -95,21 +93,21 @@ public class EndingActivity extends Activity {
             default:
                 AppMain.fc.setiStatus("default");
                 break;
-        }
+        }*/
 
     }
 
     private boolean formValidation() {
         Toast.makeText(this, "Validating Closing Section", Toast.LENGTH_SHORT).show();
 
-        if (mna7.getCheckedRadioButtonId() == -1) {
+        /*if (mna7.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(not selected): " + getResources().getResourceTypeName(R.string.mna7), Toast.LENGTH_LONG).show();
             mna7d.setError("This data is Required!");
             Log.i(TAG, "mnd9: This data is Required!");
             return false;
         } else {
             mna7d.setError(null);
-        }
+        }*/
         return true;
     }
 }

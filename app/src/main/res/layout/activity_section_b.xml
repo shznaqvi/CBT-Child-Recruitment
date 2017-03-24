@@ -1371,7 +1371,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre04op"
+            android:text="@string/cre04opv"
             android:textAlignment="center" />
 
         <LinearLayout

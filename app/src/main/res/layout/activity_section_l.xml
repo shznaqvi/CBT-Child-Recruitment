@@ -607,7 +607,7 @@
             android:id="@+id/crl1201"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hours"
+            android:hint="@string/crl1201"
             android:inputType="number"
             android:maxLength="3" />
 
@@ -615,7 +615,7 @@
             android:id="@+id/crl1202"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/days"
+            android:hint="@string/crl1202"
             android:inputType="number"
             android:maxLength="2" />
 
@@ -623,7 +623,7 @@
             android:id="@+id/crl1203"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/months"
+            android:hint="@string/crl1203"
             android:inputType="number"
             android:maxLength="2" />
 

@@ -522,7 +522,7 @@ public class SectionBActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateB();
+        /*int updcount = db.updateB();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -530,7 +530,7 @@ public class SectionBActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
 
 
 
@@ -678,7 +678,7 @@ public class SectionBActivity extends Activity {
         }
 
         if ((Integer.parseInt(crb0402.getText().toString()) < 1) || (Integer.parseInt(crb0402.getText().toString()) > 30)) {
-            Toast.makeText(this, "ERROR: " + getString(crb04) + getString(R.string.days), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR: " + getString(R.string.crb04) + getString(R.string.crb0401), Toast.LENGTH_LONG).show();
             crb0402.setError("Range is 1-30 days");
             Log.i(TAG, "crb0402: Range is 1-30 days");
             return false;

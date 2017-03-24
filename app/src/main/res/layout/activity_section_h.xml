@@ -484,7 +484,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/cri0109" />
+            android:text="@string/cri01i" />
 
         <EditText
             android:id="@+id/cri01i"
@@ -749,7 +749,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="0123456789"
-            android:hitn="@string/cri02l"
+            android:hint="@string/cri02l"
             android:inputType="number"
             />
 
@@ -876,8 +876,8 @@
 
             <Spinner
                 android:id="@+id/crj01asrc"
-                style="@style/spinner"
-                android:entries="@array/crj01asrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -929,8 +929,8 @@
 
             <Spinner
                 android:id="@+id/crj01bsrc"
-                style="@style/spinner"
-                android:entries="@array/crj01bsrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -981,8 +981,9 @@
 
             <Spinner
                 android:id="@+id/crj01csrc"
-                style="@style/spinner"
-                android:entries="@array/crj01csrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -1034,8 +1035,9 @@
 
             <Spinner
                 android:id="@+id/crj01dsrc"
-                style="@style/spinner"
-                android:entries="@array/crj01dsrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -1087,8 +1089,9 @@
 
             <Spinner
                 android:id="@+id/crj01esrc"
-                style="@style/spinner"
-                android:entries="@array/crj01esrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -1139,8 +1142,9 @@
 
             <Spinner
                 android:id="@+id/crj01fsrc"
-                style="@style/spinner"
-                android:entries="@array/crj01fsrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -1192,8 +1196,9 @@
 
             <Spinner
                 android:id="@+id/crj01gsrc"
-                style="@style/spinner"
-                android:entries="@array/crj01gsrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -1244,8 +1249,9 @@
 
             <Spinner
                 android:id="@+id/crj01hsrc"
-                style="@style/spinner"
-                android:entries="@array/crj01hsrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -1295,8 +1301,9 @@
 
             <Spinner
                 android:id="@+id/crj01isrc"
-                style="@style/spinner"
-                android:entries="@array/crj01isrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -1348,8 +1355,9 @@
 
             <Spinner
                 android:id="@+id/crj01jsrc"
-                style="@style/spinner"
-                android:entries="@array/crj01jsrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -1400,8 +1408,9 @@
 
             <Spinner
                 android:id="@+id/crj01ksrc"
-                style="@style/spinner"
-                android:entries="@array/crj01ksrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -1453,8 +1462,9 @@
 
             <Spinner
                 android:id="@+id/crj01lsrc"
-                style="@style/spinner"
-                android:entries="@array/crj01lsrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -1513,8 +1523,9 @@
 
             <Spinner
                 android:id="@+id/crj01msrc"
-                style="@style/spinner"
-                android:entries="@array/crj01msrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
 
@@ -1574,8 +1585,9 @@
 
             <Spinner
                 android:id="@+id/crj01nsrc"
-                style="@style/spinner"
-                android:entries="@array/crj01nsrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:prompt="@string/src"
                 android:textSize="24sp" />
         </LinearLayout>

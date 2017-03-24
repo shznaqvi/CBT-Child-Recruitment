@@ -21,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ActivitySectionLActivity extends Activity {
+public class SectionLActivity extends Activity {
 
     @BindView(R.id.activity_section_l)
     ScrollView activitySectionL;
