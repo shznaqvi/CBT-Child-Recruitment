@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -46,8 +47,6 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     RadioButton crf01a02;
     @BindView(R.id.crf01a99)
     RadioButton crf01a99;
-    @BindView(R.id.crf02i)
-    CheckBox crf02i;
     @BindView(R.id.crf02h)
     EditText crf02h;
     @BindView(R.id.crf02d)
@@ -357,6 +356,16 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     @BindView(R.id.fldGrpcrf09)
     LinearLayout fldGrpcrf09;
 
+    RadioGroup crf02;
+    @BindView(R.id.crf0200)
+    RadioButton crf0200;
+    @BindView(R.id.crf0201)
+    RadioButton crf0201;
+    @BindView(R.id.crf0202)
+    RadioButton crf0202;
+
+
+
     @BindViews({R.id.crf07a, R.id.crf07b, R.id.crf07c, R.id.crf07d, R.id.crf07e, R.id.crf07f, R.id.crf07g,
             R.id.crf07h, R.id.crf07i, R.id.crf07j, R.id.crf07k, R.id.crf07l, R.id.crf07m, R.id.crf07n, R.id.crf07o,
             R.id.crf07p, R.id.crf07q})
@@ -452,6 +461,32 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             rg.setOnCheckedChangeListener(this);
         }
 
+        //========== Q2 Skip pattern=============
+
+        crf0201.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crf02h.setVisibility(View.VISIBLE);
+                } else {
+                    crf02h.setVisibility(View.GONE);
+                    crf02h.setText(null);
+                }
+            }
+        });
+
+        crf0202.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crf02d.setVisibility(View.VISIBLE);
+                } else {
+                    crf02d.setVisibility(View.GONE);
+                    crf02d.setText(null);
+                }
+            }
+        });
+
 
 
     }
@@ -522,6 +557,495 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         Toast.makeText(this, "Validating Section A", Toast.LENGTH_SHORT).show();
 
         //======================= Q 1 ===============
+        if (crf01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf01), Toast.LENGTH_SHORT).show();
+            crf0199.setError("This data is Required!");
+            Log.i(TAG, "crf01: This data is Required!");
+            return false;
+        } else {
+            crf0199.setError(null);
+        }
+        //=======  Q1 Skip Check===========
+        if (crf0102.isChecked() || crf0199.isChecked()) {
+            //============ Q 1.1=============
+            if (crf01a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf01a), Toast.LENGTH_SHORT).show();
+                crf01a99.setError("This data is Required!");
+                Log.i(TAG, "crf01a: This data is Required!");
+                return false;
+            } else {
+                crf01a99.setError(null);
+            }
+        }
+        //================ Q2 ==============
+        if (crf02.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf02), Toast.LENGTH_SHORT).show();
+            crf0202.setError("This data is Required!");
+            Log.i(TAG, "crf02: This data is Required!");
+            return false;
+        } else {
+            crf0202.setError(null);
+        }
+
+        if (crf0201.isChecked()) {
+            if (crf02h.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf0201), Toast.LENGTH_SHORT).show();
+                crf02h.setError("This data is Required!");
+                Log.i(TAG, "crf02h: This data is Required!");
+                return false;
+            } else {
+                crf02h.setError(null);
+            }
+
+            if (Integer.parseInt(crf02h.getText().toString().isEmpty() ? "0" : crf02h.getText().toString()) < 0
+                    || Integer.parseInt(crf02h.getText().toString().isEmpty() ? "0" : crf02h.getText().toString()) < 23) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf0201), Toast.LENGTH_SHORT).show();
+                crf02h.setError("Range is 0 to 23 Hours");
+                Log.i(TAG, "crf02h: Range is 0 to 23 Hours");
+                return false;
+            } else {
+                crf02h.setError(null);
+            }
+
+        }
+
+        if (crf0202.isChecked()) {
+            if (crf02d.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf0202), Toast.LENGTH_SHORT).show();
+                crf02d.setError("This data is Required!");
+                Log.i(TAG, "crf02d: This data is Required!");
+                return false;
+            } else {
+                crf02d.setError(null);
+            }
+
+            if (Integer.parseInt(crf02d.getText().toString().isEmpty() ? "0" : crf02d.getText().toString()) < 1
+                    || Integer.parseInt(crf02d.getText().toString().isEmpty() ? "0" : crf02h.getText().toString()) < 29) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf0201), Toast.LENGTH_SHORT).show();
+                crf02d.setError("Range is 1 to 29 Days");
+                Log.i(TAG, "crf02d: Range is 1 to 29 Days");
+                return false;
+            } else {
+                crf02d.setError(null);
+            }
+        }
+
+
+        //=============== Q3==================
+        if (crf03.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf03), Toast.LENGTH_SHORT).show();
+            crf0399.setError("This data is Required!");
+            Log.i(TAG, "crf03a: This data is Required!");
+            return false;
+        } else {
+            crf0399.setError(null);
+        }
+
+
+        //================= Q4================
+        if (crf04.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf04), Toast.LENGTH_SHORT).show();
+            crf0499.setError("This data is Required!");
+            Log.i(TAG, "crf04: This data is Required!");
+            return false;
+        } else {
+            crf0499.setError(null);
+        }
+        //=============== Q5===============
+        if (crf05.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf05), Toast.LENGTH_SHORT).show();
+            crf0599.setError("This data is Required!");
+            Log.i(TAG, "crf05: This data is Required!");
+            return false;
+        } else {
+            crf0599.setError(null);
+        }
+
+        //============ Q 6A ==========
+        if (crf06a.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf06a), Toast.LENGTH_SHORT).show();
+            crf06a99.setError("This data is Required!");
+            Log.i(TAG, "crf06a: This data is Required!");
+            return false;
+        } else {
+            crf06a99.setError(null);
+        }
+
+        //============ Q 6B ==========
+        if (crf06b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf06b), Toast.LENGTH_SHORT).show();
+            crf06b99.setError("This data is Required!");
+            Log.i(TAG, "crf06b: This data is Required!");
+            return false;
+        } else {
+            crf06b99.setError(null);
+        }
+
+        if (crf06b01.isChecked()) {
+            if (crf06btime.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.times), Toast.LENGTH_SHORT).show();
+                crf06btime.setError("This data is Required!");
+                Log.i(TAG, "crf06btime: This data is Required!");
+                return false;
+            } else {
+                crf06btime.setError(null);
+            }
+        }
+
+        //============ Q 6c ==========
+        if (crf06c.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf06c), Toast.LENGTH_SHORT).show();
+            crf06c99.setError("This data is Required!");
+            Log.i(TAG, "crf06c: This data is Required!");
+            return false;
+        } else {
+            crf06c99.setError(null);
+        }
+
+        if (crf06c01.isChecked()) {
+            if (crf06ctime.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.times), Toast.LENGTH_SHORT).show();
+                crf06ctime.setError("This data is Required!");
+                Log.i(TAG, "crf06ctime: This data is Required!");
+                return false;
+            } else {
+                crf06ctime.setError(null);
+            }
+        }
+
+        //============ Q 6d ==========
+        if (crf06d.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf06d), Toast.LENGTH_SHORT).show();
+            crf06d99.setError("This data is Required!");
+            Log.i(TAG, "crf06d: This data is Required!");
+            return false;
+        } else {
+            crf06d99.setError(null);
+        }
+
+        //============ Q 6e ==========
+        if (crf06e.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf06e), Toast.LENGTH_SHORT).show();
+            crf06e99.setError("This data is Required!");
+            Log.i(TAG, "crf06e: This data is Required!");
+            return false;
+        } else {
+            crf06e99.setError(null);
+        }
+
+
+        //============ Q 6f ==========
+        if (crf06f.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf06f), Toast.LENGTH_SHORT).show();
+            crf06f99.setError("This data is Required!");
+            Log.i(TAG, "crf06f: This data is Required!");
+            return false;
+        } else {
+            crf06f99.setError(null);
+        }
+
+        if (crf06f01.isChecked()) {
+            if (crf06ftime.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.times), Toast.LENGTH_SHORT).show();
+                crf06ftime.setError("This data is Required!");
+                Log.i(TAG, "crf06ftime: This data is Required!");
+                return false;
+            } else {
+                crf06ftime.setError(null);
+            }
+        }
+        //============ Q 6g ==========
+        if (crf06g.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf06g), Toast.LENGTH_SHORT).show();
+            crf06g99.setError("This data is Required!");
+            Log.i(TAG, "crf06g: This data is Required!");
+            return false;
+        } else {
+            crf06g99.setError(null);
+        }
+
+        //============ Q 6h ==========
+        if (crf06h.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf06h), Toast.LENGTH_SHORT).show();
+            crf06h99.setError("This data is Required!");
+            Log.i(TAG, "crf06h: This data is Required!");
+            return false;
+        } else {
+            crf06h99.setError(null);
+        }
+
+        //============ Q 6i ==========
+        if (crf06i.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf06i), Toast.LENGTH_SHORT).show();
+            crf06i99.setError("This data is Required!");
+            Log.i(TAG, "crf06i: This data is Required!");
+            return false;
+        } else {
+            crf06i99.setError(null);
+        }
+
+        //============ Q 7a ==========
+        if (crf07a.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07a), Toast.LENGTH_SHORT).show();
+            crf07a99.setError("This data is Required!");
+            Log.i(TAG, "crf07a: This data is Required!");
+            return false;
+        } else {
+            crf07a99.setError(null);
+        }
+
+        //============ Q 7b ==========
+        if (crf07b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07b), Toast.LENGTH_SHORT).show();
+            crf07b99.setError("This data is Required!");
+            Log.i(TAG, "crf07b: This data is Required!");
+            return false;
+        } else {
+            crf07b99.setError(null);
+        }
+
+        //============ Q 7c ==========
+        if (crf07c.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07c), Toast.LENGTH_SHORT).show();
+            crf07c99.setError("This data is Required!");
+            Log.i(TAG, "crf07c: This data is Required!");
+            return false;
+        } else {
+            crf07c99.setError(null);
+        }
+
+        //============ Q 7d ==========
+        if (crf07d.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07d), Toast.LENGTH_SHORT).show();
+            crf07d99.setError("This data is Required!");
+            Log.i(TAG, "crf07d: This data is Required!");
+            return false;
+        } else {
+            crf07d99.setError(null);
+        }
+
+        //============ Q 7e ==========
+        if (crf07e.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07e), Toast.LENGTH_SHORT).show();
+            crf07e99.setError("This data is Required!");
+            Log.i(TAG, "crf07e: This data is Required!");
+            return false;
+        } else {
+            crf07e99.setError(null);
+        }
+
+        //============ Q 7f ==========
+        if (crf07f.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07f), Toast.LENGTH_SHORT).show();
+            crf07f99.setError("This data is Required!");
+            Log.i(TAG, "crf07f: This data is Required!");
+            return false;
+        } else {
+            crf07f99.setError(null);
+        }
+
+        //============ Q 7g ==========
+        if (crf07g.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07g), Toast.LENGTH_SHORT).show();
+            crf07g99.setError("This data is Required!");
+            Log.i(TAG, "crf07g: This data is Required!");
+            return false;
+        } else {
+            crf07g99.setError(null);
+        }
+
+        //============ Q 7h ==========
+        if (crf07h.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07h), Toast.LENGTH_SHORT).show();
+            crf07h99.setError("This data is Required!");
+            Log.i(TAG, "crf07h: This data is Required!");
+            return false;
+        } else {
+            crf07h99.setError(null);
+        }
+
+        //============ Q 7i ==========
+        if (crf07i.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07i), Toast.LENGTH_SHORT).show();
+            crf07i99.setError("This data is Required!");
+            Log.i(TAG, "crf07i: This data is Required!");
+            return false;
+        } else {
+            crf07i99.setError(null);
+        }
+
+        //============ Q 7j ==========
+        if (crf07j.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07j), Toast.LENGTH_SHORT).show();
+            crf07j99.setError("This data is Required!");
+            Log.i(TAG, "crf07j: This data is Required!");
+            return false;
+        } else {
+            crf07j99.setError(null);
+        }
+
+        //============ Q 7k ==========
+        if (crf07k.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07k), Toast.LENGTH_SHORT).show();
+            crf07k99.setError("This data is Required!");
+            Log.i(TAG, "crf07k: This data is Required!");
+            return false;
+        } else {
+            crf07k99.setError(null);
+        }
+
+        //============ Q 7l ==========
+        if (crf07l.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07l), Toast.LENGTH_SHORT).show();
+            crf07l99.setError("This data is Required!");
+            Log.i(TAG, "crf07l: This data is Required!");
+            return false;
+        } else {
+            crf07l99.setError(null);
+        }
+
+        //============ Q 7m ==========
+        if (crf07m.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07m), Toast.LENGTH_SHORT).show();
+            crf07m99.setError("This data is Required!");
+            Log.i(TAG, "crf07m: This data is Required!");
+            return false;
+        } else {
+            crf07m99.setError(null);
+        }
+
+        //============ Q 7n ==========
+        if (crf07n.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07n), Toast.LENGTH_SHORT).show();
+            crf07n99.setError("This data is Required!");
+            Log.i(TAG, "crf07n: This data is Required!");
+            return false;
+        } else {
+            crf07n99.setError(null);
+        }
+
+        //============ Q 7o ==========
+        if (crf07o.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07o), Toast.LENGTH_SHORT).show();
+            crf07o99.setError("This data is Required!");
+            Log.i(TAG, "crf07o: This data is Required!");
+            return false;
+        } else {
+            crf07o99.setError(null);
+        }
+
+        //============ Q 7p ==========
+        if (crf07p.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07p), Toast.LENGTH_SHORT).show();
+            crf07p99.setError("This data is Required!");
+            Log.i(TAG, "crf07p: This data is Required!");
+            return false;
+        } else {
+            crf07p99.setError(null);
+        }
+
+        //============ Q 7q ==========
+        if (crf07q.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07q), Toast.LENGTH_SHORT).show();
+            crf07q99.setError("This data is Required!");
+            Log.i(TAG, "crf07q: This data is Required!");
+            return false;
+        } else {
+            crf07q99.setError(null);
+        }
+
+        //============ Q 8 ==========
+        if (crf08.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf08), Toast.LENGTH_SHORT).show();
+            crf0899.setError("This data is Required!");
+            Log.i(TAG, "crf08: This data is Required!");
+            return false;
+        } else {
+            crf0899.setError(null);
+        }
+
+        if (crf0801.isChecked()) {
+            //============ Q 9 ==========
+            if (crf09num.getText().toString().isEmpty() && !crf0999.isChecked()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf09), Toast.LENGTH_SHORT).show();
+                crf0999.setError("This data is Required!");
+                Log.i(TAG, "crf09: This data is Required!");
+                return false;
+            } else {
+                crf0999.setError(null);
+            }
+        }
+
+        if (crf0802.isChecked() || crf0899.isChecked()) {
+            //============ Q 10 ==========
+            if (crf10.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf10), Toast.LENGTH_SHORT).show();
+                crf1099.setError("This data is Required!");
+                Log.i(TAG, "crf10: This data is Required!");
+                return false;
+            } else {
+                crf1099.setError(null);
+            }
+        }
+
+        //============ Q 11 ==========
+        if (crf11.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf11), Toast.LENGTH_SHORT).show();
+            crf1199.setError("This data is Required!");
+            Log.i(TAG, "crf11: This data is Required!");
+            return false;
+        } else {
+            crf1199.setError(null);
+        }
+
+        //============ Q 12 ==========
+        if (crf12.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf12), Toast.LENGTH_SHORT).show();
+            crf1299.setError("This data is Required!");
+            Log.i(TAG, "crf12: This data is Required!");
+            return false;
+        } else {
+            crf1299.setError(null);
+        }
+
+        //============ Q 13 ==========
+        if (crf13.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf13), Toast.LENGTH_SHORT).show();
+            crf1399.setError("This data is Required!");
+            Log.i(TAG, "crf13: This data is Required!");
+            return false;
+        } else {
+            crf1399.setError(null);
+        }
+
+        //============ Q 15 ==========
+        if (crf15.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
+            crf15.setError("This data is Required!");
+            Log.i(TAG, "crf15: This data is Required!");
+            return false;
+        } else {
+            crf15.setError(null);
+        }
+
+        //================ Q 7 Skip check===========
+        if (is07AllNo() && crf0801.isChecked()) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.crf07a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
+            crf07a02.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.crf08));
+            Log.i(TAG, "crf07: This data is Required!");
+            return false;
+        } else {
+            crf07a02.setError(null);
+        }
+
+        if (is07Alldontknow() && crf0802.isChecked()) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.crf08) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
+            crf0802.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.crf08));
+            Log.i(TAG, "crf08: This data is Required!");
+            return false;
+        } else {
+            crf0802.setError(null);
+        }
 
 
         return true;
@@ -537,7 +1061,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         sf.put("crf01a", crf01a01.isChecked() ? "1" : crf01a02.isChecked() ? "2" : crf01a99.isChecked() ? "99" : "0");
         sf.put("crf02h", crf02h.getText().toString());
         sf.put("crf02d", crf02d.getText().toString());
-        sf.put("crf02i", crf02i.isChecked() ? "00" : "0");
+        sf.put("crf02", crf0200.isChecked() ? "000" : crf0201.isChecked() ? "1" : crf0202.isChecked() ? "2" : "0");
         sf.put("crf03", crf0301.isChecked() ? "1" : crf0302.isChecked() ? "2" : crf0399.isChecked() ? "99" : "0");
         sf.put("crf04", crf0401.isChecked() ? "1" : crf0402.isChecked() ? "2" : crf0499.isChecked() ? "99" : "0");
         sf.put("crf05", crf0501.isChecked() ? "1" : crf0502.isChecked() ? "2" : crf0599.isChecked() ? "99" : "0");

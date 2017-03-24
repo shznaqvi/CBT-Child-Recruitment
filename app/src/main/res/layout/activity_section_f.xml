@@ -111,28 +111,52 @@
             android:layout_marginTop="16dp"
             android:text="@string/crf02" />
 
-
-        <CheckBox
-            android:id="@+id/crf02i"
+        <RadioGroup
+            android:id="@+id/crf02"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/crf02i" />
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/crf0200"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/crf0200" />
+
+            <RadioButton
+                android:id="@+id/crf0201"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/crf0201" />
+
+            <RadioButton
+                android:id="@+id/crf0202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/crf0202" />
+
+        </RadioGroup>
+
 
         <EditText
             android:id="@+id/crf02h"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="0123456789"
-            android:hint="@string/crf02h"
-            android:inputType="number" />
+            android:hint="@string/crf0201"
+            android:inputType="number"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/crf02d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="0123456789"
-            android:hint="@string/crf02d"
-            android:inputType="number" />
+            android:hint="@string/crf0202"
+            android:inputType="number"
+            android:visibility="gone" />
 
 
         <TextView
