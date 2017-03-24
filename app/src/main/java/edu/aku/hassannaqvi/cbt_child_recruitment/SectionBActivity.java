@@ -519,6 +519,17 @@ public class SectionBActivity extends Activity {
 
     private boolean updateDB() {
 
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        int updcount = db.updateB();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
 
 
 
