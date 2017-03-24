@@ -50,6 +50,8 @@ public class SectionBActivity extends Activity {
     RadioButton crb0501;
     @BindView(R.id.crb0502)
     RadioButton crb0502;
+    @BindView(R.id.crbGrp07)
+    LinearLayout crbGrp07;
     @BindView(R.id.crb0601)
     EditText crb0601;
     @BindView(R.id.crb07)
@@ -128,6 +130,10 @@ public class SectionBActivity extends Activity {
     RadioButton crd0396;
     @BindView(R.id.crd0396x)
     EditText crd0396x;
+    @BindView(R.id.crdGrp01)
+    LinearLayout crdGrp01;
+    @BindView(R.id.crdGrp02)
+    LinearLayout crdGrp02;
     @BindView(R.id.cre01)
     RadioGroup cre01;
     @BindView(R.id.cre0101)
@@ -310,12 +316,7 @@ public class SectionBActivity extends Activity {
     RadioButton cre0504a02;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
-    @BindView(R.id.crbGrp07)
-    LinearLayout crbGrp07;
-    @BindView(R.id.crdGrp01)
-    LinearLayout crdGrp01;
-    @BindView(R.id.crdGrp02)
-    LinearLayout crdGrp02;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
