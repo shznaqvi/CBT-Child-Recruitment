@@ -83,86 +83,94 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/other"
+            android:visibility="gone"
             />
 
-
-
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrh02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/crh02" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <RadioGroup
-            android:id="@+id/crh02"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/crh0201"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0201" />
+                android:layout_marginTop="16dp"
+                android:text="@string/crh02" />
 
-            <RadioButton
-                android:id="@+id/crh0202"
+            <RadioGroup
+                android:id="@+id/crh02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/crh0201"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0201" />
+
+                <RadioButton
+                    android:id="@+id/crh0202"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0202" />
+
+
+            </RadioGroup>
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0202" />
+                android:layout_marginTop="16dp"
+                android:text="@string/crh03" />
 
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/crh03" />
-
-        <RadioGroup
-            android:id="@+id/crh03"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/crh0301"
+            <RadioGroup
+                android:id="@+id/crh03"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0301" />
+                android:layout_height="wrap_content">
 
-            <RadioButton
-                android:id="@+id/crh0302"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0302" />
+                <RadioButton
+                    android:id="@+id/crh0301"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0301" />
 
-            <RadioButton
-                android:id="@+id/crh0303"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0303" />
+                <RadioButton
+                    android:id="@+id/crh0302"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0302" />
 
-            <RadioButton
-                android:id="@+id/crh0304"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0304" />
+                <RadioButton
+                    android:id="@+id/crh0303"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0303" />
 
-            <RadioButton
-                android:id="@+id/crh0305"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0305" />
+                <RadioButton
+                    android:id="@+id/crh0304"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0304" />
+
+                <RadioButton
+                    android:id="@+id/crh0305"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0305" />
 
 
-        </RadioGroup>
+            </RadioGroup>
+
+        </LinearLayout>
 
 
         <TextView
@@ -192,53 +200,62 @@
 
         </RadioGroup>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrh05"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/crh05" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <RadioGroup
-            android:id="@+id/crh05"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/crh0501"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0501" />
+                android:layout_marginTop="16dp"
+                android:text="@string/crh05" />
 
-            <RadioButton
-                android:id="@+id/crh0502"
+            <RadioGroup
+                android:id="@+id/crh05"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0502" />
+                android:layout_height="wrap_content">
 
-            <RadioButton
-                android:id="@+id/crh0503"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0503" />
+                <RadioButton
+                    android:id="@+id/crh0501"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0501" />
 
-            <RadioButton
-                android:id="@+id/crh0504"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0504" />
+                <RadioButton
+                    android:id="@+id/crh0502"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0502" />
 
-            <RadioButton
-                android:id="@+id/crh0505"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/crh0505" />
+                <RadioButton
+                    android:id="@+id/crh0503"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0503" />
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/crh0504"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0504" />
+
+                <RadioButton
+                    android:id="@+id/crh0505"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crh0505" />
+
+            </RadioGroup>
+
+        </LinearLayout>
 
 
         <TextView
@@ -851,22 +868,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-
-        <EditText
-            android:id="@+id/crj01anum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01asrc"
-            style="@style/spinner"
-            android:entries="@array/crj01asrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01anum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01asrc"
+                style="@style/spinner"
+                android:entries="@array/crj01asrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -895,22 +921,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-
-        <EditText
-            android:id="@+id/crj01bnum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01bsrc"
-            style="@style/spinner"
-            android:entries="@array/crj01bsrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01bnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01bsrc"
+                style="@style/spinner"
+                android:entries="@array/crj01bsrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -938,22 +973,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-
-        <EditText
-            android:id="@+id/crj01cnum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01csrc"
-            style="@style/spinner"
-            android:entries="@array/crj01csrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01cnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01csrc"
+                style="@style/spinner"
+                android:entries="@array/crj01csrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -982,21 +1026,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01dnum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01dsrc"
-            style="@style/spinner"
-            android:entries="@array/crj01dsrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01dnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01dsrc"
+                style="@style/spinner"
+                android:entries="@array/crj01dsrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -1025,21 +1079,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01enum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01e"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01esrc"
-            style="@style/spinner"
-            android:entries="@array/crj01esrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01enum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01esrc"
+                style="@style/spinner"
+                android:entries="@array/crj01esrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1067,21 +1131,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01fnum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01f"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01fsrc"
-            style="@style/spinner"
-            android:entries="@array/crj01fsrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01fnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01fsrc"
+                style="@style/spinner"
+                android:entries="@array/crj01fsrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -1110,21 +1184,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01gnum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01g"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01gsrc"
-            style="@style/spinner"
-            android:entries="@array/crj01gsrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01gnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01gsrc"
+                style="@style/spinner"
+                android:entries="@array/crj01gsrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1152,22 +1236,30 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01hnum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01h"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01hsrc"
-            style="@style/spinner"
-            android:entries="@array/crj01hsrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
 
+            <EditText
+                android:id="@+id/crj01hnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01hsrc"
+                style="@style/spinner"
+                android:entries="@array/crj01hsrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1195,21 +1287,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01inum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01i"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01isrc"
-            style="@style/spinner"
-            android:entries="@array/crj01isrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01inum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01isrc"
+                style="@style/spinner"
+                android:entries="@array/crj01isrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -1238,21 +1340,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01jnum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01j"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01jsrc"
-            style="@style/spinner"
-            android:entries="@array/crj01jsrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01jnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01jsrc"
+                style="@style/spinner"
+                android:entries="@array/crj01jsrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1280,21 +1392,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01knum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01k"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01ksrc"
-            style="@style/spinner"
-            android:entries="@array/crj01ksrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01knum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01ksrc"
+                style="@style/spinner"
+                android:entries="@array/crj01ksrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -1323,21 +1445,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01lnum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01l"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01lsrc"
-            style="@style/spinner"
-            android:entries="@array/crj01lsrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01lnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01lsrc"
+                style="@style/spinner"
+                android:entries="@array/crj01lsrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -1372,21 +1504,31 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01mnum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01msrc"
-            style="@style/spinner"
-            android:entries="@array/crj01msrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01mnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01msrc"
+                style="@style/spinner"
+                android:entries="@array/crj01msrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1422,21 +1564,30 @@
                 android:text="@string/no" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/crj01nnum"
+        <LinearLayout
+            android:id="@+id/fldGrpcrj01n"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:hint="@string/bnf"
-            android:inputType="number"
-            android:maxLength="2" />
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/crj01nsrc"
-            style="@style/spinner"
-            android:entries="@array/crj01nsrc"
-            android:prompt="@string/src"
-            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/crj01nnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint="@string/bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+            <Spinner
+                android:id="@+id/crj01nsrc"
+                style="@style/spinner"
+                android:entries="@array/crj01nsrc"
+                android:prompt="@string/src"
+                android:textSize="24sp" />
+        </LinearLayout>
 
 
         <LinearLayout
