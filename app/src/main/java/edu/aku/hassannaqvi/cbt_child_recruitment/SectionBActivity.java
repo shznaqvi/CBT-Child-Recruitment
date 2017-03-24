@@ -448,7 +448,7 @@ public class SectionBActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (updateDb()) {
+            if (updateDB()) {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -471,7 +471,9 @@ public class SectionBActivity extends Activity {
         startActivity(endSec);
     }
 
-    private boolean updateDb() {
+    private boolean updateDB() {
+
+
 
 
         return true;
@@ -481,6 +483,9 @@ public class SectionBActivity extends Activity {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
         JSONObject sb = new JSONObject();
+        JSONObject sc = new JSONObject();
+        JSONObject sd = new JSONObject();
+        JSONObject se = new JSONObject();
 
         sb.put("crb01", crb01.getText().toString());
         sb.put("crb02", crb0201.isChecked() ? "1" : crb0202.isChecked() ? "2" : "0");
@@ -491,29 +496,68 @@ public class SectionBActivity extends Activity {
         sb.put("crb0601", crb0601.getText().toString());
         sb.put("crb07", crb0701.isChecked() ? "1" : crb0702.isChecked() ? "2" : "0");
         sb.put("crb08", crb0801.getText().toString());
-        sb.put("crc01m1", crc01m1.getText().toString());
-        sb.put("crc01m2", crc01m2.getText().toString());
-        sb.put("crc01m3", crc01m3.getText().toString());
-        sb.put("crc02m1 ", crc02m1.getText().toString());
-        sb.put("crc02m2 ", crc02m2.getText().toString());
-        sb.put("crc02m3 ", crc02m3.getText().toString());
-        sb.put("crc03m1 ", crc03m1.getText().toString());
-        sb.put("crc03m2 ", crc03m2.getText().toString());
-        sb.put("crc03m3 ", crc03m3.getText().toString());
-        sb.put("crd0101", crd0101.isChecked() ? "1" : "0");
-        sb.put("crd0102", crd0102.isChecked() ? "2" : "0");
-        sb.put("crd0103", crd0103.isChecked() ? "3" : "0");
-        sb.put("crd0104", crd0104.isChecked() ? "4" : "0");
-        sb.put("crd0105", crd0105.isChecked() ? "5" : "0");
-        sb.put("crd0106", crd0106.isChecked() ? "6" : "0");
-        sb.put("crd0107", crd0107.isChecked() ? "7" : "0");
-        sb.put("crd0108", crd0108.isChecked() ? "8" : "0");
-        sb.put("crd0109", crd0109.isChecked() ? "9" : "0");
-        sb.put("crd0196", crd0196.isChecked() ? "88" : "0");
-        sb.put("crd0196x", crd0196x.getText().toString());
-        sb.put("crd02", crd0201.isChecked() ? "1" : crd0202.isChecked() ? "2" : "0");
-        sb.put("crd03", crd0301.isChecked() ? "1" : crd0302.isChecked() ? "2" : crd0303.isChecked() ? "3" : crd0304.isChecked() ? "4" : crd0305.isChecked() ? "5" : crd0306.isChecked() ? "6" : crd0307.isChecked() ? "7" : crd0308.isChecked() ? "8" : crd0396.isChecked() ? "96" : "0");
-        sb.put("crd0396x", crd0396x.getText().toString());
+        sc.put("crc01m1", crc01m1.getText().toString());
+        sc.put("crc01m2", crc01m2.getText().toString());
+        sc.put("crc01m3", crc01m3.getText().toString());
+        sc.put("crc02m1 ", crc02m1.getText().toString());
+        sc.put("crc02m2 ", crc02m2.getText().toString());
+        sc.put("crc02m3 ", crc02m3.getText().toString());
+        sc.put("crc03m1 ", crc03m1.getText().toString());
+        sc.put("crc03m2 ", crc03m2.getText().toString());
+        sc.put("crc03m3 ", crc03m3.getText().toString());
+        sd.put("crd0101", crd0101.isChecked() ? "1" : "0");
+        sd.put("crd0102", crd0102.isChecked() ? "2" : "0");
+        sd.put("crd0103", crd0103.isChecked() ? "3" : "0");
+        sd.put("crd0104", crd0104.isChecked() ? "4" : "0");
+        sd.put("crd0105", crd0105.isChecked() ? "5" : "0");
+        sd.put("crd0106", crd0106.isChecked() ? "6" : "0");
+        sd.put("crd0107", crd0107.isChecked() ? "7" : "0");
+        sd.put("crd0108", crd0108.isChecked() ? "8" : "0");
+        sd.put("crd0109", crd0109.isChecked() ? "9" : "0");
+        sd.put("crd0196", crd0196.isChecked() ? "88" : "0");
+        sd.put("crd0196x", crd0196x.getText().toString());
+        sd.put("crd02", crd0201.isChecked() ? "1" : crd0202.isChecked() ? "2" : "0");
+        sd.put("crd03", crd0301.isChecked() ? "1" : crd0302.isChecked() ? "2" : crd0303.isChecked() ? "3" : crd0304.isChecked() ? "4" : crd0305.isChecked() ? "5" : crd0306.isChecked() ? "6" : crd0307.isChecked() ? "7" : crd0308.isChecked() ? "8" : crd0396.isChecked() ? "96" : "0");
+        sd.put("crd0396x", crd0396x.getText().toString());
+        se.put("cre01", cre0101.isChecked() ? "1" : cre0102.isChecked() ? "2" : "0");
+        se.put("cre01a", cre01a01.isChecked() ? "1" : cre01a02.isChecked() ? "2" : "0");
+        // BCG At Birth
+        se.put("cre0201a", cre0201a01.isChecked() ? "1" : cre0201a02.isChecked() ? "2" : "0");
+        se.put("cre0201b", cre0201b01.isChecked() ? "1" : cre0201b02.isChecked() ? "2" : "0");
+        //Polio At Birth
+        se.put("cre0202a", cre0202a01.isChecked() ? "1" : cre0202a02.isChecked() ? "2" : "0");
+        se.put("cre0202b", cre0202b01.isChecked() ? "1" : cre0202b02.isChecked() ? "2" : "0");
+        // Penta 1 at 6 weeks
+        se.put("cre0301a", cre0301a01.isChecked() ? "1" : cre0301a02.isChecked() ? "2" : "0");
+        se.put("cre0301b", cre0301b01.isChecked() ? "1" : cre0301b02.isChecked() ? "2" : "0");
+        //PCV 1 at 6 weeks
+        se.put("cre0302a", cre0302a01.isChecked() ? "1" : cre0302a02.isChecked() ? "2" : "0");
+        se.put("cre0302b", cre0302b01.isChecked() ? "1" : cre0302b02.isChecked() ? "2" : "0");
+        // OPV 1 at 6 weeks
+        se.put("cre0303a", cre0303a01.isChecked() ? "1" : cre0303a02.isChecked() ? "2" : "0");
+        se.put("cre0303b", cre0303b01.isChecked() ? "1" : cre0303b02.isChecked() ? "2" : "0");
+        // Penta 2 at 10 weeks
+        se.put("cre0401a", cre0401a01.isChecked() ? "1" : cre0401a02.isChecked() ? "2" : "0");
+        se.put("cre0401b", cre0401b01.isChecked() ? "1" : cre0401b02.isChecked() ? "2" : "0");
+        // PCV 2 at 6 weeks
+        se.put("cre0402a", cre0402a01.isChecked() ? "1" : cre0402a02.isChecked() ? "2" : "0");
+        se.put("cre0402b", cre0402b01.isChecked() ? "1" : cre0402b02.isChecked() ? "2" : "0");
+        // OPV 2 at 6 weeks
+        se.put("cre0403a", cre0403a01.isChecked() ? "1" : cre0403a02.isChecked() ? "2" : "0");
+        se.put("cre0403b", cre0403b01.isChecked() ? "1" : cre0403b02.isChecked() ? "2" : "0");
+        // Penta 3 at 14 weeks
+        se.put("cre0501a", cre0501a01.isChecked() ? "1" : cre0501a02.isChecked() ? "2" : "0");
+        se.put("cre0501b", cre0501b01.isChecked() ? "1" : cre0501b02.isChecked() ? "2" : "0");
+        // PCV 3 at 14 weeks
+        se.put("cre0502a", cre0502a01.isChecked() ? "1" : cre0502a02.isChecked() ? "2" : "0");
+        se.put("cre0502b", cre0502b01.isChecked() ? "1" : cre0502b02.isChecked() ? "2" : "0");
+        // OPV 3 at 14 weeks
+        se.put("cre0503a", cre0503a01.isChecked() ? "1" : cre0503a02.isChecked() ? "2" : "0");
+        se.put("cre0503b", cre0503b01.isChecked() ? "1" : cre0503b02.isChecked() ? "2" : "0");
+        // IPV at 14 weeks
+        se.put("cre0504a", cre0504a01.isChecked() ? "1" : cre0504a02.isChecked() ? "2" : "0");
+        se.put("cre0504b", cre0504b01.isChecked() ? "1" : cre0504b02.isChecked() ? "2" : "0");
+
 
 
         Toast.makeText(this, "Validation Succecful", Toast.LENGTH_SHORT).show();
