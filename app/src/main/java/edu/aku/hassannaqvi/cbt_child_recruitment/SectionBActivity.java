@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.cbt_child_recruitment;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -432,6 +433,52 @@ public class SectionBActivity extends Activity {
                 } else {
                     crdGrp02.setVisibility(View.VISIBLE);
 
+                }
+            }
+        });
+
+        // Section E Skip Pattern
+        cre01a.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (cre01a01.isChecked()) {
+                    fldGrpBcg.setVisibility(View.VISIBLE);
+                    fldGrpPolio.setVisibility(View.VISIBLE);
+                    fldGrpPenta1.setVisibility(View.VISIBLE);
+                    fldGrppcv1.setVisibility(View.VISIBLE);
+                    fldGrpopv1.setVisibility(View.VISIBLE);
+                    fldGrppenta2.setVisibility(View.VISIBLE);
+                    fldGrppcv2.setVisibility(View.VISIBLE);
+                    fldGrpopv2.setVisibility(View.VISIBLE);
+                    fldGrpenta3.setVisibility(View.VISIBLE);
+                    fldGrppcv3.setVisibility(View.VISIBLE);
+                    fldGrpopv3.setVisibility(View.VISIBLE);
+                    fldGrpipv.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpBcg.setVisibility(View.GONE);
+                    cre0201a.clearCheck();
+                    fldGrpPolio.setVisibility(View.GONE);
+                    cre0202a.clearCheck();
+                    fldGrpPenta1.setVisibility(View.GONE);
+                    cre0301a.clearCheck();
+                    fldGrppcv1.setVisibility(View.GONE);
+                    cre0302a.clearCheck();
+                    fldGrpopv1.setVisibility(View.GONE);
+                    cre0303a.clearCheck();
+                    fldGrppenta2.setVisibility(View.GONE);
+                    cre0401a.clearCheck();
+                    fldGrppcv2.setVisibility(View.GONE);
+                    cre0402a.clearCheck();
+                    fldGrpopv2.setVisibility(View.GONE);
+                    cre0403a.clearCheck();
+                    fldGrpenta3.setVisibility(View.GONE);
+                    cre0501a.clearCheck();
+                    fldGrppcv3.setVisibility(View.GONE);
+                    cre0502a.clearCheck();
+                    fldGrpopv3.setVisibility(View.GONE);
+                    cre0503a.clearCheck();
+                    fldGrpipv.setVisibility(View.GONE);
+                    cre0504a.clearCheck();
                 }
             }
         });
