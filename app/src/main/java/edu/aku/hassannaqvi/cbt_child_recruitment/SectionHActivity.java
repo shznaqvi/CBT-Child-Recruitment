@@ -1,9 +1,11 @@
 package edu.aku.hassannaqvi.cbt_child_recruitment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -11,12 +13,18 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ActivitySectionHActivity extends Activity {
+public class SectionHActivity extends Activity {
+
+    private static final String TAG = SectionHActivity.class.getSimpleName();
 
     @BindView(R.id.activity_section_h)
     ScrollView activitySectionH;
@@ -28,8 +36,6 @@ public class ActivitySectionHActivity extends Activity {
     RadioButton crh0102;
     @BindView(R.id.crh0103)
     RadioButton crh0103;
-    @BindView(R.id.crh0104)
-    RadioButton crh0104;
     @BindView(R.id.crh0196)
     RadioButton crh0196;
     @BindView(R.id.crh0196x)
@@ -74,30 +80,29 @@ public class ActivitySectionHActivity extends Activity {
     RadioButton crh0504;
     @BindView(R.id.crh0505)
     RadioButton crh0505;
-    @BindView(R.id.crh06)
-    RadioGroup crh06;
+
     @BindView(R.id.crh0601)
-    RadioButton crh0601;
+    CheckBox crh0601;
     @BindView(R.id.crh0602)
-    RadioButton crh0602;
+    CheckBox crh0602;
     @BindView(R.id.crh0603)
-    RadioButton crh0603;
+    CheckBox crh0603;
     @BindView(R.id.crh0604)
-    RadioButton crh0604;
+    CheckBox crh0604;
     @BindView(R.id.crh0605)
-    RadioButton crh0605;
+    CheckBox crh0605;
     @BindView(R.id.crh0606)
-    RadioButton crh0606;
+    CheckBox crh0606;
     @BindView(R.id.crh0607)
-    RadioButton crh0607;
+    CheckBox crh0607;
     @BindView(R.id.crh0608)
-    RadioButton crh0608;
+    CheckBox crh0608;
     @BindView(R.id.crh0609)
-    RadioButton crh0609;
+    CheckBox crh0609;
     @BindView(R.id.crh0696)
-    RadioButton crh0696;
-    @BindView(R.id.crh0610x)
-    EditText crh0610x;
+    CheckBox crh0696;
+    @BindView(R.id.crh0696x)
+    EditText crh0696x;
     @BindView(R.id.cri01a)
     EditText cri01a;
     @BindView(R.id.cri01b)
@@ -341,15 +346,27 @@ public class ActivitySectionHActivity extends Activity {
 
 
 //*********************************Section H***********************
-        crh01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        crh0101.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (crh0101.isChecked()) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
                     fldGrpcrh02.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrh02.setVisibility(View.GONE);
                     crh02.clearCheck();
                     crh03.clearCheck();
+                }
+            }
+        });
+
+        crh0196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crh0196x.setVisibility(View.VISIBLE);
+                } else {
+                    crh0196x.setVisibility(View.GONE);
+                    crh0196x.setText(null);
                 }
             }
         });
@@ -365,6 +382,7 @@ public class ActivitySectionHActivity extends Activity {
                 }
             }
         });
+
 
 //******************************************** Section J *******************************************
         crj01a01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -519,6 +537,7 @@ public class ActivitySectionHActivity extends Activity {
                 } else {
                     fldGrpcrj01m.setVisibility(View.GONE);
                     crj01mnum.setText(null);
+                    crj01mx.setText(null);
                 }
             }
         });
@@ -531,6 +550,7 @@ public class ActivitySectionHActivity extends Activity {
                 } else {
                     fldGrpcrj01n.setVisibility(View.GONE);
                     crj01nnum.setText(null);
+                    crj01nx.setText(null);
                 }
             }
         });
@@ -539,13 +559,109 @@ public class ActivitySectionHActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        //TODO implement
+        if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                startActivity(new Intent(this, SectionGActivity.class));
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
 
 
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
-        //TODO implement
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+
+        /*if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+*/
+        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        Intent endSec = new Intent(this, EndingActivity.class);
+        endSec.putExtra("complete", false);
+        startActivity(endSec);
+            /*} else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }*/
+    }
+
+    private void SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        JSONObject sh = new JSONObject();
+        JSONObject si = new JSONObject();
+        JSONObject sj = new JSONObject();
+
+        sh.put("crh01", crh0101.isChecked() ? "1" : crh0102.isChecked() ? "2" : crh0103.isChecked() ? "3"
+                : crh0196.isChecked() ? "96" : "0");
+        sh.put("crh0196x", crh0196x.getText().toString());
+        sh.put("crh02", crh0201.isChecked() ? "1" : crh0202.isChecked() ? "2" : "0");
+        sh.put("crh03", crh0301.isChecked() ? "1" : crh0302.isChecked() ? "2" : crh0303.isChecked() ? "3"
+                : crh0304.isChecked() ? "4" : crh0305.isChecked() ? "5" : "0");
+        sh.put("crh04", crh0401.isChecked() ? "1" : crh0402.isChecked() ? "2" : "0");
+        sh.put("crh05", crh0501.isChecked() ? "1" : crh0502.isChecked() ? "2" : crh0503.isChecked() ? "3"
+                : crh0504.isChecked() ? "4" : crh0505.isChecked() ? "5" : "0");
+        sh.put("crh0601", crh0601.isChecked() ? "1" : "0");
+        sh.put("crh0602", crh0602.isChecked() ? "1" : "0");
+        sh.put("crh0603", crh0603.isChecked() ? "1" : "0");
+        sh.put("crh0604", crh0604.isChecked() ? "1" : "0");
+        sh.put("crh0605", crh0605.isChecked() ? "1" : "0");
+        sh.put("crh0606", crh0606.isChecked() ? "1" : "0");
+        sh.put("crh0607", crh0607.isChecked() ? "1" : "0");
+        sh.put("crh0607", crh0607.isChecked() ? "1" : "0");
+        sh.put("crh0608", crh0608.isChecked() ? "1" : "0");
+        sh.put("crh0609", crh0609.isChecked() ? "1" : "0");
+        sh.put("crh0696", crh0696.isChecked() ? "1" : "0");
+        sh.put("crh0696x", crh0696x.getText().toString());
+
+        si.put("cri01a", cri01a.getText().toString());
+        si.put("cri01b", cri01b.getText().toString());
+        si.put("cri01c", cri01c.getText().toString());
+        si.put("cri01d", cri01d.getText().toString());
+        si.put("cri01e", cri01e.getText().toString());
+        si.put("cri01f", cri01f.getText().toString());
+        si.put("cri01g", cri01g.getText().toString());
+        si.put("cri01h", cri01h.getText().toString());
+        si.put("cri01i", cri01i.getText().toString());
+        si.put("cri01j", cri01j.getText().toString());
+        si.put("cri01k", cri01k.getText().toString());
+        si.put("cri01l", cri01l.getText().toString());
+        si.put("cri01m", cri01m.getText().toString());
+        si.put("cri02a", cri02a.getText().toString());
+        si.put("cri02b", cri02b.getText().toString());
+        si.put("cri02c", cri02c.getText().toString());
+        si.put("cri02d", cri02d.getText().toString());
+        si.put("cri02e", cri02e.getText().toString());
+        si.put("cri02f", cri02f.getText().toString());
+        si.put("cri02g", cri02g.getText().toString());
+        si.put("cri02g", cri02h.getText().toString());
+        si.put("cri02i", cri02i.getText().toString());
+        si.put("cri02j", cri02j.getText().toString());
+        si.put("cri02k", cri02k.getText().toString());
+        si.put("cri02l", cri02l.getText().toString());
+        si.put("cri03", cri03.getText().toString());
+        si.put("cri04", cri0401.isChecked() ? "1" : cri0402.isChecked() ? "2" : cri0499.isChecked() ? "99" : "0");
+
+
+        //DCEApp.fc.setROW_Sa(String.valueOf(sa));
+
+        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
 
