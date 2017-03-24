@@ -814,6 +814,280 @@ public class SectionHActivity extends Activity {
             crh0696x.setError(null);
         }
 
+//**************************************** Section I ************************************
+
+        // =================== Q 1.1 ===============
+        if (cri01a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01a), Toast.LENGTH_SHORT).show();
+            cri01a.setError("This data is Required!");
+            Log.i(TAG, "cri01a: This data is Required!");
+            return false;
+        } else {
+            cri01a.setError(null);
+        }
+
+        // =================== Q 1.2 ===============
+        if (cri01b.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01b), Toast.LENGTH_SHORT).show();
+            cri01b.setError("This data is Required!");
+            Log.i(TAG, "cri01b: This data is Required!");
+            return false;
+        } else {
+            cri01b.setError(null);
+        }
+
+        // =================== Q 1.3 ===============
+        if (cri01c.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01c), Toast.LENGTH_SHORT).show();
+            cri01c.setError("This data is Required!");
+            Log.i(TAG, "cri01c: This data is Required!");
+            return false;
+        } else {
+            cri01c.setError(null);
+        }
+
+        // =================== Q 1.4 ===============
+        if (cri01d.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01d), Toast.LENGTH_SHORT).show();
+            cri01d.setError("This data is Required!");
+            Log.i(TAG, "cri01d: This data is Required!");
+            return false;
+        } else {
+            cri01d.setError(null);
+        }
+
+        // =================== Q 1.5 ===============
+        if (cri01e.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01e), Toast.LENGTH_SHORT).show();
+            cri01e.setError("This data is Required!");
+            Log.i(TAG, "cri01e: This data is Required!");
+            return false;
+        } else {
+            cri01e.setError(null);
+        }
+
+        // =================== Q 1.6 ===============
+        if (cri01f.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01f), Toast.LENGTH_SHORT).show();
+            cri01f.setError("This data is Required!");
+            Log.i(TAG, "cri01f: This data is Required!");
+            return false;
+        } else {
+            cri01f.setError(null);
+        }
+
+        // =================== Q 1.7 ===============
+        if (cri01g.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01g), Toast.LENGTH_SHORT).show();
+            cri01g.setError("This data is Required!");
+            Log.i(TAG, "cri01g: This data is Required!");
+            return false;
+        } else {
+            cri01g.setError(null);
+        }
+
+        // =================== Q 1.8 ===============
+        if (cri01h.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01h), Toast.LENGTH_SHORT).show();
+            cri01h.setError("This data is Required!");
+            Log.i(TAG, "cri01h: This data is Required!");
+            return false;
+        } else {
+            cri01h.setError(null);
+        }
+
+        // =================== Q 1.9 ===============
+        if (cri01i.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01i), Toast.LENGTH_SHORT).show();
+            cri01i.setError("This data is Required!");
+            Log.i(TAG, "cri01i: This data is Required!");
+            return false;
+        } else {
+            cri01i.setError(null);
+        }
+
+        // =================== Q 1.10 ===============
+        if (cri01j.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01j), Toast.LENGTH_SHORT).show();
+            cri01j.setError("This data is Required!");
+            Log.i(TAG, "cri01j: This data is Required!");
+            return false;
+        } else {
+            cri01j.setError(null);
+        }
+
+        // =================== Q 1.11 ===============
+        if (cri01k.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01k), Toast.LENGTH_SHORT).show();
+            cri01k.setError("This data is Required!");
+            Log.i(TAG, "cri01k: This data is Required!");
+            return false;
+        } else {
+            cri01k.setError(null);
+        }
+
+        // =================== Q 1.12 ===============
+        if (cri01l.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01l), Toast.LENGTH_SHORT).show();
+            cri01l.setError("This data is Required!");
+            Log.i(TAG, "cri01l: This data is Required!");
+            return false;
+        } else {
+            cri01l.setError(null);
+        }
+
+        // =================== Q 1.13 ===============
+        if (cri01m.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri01m), Toast.LENGTH_SHORT).show();
+            cri01m.setError("This data is Required!");
+            Log.i(TAG, "cri01m: This data is Required!");
+            return false;
+        } else {
+            cri01m.setError(null);
+        }
+
+        // =================== Q 2.1 ===============
+        if (cri02a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02a), Toast.LENGTH_SHORT).show();
+            cri02a.setError("This data is Required!");
+            Log.i(TAG, "cri02a: This data is Required!");
+            return false;
+        } else {
+            cri02a.setError(null);
+        }
+
+        // =================== Q 2.2 ===============
+        if (cri02b.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02b), Toast.LENGTH_SHORT).show();
+            cri02b.setError("This data is Required!");
+            Log.i(TAG, "cri02b: This data is Required!");
+            return false;
+        } else {
+            cri02b.setError(null);
+        }
+
+        // =================== Q 2.3 ===============
+        if (cri02c.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02c), Toast.LENGTH_SHORT).show();
+            cri02c.setError("This data is Required!");
+            Log.i(TAG, "cri02c: This data is Required!");
+            return false;
+        } else {
+            cri02c.setError(null);
+        }
+
+        // =================== Q 2.4 ===============
+        if (cri02d.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02d), Toast.LENGTH_SHORT).show();
+            cri02d.setError("This data is Required!");
+            Log.i(TAG, "cri02d: This data is Required!");
+            return false;
+        } else {
+            cri02d.setError(null);
+        }
+
+        // =================== Q 2.5 ===============
+        if (cri02e.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02e), Toast.LENGTH_SHORT).show();
+            cri02e.setError("This data is Required!");
+            Log.i(TAG, "cri02e: This data is Required!");
+            return false;
+        } else {
+            cri02e.setError(null);
+        }
+
+        // =================== Q 2.6 ===============
+        if (cri02f.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02f), Toast.LENGTH_SHORT).show();
+            cri02f.setError("This data is Required!");
+            Log.i(TAG, "cri02f: This data is Required!");
+            return false;
+        } else {
+            cri02f.setError(null);
+        }
+
+        // =================== Q 2.7 ===============
+        if (cri02g.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02g), Toast.LENGTH_SHORT).show();
+            cri02g.setError("This data is Required!");
+            Log.i(TAG, "cri02g: This data is Required!");
+            return false;
+        } else {
+            cri02g.setError(null);
+        }
+
+        // =================== Q 2.8 ===============
+        if (cri02h.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02h), Toast.LENGTH_SHORT).show();
+            cri02h.setError("This data is Required!");
+            Log.i(TAG, "cri02h: This data is Required!");
+            return false;
+        } else {
+            cri02h.setError(null);
+        }
+
+        // =================== Q 2.9 ===============
+        if (cri02i.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02i), Toast.LENGTH_SHORT).show();
+            cri02i.setError("This data is Required!");
+            Log.i(TAG, "cri02i: This data is Required!");
+            return false;
+        } else {
+            cri02i.setError(null);
+        }
+
+        // =================== Q 2.10 ===============
+        if (cri02j.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02j), Toast.LENGTH_SHORT).show();
+            cri02j.setError("This data is Required!");
+            Log.i(TAG, "cri02j: This data is Required!");
+            return false;
+        } else {
+            cri02j.setError(null);
+        }
+
+        // =================== Q 2.11 ===============
+        if (cri02k.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02k), Toast.LENGTH_SHORT).show();
+            cri02k.setError("This data is Required!");
+            Log.i(TAG, "cri02k: This data is Required!");
+            return false;
+        } else {
+            cri02k.setError(null);
+        }
+
+        // =================== Q 2.12 ===============
+        if (cri02l.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri02l), Toast.LENGTH_SHORT).show();
+            cri02l.setError("This data is Required!");
+            Log.i(TAG, "cri02l: This data is Required!");
+            return false;
+        } else {
+            cri02l.setError(null);
+        }
+
+        // =================== Q 3 ===============
+        if (cri03.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri03), Toast.LENGTH_SHORT).show();
+            cri03.setError("This data is Required!");
+            Log.i(TAG, "cri03: This data is Required!");
+            return false;
+        } else {
+            cri03.setError(null);
+        }
+
+        // =================== Q 4 ===============
+        if (cri04.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cri04), Toast.LENGTH_SHORT).show();
+            cri0499.setError("This data is Required!");
+            Log.i(TAG, "cri04: This data is Required!");
+            return false;
+        } else {
+            cri0499.setError(null);
+        }
+
+
+
 
         return true;
 
