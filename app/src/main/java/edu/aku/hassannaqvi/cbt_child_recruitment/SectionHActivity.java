@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -673,7 +674,6 @@ public class SectionHActivity extends Activity {
         sj.put("crj01a", crj01a01.isChecked() ? "1" : crj01a02.isChecked() ? "2" : "0");
         sj.put("crj01anum", crj01anum.getText().toString());
         sj.put("crj01asrc", crj01asrc.getSelectedItem().toString());
-
         sj.put("crj01b", crj01b01.isChecked() ? "1" : crj01b02.isChecked() ? "2" : "0");
         sj.put("crj01bnum", crj01bnum.getText().toString());
         sj.put("crj01bsrc", crj01bsrc.getSelectedItem().toString());
@@ -717,22 +717,106 @@ public class SectionHActivity extends Activity {
         sj.put("crj01nsrc", crj01nsrc.getSelectedItem().toString());
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         //DCEApp.fc.setROW_Sa(String.valueOf(sa));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+    }
+
+    public boolean ValidateForm() {
+
+        Toast.makeText(this, "Validating Section H", Toast.LENGTH_SHORT).show();
+
+//*************************************Section H******************
+        //======================= Q 1 ===============
+        if (crh01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crh01), Toast.LENGTH_SHORT).show();
+            crh0196.setError("This data is Required!");
+            Log.i(TAG, "crh01: This data is Required!");
+            return false;
+        } else {
+            crh0196.setError(null);
+        }
+
+        //====================== Q1 Others ================
+        if (crh0196.isChecked() && crh0196x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crh01) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            crh0196x.setError("This data is Required!");
+            Log.i(TAG, "crh0196x: This data is Required!");
+            return false;
+        } else {
+            crh0196x.setError(null);
+        }
+
+        if (crh0101.isChecked()) {
+            //====================== Q2 ================
+            if (crh02.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crh02), Toast.LENGTH_SHORT).show();
+                crh0202.setError("This data is Required!");
+                Log.i(TAG, "crh02: This data is Required!");
+                return false;
+            } else {
+                crh0202.setError(null);
+            }
+
+            //====================== Q3 ================
+            if (crh03.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crh03), Toast.LENGTH_SHORT).show();
+                crh0305.setError("This data is Required!");
+                Log.i(TAG, "crh03: This data is Required!");
+                return false;
+            } else {
+                crh0305.setError(null);
+            }
+
+        }
+
+        //====================== Q4 ================
+        if (crh04.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crh04), Toast.LENGTH_SHORT).show();
+            crh0402.setError("This data is Required!");
+            Log.i(TAG, "crh04: This data is Required!");
+            return false;
+        } else {
+            crh0402.setError(null);
+        }
+
+        if (crh0401.isChecked()) {
+            //====================== Q5 ================
+            if (crh05.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crh05), Toast.LENGTH_SHORT).show();
+                crh0505.setError("This data is Required!");
+                Log.i(TAG, "crh05: This data is Required!");
+                return false;
+            } else {
+                crh0505.setError(null);
+            }
+        }
+
+        //====================== Q6 ================
+        if (!(crh0601.isChecked() && crh0602.isChecked() && crh0603.isChecked() && crh0604.isChecked()
+                && crh0605.isChecked() && crh0606.isChecked() && crh0607.isChecked() && crh0607.isChecked()
+                && crh0608.isChecked() && crh0609.isChecked() && crh0696.isChecked())) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crh06), Toast.LENGTH_SHORT).show();
+            crh0696.setError("This data is Required!");
+            Log.i(TAG, "crh06: This data is Required!");
+            return false;
+        } else {
+            crh0696.setError(null);
+        }
+
+        //====================== Q6 Others ================
+        if (crh0696.isChecked() && crh0696x.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crh06) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            crh0696x.setError("This data is Required!");
+            Log.i(TAG, "crh0696x: This data is Required!");
+            return false;
+        } else {
+            crh0696x.setError(null);
+        }
+
+
+        return true;
+
     }
 
 
