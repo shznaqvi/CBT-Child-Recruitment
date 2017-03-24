@@ -21,7 +21,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
-            android:text="@string/section_H"
+            android:text="@string/crhheading"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -158,7 +158,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/crh0305" />
+                    android:text="@string/none" />
 
 
             </RadioGroup>
@@ -244,7 +244,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/crh0505" />
+                    android:text="@string/none" />
 
             </RadioGroup>
 
@@ -342,7 +342,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
-            android:text="@string/section_I"
+            android:text="@string/criheading"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -815,7 +815,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
-            android:text="@string/section_J"
+            android:text="@string/crjheading"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -1465,7 +1465,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/crj01m" />
+            android:text="@string/other" />
 
 
         <RadioGroup
@@ -1524,7 +1524,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/crj01n" />
+            android:text="@string/other" />
 
 
 

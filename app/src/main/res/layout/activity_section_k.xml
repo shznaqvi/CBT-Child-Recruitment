@@ -22,7 +22,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
-            android:text="@string/section_K"
+            android:text="@string/crkheading"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -1004,7 +1004,7 @@
             android:id="@+id/crk1196"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/crk1196" />
+            android:text="@string/other" />
 
         <EditText
             android:id="@+id/crk1196x"

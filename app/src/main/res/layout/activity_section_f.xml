@@ -21,7 +21,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
-            android:text="@string/section_A"
+            android:text="@string/crfheading"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -351,15 +351,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:text="@string/hint"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp" />
+            android:visibility="visible">
 
 
             <EditText
@@ -414,13 +406,6 @@
             android:orientation="vertical"
             android:visibility="gone">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:text="@string/hint"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/crf06ctime"
@@ -541,14 +526,6 @@
             android:orientation="vertical"
             android:visibility="gone">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:text="@string/hint"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp" />
-
 
             <EditText
                 android:id="@+id/crf06ftime"
@@ -667,7 +644,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
-            android:text="@string/crf07"
+            android:text="@string/crf07sub"
             android:textColor="@color/colorPrimaryDark" />
 
         <TextView

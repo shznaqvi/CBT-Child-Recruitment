@@ -22,7 +22,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
-            android:text="@string/section_G"
+            android:text="@string/crgheading"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -221,7 +221,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/crg02015" />
+                android:text="@string/crg0215" />
 
             <RadioButton
                 android:id="@+id/crg0296"
@@ -347,7 +347,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
-            android:text="@string/crg05sub1"
+            android:text="@string/crg0501sub"
             android:textColor="@color/colorPrimaryDark" />
 
 
@@ -388,7 +388,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#efefef"
-                android:text="@string/crg05sub2"
+                android:text="@string/crg0505sub"
                 android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
@@ -1200,7 +1200,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
-            android:text="@string/crg12sub1"
+            android:text="@string/crg1201sub"
             android:textColor="@color/colorPrimaryDark" />
 
 
@@ -1227,7 +1227,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#efefef"
-                android:text="@string/crg12sub2"
+                android:text="@string/crg1203sub"
                 android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
@@ -1248,7 +1248,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#efefef"
-                android:text="@string/crg12sub3"
+                android:text="@string/crg1205sub"
                 android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
@@ -1327,7 +1327,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
-            android:text="@string/crg13sub1"
+            android:text="@string/crg1301sub"
             android:textColor="@color/colorPrimaryDark" />
 
 
@@ -1362,7 +1362,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#efefef"
-                android:text="@string/crg13sub2"
+                android:text="@string/crg1304sub"
                 android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
@@ -1398,7 +1398,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#efefef"
-                android:text="@string/crg13sub3"
+                android:text="@string/crg1308sub"
                 android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
@@ -1450,15 +1450,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/crg13" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crg13sub1"
-            android:textColor="@color/colorPrimaryDark" />
-
+            android:text="@string/crg14" />
 
         <RadioGroup
             android:id="@+id/crg14"
@@ -2021,26 +2013,13 @@
             android:inputType="number"
             android:maxLength="2" />
 
-            <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/crg2007" />
-
-            <EditText
-            android:id="@+id/crg2007"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/crg2007"
-            android:inputType="number"
-            android:maxLength="2" />
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crg21"
-            android:textColor="@color/colorPrimaryDark" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crg21"
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
             android:layout_width="match_parent"

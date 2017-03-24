@@ -22,7 +22,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
-            android:text="@string/section_l"
+            android:text="@string/crlHeading"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -121,7 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
-            android:text="@string/crl04sub1"
+            android:text="@string/crl10HP"
             android:textColor="@color/colorPrimaryDark" />
 
         <RadioGroup
@@ -154,7 +154,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#efefef"
-                android:text="@string/crl04sub2"
+                android:text="@string/crl10OP"
                 android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
@@ -399,7 +399,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
-            android:text="@string/crl10sub1"
+            android:text="@string/crl10HP"
             android:textColor="@color/colorPrimaryDark" />
 
         <RadioGroup
@@ -432,7 +432,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#efefef"
-                android:text="@string/crl10sub2"
+                android:text="@string/crl10OP"
                 android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
@@ -483,7 +483,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
-            android:text="@string/crl13sub1"
+            android:text="@string/crl10HP"
             android:textColor="@color/colorPrimaryDark" />
 
         <RadioGroup
@@ -516,7 +516,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#efefef"
-                android:text="@string/crl13sub2"
+                android:text="@string/crl10OP"
                 android:textColor="@color/colorPrimaryDark" />
 
             <RadioButton
