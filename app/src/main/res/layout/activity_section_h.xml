@@ -333,7 +333,8 @@
             android:id="@+id/crh0696x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/other" />
+            android:hint="@string/other"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="match_parent"

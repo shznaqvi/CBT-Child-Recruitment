@@ -383,6 +383,18 @@ public class SectionHActivity extends Activity {
             }
         });
 
+        crh0696.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crh0696x.setVisibility(View.VISIBLE);
+                } else {
+                    crh0696x.setVisibility(View.GONE);
+                    crh0696x.setText(null);
+                }
+            }
+        });
+
 
 //******************************************** Section J *******************************************
         crj01a01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -657,6 +669,65 @@ public class SectionHActivity extends Activity {
         si.put("cri02l", cri02l.getText().toString());
         si.put("cri03", cri03.getText().toString());
         si.put("cri04", cri0401.isChecked() ? "1" : cri0402.isChecked() ? "2" : cri0499.isChecked() ? "99" : "0");
+
+        sj.put("crj01a", crj01a01.isChecked() ? "1" : crj01a02.isChecked() ? "2" : "0");
+        sj.put("crj01anum", crj01anum.getText().toString());
+        sj.put("crj01asrc", crj01asrc.getSelectedItem().toString());
+
+        sj.put("crj01b", crj01b01.isChecked() ? "1" : crj01b02.isChecked() ? "2" : "0");
+        sj.put("crj01bnum", crj01bnum.getText().toString());
+        sj.put("crj01bsrc", crj01bsrc.getSelectedItem().toString());
+        sj.put("crj01c", crj01c01.isChecked() ? "1" : crj01c02.isChecked() ? "2" : "0");
+        sj.put("crj01cnum", crj01cnum.getText().toString());
+        sj.put("crj01csrc", crj01csrc.getSelectedItem().toString());
+        sj.put("crj01d", crj01d01.isChecked() ? "1" : crj01d02.isChecked() ? "2" : "0");
+        sj.put("crj01dnum", crj01dnum.getText().toString());
+        sj.put("crj01dsrc", crj01dsrc.getSelectedItem().toString());
+        sj.put("crj01e", crj01e01.isChecked() ? "1" : crj01e02.isChecked() ? "2" : "0");
+        sj.put("crj01enum", crj01enum.getText().toString());
+        sj.put("crj01esrc", crj01esrc.getSelectedItem().toString());
+        sj.put("crj01f", crj01f01.isChecked() ? "1" : crj01f02.isChecked() ? "2" : "0");
+        sj.put("crj01fnum", crj01fnum.getText().toString());
+        sj.put("crj01fsrc", crj01fsrc.getSelectedItem().toString());
+        sj.put("crj01g", crj01g01.isChecked() ? "1" : crj01g02.isChecked() ? "2" : "0");
+        sj.put("crj01gnum", crj01gnum.getText().toString());
+        sj.put("crj01gsrc", crj01gsrc.getSelectedItem().toString());
+        sj.put("crj01h", crj01h01.isChecked() ? "1" : crj01h02.isChecked() ? "2" : "0");
+        sj.put("crj01hnum", crj01hnum.getText().toString());
+        sj.put("crj01hsrc", crj01hsrc.getSelectedItem().toString());
+        sj.put("crj01i", crj01i01.isChecked() ? "1" : crj01i02.isChecked() ? "2" : "0");
+        sj.put("crj01inum", crj01inum.getText().toString());
+        sj.put("crj01isrc", crj01isrc.getSelectedItem().toString());
+        sj.put("crj01j", crj01j01.isChecked() ? "1" : crj01j02.isChecked() ? "2" : "0");
+        sj.put("crj01jnum", crj01jnum.getText().toString());
+        sj.put("crj01jsrc", crj01jsrc.getSelectedItem().toString());
+        sj.put("crj01k", crj01k01.isChecked() ? "1" : crj01k02.isChecked() ? "2" : "0");
+        sj.put("crj01knum", crj01knum.getText().toString());
+        sj.put("crj01ksrc", crj01ksrc.getSelectedItem().toString());
+        sj.put("crj01l", crj01l01.isChecked() ? "1" : crj01l02.isChecked() ? "2" : "0");
+        sj.put("crj01lnum", crj01lnum.getText().toString());
+        sj.put("crj01lsrc", crj01lsrc.getSelectedItem().toString());
+        sj.put("crj01m", crj01m01.isChecked() ? "1" : crj01m02.isChecked() ? "2" : "0");
+        sj.put("crj01mx", crj01mx.getText().toString());
+        sj.put("crj01mnum", crj01mnum.getText().toString());
+        sj.put("crj01msrc", crj01msrc.getSelectedItem().toString());
+        sj.put("crj01n", crj01n01.isChecked() ? "1" : crj01n02.isChecked() ? "2" : "0");
+        sj.put("crj01nx", crj01nx.getText().toString());
+        sj.put("crj01nnum", crj01nnum.getText().toString());
+        sj.put("crj01nsrc", crj01nsrc.getSelectedItem().toString());
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         //DCEApp.fc.setROW_Sa(String.valueOf(sa));
