@@ -324,8 +324,7 @@ public class SectionBActivity extends Activity {
         setContentView(R.layout.activity_section_b);
         ButterKnife.bind(this);
 
-        // ===================Section-B ====================
-
+//************************************Section B*********************************************************************
         // ====================== Q7 Skip Pattern =========================
         crb07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -340,8 +339,8 @@ public class SectionBActivity extends Activity {
             }
         });
 
-        // ===================Section-D ====================
 
+//************************************Section D*********************************************************************
         // =================== Q1 Others ====================
 
         crd0196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -436,7 +435,7 @@ public class SectionBActivity extends Activity {
                 }
             }
         });
-
+//************************************Section E*********************************************************************
         // Section E Skip Pattern
         cre01a.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -534,6 +533,7 @@ public class SectionBActivity extends Activity {
         JSONObject sd = new JSONObject();
         JSONObject se = new JSONObject();
 
+//************************************Section B*********************************************************************
         sb.put("crb01", crb01.getText().toString());
         sb.put("crb02", crb0201.isChecked() ? "1" : crb0202.isChecked() ? "2" : "0");
         sb.put("crb03", new SimpleDateFormat("dd-MM-yyyy").format(crb03.getCalendarView().getDate()));
@@ -543,6 +543,7 @@ public class SectionBActivity extends Activity {
         sb.put("crb0601", crb0601.getText().toString());
         sb.put("crb07", crb0701.isChecked() ? "1" : crb0702.isChecked() ? "2" : "0");
         sb.put("crb08", crb0801.getText().toString());
+//************************************Section C*********************************************************************
         sc.put("crc01m1", crc01m1.getText().toString());
         sc.put("crc01m2", crc01m2.getText().toString());
         sc.put("crc01m3", crc01m3.getText().toString());
@@ -552,6 +553,7 @@ public class SectionBActivity extends Activity {
         sc.put("crc03m1 ", crc03m1.getText().toString());
         sc.put("crc03m2 ", crc03m2.getText().toString());
         sc.put("crc03m3 ", crc03m3.getText().toString());
+//************************************Section D*********************************************************************
         sd.put("crd0101", crd0101.isChecked() ? "1" : "0");
         sd.put("crd0102", crd0102.isChecked() ? "2" : "0");
         sd.put("crd0103", crd0103.isChecked() ? "3" : "0");
@@ -566,6 +568,7 @@ public class SectionBActivity extends Activity {
         sd.put("crd02", crd0201.isChecked() ? "1" : crd0202.isChecked() ? "2" : "0");
         sd.put("crd03", crd0301.isChecked() ? "1" : crd0302.isChecked() ? "2" : crd0303.isChecked() ? "3" : crd0304.isChecked() ? "4" : crd0305.isChecked() ? "5" : crd0306.isChecked() ? "6" : crd0307.isChecked() ? "7" : crd0308.isChecked() ? "8" : crd0396.isChecked() ? "96" : "0");
         sd.put("crd0396x", crd0396x.getText().toString());
+//************************************Section E*********************************************************************
         se.put("cre01", cre0101.isChecked() ? "1" : cre0102.isChecked() ? "2" : "0");
         se.put("cre01a", cre01a01.isChecked() ? "1" : cre01a02.isChecked() ? "2" : "0");
         // BCG At Birth
@@ -613,6 +616,7 @@ public class SectionBActivity extends Activity {
 
     public boolean validateForm() {
 
+//************************************Section B*********************************************************************
         // =================== Q1 ====================
         if (crb01.getText().toString().isEmpty()) {
             Toast.makeText(this, "" + getString(R.string.crb01), Toast.LENGTH_SHORT).show();
@@ -736,7 +740,7 @@ public class SectionBActivity extends Activity {
                 }
             }
         }
-        // =================== Section-c ====================
+//************************************Section C*********************************************************************
 
         // =================== Q1 m1 ====================
         if (crc01m1.getText().toString().isEmpty()) {
@@ -1042,7 +1046,7 @@ public class SectionBActivity extends Activity {
             }
         }
 
-        // =================== Section-D ====================
+//*****************************************Section-D****************************************************************
 
         // ====================== Q1 ===================
         if (!(crd0101.isChecked() || crd0102.isChecked() || crd0103.isChecked() || crd0104.isChecked()
@@ -1097,8 +1101,288 @@ public class SectionBActivity extends Activity {
             }
 
         }
-        // =================== Section-E ====================
+//*****************************************Section-E****************************************************************
+        //============ Q 1 ==========
+        if (cre01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre01), Toast.LENGTH_SHORT).show();
+            cre0102.setError("This data is Required!");
+            Log.i(TAG, "cre01: This data is Required!");
+            return false;
+        } else {
+            cre0102.setError(null);
+        }
 
+        //============ Q 1a ==========
+        if (cre01a.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre01a), Toast.LENGTH_SHORT).show();
+            cre01a02.setError("This data is Required!");
+            Log.i(TAG, "cre01a: This data is Required!");
+            return false;
+        } else {
+            cre01a02.setError(null);
+        }
+
+        if (cre01a01.isChecked()) {
+            //============ BCG / Card Present ==========
+            if (cre0201a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0201a), Toast.LENGTH_SHORT).show();
+                cre0201a02.setError("This data is Required!");
+                Log.i(TAG, "cre0201a: This data is Required!");
+                return false;
+            } else {
+                cre0201a02.setError(null);
+            }
+
+            //============ Polio 0 / Card Present ==========
+            if (cre0202a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0202a), Toast.LENGTH_SHORT).show();
+                cre0202a02.setError("This data is Required!");
+                Log.i(TAG, "cre0202a: This data is Required!");
+                return false;
+            } else {
+                cre0202a02.setError(null);
+            }
+
+            //============ Penta 1 / Card Present ==========
+            if (cre0301a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0301a), Toast.LENGTH_SHORT).show();
+                cre0301a02.setError("This data is Required!");
+                Log.i(TAG, "cre0301a: This data is Required!");
+                return false;
+            } else {
+                cre0301a02.setError(null);
+            }
+
+            //============ PCV 1 / Card Present ==========
+            if (cre0302a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0302a), Toast.LENGTH_SHORT).show();
+                cre0302a02.setError("This data is Required!");
+                Log.i(TAG, "cre0302a: This data is Required!");
+                return false;
+            } else {
+                cre0302a02.setError(null);
+            }
+
+            //============ OPV 1 / Card Present ==========
+            if (cre0303a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0303a), Toast.LENGTH_SHORT).show();
+                cre0303a02.setError("This data is Required!");
+                Log.i(TAG, "cre0303a: This data is Required!");
+                return false;
+            } else {
+                cre0303a02.setError(null);
+            }
+
+            //============ Penta 2 / Card Present ==========
+            if (cre0401a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0401a), Toast.LENGTH_SHORT).show();
+                cre0401a02.setError("This data is Required!");
+                Log.i(TAG, "cre0401a: This data is Required!");
+                return false;
+            } else {
+                cre0401a02.setError(null);
+            }
+
+            //============ PCV 2 / Card Present ==========
+            if (cre0402a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0402a), Toast.LENGTH_SHORT).show();
+                cre0402a02.setError("This data is Required!");
+                Log.i(TAG, "cre0402a: This data is Required!");
+                return false;
+            } else {
+                cre0402a02.setError(null);
+            }
+
+            //============ OPV 2 / Card Present ==========
+            if (cre0403a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0403a), Toast.LENGTH_SHORT).show();
+                cre0403a02.setError("This data is Required!");
+                Log.i(TAG, "cre0403a: This data is Required!");
+                return false;
+            } else {
+                cre0403a02.setError(null);
+            }
+
+            //============ Penta 3 / Card Present ==========
+            if (cre0501a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0501a), Toast.LENGTH_SHORT).show();
+                cre0501a02.setError("This data is Required!");
+                Log.i(TAG, "cre0501a: This data is Required!");
+                return false;
+            } else {
+                cre0501a02.setError(null);
+            }
+
+            //============ BCG / Card Present ==========
+            if (cre0502a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0502a), Toast.LENGTH_SHORT).show();
+                cre0502a02.setError("This data is Required!");
+                Log.i(TAG, "cre0502a: This data is Required!");
+                return false;
+            } else {
+                cre0502a02.setError(null);
+            }
+
+            //============ PCV 3 / Card Present ==========
+            if (cre0502a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0502a), Toast.LENGTH_SHORT).show();
+                cre0502a02.setError("This data is Required!");
+                Log.i(TAG, "cre0502a: This data is Required!");
+                return false;
+            } else {
+                cre0502a02.setError(null);
+            }
+
+            //============ OPV 3 / Card Present ==========
+            if (cre0503a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0503a), Toast.LENGTH_SHORT).show();
+                cre0503a02.setError("This data is Required!");
+                Log.i(TAG, "cre0503a: This data is Required!");
+                return false;
+            } else {
+                cre0503a02.setError(null);
+            }
+
+            //============ IPV / Card Present ==========
+            if (cre0504a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0504a), Toast.LENGTH_SHORT).show();
+                cre0504a02.setError("This data is Required!");
+                Log.i(TAG, "cre0504a: This data is Required!");
+                return false;
+            } else {
+                cre0504a02.setError(null);
+            }
+        }
+
+        //============ BCG / Mother ==========
+        if (cre0201b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0201b), Toast.LENGTH_SHORT).show();
+            cre0201b02.setError("This data is Required!");
+            Log.i(TAG, "cre0201b: This data is Required!");
+            return false;
+        } else {
+            cre0201b02.setError(null);
+        }
+
+        //============ Polio 0 / Mother ==========
+        if (cre0202b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0202b), Toast.LENGTH_SHORT).show();
+            cre0202b02.setError("This data is Required!");
+            Log.i(TAG, "cre0202b: This data is Required!");
+            return false;
+        } else {
+            cre0202b02.setError(null);
+        }
+
+        //============ Penta 1 / Mother ==========
+        if (cre0301b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0301b), Toast.LENGTH_SHORT).show();
+            cre0301b02.setError("This data is Required!");
+            Log.i(TAG, "cre0301b: This data is Required!");
+            return false;
+        } else {
+            cre0301b02.setError(null);
+        }
+
+        //============ PCV 1 / Mother ==========
+        if (cre0302b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0302b), Toast.LENGTH_SHORT).show();
+            cre0302b02.setError("This data is Required!");
+            Log.i(TAG, "cre0302b: This data is Required!");
+            return false;
+        } else {
+            cre0302b02.setError(null);
+        }
+
+        //============ OPV 1 / Mother ==========
+        if (cre0303b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0303b), Toast.LENGTH_SHORT).show();
+            cre0303b02.setError("This data is Required!");
+            Log.i(TAG, "cre0303b: This data is Required!");
+            return false;
+        } else {
+            cre0303b02.setError(null);
+        }
+
+        //============ Penta 2 / Mother ==========
+        if (cre0401b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0401b), Toast.LENGTH_SHORT).show();
+            cre0401b02.setError("This data is Required!");
+            Log.i(TAG, "cre0401b: This data is Required!");
+            return false;
+        } else {
+            cre0401b02.setError(null);
+        }
+
+        //============ PCV 2 / Mother ==========
+        if (cre0402b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0402b), Toast.LENGTH_SHORT).show();
+            cre0402b02.setError("This data is Required!");
+            Log.i(TAG, "cre0402b: This data is Required!");
+            return false;
+        } else {
+            cre0402b02.setError(null);
+        }
+
+        //============ OPV 2 / Mother ==========
+        if (cre0403b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0403b), Toast.LENGTH_SHORT).show();
+            cre0403b02.setError("This data is Required!");
+            Log.i(TAG, "cre0403b: This data is Required!");
+            return false;
+        } else {
+            cre0403b02.setError(null);
+        }
+
+        //============ Penta 3 / Mother ==========
+        if (cre0501b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0501b), Toast.LENGTH_SHORT).show();
+            cre0501b02.setError("This data is Required!");
+            Log.i(TAG, "cre0501b: This data is Required!");
+            return false;
+        } else {
+            cre0501b02.setError(null);
+        }
+
+        //============ BCG / Mother ==========
+        if (cre0502b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0502b), Toast.LENGTH_SHORT).show();
+            cre0502b02.setError("This data is Required!");
+            Log.i(TAG, "cre0502b: This data is Required!");
+            return false;
+        } else {
+            cre0502b02.setError(null);
+        }
+
+        //============ PCV 3 / Mother ==========
+        if (cre0502b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0502b), Toast.LENGTH_SHORT).show();
+            cre0502b02.setError("This data is Required!");
+            Log.i(TAG, "cre0502b: This data is Required!");
+            return false;
+        } else {
+            cre0502b02.setError(null);
+        }
+
+        //============ OPV 3 / Mother ==========
+        if (cre0503b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0503b), Toast.LENGTH_SHORT).show();
+            cre0503b02.setError("This data is Required!");
+            Log.i(TAG, "cre0503b: This data is Required!");
+            return false;
+        } else {
+            cre0503b02.setError(null);
+        }
+
+        //============ IPV / Mother ==========
+        if (cre0504b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre0504b), Toast.LENGTH_SHORT).show();
+            cre0504b02.setError("This data is Required!");
+            Log.i(TAG, "cre0504b: This data is Required!");
+            return false;
+        } else {
+            cre0504b02.setError(null);
+        }
 
 
         return true;
