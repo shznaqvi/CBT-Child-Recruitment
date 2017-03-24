@@ -495,21 +495,21 @@
                 android:orientation="vertical">
 
                 <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/crd03" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/crd03" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crdsub1"
-            android:textColor="@color/colorPrimaryDark" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#efefef"
+                    android:text="@string/crdsub1"
+                    android:textColor="@color/colorPrimaryDark" />
 
                 <RadioGroup
                     android:id="@+id/crd03"
-                android:layout_width="match_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
@@ -586,14 +586,14 @@
                         android:text="@string/other" />
                 </RadioGroup>
 
-        <EditText
-            android:id="@+id/crd0396x"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
-            android:hint="@string/other"
-            android:maxLength="30"
-            android:visibility="gone" />
+                <EditText
+                    android:id="@+id/crd0396x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
+                    android:hint="@string/other"
+                    android:maxLength="30"
+                    android:visibility="gone" />
 
             </LinearLayout>
         </LinearLayout>
@@ -699,6 +699,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="67dp"
                     android:layout_marginTop="5dp"
