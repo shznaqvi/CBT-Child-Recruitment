@@ -554,7 +554,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
 
     public boolean ValidateForm() {
 
-        Toast.makeText(this, "Validating Section A", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Validating Section F", Toast.LENGTH_SHORT).show();
 
         //======================= Q 1 ===============
         if (crf01.getCheckedRadioButtonId() == -1) {
