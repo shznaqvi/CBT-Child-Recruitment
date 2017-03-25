@@ -666,9 +666,180 @@ public class SectionGActivity extends Activity {
                 if (isChecked) {
                     crgGrp22.setVisibility(View.GONE);
                     crg22a.clearCheck();
+                } else {
+                    crgGrp22.setVisibility(View.VISIBLE);
                 }
             }
         });
+
+        // =================== Q1 Others ====================
+
+        crg0196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg0196x.setVisibility(View.VISIBLE);
+                } else {
+                    crg0196x.setVisibility(View.GONE);
+                    crg0196x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q2 Others ====================
+
+        crg0296.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg0296x.setVisibility(View.VISIBLE);
+                } else {
+                    crg0296x.setVisibility(View.GONE);
+                    crg0296x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q4 Others ====================
+
+        crg0496.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg0496x.setVisibility(View.VISIBLE);
+                } else {
+                    crg0496x.setVisibility(View.GONE);
+                    crg0496x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q5 Others ====================
+
+        crg0596.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg0596x.setVisibility(View.VISIBLE);
+                } else {
+                    crg0596x.setVisibility(View.GONE);
+                    crg0596x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q9 Others ====================
+
+        crg0996.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg0996x.setVisibility(View.VISIBLE);
+                } else {
+                    crg0996x.setVisibility(View.GONE);
+                    crg0996x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q10 Others ====================
+
+        crg1096.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg1096x.setVisibility(View.VISIBLE);
+                } else {
+                    crg1096x.setVisibility(View.GONE);
+                    crg1096x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q12 Others ====================
+
+        crg1296.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg1296x.setVisibility(View.VISIBLE);
+                } else {
+                    crg1296x.setVisibility(View.GONE);
+                    crg1296x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q13 Others ====================
+
+        crg1396.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg1396x.setVisibility(View.VISIBLE);
+                } else {
+                    crg1396x.setVisibility(View.GONE);
+                    crg1396x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q14 Others ====================
+
+        crg1496.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg1496x.setVisibility(View.VISIBLE);
+                } else {
+                    crg1496x.setVisibility(View.GONE);
+                    crg1496x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q21a Others ====================
+
+        crg21a96.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg21a96x.setVisibility(View.VISIBLE);
+                } else {
+                    crg21a96x.setVisibility(View.GONE);
+                    crg21a96x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q21b Others ====================
+
+        crg21b96.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg21b96x.setVisibility(View.VISIBLE);
+                } else {
+                    crg21b96x.setVisibility(View.GONE);
+                    crg21b96x.setText(null);
+                }
+            }
+        });
+
+        // =================== Q21c Others ====================
+
+        crg21c96.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg21c96x.setVisibility(View.VISIBLE);
+                } else {
+                    crg21c96x.setVisibility(View.GONE);
+                    crg21c96x.setText(null);
+                }
+            }
+        });
+
     }
 
     @OnClick(R.id.btnNext)
