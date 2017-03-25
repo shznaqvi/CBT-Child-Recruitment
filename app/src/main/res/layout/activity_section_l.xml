@@ -75,13 +75,13 @@
             android:layout_marginTop="16dp"
             android:text="@string/crl02" />
 
-        <EditText
+            <EditText
             android:id="@+id/crl02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/months"
             android:inputType="number"
-            android:maxLength="2" />
+                android:maxLength="1" />
 
         </LinearLayout>
 
@@ -254,8 +254,8 @@
             android:id="@+id/crl0501x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/crl0501"
+                android:inputType="number"
+                android:maxLength="1"
             android:visibility="gone" />
 
             <TextView
@@ -356,12 +356,13 @@
             </RadioGroup>
 
             <EditText
-            android:id="@+id/crl0701x"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/crl0701"
-            android:visibility="gone" />
+                android:id="@+id/crl0701x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/crl0701"
+                android:inputType="number"
+                android:maxLength="1"
+                android:visibility="gone" />
 
             <TextView
             android:layout_width="match_parent"
