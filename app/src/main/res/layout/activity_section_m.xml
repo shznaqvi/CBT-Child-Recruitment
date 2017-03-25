@@ -835,6 +835,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/crmfood08" />
+
+            <RadioButton
+                android:id="@+id/crm043b09"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/crmfood09" />
+
+            <RadioButton
+                android:id="@+id/crm043b10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/crmfood10" />
         </RadioGroup>
 
             </LinearLayout>
@@ -1935,21 +1949,28 @@
             android:id="@+id/crn01s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="123456789"
+            android:digits="0123456789"
             android:hint="@string/crnba"
             android:inputType="number" />
+
+        <LinearLayout
+            android:id="@+id/fldGrpcrn01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
-            android:text="@string/crnc"
+            android:text="@string/crnd"
             android:textColor="@color/colorPrimaryDark" />
 
 
         <DatePicker
-            android:id="@+id/crn01dob"
+            android:id="@+id/crn01dod1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -1966,7 +1987,7 @@
             android:textColor="@color/colorPrimaryDark" />
 
         <DatePicker
-            android:id="@+id/crn01dod"
+            android:id="@+id/crn01dod2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -1974,6 +1995,8 @@
             android:datePickerMode="spinner"
             android:ems="10"
             android:spinnersShown="true" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1993,21 +2016,28 @@
             android:id="@+id/crn02s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="123456789"
+            android:digits="0123456789"
             android:hint="@string/crnba"
             android:inputType="number" />
+
+        <LinearLayout
+            android:id="@+id/fldGrpcrn02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
-            android:text="@string/crnc"
+            android:text="@string/crnd"
             android:textColor="@color/colorPrimaryDark" />
 
 
         <DatePicker
-            android:id="@+id/crn02dob"
+            android:id="@+id/crn02dod1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -2024,7 +2054,7 @@
             android:textColor="@color/colorPrimaryDark" />
 
         <DatePicker
-            android:id="@+id/crn02dod"
+            android:id="@+id/crn02dod2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -2032,6 +2062,8 @@
             android:datePickerMode="spinner"
             android:ems="10"
             android:spinnersShown="true" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -2055,6 +2087,13 @@
             android:digits="123456789"
             android:hint="@string/crnba"
             android:inputType="number" />
+
+        <LinearLayout
+            android:id="@+id/fldGrpcrn03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
         <TextView
@@ -2095,6 +2134,8 @@
             android:ems="10"
             android:spinnersShown="true" />
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -2117,6 +2158,13 @@
             android:digits="123456789"
             android:hint="@string/crnba"
             android:inputType="number" />
+
+        <LinearLayout
+            android:id="@+id/fldGrpcrn04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
         <TextView
@@ -2174,6 +2222,8 @@
             android:ems="10"
             android:spinnersShown="true" />
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -2197,8 +2247,15 @@
             android:hint="@string/crnba"
             android:inputType="number" />
 
+        <LinearLayout
+            android:id="@+id/fldGrpcrn05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <TextView
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -2253,6 +2310,8 @@
             android:ems="10"
             android:spinnersShown="true" />
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -2276,8 +2335,15 @@
             android:hint="@string/crnba"
             android:inputType="number" />
 
+        <LinearLayout
+            android:id="@+id/fldGrpcrn06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <TextView
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -2332,6 +2398,8 @@
             android:ems="10"
             android:spinnersShown="true" />
 
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -2354,8 +2422,15 @@
             android:hint="@string/crnc"
             android:inputType="number" />
 
+        <LinearLayout
+            android:id="@+id/fldGrpcrn07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <TextView
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -2410,6 +2485,8 @@
             android:ems="10"
             android:spinnersShown="true" />
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -2432,6 +2509,13 @@
             android:digits="123456789"
             android:hint="@string/crnba"
             android:inputType="number" />
+
+        <LinearLayout
+            android:id="@+id/fldGrpcrn08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
         <TextView
@@ -2488,6 +2572,8 @@
             android:datePickerMode="spinner"
             android:ems="10"
             android:spinnersShown="true" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/fldGrpbtn"
