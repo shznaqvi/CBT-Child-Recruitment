@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_section_h"
     android:layout_width="match_parent"
@@ -58,7 +59,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrm01b"
@@ -176,7 +178,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrm02b"
@@ -293,7 +296,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrm03b"
@@ -411,7 +415,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrm04b"
@@ -527,7 +532,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
             <LinearLayout
                 android:id="@+id/fldGrpcrm041b"
@@ -644,7 +650,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
             <LinearLayout
                 android:id="@+id/fldGrpcrm042b"
@@ -759,7 +766,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
             <LinearLayout
                 android:id="@+id/fldGrpcrm043b"
@@ -875,7 +883,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
             <LinearLayout
                 android:id="@+id/fldGrpcrm044b"
@@ -995,7 +1004,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrm05b"
@@ -1111,7 +1121,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
             <LinearLayout
                 android:id="@+id/fldGrpcrm051b"
@@ -1228,7 +1239,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
             <LinearLayout
                 android:id="@+id/fldGrpcrm052b"
@@ -1348,7 +1360,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrm06b"
@@ -1464,7 +1477,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
             <LinearLayout
                 android:id="@+id/fldGrpcrm061b"
@@ -1584,7 +1598,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrm07b"
@@ -1700,7 +1715,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrm08b"
@@ -1815,7 +1831,8 @@
             android:digits="0123456789"
             android:hint="@string/crm01a"
             android:inputType="number"
-            android:maxLength="1" />
+            android:maxLength="1"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrm09b"
@@ -1951,7 +1968,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/crnba"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrn01"
@@ -1968,16 +1986,15 @@
             android:text="@string/crnd"
             android:textColor="@color/colorPrimaryDark" />
 
-
-        <DatePicker
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
             android:id="@+id/crn01dod1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1986,15 +2003,14 @@
             android:text="@string/crnd"
             android:textColor="@color/colorPrimaryDark" />
 
-        <DatePicker
-            android:id="@+id/crn01dod2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn01dod2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
         </LinearLayout>
 
@@ -2018,7 +2034,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/crnba"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrn02"
@@ -2036,15 +2053,14 @@
             android:textColor="@color/colorPrimaryDark" />
 
 
-        <DatePicker
-            android:id="@+id/crn02dod1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn02dod1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
         <TextView
             android:layout_width="match_parent"
@@ -2053,15 +2069,14 @@
             android:text="@string/crnd"
             android:textColor="@color/colorPrimaryDark" />
 
-        <DatePicker
-            android:id="@+id/crn02dod2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn02dod2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
         </LinearLayout>
 
@@ -2086,7 +2101,8 @@
             android:layout_height="wrap_content"
             android:digits="123456789"
             android:hint="@string/crnba"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrn03"
@@ -2104,35 +2120,32 @@
             android:textColor="@color/colorPrimaryDark" />
 
 
-        <DatePicker
-            android:id="@+id/crn03dob1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn03dob1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn03dob2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn03dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn03dob3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn03dob3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
         </LinearLayout>
 
@@ -2157,7 +2170,8 @@
             android:layout_height="wrap_content"
             android:digits="123456789"
             android:hint="@string/crnba"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrn04"
@@ -2167,60 +2181,56 @@
             android:visibility="gone">
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crnc"
-            android:textColor="@color/colorPrimaryDark" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crnc"
+                android:textColor="@color/colorPrimaryDark" />
 
 
-        <DatePicker
-            android:id="@+id/crn04dob1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn04dob1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn04dob2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn04dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crnd"
-            android:textColor="@color/colorPrimaryDark" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crnd"
+                android:textColor="@color/colorPrimaryDark" />
 
-        <DatePicker
-            android:id="@+id/crn04dod1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn04dod1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn04dod2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn04dod2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
         </LinearLayout>
 
@@ -2245,7 +2255,8 @@
             android:layout_height="wrap_content"
             android:digits="123456789"
             android:hint="@string/crnba"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrn05"
@@ -2256,59 +2267,55 @@
 
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crnc"
-            android:textColor="@color/colorPrimaryDark" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crnc"
+                android:textColor="@color/colorPrimaryDark" />
 
 
-        <DatePicker
-            android:id="@+id/crn05dob1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn05dob1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn05dob2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn05dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crnd"
-            android:textColor="@color/colorPrimaryDark" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crnd"
+                android:textColor="@color/colorPrimaryDark" />
 
-        <DatePicker
-            android:id="@+id/crn05dod1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn05dod1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn05dod2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn05dod2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
         </LinearLayout>
 
@@ -2333,7 +2340,8 @@
             android:layout_height="wrap_content"
             android:digits="123456789"
             android:hint="@string/crnba"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrn06"
@@ -2344,59 +2352,55 @@
 
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crnc"
-            android:textColor="@color/colorPrimaryDark" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crnc"
+                android:textColor="@color/colorPrimaryDark" />
 
 
-        <DatePicker
-            android:id="@+id/crn06dob1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn06dob1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn06dob2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn06dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crnd"
-            android:textColor="@color/colorPrimaryDark" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crnd"
+                android:textColor="@color/colorPrimaryDark" />
 
-        <DatePicker
-            android:id="@+id/crn06dod1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn06dod1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn06dod2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn06dod2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
         </LinearLayout>
 
@@ -2418,9 +2422,10 @@
             android:id="@+id/crn07s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="123456789"
-            android:hint="@string/crnc"
-            android:inputType="number" />
+            android:digits="0123456789"
+            android:hint="@string/crnba"
+            android:inputType="number"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrn07"
@@ -2431,59 +2436,55 @@
 
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crnd"
-            android:textColor="@color/colorPrimaryDark" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crnc"
+                android:textColor="@color/colorPrimaryDark" />
 
 
-        <DatePicker
-            android:id="@+id/crn07dob1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn07dob1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn07dob2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn07dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crnd"
-            android:textColor="@color/colorPrimaryDark" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crnd"
+                android:textColor="@color/colorPrimaryDark" />
 
-        <DatePicker
-            android:id="@+id/crn07dod1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn07dod1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn07dod2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn07dod2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
         </LinearLayout>
 
@@ -2506,9 +2507,10 @@
             android:id="@+id/crn08s"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="123456789"
+            android:digits="0123456789"
             android:hint="@string/crnba"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:id="@+id/fldGrpcrn08"
@@ -2518,60 +2520,56 @@
             android:visibility="gone">
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crnc"
-            android:textColor="@color/colorPrimaryDark" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crnc"
+                android:textColor="@color/colorPrimaryDark" />
 
 
-        <DatePicker
-            android:id="@+id/crn08dob1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn08dob1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn08dob2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn08dob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crnd"
-            android:textColor="@color/colorPrimaryDark" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#efefef"
+                android:text="@string/crnd"
+                android:textColor="@color/colorPrimaryDark" />
 
-        <DatePicker
-            android:id="@+id/crn08dod1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn08dod1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
-        <DatePicker
-            android:id="@+id/crn08dod2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crn08dod2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd/MM/yyyy" />
 
         </LinearLayout>
 

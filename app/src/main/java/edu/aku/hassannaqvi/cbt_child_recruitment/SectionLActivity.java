@@ -368,7 +368,7 @@ public class SectionLActivity extends Activity {
             }
 
             if ((Integer.parseInt(crl02.getText().toString()) < 1) || (Integer.parseInt(crl02.getText().toString()) > 9)) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.crl02) + getString(R.string.month), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR: " + getString(R.string.crl02) + getString(R.string.months), Toast.LENGTH_LONG).show();
                 crl02.setError("Range is 1-9 months");
                 Log.i(TAG, "fpb00201: Range is 1-9 months");
                 return false;
@@ -547,7 +547,7 @@ public class SectionLActivity extends Activity {
         }
 
         if ((Integer.parseInt(crl1202.getText().toString()) < 1) || (Integer.parseInt(crl1202.getText().toString()) > 30)) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.days), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1202), Toast.LENGTH_LONG).show();
             crl1202.setError("Range is 1-30 days");
             Log.i(TAG, "crl1202: Range is 1-30 days");
             return false;
@@ -565,7 +565,7 @@ public class SectionLActivity extends Activity {
         }
 
         if ((Integer.parseInt(crl1203.getText().toString()) < 1) || (Integer.parseInt(crl1203.getText().toString()) > 20)) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.weeks), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1203), Toast.LENGTH_LONG).show();
             crl1203.setError("Range is 1-30 days");
             Log.i(TAG, "crl1203: Range is 1-30 days");
             return false;

@@ -1,13 +1,12 @@
 package edu.aku.hassannaqvi.cbt_child_recruitment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -18,11 +17,15 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
+
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class SectionMActivity extends Activity {
+public class SectionMActivity extends AppCompatActivity {
 
     private static final String TAG = SectionMActivity.class.getSimpleName();
 
@@ -445,87 +448,87 @@ public class SectionMActivity extends Activity {
     @BindView(R.id.fldGrpcrn01)
     LinearLayout fldGrpcrn01;
     @BindView(R.id.crn01dod1)
-    DatePicker crn01dod1;
+    DatePickerInputEditText crn01dod1;
     @BindView(R.id.crn01dod2)
-    DatePicker crn01dod2;
+    DatePickerInputEditText crn01dod2;
     @BindView(R.id.crn02s)
     EditText crn02s;
     @BindView(R.id.fldGrpcrn02)
     LinearLayout fldGrpcrn02;
     @BindView(R.id.crn02dod1)
-    DatePicker crn02dod1;
+    DatePickerInputEditText crn02dod1;
     @BindView(R.id.crn02dod2)
-    DatePicker crn02dod2;
+    DatePickerInputEditText crn02dod2;
     @BindView(R.id.crn03s)
     EditText crn03s;
     @BindView(R.id.fldGrpcrn03)
     LinearLayout fldGrpcrn03;
     @BindView(R.id.crn03dob1)
-    DatePicker crn03dob1;
+    DatePickerInputEditText crn03dob1;
     @BindView(R.id.crn03dob2)
-    DatePicker crn03dob2;
+    DatePickerInputEditText crn03dob2;
     @BindView(R.id.crn03dob3)
-    DatePicker crn03dob3;
+    DatePickerInputEditText crn03dob3;
     @BindView(R.id.crn04s)
     EditText crn04s;
     @BindView(R.id.fldGrpcrn04)
     LinearLayout fldGrpcrn04;
     @BindView(R.id.crn04dob1)
-    DatePicker crn04dob1;
+    DatePickerInputEditText crn04dob1;
     @BindView(R.id.crn04dob2)
-    DatePicker crn04dob2;
+    DatePickerInputEditText crn04dob2;
     @BindView(R.id.crn04dod1)
-    DatePicker crn04dod1;
+    DatePickerInputEditText crn04dod1;
     @BindView(R.id.crn04dod2)
-    DatePicker crn04dod2;
+    DatePickerInputEditText crn04dod2;
     @BindView(R.id.crn05s)
     EditText crn05s;
     @BindView(R.id.fldGrpcrn05)
     LinearLayout fldGrpcrn05;
     @BindView(R.id.crn05dob1)
-    DatePicker crn05dob1;
+    DatePickerInputEditText crn05dob1;
     @BindView(R.id.crn05dob2)
-    DatePicker crn05dob2;
+    DatePickerInputEditText crn05dob2;
     @BindView(R.id.crn05dod1)
-    DatePicker crn05dod1;
+    DatePickerInputEditText crn05dod1;
     @BindView(R.id.crn05dod2)
-    DatePicker crn05dod2;
+    DatePickerInputEditText crn05dod2;
     @BindView(R.id.crn06s)
     EditText crn06s;
     @BindView(R.id.fldGrpcrn06)
     LinearLayout fldGrpcrn06;
     @BindView(R.id.crn06dob1)
-    DatePicker crn06dob1;
+    DatePickerInputEditText crn06dob1;
     @BindView(R.id.crn06dob2)
-    DatePicker crn06dob2;
+    DatePickerInputEditText crn06dob2;
     @BindView(R.id.crn06dod1)
-    DatePicker crn06dod1;
+    DatePickerInputEditText crn06dod1;
     @BindView(R.id.crn06dod2)
-    DatePicker crn06dod2;
+    DatePickerInputEditText crn06dod2;
     @BindView(R.id.crn07s)
     EditText crn07s;
     @BindView(R.id.fldGrpcrn07)
     LinearLayout fldGrpcrn07;
     @BindView(R.id.crn07dob1)
-    DatePicker crn07dob1;
+    DatePickerInputEditText crn07dob1;
     @BindView(R.id.crn07dob2)
-    DatePicker crn07dob2;
+    DatePickerInputEditText crn07dob2;
     @BindView(R.id.crn07dod1)
-    DatePicker crn07dod1;
+    DatePickerInputEditText crn07dod1;
     @BindView(R.id.crn07dod2)
-    DatePicker crn07dod2;
+    DatePickerInputEditText crn07dod2;
     @BindView(R.id.crn08s)
     EditText crn08s;
     @BindView(R.id.fldGrpcrn08)
     LinearLayout fldGrpcrn08;
     @BindView(R.id.crn08dob1)
-    DatePicker crn08dob1;
+    DatePickerInputEditText crn08dob1;
     @BindView(R.id.crn08dob2)
-    DatePicker crn08dob2;
+    DatePickerInputEditText crn08dob2;
     @BindView(R.id.crn08dod1)
-    DatePicker crn08dod1;
+    DatePickerInputEditText crn08dod1;
     @BindView(R.id.crn08dod2)
-    DatePicker crn08dod2;
+    DatePickerInputEditText crn08dod2;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
     @BindView(R.id.crm043b09)
@@ -533,11 +536,210 @@ public class SectionMActivity extends Activity {
     @BindView(R.id.crm043b10)
     RadioButton crm043b10;
 
+    @BindViews({R.id.crn01dod1, R.id.crn01dod2, R.id.crn02dod1, R.id.crn02dod2, R.id.crn03dob1, R.id.crn03dob2, R.id.crn03dob3,
+            R.id.crn04dob1, R.id.crn04dob2, R.id.crn04dod1, R.id.crn04dod2, R.id.crn05dob1, R.id.crn05dob2, R.id.crn05dod1,
+            R.id.crn05dod2, R.id.crn06dob1, R.id.crn06dob2, R.id.crn06dod1, R.id.crn06dod2, R.id.crn07dob1, R.id.crn07dob2,
+            R.id.crn07dod1, R.id.crn07dod2, R.id.crn08dob1, R.id.crn08dob2, R.id.crn08dod1, R.id.crn08dod2})
+    List<DatePickerInputEditText> crndates;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_m);
         ButterKnife.bind(this);
+
+        for (DatePickerInputEditText de : crndates) {
+            de.setManager(getSupportFragmentManager());
+        }
+
+        crn01dod1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn01dod1.onFocusChange(v, true);
+            }
+        });
+
+        crn01dod2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn01dod2.onFocusChange(v, true);
+            }
+        });
+
+        crn02dod1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn02dod1.onFocusChange(v, true);
+            }
+        });
+
+        crn02dod2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn02dod2.onFocusChange(v, true);
+            }
+        });
+
+        crn03dob1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn03dob1.onFocusChange(v, true);
+            }
+        });
+
+        crn03dob2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn03dob2.onFocusChange(v, true);
+            }
+        });
+
+        crn03dob3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn03dob3.onFocusChange(v, true);
+            }
+        });
+
+        crn04dob1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn04dob1.onFocusChange(v, true);
+            }
+        });
+
+        crn04dob2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn04dob2.onFocusChange(v, true);
+            }
+        });
+
+        crn04dod1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn04dod1.onFocusChange(v, true);
+            }
+        });
+
+        crn04dod2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn04dod2.onFocusChange(v, true);
+            }
+        });
+
+        crn05dob1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn05dob1.onFocusChange(v, true);
+            }
+        });
+
+        crn05dob2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn05dob2.onFocusChange(v, true);
+            }
+        });
+
+        crn05dod1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn05dod1.onFocusChange(v, true);
+            }
+        });
+
+        crn05dod2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn05dod2.onFocusChange(v, true);
+            }
+        });
+
+        crn06dob1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn06dob1.onFocusChange(v, true);
+            }
+        });
+
+        crn06dob2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn06dob2.onFocusChange(v, true);
+            }
+        });
+
+        crn06dod1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn06dod1.onFocusChange(v, true);
+            }
+        });
+
+        crn06dod2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn06dod2.onFocusChange(v, true);
+            }
+        });
+
+        crn07dob1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn07dob1.onFocusChange(v, true);
+            }
+        });
+
+        crn07dob2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn07dob2.onFocusChange(v, true);
+            }
+        });
+
+        crn07dod1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn07dod1.onFocusChange(v, true);
+            }
+        });
+
+        crn07dod2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn07dod2.onFocusChange(v, true);
+            }
+        });
+
+        crn08dob1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn08dob1.onFocusChange(v, true);
+            }
+        });
+
+        crn08dob2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn08dob2.onFocusChange(v, true);
+            }
+        });
+
+        crn08dod1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn08dod1.onFocusChange(v, true);
+            }
+        });
+
+        crn08dod2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crn08dod2.onFocusChange(v, true);
+            }
+        });
 
 //******************************** Section M *******************
         //=============== Q 1B Skip Pattern==============
@@ -982,6 +1184,8 @@ public class SectionMActivity extends Activity {
                     fldGrpcrn01.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrn01.setVisibility(View.GONE);
+                    crn01dod1.setText(null);
+                    crn01dod2.setText(null);
 
                 }
             }
@@ -1006,6 +1210,9 @@ public class SectionMActivity extends Activity {
                     fldGrpcrn02.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrn02.setVisibility(View.GONE);
+                    crn02dod1.setText(null);
+                    crn02dod2.setText(null);
+
 
                 }
             }
@@ -1016,7 +1223,7 @@ public class SectionMActivity extends Activity {
             }
         });
 
-        //================ Q1 Skip Pattern============
+        //================ Q3 Skip Pattern============
         crn03s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -1030,6 +1237,12 @@ public class SectionMActivity extends Activity {
                     fldGrpcrn03.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrn03.setVisibility(View.GONE);
+                    crn03dob1.setText(null);
+                    crn03dob2.setText(null);
+                    crn03dob3.setText(null);
+
+
+
 
                 }
             }
@@ -1054,6 +1267,12 @@ public class SectionMActivity extends Activity {
                     fldGrpcrn04.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrn04.setVisibility(View.GONE);
+                    crn04dob1.setText(null);
+                    crn04dob2.setText(null);
+                    crn04dod1.setText(null);
+                    crn04dod2.setText(null);
+
+
 
                 }
             }
@@ -1064,7 +1283,7 @@ public class SectionMActivity extends Activity {
             }
         });
 
-        //================ Q1 Skip Pattern============
+        //================ Q5 Skip Pattern============
         crn05s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -1078,6 +1297,11 @@ public class SectionMActivity extends Activity {
                     fldGrpcrn05.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrn05.setVisibility(View.GONE);
+                    crn05dob1.setText(null);
+                    crn05dob2.setText(null);
+                    crn05dod1.setText(null);
+                    crn05dod2.setText(null);
+
 
                 }
             }
@@ -1087,6 +1311,97 @@ public class SectionMActivity extends Activity {
 
             }
         });
+
+        //================ Q6 Skip Pattern============
+        crn06s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(crn06s.getText().toString().isEmpty() ? "0" : crn06s.getText().toString()) > 0) {
+                    fldGrpcrn06.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcrn06.setVisibility(View.GONE);
+                    crn06dob1.setText(null);
+                    crn06dob2.setText(null);
+                    crn06dod1.setText(null);
+                    crn06dod2.setText(null);
+
+
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //================ Q7 Skip Pattern============
+        crn07s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(crn07s.getText().toString().isEmpty() ? "0" : crn07s.getText().toString()) > 0) {
+                    fldGrpcrn07.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcrn07.setVisibility(View.GONE);
+                    crn07dob1.setText(null);
+                    crn07dob2.setText(null);
+                    crn07dod1.setText(null);
+                    crn07dod2.setText(null);
+
+
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //================ Q8 Skip Pattern============
+        crn08s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(crn08s.getText().toString().isEmpty() ? "0" : crn08s.getText().toString()) > 0) {
+                    fldGrpcrn08.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcrn08.setVisibility(View.GONE);
+                    crn08dob1.setText(null);
+                    crn08dob2.setText(null);
+                    crn08dod1.setText(null);
+                    crn08dod2.setText(null);
+
+
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
+
 
 
     }
@@ -1224,6 +1539,47 @@ public class SectionMActivity extends Activity {
         sm.put("crm09b", crm09b01.isChecked() ? "1" : crm09b02.isChecked() ? "2" : crm09b03.isChecked() ? "3"
                 : crm09b04.isChecked() ? "4" : crm09b05.isChecked() ? "5" : crm09b06.isChecked() ? "6" : crm09b07.isChecked() ? "7"
                 : crm09b08.isChecked() ? "8" : crm09b09.isChecked() ? "9" : crm09b10.isChecked() ? "10" : "0");
+
+        sn.put("crn01s", crn01s.getText().toString());
+        sn.put("crn01dod1", crn01dod1.getText().toString());
+        sn.put("crn01dod2", crn01dod2.getText().toString());
+        sn.put("crn02s", crn02s.getText().toString());
+        sn.put("crn02dod1", crn02dod1.getText().toString());
+        sn.put("crn02dod2", crn02dod2.getText().toString());
+
+        sn.put("crn03s", crn03s.getText().toString());
+        sn.put("crn03dob1", crn03dob1.getText().toString());
+        sn.put("crn03dob2", crn03dob2.getText().toString());
+        sn.put("crn03dob3", crn03dob3.getText().toString());
+
+        sn.put("crn04s", crn04s.getText().toString());
+        sn.put("crn04dob1", crn04dob1.getText().toString());
+        sn.put("crn04dob2", crn04dob2.getText().toString());
+        sn.put("crn04dod1", crn04dod1.getText().toString());
+        sn.put("crn04dod2", crn04dod2.getText().toString());
+
+        sn.put("crn05s", crn05s.getText().toString());
+        sn.put("crn05dob1", crn05dob1.getText().toString());
+        sn.put("crn05dob2", crn05dob2.getText().toString());
+        sn.put("crn05dod1", crn05dod1.getText().toString());
+        sn.put("crn05dod2", crn05dod2.getText().toString());
+
+        sn.put("crn06s", crn06s.getText().toString());
+        sn.put("crn06dob1", crn06dob1.getText().toString());
+        sn.put("crn06dob2", crn06dob2.getText().toString());
+        sn.put("crn06dod1", crn06dod1.getText().toString());
+        sn.put("crn06dod2", crn06dod2.getText().toString());
+        sn.put("crn07s", crn07s.getText().toString());
+        sn.put("crn07dob1", crn07dob1.getText().toString());
+        sn.put("crn07dob2", crn07dob2.getText().toString());
+        sn.put("crn07dod1", crn07dod1.getText().toString());
+        sn.put("crn07dod2", crn07dod2.getText().toString());
+        sn.put("crn08s", crn08s.getText().toString());
+        sn.put("crn08dob1", crn08dob1.getText().toString());
+        sn.put("crn08dob2", crn08dob2.getText().toString());
+        sn.put("crn08dod1", crn08dod1.getText().toString());
+        sn.put("crn08dod2", crn08dod2.getText().toString());
+
 
 
         //DCEApp.fc.setROW_Sa(String.valueOf(sa));
@@ -1589,6 +1945,301 @@ public class SectionMActivity extends Activity {
 
         }
 
+//================================= Section N ***************************************
+        //======================== Q 1 ==========================
+
+        if (Integer.parseInt(crn01s.getText().toString().isEmpty() ? "0" : crn01s.getText().toString()) == 1) {
+            if (crn01dod1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn01), Toast.LENGTH_SHORT).show();
+                crn01dod1.setError("This data is Required!");
+                Log.i(TAG, "crn01dod1: This data is Required!");
+                return false;
+            } else {
+                crn01dod1.setError(null);
+            }
+        }
+
+        if (Integer.parseInt(crn01s.getText().toString().isEmpty() ? "0" : crn01s.getText().toString()) == 2) {
+            if (crn01dod2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn01), Toast.LENGTH_SHORT).show();
+                crn01dod2.setError("This data is Required!");
+                Log.i(TAG, "crn01dod2: This data is Required!");
+                return false;
+            } else {
+                crn01dod2.setError(null);
+            }
+        }
+
+        //======================== Q 2 ==========================
+
+        if (Integer.parseInt(crn02s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) == 1) {
+            if (crn02dod1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn02), Toast.LENGTH_SHORT).show();
+                crn02dod1.setError("This data is Required!");
+                Log.i(TAG, "crn02dod1: This data is Required!");
+                return false;
+            } else {
+                crn02dod1.setError(null);
+            }
+        }
+
+        if (Integer.parseInt(crn02s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) == 2) {
+            if (crn02dod2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn02), Toast.LENGTH_SHORT).show();
+                crn02dod2.setError("This data is Required!");
+                Log.i(TAG, "crn02dod2: This data is Required!");
+                return false;
+            } else {
+                crn02dod2.setError(null);
+            }
+        }
+
+        //======================== Q 3 ==========================
+
+        if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 1) {
+            if (crn03dob1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn03), Toast.LENGTH_SHORT).show();
+                crn03dob1.setError("This data is Required!");
+                Log.i(TAG, "crn03dob1: This data is Required!");
+                return false;
+            } else {
+                crn03dob1.setError(null);
+            }
+        }
+
+        if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 2) {
+            if (crn03dob2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn03), Toast.LENGTH_SHORT).show();
+                crn03dob2.setError("This data is Required!");
+                Log.i(TAG, "crn03dob2: This data is Required!");
+                return false;
+            } else {
+                crn03dob2.setError(null);
+            }
+        }
+
+        if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 3) {
+            if (crn03dob3.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn03), Toast.LENGTH_SHORT).show();
+                crn03dob3.setError("This data is Required!");
+                Log.i(TAG, "crn03dob3: This data is Required!");
+                return false;
+            } else {
+                crn03dob3.setError(null);
+            }
+        }
+
+        //================ Q4============
+
+        if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) == 1) {
+            if (crn04dob1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn04), Toast.LENGTH_SHORT).show();
+                crn04dob1.setError("This data is Required!");
+                Log.i(TAG, "crn04dob1: This data is Required!");
+                return false;
+            } else {
+                crn04dob1.setError(null);
+            }
+
+            if (crn04dod1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn04), Toast.LENGTH_SHORT).show();
+                crn04dod1.setError("This data is Required!");
+                Log.i(TAG, "crn04dod1: This data is Required!");
+                return false;
+            } else {
+                crn04dod1.setError(null);
+            }
+        }
+
+        if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) == 2) {
+            if (crn04dob2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn04), Toast.LENGTH_SHORT).show();
+                crn04dob2.setError("This data is Required!");
+                Log.i(TAG, "crn04dob2: This data is Required!");
+                return false;
+            } else {
+                crn04dob2.setError(null);
+            }
+
+            if (crn04dod2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn04), Toast.LENGTH_SHORT).show();
+                crn04dod2.setError("This data is Required!");
+                Log.i(TAG, "crn04dod2: This data is Required!");
+                return false;
+            } else {
+                crn04dod2.setError(null);
+            }
+        }
+
+
+        //================ Q5============
+
+        if (Integer.parseInt(crn05s.getText().toString().isEmpty() ? "0" : crn05s.getText().toString()) == 1) {
+            if (crn05dob1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn05), Toast.LENGTH_SHORT).show();
+                crn05dob1.setError("This data is Required!");
+                Log.i(TAG, "crn05dob1: This data is Required!");
+                return false;
+            } else {
+                crn05dob1.setError(null);
+            }
+
+            if (crn05dod1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn05), Toast.LENGTH_SHORT).show();
+                crn05dod1.setError("This data is Required!");
+                Log.i(TAG, "crn05dod1: This data is Required!");
+                return false;
+            } else {
+                crn05dod1.setError(null);
+            }
+        }
+
+        if (Integer.parseInt(crn05s.getText().toString().isEmpty() ? "0" : crn05s.getText().toString()) == 2) {
+            if (crn05dob2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn05), Toast.LENGTH_SHORT).show();
+                crn05dob2.setError("This data is Required!");
+                Log.i(TAG, "crn05dob2: This data is Required!");
+                return false;
+            } else {
+                crn05dob2.setError(null);
+            }
+
+            if (crn05dod2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn05), Toast.LENGTH_SHORT).show();
+                crn05dod2.setError("This data is Required!");
+                Log.i(TAG, "crn05dod2: This data is Required!");
+                return false;
+            } else {
+                crn05dod2.setError(null);
+            }
+        }
+
+        //================ Q6============
+
+        if (Integer.parseInt(crn06s.getText().toString().isEmpty() ? "0" : crn06s.getText().toString()) == 1) {
+            if (crn04dob1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn06), Toast.LENGTH_SHORT).show();
+                crn06dob1.setError("This data is Required!");
+                Log.i(TAG, "crn06dob1: This data is Required!");
+                return false;
+            } else {
+                crn06dob1.setError(null);
+            }
+
+            if (crn06dod1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn06), Toast.LENGTH_SHORT).show();
+                crn06dod1.setError("This data is Required!");
+                Log.i(TAG, "crn06dod1: This data is Required!");
+                return false;
+            } else {
+                crn06dod1.setError(null);
+            }
+        }
+
+        if (Integer.parseInt(crn06s.getText().toString().isEmpty() ? "0" : crn06s.getText().toString()) == 2) {
+            if (crn06dob2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn06), Toast.LENGTH_SHORT).show();
+                crn06dob2.setError("This data is Required!");
+                Log.i(TAG, "crn06dob2: This data is Required!");
+                return false;
+            } else {
+                crn06dob2.setError(null);
+            }
+
+            if (crn06dod2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn06), Toast.LENGTH_SHORT).show();
+                crn06dod2.setError("This data is Required!");
+                Log.i(TAG, "crn06dod2: This data is Required!");
+                return false;
+            } else {
+                crn06dod2.setError(null);
+            }
+        }
+
+        //================ Q7============
+
+        if (Integer.parseInt(crn07s.getText().toString().isEmpty() ? "0" : crn07s.getText().toString()) == 1) {
+            if (crn07dob1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn07), Toast.LENGTH_SHORT).show();
+                crn07dob1.setError("This data is Required!");
+                Log.i(TAG, "crn07dob1: This data is Required!");
+                return false;
+            } else {
+                crn07dob1.setError(null);
+            }
+
+            if (crn07dod1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn07), Toast.LENGTH_SHORT).show();
+                crn07dod1.setError("This data is Required!");
+                Log.i(TAG, "crn07dod1: This data is Required!");
+                return false;
+            } else {
+                crn07dod1.setError(null);
+            }
+        }
+
+        if (Integer.parseInt(crn07s.getText().toString().isEmpty() ? "0" : crn07s.getText().toString()) == 2) {
+            if (crn07dob2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn07), Toast.LENGTH_SHORT).show();
+                crn07dob2.setError("This data is Required!");
+                Log.i(TAG, "crn07dob2: This data is Required!");
+                return false;
+            } else {
+                crn07dob2.setError(null);
+            }
+
+            if (crn07dod2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn07), Toast.LENGTH_SHORT).show();
+                crn07dod2.setError("This data is Required!");
+                Log.i(TAG, "crn07dod2: This data is Required!");
+                return false;
+            } else {
+                crn07dod2.setError(null);
+            }
+        }
+
+        //================ Q8============
+
+        if (Integer.parseInt(crn08s.getText().toString().isEmpty() ? "0" : crn08s.getText().toString()) == 1) {
+            if (crn08dob1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn08), Toast.LENGTH_SHORT).show();
+                crn08dob1.setError("This data is Required!");
+                Log.i(TAG, "crn08dob1: This data is Required!");
+                return false;
+            } else {
+                crn08dob1.setError(null);
+            }
+
+            if (crn08dod1.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn08), Toast.LENGTH_SHORT).show();
+                crn08dod1.setError("This data is Required!");
+                Log.i(TAG, "crn08dod1: This data is Required!");
+                return false;
+            } else {
+                crn08dod1.setError(null);
+            }
+        }
+
+        if (Integer.parseInt(crn08s.getText().toString().isEmpty() ? "0" : crn08s.getText().toString()) == 2) {
+            if (crn08dob2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn08), Toast.LENGTH_SHORT).show();
+                crn08dob2.setError("This data is Required!");
+                Log.i(TAG, "crn08dob2: This data is Required!");
+                return false;
+            } else {
+                crn08dob2.setError(null);
+            }
+
+            if (crn08dod2.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn08), Toast.LENGTH_SHORT).show();
+                crn08dod2.setError("This data is Required!");
+                Log.i(TAG, "crn08dod2: This data is Required!");
+                return false;
+            } else {
+                crn08dod2.setError(null);
+            }
+        }
+
 
         return true;
 
@@ -1609,10 +2260,6 @@ public class SectionMActivity extends Activity {
 
 
     }
-
-
-
-
 
 
 
