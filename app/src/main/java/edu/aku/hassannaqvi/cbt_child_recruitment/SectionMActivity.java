@@ -1,9 +1,11 @@
 package edu.aku.hassannaqvi.cbt_child_recruitment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -11,12 +13,18 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SectionMActivity extends Activity {
+
+    private static final String TAG = SectionMActivity.class.getSimpleName();
 
     @BindView(R.id.activity_section_h)
     ScrollView activitySectionH;
@@ -434,18 +442,24 @@ public class SectionMActivity extends Activity {
     RadioButton crm09b10;
     @BindView(R.id.crn01s)
     EditText crn01s;
-    @BindView(R.id.crn01dob)
-    DatePicker crn01dob;
-    @BindView(R.id.crn01dod)
-    DatePicker crn01dod;
+    @BindView(R.id.fldGrpcrn01)
+    LinearLayout fldGrpcrn01;
+    @BindView(R.id.crn01dod1)
+    DatePicker crn01dod1;
+    @BindView(R.id.crn01dod2)
+    DatePicker crn01dod2;
     @BindView(R.id.crn02s)
     EditText crn02s;
-    @BindView(R.id.crn02dob)
-    DatePicker crn02dob;
-    @BindView(R.id.crn02dod)
-    DatePicker crn02dod;
+    @BindView(R.id.fldGrpcrn02)
+    LinearLayout fldGrpcrn02;
+    @BindView(R.id.crn02dod1)
+    DatePicker crn02dod1;
+    @BindView(R.id.crn02dod2)
+    DatePicker crn02dod2;
     @BindView(R.id.crn03s)
     EditText crn03s;
+    @BindView(R.id.fldGrpcrn03)
+    LinearLayout fldGrpcrn03;
     @BindView(R.id.crn03dob1)
     DatePicker crn03dob1;
     @BindView(R.id.crn03dob2)
@@ -454,6 +468,8 @@ public class SectionMActivity extends Activity {
     DatePicker crn03dob3;
     @BindView(R.id.crn04s)
     EditText crn04s;
+    @BindView(R.id.fldGrpcrn04)
+    LinearLayout fldGrpcrn04;
     @BindView(R.id.crn04dob1)
     DatePicker crn04dob1;
     @BindView(R.id.crn04dob2)
@@ -464,6 +480,8 @@ public class SectionMActivity extends Activity {
     DatePicker crn04dod2;
     @BindView(R.id.crn05s)
     EditText crn05s;
+    @BindView(R.id.fldGrpcrn05)
+    LinearLayout fldGrpcrn05;
     @BindView(R.id.crn05dob1)
     DatePicker crn05dob1;
     @BindView(R.id.crn05dob2)
@@ -474,6 +492,8 @@ public class SectionMActivity extends Activity {
     DatePicker crn05dod2;
     @BindView(R.id.crn06s)
     EditText crn06s;
+    @BindView(R.id.fldGrpcrn06)
+    LinearLayout fldGrpcrn06;
     @BindView(R.id.crn06dob1)
     DatePicker crn06dob1;
     @BindView(R.id.crn06dob2)
@@ -484,6 +504,8 @@ public class SectionMActivity extends Activity {
     DatePicker crn06dod2;
     @BindView(R.id.crn07s)
     EditText crn07s;
+    @BindView(R.id.fldGrpcrn07)
+    LinearLayout fldGrpcrn07;
     @BindView(R.id.crn07dob1)
     DatePicker crn07dob1;
     @BindView(R.id.crn07dob2)
@@ -494,6 +516,8 @@ public class SectionMActivity extends Activity {
     DatePicker crn07dod2;
     @BindView(R.id.crn08s)
     EditText crn08s;
+    @BindView(R.id.fldGrpcrn08)
+    LinearLayout fldGrpcrn08;
     @BindView(R.id.crn08dob1)
     DatePicker crn08dob1;
     @BindView(R.id.crn08dob2)
@@ -504,6 +528,10 @@ public class SectionMActivity extends Activity {
     DatePicker crn08dod2;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
+    @BindView(R.id.crm043b09)
+    RadioButton crm043b09;
+    @BindView(R.id.crm043b10)
+    RadioButton crm043b10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -938,27 +966,654 @@ public class SectionMActivity extends Activity {
             }
         });
 
+//*************************************** Section N ********************
 
+        //================ Q1 Skip Pattern============
+        crn01s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
 
+                if (Integer.parseInt(crn01s.getText().toString().isEmpty() ? "0" : crn01s.getText().toString()) > 0) {
+                    fldGrpcrn01.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcrn01.setVisibility(View.GONE);
 
+                }
+            }
 
+            @Override
+            public void afterTextChanged(Editable s) {
 
+            }
+        });
+
+        //================ Q2 Skip Pattern============
+        crn02s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(crn02s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) > 0) {
+                    fldGrpcrn02.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcrn02.setVisibility(View.GONE);
+
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //================ Q1 Skip Pattern============
+        crn03s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) > 0) {
+                    fldGrpcrn03.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcrn03.setVisibility(View.GONE);
+
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //================ Q4 Skip Pattern============
+        crn04s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) > 0) {
+                    fldGrpcrn04.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcrn04.setVisibility(View.GONE);
+
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //================ Q1 Skip Pattern============
+        crn05s.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if (Integer.parseInt(crn05s.getText().toString().isEmpty() ? "0" : crn05s.getText().toString()) > 0) {
+                    fldGrpcrn05.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcrn05.setVisibility(View.GONE);
+
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
     }
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        //TODO implement
+        if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            //if (UpdateDB()) {
+            Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+            finish();
+
+            startActivity(new Intent(this, SectionGActivity.class));
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+        // }
+
+
     }
 
 
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
-        //TODO implement
+
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+
+        /*if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+*/
+        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+        Intent endSec = new Intent(this, EndingActivity.class);
+        endSec.putExtra("complete", false);
+        startActivity(endSec);
+            /*} else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }*/
+
     }
+
+
+    private void SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        JSONObject sm = new JSONObject();
+        JSONObject sn = new JSONObject();
+
+        sm.put("crm01a", crm01a.getText().toString());
+        sm.put("crm01b", crm01b01.isChecked() ? "1" : crm01b02.isChecked() ? "2" : crm01b03.isChecked() ? "3"
+                : crm01b04.isChecked() ? "4" : crm01b05.isChecked() ? "5" : crm01b06.isChecked() ? "6" : crm01b07.isChecked() ? "7"
+                : crm01b08.isChecked() ? "8" : crm01b09.isChecked() ? "9" : crm01b10.isChecked() ? "10" : "0");
+
+        sm.put("crm02a", crm02a.getText().toString());
+        sm.put("crm02b", crm02b01.isChecked() ? "1" : crm02b02.isChecked() ? "2" : crm02b03.isChecked() ? "3"
+                : crm02b04.isChecked() ? "4" : crm02b05.isChecked() ? "5" : crm02b06.isChecked() ? "6" : crm02b07.isChecked() ? "7"
+                : crm02b08.isChecked() ? "8" : crm02b09.isChecked() ? "9" : crm02b10.isChecked() ? "10" : "0");
+
+        sm.put("crm03a", crm03a.getText().toString());
+        sm.put("crm03b", crm03b01.isChecked() ? "1" : crm03b02.isChecked() ? "2" : crm03b03.isChecked() ? "3"
+                : crm03b04.isChecked() ? "4" : crm03b05.isChecked() ? "5" : crm03b06.isChecked() ? "6" : crm03b07.isChecked() ? "7"
+                : crm03b08.isChecked() ? "8" : crm03b09.isChecked() ? "9" : crm03b10.isChecked() ? "10" : "0");
+
+        sm.put("crm04a", crm04a.getText().toString());
+        sm.put("crm04b", crm04b01.isChecked() ? "1" : crm04b02.isChecked() ? "2" : crm04b03.isChecked() ? "3"
+                : crm04b04.isChecked() ? "4" : crm04b05.isChecked() ? "5" : crm04b06.isChecked() ? "6" : crm04b07.isChecked() ? "7"
+                : crm04b08.isChecked() ? "8" : crm04b09.isChecked() ? "9" : crm04b10.isChecked() ? "10" : "0");
+
+        sm.put("crm041a", crm041a.getText().toString());
+        sm.put("crm041b", crm041b01.isChecked() ? "1" : crm041b02.isChecked() ? "2" : crm041b03.isChecked() ? "3"
+                : crm041b04.isChecked() ? "4" : crm041b05.isChecked() ? "5" : crm041b06.isChecked() ? "6" : crm041b07.isChecked() ? "7"
+                : crm041b08.isChecked() ? "8" : crm041b09.isChecked() ? "9" : crm041b10.isChecked() ? "10" : "0");
+
+        sm.put("crm042a", crm042a.getText().toString());
+        sm.put("crm042b", crm042b01.isChecked() ? "1" : crm042b02.isChecked() ? "2" : crm042b03.isChecked() ? "3"
+                : crm042b04.isChecked() ? "4" : crm042b05.isChecked() ? "5" : crm042b06.isChecked() ? "6" : crm042b07.isChecked() ? "7"
+                : crm042b08.isChecked() ? "8" : crm042b09.isChecked() ? "9" : crm042b10.isChecked() ? "10" : "0");
+
+        sm.put("crm043a", crm043a.getText().toString());
+        sm.put("crm043b", crm043b01.isChecked() ? "1" : crm043b02.isChecked() ? "2" : crm043b03.isChecked() ? "3"
+                : crm043b04.isChecked() ? "4" : crm043b05.isChecked() ? "5" : crm043b06.isChecked() ? "6" : crm043b07.isChecked() ? "7"
+                : crm043b08.isChecked() ? "8" : crm043b09.isChecked() ? "9" : crm043b10.isChecked() ? "10" : "0");
+
+        sm.put("crm044a", crm044a.getText().toString());
+        sm.put("crm044b", crm044b01.isChecked() ? "1" : crm044b02.isChecked() ? "2" : crm044b03.isChecked() ? "3"
+                : crm044b04.isChecked() ? "4" : crm044b05.isChecked() ? "5" : crm044b06.isChecked() ? "6" : crm044b07.isChecked() ? "7"
+                : crm044b08.isChecked() ? "8" : crm044b09.isChecked() ? "9" : crm044b10.isChecked() ? "10" : "0");
+
+        sm.put("crm05a", crm05a.getText().toString());
+        sm.put("crm05b", crm05b01.isChecked() ? "1" : crm05b02.isChecked() ? "2" : crm05b03.isChecked() ? "3"
+                : crm05b04.isChecked() ? "4" : crm05b05.isChecked() ? "5" : crm05b06.isChecked() ? "6" : crm05b07.isChecked() ? "7"
+                : crm05b08.isChecked() ? "8" : crm05b09.isChecked() ? "9" : crm05b10.isChecked() ? "10" : "0");
+
+        sm.put("crm051a", crm051a.getText().toString());
+        sm.put("crm051b", crm051b01.isChecked() ? "1" : crm051b02.isChecked() ? "2" : crm043b03.isChecked() ? "3"
+                : crm051b04.isChecked() ? "4" : crm051b05.isChecked() ? "5" : crm051b06.isChecked() ? "6" : crm051b07.isChecked() ? "7"
+                : crm051b08.isChecked() ? "8" : crm051b09.isChecked() ? "9" : crm051b10.isChecked() ? "10" : "0");
+
+        sm.put("crm052a", crm052a.getText().toString());
+        sm.put("crm052b", crm052b01.isChecked() ? "1" : crm052b02.isChecked() ? "2" : crm052b03.isChecked() ? "3"
+                : crm052b04.isChecked() ? "4" : crm052b05.isChecked() ? "5" : crm052b06.isChecked() ? "6" : crm052b07.isChecked() ? "7"
+                : crm052b08.isChecked() ? "8" : crm052b09.isChecked() ? "9" : crm052b10.isChecked() ? "10" : "0");
+
+        sm.put("crm06a", crm06a.getText().toString());
+        sm.put("crm06b", crm06b01.isChecked() ? "1" : crm06b02.isChecked() ? "2" : crm06b03.isChecked() ? "3"
+                : crm06b04.isChecked() ? "4" : crm06b05.isChecked() ? "5" : crm06b06.isChecked() ? "6" : crm06b07.isChecked() ? "7"
+                : crm06b08.isChecked() ? "8" : crm06b09.isChecked() ? "9" : crm06b10.isChecked() ? "10" : "0");
+
+        sm.put("crm061a", crm061a.getText().toString());
+        sm.put("crm061b", crm061b01.isChecked() ? "1" : crm061b02.isChecked() ? "2" : crm061b03.isChecked() ? "3"
+                : crm061b04.isChecked() ? "4" : crm061b05.isChecked() ? "5" : crm061b06.isChecked() ? "6" : crm061b07.isChecked() ? "7"
+                : crm061b08.isChecked() ? "8" : crm061b09.isChecked() ? "9" : crm061b10.isChecked() ? "10" : "0");
+
+        sm.put("crm07a", crm07a.getText().toString());
+        sm.put("crm07b", crm07b01.isChecked() ? "1" : crm07b02.isChecked() ? "2" : crm07b03.isChecked() ? "3"
+                : crm07b04.isChecked() ? "4" : crm07b05.isChecked() ? "5" : crm07b06.isChecked() ? "6" : crm07b07.isChecked() ? "7"
+                : crm07b08.isChecked() ? "8" : crm07b09.isChecked() ? "9" : crm07b10.isChecked() ? "10" : "0");
+
+        sm.put("crm08a", crm08a.getText().toString());
+        sm.put("crm08b", crm08b01.isChecked() ? "1" : crm08b02.isChecked() ? "2" : crm08b03.isChecked() ? "3"
+                : crm08b04.isChecked() ? "4" : crm08b05.isChecked() ? "5" : crm08b06.isChecked() ? "6" : crm08b07.isChecked() ? "7"
+                : crm08b08.isChecked() ? "8" : crm08b09.isChecked() ? "9" : crm08b10.isChecked() ? "10" : "0");
+
+        sm.put("crm09a", crm09a.getText().toString());
+        sm.put("crm09b", crm09b01.isChecked() ? "1" : crm09b02.isChecked() ? "2" : crm09b03.isChecked() ? "3"
+                : crm09b04.isChecked() ? "4" : crm09b05.isChecked() ? "5" : crm09b06.isChecked() ? "6" : crm09b07.isChecked() ? "7"
+                : crm09b08.isChecked() ? "8" : crm09b09.isChecked() ? "9" : crm09b10.isChecked() ? "10" : "0");
+
+
+        //DCEApp.fc.setROW_Sa(String.valueOf(sa));
+
+        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+    }
+
+    public boolean ValidateForm() {
+
+        Toast.makeText(this, "Validating Section M", Toast.LENGTH_SHORT).show();
+
+        //======================= Q 1 ===============
+        if (crm01a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm01a.setError("This data is Required!");
+            Log.i(TAG, "crm01a: This data is Required!");
+            return false;
+        } else {
+            crm01a.setError(null);
+        }
+
+        if (Integer.parseInt(crm01a.getText().toString().isEmpty() ? "0" : crm01a.getText().toString()) > 0) {
+            if (crm01b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                crm01b10.setError("This data is Required!");
+                Log.i(TAG, "crm01b: This data is Required!");
+                return false;
+            } else {
+                crm01b10.setError(null);
+            }
+
+        }
+
+        //======================= Q 2 ===============
+        if (crm02a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm02a.setError("This data is Required!");
+            Log.i(TAG, "crm02a: This data is Required!");
+            return false;
+        } else {
+            crm02a.setError(null);
+        }
+
+        if (Integer.parseInt(crm02a.getText().toString().isEmpty() ? "0" : crm02a.getText().toString()) > 0) {
+            if (crm02b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                crm02b10.setError("This data is Required!");
+                Log.i(TAG, "crm02b: This data is Required!");
+                return false;
+            } else {
+                crm02b10.setError(null);
+            }
+
+        }
+
+        //======================= Q 3 ===============
+        if (crm03a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm03a.setError("This data is Required!");
+            Log.i(TAG, "crm03a: This data is Required!");
+            return false;
+        } else {
+            crm03a.setError(null);
+        }
+
+        if (Integer.parseInt(crm03a.getText().toString().isEmpty() ? "0" : crm03a.getText().toString()) > 0) {
+            if (crm03b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                crm03b10.setError("This data is Required!");
+                Log.i(TAG, "crm03b: This data is Required!");
+                return false;
+            } else {
+                crm03b10.setError(null);
+            }
+
+        }
+
+        //======================= Q 4 ===============
+        if (crm04a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm04a.setError("This data is Required!");
+            Log.i(TAG, "crm01a: This data is Required!");
+            return false;
+        } else {
+            crm04a.setError(null);
+        }
+
+        if (Integer.parseInt(crm04a.getText().toString().isEmpty() ? "0" : crm01a.getText().toString()) > 0) {
+            if (crm04b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                crm04b10.setError("This data is Required!");
+                Log.i(TAG, "crm04b: This data is Required!");
+                return false;
+            } else {
+                crm04b10.setError(null);
+            }
+
+            //======================= Q 4.1 ===============
+            if (crm041a.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm041a.setError("This data is Required!");
+                Log.i(TAG, "crm041a: This data is Required!");
+                return false;
+            } else {
+                crm041a.setError(null);
+            }
+
+            if (Integer.parseInt(crm041a.getText().toString().isEmpty() ? "0" : crm041a.getText().toString()) > 0) {
+                if (crm041b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                    crm041b10.setError("This data is Required!");
+                    Log.i(TAG, "crm041b: This data is Required!");
+                    return false;
+                } else {
+                    crm041b10.setError(null);
+                }
+
+            }
+
+            //======================= Q 4.2 ===============
+            if (crm042a.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm042a.setError("This data is Required!");
+                Log.i(TAG, "crm042a: This data is Required!");
+                return false;
+            } else {
+                crm042a.setError(null);
+            }
+
+            if (Integer.parseInt(crm042a.getText().toString().isEmpty() ? "0" : crm042a.getText().toString()) > 0) {
+                if (crm042b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                    crm042b10.setError("This data is Required!");
+                    Log.i(TAG, "crm042b: This data is Required!");
+                    return false;
+                } else {
+                    crm042b10.setError(null);
+                }
+
+            }
+
+            //======================= Q 4.3 ===============
+            if (crm043a.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm043a.setError("This data is Required!");
+                Log.i(TAG, "crm043a: This data is Required!");
+                return false;
+            } else {
+                crm043a.setError(null);
+            }
+
+            if (Integer.parseInt(crm043a.getText().toString().isEmpty() ? "0" : crm043a.getText().toString()) > 0) {
+                if (crm043b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                    crm043b10.setError("This data is Required!");
+                    Log.i(TAG, "crm043b: This data is Required!");
+                    return false;
+                } else {
+                    crm043b10.setError(null);
+                }
+
+            }
+
+            //======================= Q 4.4 ===============
+            if (crm044a.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm044a.setError("This data is Required!");
+                Log.i(TAG, "crm044a: This data is Required!");
+                return false;
+            } else {
+                crm044a.setError(null);
+            }
+
+            if (Integer.parseInt(crm044a.getText().toString().isEmpty() ? "0" : crm044a.getText().toString()) > 0) {
+                if (crm044b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                    crm044b10.setError("This data is Required!");
+                    Log.i(TAG, "crm044b: This data is Required!");
+                    return false;
+                } else {
+                    crm044b10.setError(null);
+                }
+
+            }
+
+        }
+
+        //======================= Q 5 ===============
+        if (crm05a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm05a.setError("This data is Required!");
+            Log.i(TAG, "crm05a: This data is Required!");
+            return false;
+        } else {
+            crm05a.setError(null);
+        }
+
+        if (Integer.parseInt(crm05a.getText().toString().isEmpty() ? "0" : crm05a.getText().toString()) > 0) {
+            if (crm05b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                crm05b10.setError("This data is Required!");
+                Log.i(TAG, "crm05b: This data is Required!");
+                return false;
+            } else {
+                crm05b10.setError(null);
+            }
+
+            //======================= Q 5.1 ===============
+            if (crm051a.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm051a.setError("This data is Required!");
+                Log.i(TAG, "crm051a: This data is Required!");
+                return false;
+            } else {
+                crm051a.setError(null);
+            }
+
+            if (Integer.parseInt(crm051a.getText().toString().isEmpty() ? "0" : crm051a.getText().toString()) > 0) {
+                if (crm051b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                    crm051b10.setError("This data is Required!");
+                    Log.i(TAG, "crm051b: This data is Required!");
+                    return false;
+                } else {
+                    crm051b10.setError(null);
+                }
+
+            }
+
+            //======================= Q 5.2 ===============
+            if (crm052a.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm052a.setError("This data is Required!");
+                Log.i(TAG, "crm052a: This data is Required!");
+                return false;
+            } else {
+                crm052a.setError(null);
+            }
+
+            if (Integer.parseInt(crm052a.getText().toString().isEmpty() ? "0" : crm052a.getText().toString()) > 0) {
+                if (crm052b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                    crm052b10.setError("This data is Required!");
+                    Log.i(TAG, "crm052b: This data is Required!");
+                    return false;
+                } else {
+                    crm052b10.setError(null);
+                }
+
+            }
+
+
+        }
+
+        //======================= Q 6 ===============
+        if (crm06a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm06a.setError("This data is Required!");
+            Log.i(TAG, "crm06a: This data is Required!");
+            return false;
+        } else {
+            crm06a.setError(null);
+        }
+
+        if (Integer.parseInt(crm06a.getText().toString().isEmpty() ? "0" : crm06a.getText().toString()) > 0) {
+            if (crm06b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                crm06b10.setError("This data is Required!");
+                Log.i(TAG, "crm06b: This data is Required!");
+                return false;
+            } else {
+                crm06b10.setError(null);
+            }
+
+            //======================= Q 6.1 ===============
+            if (crm061a.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm061a.setError("This data is Required!");
+                Log.i(TAG, "crm061a: This data is Required!");
+                return false;
+            } else {
+                crm061a.setError(null);
+            }
+
+            if (Integer.parseInt(crm061a.getText().toString().isEmpty() ? "0" : crm061a.getText().toString()) > 0) {
+                if (crm061b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                    crm061b10.setError("This data is Required!");
+                    Log.i(TAG, "crm061b: This data is Required!");
+                    return false;
+                } else {
+                    crm061b10.setError(null);
+                }
+
+            }
+
+
+        }
+
+        //======================= Q 7 ===============
+        if (crm07a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm07a.setError("This data is Required!");
+            Log.i(TAG, "crm07a: This data is Required!");
+            return false;
+        } else {
+            crm07a.setError(null);
+        }
+
+        if (Integer.parseInt(crm07a.getText().toString().isEmpty() ? "0" : crm07a.getText().toString()) > 0) {
+            if (crm07b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                crm07b10.setError("This data is Required!");
+                Log.i(TAG, "crm07b: This data is Required!");
+                return false;
+            } else {
+                crm07b10.setError(null);
+            }
+
+        }
+
+        //======================= Q 8 ===============
+        if (crm08a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm08a.setError("This data is Required!");
+            Log.i(TAG, "crm08a: This data is Required!");
+            return false;
+        } else {
+            crm08a.setError(null);
+        }
+
+        if (Integer.parseInt(crm08a.getText().toString().isEmpty() ? "0" : crm08a.getText().toString()) > 0) {
+            if (crm08b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                crm08b10.setError("This data is Required!");
+                Log.i(TAG, "crm08b: This data is Required!");
+                return false;
+            } else {
+                crm08b10.setError(null);
+            }
+
+        }
+
+        //======================= Q 9 ===============
+        if (crm09a.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm09a.setError("This data is Required!");
+            Log.i(TAG, "crm09a: This data is Required!");
+            return false;
+        } else {
+            crm09a.setError(null);
+        }
+
+        if (Integer.parseInt(crm09a.getText().toString().isEmpty() ? "0" : crm09a.getText().toString()) > 0) {
+            if (crm09b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
+                crm09b10.setError("This data is Required!");
+                Log.i(TAG, "crm09b: This data is Required!");
+                return false;
+            } else {
+                crm09b10.setError(null);
+            }
+
+        }
+
+
+        return true;
+
+    }
+
+    private boolean UpdateDB() {
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        /*int updcount = db.updateF();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
+        return false;
+        //}
+
+
+    }
+
+
+
+
+
 
 
 }
