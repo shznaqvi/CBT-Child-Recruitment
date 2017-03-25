@@ -702,9 +702,16 @@ public class SectionGActivity extends Activity {
     }
 
     private boolean updateDb() {
+        DatabaseHelper db = new DatabaseHelper(this);
 
+        /*int updcount = db.updateA();
 
-        return true;
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
+        return false;
     }
 
     private void saveDrafts() throws JSONException {
@@ -787,6 +794,15 @@ public class SectionGActivity extends Activity {
     public boolean validateForm() {
 
         // =================== Q1 ====================
+        if (crg01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "" + getString(R.string.crg01), Toast.LENGTH_SHORT).show();
+            crg0196.setError("This Data is required");
+            Log.d(TAG, "not selected: crg01 ");
+            return false;
+        } else {
+            crg0196.setError(null);
+        }
+
         if (crg01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "" + getString(R.string.crg01), Toast.LENGTH_SHORT).show();
             crg0196.setError("This Data is required");
