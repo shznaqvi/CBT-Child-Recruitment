@@ -475,8 +475,8 @@ public class SectionGActivity extends Activity {
     EditText crg2005;
     @BindView(R.id.crg2006)
     EditText crg2006;
-    @BindView(R.id.crg2007)
-    EditText crg2007;
+    //@BindView(R.id.crg2007)
+    //EditText crg2007;
     @BindView(R.id.crg21a)
     RadioGroup crg21a;
     @BindView(R.id.crg21a01)
@@ -642,7 +642,7 @@ public class SectionGActivity extends Activity {
                     crg2005.setText(null);
                     crg2006.setText(null);
                     crg2006.setText(null);
-                    crg2007.setText(null);
+                    //crg2007.setText(null);
                     crg21a.clearCheck();
                     crg21a96x.setText(null);
                     crg21b.clearCheck();
@@ -680,7 +680,7 @@ public class SectionGActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (updateDb()) {
+            //if (updateDb()) {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -690,7 +690,7 @@ public class SectionGActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
             }
-        }
+        //}
     }
 
     @OnClick(R.id.btnEnd)

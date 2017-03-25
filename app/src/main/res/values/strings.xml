@@ -103,6 +103,7 @@
     <string name="creheading"> Child Vaccination Status </string>
     <string name="cre01"> کیا کبھی بچے نے کسی بیماری کی ویکسین لگوائی ہے بشمول پولیو کی قومی مہم کے دوران
     اگر کارڈ موجود ہے تو اس میں سے کس طرح کی ویکسینز لگوائی ہیں درج کریں۔ </string>
+    <string name="cre01a">کیا کارڈ موجود ہے؟</string>
     <string name="card"> کارڈ کے مطابق ویسکسینشن کی تصدیق </string>
     <string name="mother"> ماں کے مطابق </string>
     <string name="cre02"> پیدائش کے وقت </string>

@@ -578,7 +578,7 @@ public class SectionHActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {
+            //if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -587,7 +587,7 @@ public class SectionHActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        //}
 
     }
 
@@ -1098,7 +1098,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01a01.isChecked()) {
             if (crj01anum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01anum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01anum.setError("This data is Required!");
                 Log.i(TAG, "crj01anum: This data is Required!");
                 return false;
@@ -1119,7 +1119,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01b01.isChecked()) {
             if (crj01bnum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01bnum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01bnum.setError("This data is Required!");
                 Log.i(TAG, "crj01bnum: This data is Required!");
                 return false;
@@ -1139,7 +1139,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01c01.isChecked()) {
             if (crj01cnum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01cnum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01cnum.setError("This data is Required!");
                 Log.i(TAG, "crj01cnum: This data is Required!");
                 return false;
@@ -1160,7 +1160,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01d01.isChecked()) {
             if (crj01dnum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01dnum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01dnum.setError("This data is Required!");
                 Log.i(TAG, "crj01dnum: This data is Required!");
                 return false;
@@ -1181,7 +1181,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01e01.isChecked()) {
             if (crj01enum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01enum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01enum.setError("This data is Required!");
                 Log.i(TAG, "crj01enum: This data is Required!");
                 return false;
@@ -1202,7 +1202,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01f01.isChecked()) {
             if (crj01fnum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01fnum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01fnum.setError("This data is Required!");
                 Log.i(TAG, "crj01fnum: This data is Required!");
                 return false;
@@ -1223,7 +1223,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01g01.isChecked()) {
             if (crj01gnum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01gnum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01gnum.setError("This data is Required!");
                 Log.i(TAG, "crj01gnum: This data is Required!");
                 return false;
@@ -1244,7 +1244,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01h01.isChecked()) {
             if (crj01hnum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01hnum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01hnum.setError("This data is Required!");
                 Log.i(TAG, "crj01hnum: This data is Required!");
                 return false;
@@ -1265,7 +1265,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01i01.isChecked()) {
             if (crj01inum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01inum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01inum.setError("This data is Required!");
                 Log.i(TAG, "crj01inum: This data is Required!");
                 return false;
@@ -1286,7 +1286,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01j01.isChecked()) {
             if (crj01jnum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01jnum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01jnum.setError("This data is Required!");
                 Log.i(TAG, "crj01jnum: This data is Required!");
                 return false;
@@ -1307,7 +1307,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01k01.isChecked()) {
             if (crj01knum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01knum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01knum.setError("This data is Required!");
                 Log.i(TAG, "crj01knum: This data is Required!");
                 return false;
@@ -1328,7 +1328,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01l01.isChecked()) {
             if (crj01lnum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01lnum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01lnum.setError("This data is Required!");
                 Log.i(TAG, "crj01lnum: This data is Required!");
                 return false;
@@ -1340,7 +1340,7 @@ public class SectionHActivity extends Activity {
 
         //================== 1.13 ===================
         if (crj01m.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01m), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             crj01m02.setError("This data is Required!");
             Log.i(TAG, "crj01m: This data is Required!");
             return false;
@@ -1349,7 +1349,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01m01.isChecked()) {
             if (crj01mx.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01mx) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 crj01mx.setError("This data is Required!");
                 Log.i(TAG, "crj01mx: This data is Required!");
                 return false;
@@ -1357,7 +1357,7 @@ public class SectionHActivity extends Activity {
                 crj01mx.setError(null);
             }
             if (crj01mnum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01mnum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01mnum.setError("This data is Required!");
                 Log.i(TAG, "crj01mnum: This data is Required!");
                 return false;
@@ -1369,7 +1369,7 @@ public class SectionHActivity extends Activity {
 
         //================== 1.14 ===================
         if (crj01n.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01n), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
             crj01n02.setError("This data is Required!");
             Log.i(TAG, "crj01n: This data is Required!");
             return false;
@@ -1378,7 +1378,7 @@ public class SectionHActivity extends Activity {
         }
         if (crj01n01.isChecked()) {
             if (crj01nx.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01nx) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 crj01nx.setError("This data is Required!");
                 Log.i(TAG, "crj01nx: This data is Required!");
                 return false;
@@ -1386,7 +1386,7 @@ public class SectionHActivity extends Activity {
                 crj01nx.setError(null);
             }
             if (crj01mnum.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crj01mnum), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
                 crj01mnum.setError("This data is Required!");
                 Log.i(TAG, "crj01mnum: This data is Required!");
                 return false;
@@ -1406,15 +1406,15 @@ public class SectionHActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateH();
+        /*int updcount = db.updateH();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
             return false;
-        }
+        //}
 
 
     }

@@ -274,7 +274,7 @@ public class SectionLActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (updateDb()) {
+            //if (updateDb()) {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -284,7 +284,7 @@ public class SectionLActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
             }
-        }
+        //}
     }
 
 

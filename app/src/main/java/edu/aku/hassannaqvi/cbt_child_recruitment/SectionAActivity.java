@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -108,6 +109,8 @@ public class SectionAActivity extends Activity {
     LinearLayout fldGrpbtn;
     @BindView(R.id.cra03)
     EditText cra03;
+    @BindView(R.id.btnNext)
+    Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,6 +128,7 @@ public class SectionAActivity extends Activity {
                 } else {
                     fldGrpcra02.setVisibility(View.GONE);
                     fldGrpcra03.setVisibility(View.GONE);
+                    btnNext.setVisibility(View.GONE);
                     cra02.clearCheck();
                     cra03.setText(null);
                     cra04.clearCheck();
@@ -162,6 +166,7 @@ public class SectionAActivity extends Activity {
                     fldGrpcra03.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcra03.setVisibility(View.GONE);
+                    btnNext.setVisibility(View.GONE);
                     cra03.setText(null);
                     cra04.clearCheck();
                     cra05.setText(null);
@@ -201,7 +206,7 @@ public class SectionAActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {
+            //if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -210,7 +215,7 @@ public class SectionAActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        //}
 
     }
 

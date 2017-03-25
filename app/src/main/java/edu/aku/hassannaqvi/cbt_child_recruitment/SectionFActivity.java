@@ -347,11 +347,11 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     LinearLayout fldGrpbtn;
     @BindView(R.id.fldGrpcrf01a)
     LinearLayout fldGrpcrf01a;
-    @BindView(R.id.fldGrpcrf06b)
+    @BindView(R.id.fldGrp06b)
     LinearLayout fldGrpcrf06b;
-    @BindView(R.id.fldGrpcrf06c)
+    @BindView(R.id.fldGrp06c)
     LinearLayout fldGrpcrf06c;
-    @BindView(R.id.fldGrpcrf06f)
+    @BindView(R.id.fldGrp06f)
     LinearLayout fldGrpcrf06f;
     @BindView(R.id.fldGrpcrf09)
     LinearLayout fldGrpcrf09;
@@ -499,7 +499,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {
+            //if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -508,7 +508,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        // }
 
     }
 
@@ -538,15 +538,15 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateF();
+        /*int updcount = db.updateF();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
             return false;
-        }
+        //}
 
 
     }

@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
     }
 
     public void openForm(View v) {
-        Intent oF = new Intent(this, SectionAActivity.class);
+        Intent oF = new Intent(this, SectionMActivity.class);
         startActivity(oF);
     }
 
@@ -117,7 +117,7 @@ public class MainActivity extends Activity {
         startActivity(iB);
     }
 
-    public void openC(View v) {
+    /*public void openC(View v) {
         Intent iC = new Intent(this, SectionCActivity.class);
         startActivity(iC);
     }
@@ -130,17 +130,17 @@ public class MainActivity extends Activity {
     public void openE(View v) {
         Intent iD = new Intent(this, SectionEActivity.class);
         startActivity(iD);
-    }
+*/    //}
 
     public void openF(View v) {
         Intent iD = new Intent(this, SectionFActivity.class);
         startActivity(iD);
     }
 
-    public void openIM(View v) {
+   /* public void openIM(View v) {
         Intent iIM = new Intent(this, SectionIMActivity.class);
         startActivity(iIM);
-    }
+    }*/
 
     public void openG(View v) {
         Intent iG = new Intent(this, SectionGActivity.class);

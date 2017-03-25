@@ -24,15 +24,12 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -76,8 +73,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     TextView txtinstalldate;
     @BindView(R.id.email_sign_in_button)
     Button mEmailSignInButton;
-    @BindView(R.id.spUC)
+    /*@BindView(R.id.spUC)
     Spinner spUC;
+    */
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -211,11 +209,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // attaching data adapter to spinner
-        spUC.setAdapter(dataAdapter);
-        spUC.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+        //spUC.setAdapter(dataAdapter);
+        //spUC.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
         //spUC.setOnItemSelectedListener(this);
-        spUC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
+        //spUC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /*@Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 AppMain.mna3 = Integer.valueOf(values.get(position));
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -228,7 +226,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
             }
         });
-
+*/
 
     }
 

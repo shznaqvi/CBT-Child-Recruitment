@@ -109,6 +109,7 @@
                         android:layout_height="wrap_content"
                         android:digits="0123456789:"
                         android:hint="@string/cra03"
+                        android:inputType="number"
                         android:maxLength="5" />
 
 

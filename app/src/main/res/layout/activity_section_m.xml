@@ -34,9 +34,7 @@
             android:layout_height="wrap_content"
             android:background="#efefef"
             android:text="@string/crmheadingsub"
-            android:textColor="@color/colorPrimaryDark"
-
-            />
+            android:textColor="@color/colorPrimaryDark" />
 
 
         <TextView
@@ -62,7 +60,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrm01b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -147,6 +152,8 @@
 
         </RadioGroup>
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -171,7 +178,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrm02b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -256,6 +270,8 @@
 
         </RadioGroup>
 
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -279,7 +295,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrm03b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -364,6 +387,8 @@
 
         </RadioGroup>
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -388,7 +413,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrm04b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -497,7 +529,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpcrm041b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -581,6 +620,8 @@
 
         </RadioGroup>
 
+            </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -605,7 +646,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpcrm042b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -688,7 +736,9 @@
                 android:text="@string/crmfood10" />
         </RadioGroup>
 
-        <TextView
+            </LinearLayout>
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -711,7 +761,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpcrm043b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -780,6 +837,8 @@
                 android:text="@string/crmfood08" />
         </RadioGroup>
 
+            </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -804,7 +863,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpcrm044b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -870,7 +936,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/crmfood07" />
+                android:text="@string/crmfood08" />
 
             <RadioButton
                 android:id="@+id/crm044b09"
@@ -889,7 +955,9 @@
 
         </RadioGroup>
 
+            </LinearLayout>
 
+        </LinearLayout>
 
 
         <TextView
@@ -915,7 +983,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrm05b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -1024,7 +1099,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpcrm051b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -1069,7 +1151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/crmfood04" />
+                android:text="@string/crmfood05" />
 
             <RadioButton
                 android:id="@+id/crm051b06"
@@ -1092,7 +1174,23 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/crmfood08" />
 
+            <RadioButton
+                android:id="@+id/crm051b09"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/crmfood09" />
+
+            <RadioButton
+                android:id="@+id/crm051b10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/crmfood10" />
+
         </RadioGroup>
+
+            </LinearLayout>
 
 
         <TextView
@@ -1118,7 +1216,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpcrm052b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -1203,6 +1308,10 @@
 
         </RadioGroup>
 
+            </LinearLayout>
+
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1227,7 +1336,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrm06b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -1336,7 +1452,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpcrm061b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -1421,6 +1544,10 @@
 
         </RadioGroup>
 
+            </LinearLayout>
+
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1445,7 +1572,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrm07b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -1528,6 +1662,8 @@
                 android:text="@string/crmfood10" />
         </RadioGroup>
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1552,7 +1688,14 @@
             android:inputType="number"
             android:maxLength="1" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcrm08b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#efefef"
@@ -1635,6 +1778,8 @@
                 android:text="@string/crmfood10" />
         </RadioGroup>
 
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1657,6 +1802,13 @@
             android:hint="@string/crm01a"
             android:inputType="number"
             android:maxLength="1" />
+
+        <LinearLayout
+            android:id="@+id/fldGrpcrm09b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
 
         <TextView
             android:layout_width="match_parent"
@@ -1740,6 +1892,8 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/crmfood10" />
         </RadioGroup>
+
+        </LinearLayout>
 
 
         <TextView
@@ -1861,6 +2015,13 @@
             android:datePickerMode="spinner"
             android:ems="10"
             android:spinnersShown="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#efefef"
+            android:text="@string/crnd"
+            android:textColor="@color/colorPrimaryDark" />
 
         <DatePicker
             android:id="@+id/crn02dod"
