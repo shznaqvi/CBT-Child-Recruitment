@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.cbt_child_recruitment;
+package edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -18,6 +18,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
+
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
+import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
 
 /**
  * Created by hassan.naqvi on 7/26/2016.

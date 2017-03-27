@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.cbt_child_recruitment;
+package edu.aku.hassannaqvi.cbt_child_recruitment.contracts;
 
 
 import android.database.Cursor;

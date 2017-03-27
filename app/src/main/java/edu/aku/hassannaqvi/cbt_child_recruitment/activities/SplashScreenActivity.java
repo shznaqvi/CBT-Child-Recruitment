@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.cbt_child_recruitment;
+package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+
+import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
 
 /**

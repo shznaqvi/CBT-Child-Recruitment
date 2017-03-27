@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.cbt_child_recruitment;
+package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -23,6 +23,15 @@ import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AndroidDatabaseManager;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
+import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
+import edu.aku.hassannaqvi.cbt_child_recruitment.R;
+import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncForms;
+import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncIMs;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetChildren;
+import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetUsers;
 
 public class MainActivity extends Activity {
 
@@ -66,27 +75,27 @@ public class MainActivity extends Activity {
         rSumText += "\r\n";
         rSumText += "    Forms List: \r\n";
         String iStatus = "";
-        for (FormsContract fc : todaysForms) {
-
-            switch (fc.getiStatus()) {
-                case "1":
-                    iStatus = "Complete";
-                    break;
-                case "2":
-                    iStatus = "House Locked";
-                    break;
-                case "3":
-                    iStatus = "Refused";
-                    break;
-                case "4":
-                    iStatus = "Refused";
-                    break;
-            }
-
-            rSumText += fc.getLhwCode() + " " + fc.getHouseHold() + " " + iStatus;
-            rSumText += "\r\n";
-
-        }
+//        for (FormsContract fc : todaysForms) {
+//
+//            switch (fc.getiStatus()) {
+//                case "1":
+//                    iStatus = "Complete";
+//                    break;
+//                case "2":
+//                    iStatus = "House Locked";
+//                    break;
+//                case "3":
+//                    iStatus = "Refused";
+//                    break;
+//                case "4":
+//                    iStatus = "Refused";
+//                    break;
+//            }
+//
+//            rSumText += fc.getLhwCode() + " " + fc.getHouseHold() + " " + iStatus;
+//            rSumText += "\r\n";
+//
+//        }
 
         rSumText += "--------------------------------------------------\r\n";
         if (AppMain.admin) {

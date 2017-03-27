@@ -17,10 +17,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
-import edu.aku.hassannaqvi.cbt_child_recruitment.FormsContract.singleForm;
-import edu.aku.hassannaqvi.cbt_child_recruitment.IMsContract.singleIms;
-import edu.aku.hassannaqvi.cbt_child_recruitment.PSUsContract.singleChild;
-import edu.aku.hassannaqvi.cbt_child_recruitment.UsersContract.singleUser;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract.singleForm;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract.singleIms;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.PSUsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.PSUsContract.singleChild;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract.singleUser;
 
 /**
  * Created by hassan.naqvi on 10/29/2016.
@@ -48,32 +52,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + singleForm.TABLE_NAME + "("
-            + singleForm._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + singleForm.COLUMN_UID + " TEXT,"
-            + singleForm.COLUMN_DEVICE_ID + " TEXT,"
-            + singleForm.COLUMN_PROJECT_NAME + " TEXT,"
-            + singleForm.COLUMN_SURVEY_TYPE + " TEXT,"
-            + singleForm.COLUMN_GPS_ACC + " TEXT,"
-            + singleForm.COLUMN_GPS_LAT + " TEXT,"
-            + singleForm.COLUMN_GPS_LNG + " TEXT,"
-            + singleForm.COLUMN_GPS_TIME + " TEXT,"
-            + singleForm.COLUMN_SYNCED + " TEXT,"
-            + singleForm.COLUMN_SYNCED_DATE + " TEXT,"
-            + singleForm.COLUMN_MNA1 + " TEXT,"
-            + singleForm.COLUMN_MNA2 + " TEXT,"
-            + singleForm.COLUMN_MNA3 + " TEXT,"
-            + singleForm.COLUMN_MNA4 + " TEXT,"
-            + singleForm.COLUMN_MNA5 + " TEXT,"
-            + singleForm.COLUMN_MNA6 + " TEXT,"
-            + singleForm.COLUMN_MNA6A + " TEXT,"
-            + singleForm.COLUMN_MNA7 + " TEXT,"
-            + singleForm.COLUMN_SA + " TEXT,"
-            + singleForm.COLUMN_SB + " TEXT,"
-            + singleForm.COLUMN_SC + " TEXT,"
-            + singleForm.COLUMN_SD + " TEXT,"
-            + singleForm.COLUMN_SE + " TEXT,"
-            + singleForm.COLUMN_SF + " TEXT,"
-            + singleForm.COLUMN_SG + " TEXT"
+            + singleForm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
+            singleForm.COLUMN_UID + " TEXT,"+
+            singleForm.COLUMN_MNA1 + " TEXT,"+
+            singleForm.COLUMN_MNA2 + " TEXT,"+
+            singleForm.COLUMN_HFACILITY + " TEXT,"+
+            singleForm.COLUMN_LHWCODE + " TEXT,"+
+            singleForm.COLUMN_HOUSEHOLD + " TEXT,"+
+            singleForm.COLUMN_CHILDID + " TEXT,"+
+            singleForm.COLUMN_UCCODE + " TEXT,"+
+            singleForm.COLUMN_VILLAGECODE + " TEXT,"+
+            singleForm.COLUMN_ISTATUS + " TEXT,"+
+            singleForm.COLUMN_SA + " TEXT,"+
+            singleForm.COLUMN_SB + " TEXT,"+
+            singleForm.COLUMN_SC + " TEXT,"+
+            singleForm.COLUMN_SD + " TEXT,"+
+            singleForm.COLUMN_SE + " TEXT,"+
+            singleForm.COLUMN_SF + " TEXT,"+
+            singleForm.COLUMN_SG + " TEXT,"+
+            singleForm.COLUMN_SH + " TEXT,"+
+            singleForm.COLUMN_SI + " TEXT,"+
+            singleForm.COLUMN_SJ + " TEXT,"+
+            singleForm.COLUMN_SK + " TEXT,"+
+            singleForm.COLUMN_SL + " TEXT,"+
+            singleForm.COLUMN_SM + " TEXT,"+
+            singleForm.COLUMN_SN + " TEXT,"+
+            singleForm.COLUMN_GPSLAT + " TEXT,"+
+            singleForm.COLUMN_GPSLNG + " TEXT,"+
+            singleForm.COLUMN_GPSTIME + " TEXT,"+
+            singleForm.COLUMN_GPSACC + " TEXT,"+
+            singleForm.COLUMN_DEVICEID + " TEXT,"+
+            singleForm.COLUMN_SYNCED + " TEXT,"+
+            singleForm.COLUMN_SYNCED_DATE + " TEXT,"
             + " );";
     private static final java.lang.String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + singleForm.TABLE_NAME;
     private static final String SQL_DELETE_IMS =
@@ -118,22 +128,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(singleForm.COLUMN_PROJECT_NAME, fc.getProjectName());
-        values.put(singleForm.COLUMN_SURVEY_TYPE, fc.getProjectName());
-        values.put(singleForm.COLUMN_DEVICE_ID, fc.getDeviceID());
-        values.put(singleForm.COLUMN_GPS_ACC, fc.getGpsAcc());
-        values.put(singleForm.COLUMN_GPS_LAT, fc.getGpsLat());
-        values.put(singleForm.COLUMN_GPS_LNG, fc.getGpsLng());
-        values.put(singleForm.COLUMN_GPS_TIME, fc.getGpsTime());
+        values.put(singleForm.COLUMN_ID, fc.getID());
+        values.put(singleForm.COLUMN_UID, fc.getUID());
         values.put(singleForm.COLUMN_MNA1, fc.getMna1());
         values.put(singleForm.COLUMN_MNA2, fc.getMna2());
-        values.put(singleForm.COLUMN_MNA3, fc.gethFacility());
-        values.put(singleForm.COLUMN_MNA4, fc.getLhwCode());
-        values.put(singleForm.COLUMN_MNA5, fc.getHouseHold());
-        values.put(singleForm.COLUMN_MNA6, fc.getChildId());
-        values.put(singleForm.COLUMN_MNA7, fc.getiStatus());
+        values.put(singleForm.COLUMN_HFACILITY, fc.gethFacility());
+        values.put(singleForm.COLUMN_LHWCODE, fc.getLhwCode());
+        values.put(singleForm.COLUMN_HOUSEHOLD, fc.getHouseHold());
+        values.put(singleForm.COLUMN_CHILDID, fc.getChildId());
+        values.put(singleForm.COLUMN_UCCODE, fc.getUccode());
+        values.put(singleForm.COLUMN_VILLAGECODE, fc.getVillagecode());
+        values.put(singleForm.COLUMN_ISTATUS, fc.getiStatus());
         values.put(singleForm.COLUMN_SA, fc.getsA());
-
+        values.put(singleForm.COLUMN_SB, fc.getsB());
+        values.put(singleForm.COLUMN_SC, fc.getsC());
+        values.put(singleForm.COLUMN_SD, fc.getsD());
+        values.put(singleForm.COLUMN_SE, fc.getsE());
+        values.put(singleForm.COLUMN_SF, fc.getsF());
+        values.put(singleForm.COLUMN_SG, fc.getsG());
+        values.put(singleForm.COLUMN_SH, fc.getsH());
+        values.put(singleForm.COLUMN_SI, fc.getsI());
+        values.put(singleForm.COLUMN_SJ, fc.getsJ());
+        values.put(singleForm.COLUMN_SK, fc.getsK());
+        values.put(singleForm.COLUMN_SL, fc.getsL());
+        values.put(singleForm.COLUMN_SM, fc.getsM());
+        values.put(singleForm.COLUMN_SN, fc.getsN());
+        values.put(singleForm.COLUMN_GPSLAT, fc.getGpsLat());
+        values.put(singleForm.COLUMN_GPSLNG, fc.getGpsLng());
+        values.put(singleForm.COLUMN_GPSTIME, fc.getGpsTime());
+        values.put(singleForm.COLUMN_GPSACC, fc.getGpsAcc());
+        values.put(singleForm.COLUMN_DEVICEID, fc.getDeviceID());
+        values.put(singleForm.COLUMN_SYNCED, fc.getSynced());
+        values.put(singleForm.COLUMN_SYNCED_DATE, fc.getSynced_date());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -186,25 +212,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleForm._ID,
+                singleForm.COLUMN_ID,
                 singleForm.COLUMN_UID,
-                singleForm.COLUMN_PROJECT_NAME,
-                singleForm.COLUMN_SURVEY_TYPE,
-                singleForm.COLUMN_DEVICE_ID,
-                singleForm.COLUMN_GPS_LAT,
-                singleForm.COLUMN_GPS_LNG,
-                singleForm.COLUMN_GPS_ACC,
-                singleForm.COLUMN_GPS_TIME,
-                singleForm.COLUMN_SYNCED,
-                singleForm.COLUMN_SYNCED_DATE,
                 singleForm.COLUMN_MNA1,
                 singleForm.COLUMN_MNA2,
-                singleForm.COLUMN_MNA3,
-                singleForm.COLUMN_MNA4,
-                singleForm.COLUMN_MNA5,
-                singleForm.COLUMN_MNA6,
-                singleForm.COLUMN_MNA6A,
-                singleForm.COLUMN_MNA7,
+                singleForm.COLUMN_HFACILITY,
+                singleForm.COLUMN_LHWCODE,
+                singleForm.COLUMN_HOUSEHOLD,
+                singleForm.COLUMN_CHILDID,
+                singleForm.COLUMN_UCCODE,
+                singleForm.COLUMN_VILLAGECODE,
+                singleForm.COLUMN_ISTATUS,
                 singleForm.COLUMN_SA,
                 singleForm.COLUMN_SB,
                 singleForm.COLUMN_SC,
@@ -212,8 +230,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm.COLUMN_SE,
                 singleForm.COLUMN_SF,
                 singleForm.COLUMN_SG,
-
-
+                singleForm.COLUMN_SH,
+                singleForm.COLUMN_SI,
+                singleForm.COLUMN_SJ,
+                singleForm.COLUMN_SK,
+                singleForm.COLUMN_SL,
+                singleForm.COLUMN_SM,
+                singleForm.COLUMN_SN,
+                singleForm.COLUMN_GPSLAT,
+                singleForm.COLUMN_GPSLNG,
+                singleForm.COLUMN_GPSTIME,
+                singleForm.COLUMN_GPSACC,
+                singleForm.COLUMN_DEVICEID,
+                singleForm.COLUMN_SYNCED,
+                singleForm.COLUMN_SYNCED_DATE
         };
         String whereClause = null;
         String[] whereArgs = null;
@@ -253,25 +283,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleForm._ID,
+                singleForm.COLUMN_ID,
                 singleForm.COLUMN_UID,
-                singleForm.COLUMN_PROJECT_NAME,
-                singleForm.COLUMN_SURVEY_TYPE,
-                singleForm.COLUMN_DEVICE_ID,
-                singleForm.COLUMN_GPS_LAT,
-                singleForm.COLUMN_GPS_LNG,
-                singleForm.COLUMN_GPS_ACC,
-                singleForm.COLUMN_GPS_TIME,
-                singleForm.COLUMN_SYNCED,
-                singleForm.COLUMN_SYNCED_DATE,
                 singleForm.COLUMN_MNA1,
                 singleForm.COLUMN_MNA2,
-                singleForm.COLUMN_MNA3,
-                singleForm.COLUMN_MNA4,
-                singleForm.COLUMN_MNA5,
-                singleForm.COLUMN_MNA6,
-                singleForm.COLUMN_MNA6A,
-                singleForm.COLUMN_MNA7,
+                singleForm.COLUMN_HFACILITY,
+                singleForm.COLUMN_LHWCODE,
+                singleForm.COLUMN_HOUSEHOLD,
+                singleForm.COLUMN_CHILDID,
+                singleForm.COLUMN_UCCODE,
+                singleForm.COLUMN_VILLAGECODE,
+                singleForm.COLUMN_ISTATUS,
                 singleForm.COLUMN_SA,
                 singleForm.COLUMN_SB,
                 singleForm.COLUMN_SC,
@@ -279,8 +301,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm.COLUMN_SE,
                 singleForm.COLUMN_SF,
                 singleForm.COLUMN_SG,
-
-
+                singleForm.COLUMN_SH,
+                singleForm.COLUMN_SI,
+                singleForm.COLUMN_SJ,
+                singleForm.COLUMN_SK,
+                singleForm.COLUMN_SL,
+                singleForm.COLUMN_SM,
+                singleForm.COLUMN_SN,
+                singleForm.COLUMN_GPSLAT,
+                singleForm.COLUMN_GPSLNG,
+                singleForm.COLUMN_GPSTIME,
+                singleForm.COLUMN_GPSACC,
+                singleForm.COLUMN_DEVICEID,
+                singleForm.COLUMN_SYNCED,
+                singleForm.COLUMN_SYNCED_DATE
         };
         String whereClause = singleForm.COLUMN_SYNCED + " is null OR " + singleForm.COLUMN_SYNCED + " = ''";
         String[] whereArgs = null;
@@ -321,10 +355,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleForm._ID,
-                singleForm.COLUMN_MNA4,
-                singleForm.COLUMN_MNA5,
-                singleForm.COLUMN_MNA7,
+                singleForm._ID
         };
 
         String whereClause = singleForm.COLUMN_MNA1 + " LIKE ?";
@@ -529,7 +560,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(singleForm.COLUMN_MNA7, AppMain.fc.getiStatus());
+//        values.put(singleForm.COLUMN_MNA7, AppMain.fc.getiStatus());
 
 
         // Which row to update, based on the ID

@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.cbt_child_recruitment;
+package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +23,8 @@ import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
+import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 public class SectionMActivity extends AppCompatActivity {

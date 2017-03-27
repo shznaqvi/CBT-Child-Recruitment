@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.cbt_child_recruitment;
+package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,6 +22,8 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
+import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
 public class SectionHActivity extends Activity {
 

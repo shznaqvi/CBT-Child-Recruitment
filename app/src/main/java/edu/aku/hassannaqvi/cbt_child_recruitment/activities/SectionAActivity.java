@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.cbt_child_recruitment;
+package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -21,6 +20,8 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
+import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
 public class SectionAActivity extends Activity {
 
@@ -112,10 +113,6 @@ public class SectionAActivity extends Activity {
     EditText cra03;
     @BindView(R.id.btnNext)
     Button btnNext;
-    @BindView(R.id.cravillage)
-    Spinner cravillage;
-    @BindView(R.id.crauc)
-    Spinner crauc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -266,17 +263,6 @@ public class SectionAActivity extends Activity {
 
         Toast.makeText(this, "Validating Section A", Toast.LENGTH_SHORT).show();
 
-        //================ Q 3==================
-        if (cra03.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra03), Toast.LENGTH_SHORT).show();
-            cra03.setError("This data is Required!");
-
-            Log.i(TAG, "cra03: This Data is Required!");
-            return false;
-        } else {
-            cra03.setError(null);
-        }
-
         //======================= Q 1 ===============
         if (cra01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra01), Toast.LENGTH_SHORT).show();
@@ -301,7 +287,16 @@ public class SectionAActivity extends Activity {
             }
 
             if (cra0201.isChecked()) {
+                //================ Q 3==================
+                if (cra03.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra03), Toast.LENGTH_SHORT).show();
+                    cra03.setError("This data is Required!");
 
+                    Log.i(TAG, "cra03: This Data is Required!");
+                    return false;
+                } else {
+                    cra03.setError(null);
+                }
 
                 //================= Q4================
                 if (cra04.getCheckedRadioButtonId() == -1) {
@@ -591,8 +586,6 @@ public class SectionAActivity extends Activity {
 
         JSONObject sa = new JSONObject();
 
-        sa.put("cravillage", cravillage.getSelectedItem().toString());
-        sa.put("crauc", crauc.getSelectedItem().toString());
         sa.put("cra01", cra0101.isChecked() ? "1" : cra0102.isChecked() ? "2" : "0");
         sa.put("cra02", cra0201.isChecked() ? "1" : cra0202.isChecked() ? "2" : "0");
         sa.put("cra03", cra03.getText().toString());
