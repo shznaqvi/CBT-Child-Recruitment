@@ -29,7 +29,7 @@
             android:background="@color/colorHeading"
             android:text="@string/crbheading"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -51,6 +51,7 @@
             android:id="@+id/crb01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             android:hint="@string/crb01" />
 
@@ -88,6 +89,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/crb03" />
 
+
         <DatePicker
             android:id="@+id/crb03"
             android:layout_width="match_parent"
@@ -97,6 +99,7 @@
             android:datePickerMode="spinner"
             android:ems="10"
             android:spinnersShown="true" />
+
 
         <TextView
             android:layout_width="match_parent"
@@ -108,6 +111,7 @@
             android:id="@+id/crb0401"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:hint="@string/crb0401"
             android:inputType="number"
             android:maxLength="2" />
@@ -116,6 +120,7 @@
             android:id="@+id/crb0402"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:hint="@string/crb0402"
             android:inputType="number"
             android:maxLength="2" />
@@ -158,6 +163,7 @@
             android:id="@+id/crb0601"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:hint="@string/crb0601"
             android:inputType="number"
             android:maxLength="2" />
@@ -206,6 +212,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:layout_marginTop="1dp"
             android:hint="@string/kg"
             android:inputType="numberDecimal"
             android:maxLength="5" />
@@ -215,6 +222,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
+            android:layout_marginTop="32dp"
             android:background="@color/colorPrimaryDark" />
 
         <TextView
@@ -225,7 +233,7 @@
             android:background="@color/colorHeading"
             android:text="@string/crcheading"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -241,50 +249,102 @@
             android:layout_marginTop="16dp"
             android:text="@string/crc01" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crcsubM1"
-            android:textColor="@color/colorPrimaryDark" />
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/crc01m1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/cm"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="#e0f2f1"
+                android:text="@string/crcsubM1"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crcsubM2"
-            android:textColor="@color/colorPrimaryDark" />
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
 
-        <EditText
-            android:id="@+id/crc01m2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/cm"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="#e0f2f1"
+                android:text="@string/crcsubM2"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crcsubM3"
-            android:textColor="@color/colorPrimaryDark" />
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
 
-        <EditText
-            android:id="@+id/crc01m3"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="#e0f2f1"
+                android:text="@string/crcsubM3"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cm"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/crc01m1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:hint="@string/cm"
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+
+            <EditText
+                android:id="@+id/crc01m2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:hint="@string/cm"
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+
+            <EditText
+                android:id="@+id/crc01m3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:hint="@string/cm"
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -292,51 +352,102 @@
             android:layout_marginTop="16dp"
             android:text="@string/crc02" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crcsubM1"
-            android:textColor="@color/colorPrimaryDark" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="#e0f2f1"
+                android:text="@string/crcsubM1"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="#e0f2f1"
+                android:text="@string/crcsubM2"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="#e0f2f1"
+                android:text="@string/crcsubM3"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
 
         <EditText
             android:id="@+id/crc02m1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_weight="1"
             android:hint="@string/kg"
             android:inputType="numberDecimal"
             android:maxLength="5" />
 
-        <TextView
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crcsubM2"
-            android:textColor="@color/colorPrimaryDark" />
 
-        <EditText
-            android:id="@+id/crc02m2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/kg"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
+            <EditText
+                android:id="@+id/crc02m2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:hint="@string/kg"
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crcsubM3"
-            android:textColor="@color/colorPrimaryDark" />
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
 
-        <EditText
-            android:id="@+id/crc02m3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/kg"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
+
+            <EditText
+                android:id="@+id/crc02m3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:hint="@string/kg"
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -344,55 +455,108 @@
             android:layout_marginTop="16dp"
             android:text="@string/crc03" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crcsubM1"
-            android:textColor="@color/colorPrimaryDark" />
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/crc03m1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/cm"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="#e0f2f1"
+                android:text="@string/crcsubM1"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crcsubM2"
-            android:textColor="@color/colorPrimaryDark" />
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
 
-        <EditText
-            android:id="@+id/crc03m2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/cm"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#efefef"
-            android:text="@string/crcsubM3"
-            android:textColor="@color/colorPrimaryDark" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="#e0f2f1"
+                android:text="@string/crcsubM2"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/crc03m3"
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="#e0f2f1"
+                android:text="@string/crcsubM3"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/cm"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/crc03m1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:hint="@string/cm"
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+
+            <EditText
+                android:id="@+id/crc03m2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:hint="@string/cm"
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+
+            <EditText
+                android:id="@+id/crc03m3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:hint="@string/cm"
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
+            android:layout_marginTop="46dp"
             android:background="@color/colorPrimaryDark" />
 
         <TextView
@@ -403,7 +567,7 @@
             android:background="@color/colorHeading"
             android:text="@string/crdheading"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -424,66 +588,77 @@
             android:id="@+id/crd0101"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="@string/crd0101" />
 
         <CheckBox
             android:id="@+id/crd0102"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="@string/crd0102" />
 
         <CheckBox
             android:id="@+id/crd0103"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="@string/crd0103" />
 
         <CheckBox
             android:id="@+id/crd0104"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="@string/crd0104" />
 
         <CheckBox
             android:id="@+id/crd0105"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="@string/crd0105" />
 
         <CheckBox
             android:id="@+id/crd0106"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="@string/crd0106" />
 
         <CheckBox
             android:id="@+id/crd0107"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="@string/crd0107" />
 
         <CheckBox
             android:id="@+id/crd0108"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="@string/crd0108" />
 
         <CheckBox
             android:id="@+id/crd0109"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="@string/none" />
 
         <CheckBox
             android:id="@+id/crd0196"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="@string/other" />
 
         <EditText
             android:id="@+id/crd0196x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
             android:maxLength="30"
@@ -626,6 +801,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
+                    android:layout_marginTop="1dp"
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
                     android:hint="@string/other"
                     android:maxLength="30"
@@ -637,6 +813,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
+            android:layout_marginTop="46dp"
             android:background="@color/colorPrimaryDark" />
 
         <TextView
@@ -647,7 +824,7 @@
             android:background="@color/colorHeading"
             android:text="@string/creheading"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -719,9 +896,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:background="@color/colorHeading"
+            android:background="#e0f2f1"
             android:text="@string/cre02"
-            android:textAlignment="textEnd"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -746,11 +922,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -764,12 +940,14 @@
                         android:id="@+id/cre0201b01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0201b02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -791,8 +969,10 @@
                 android:orientation="vertical">
 
                 <TextView
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -808,12 +988,14 @@
                         android:id="@+id/cre0201a01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0201a02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -842,10 +1024,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -859,12 +1042,14 @@
                         android:id="@+id/cre0202b01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0202b02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -888,6 +1073,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -903,12 +1089,14 @@
                         android:id="@+id/cre0202a01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0202a02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -924,7 +1112,6 @@
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/cre03"
-            android:textAlignment="textEnd"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -949,10 +1136,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -966,12 +1154,14 @@
                         android:id="@+id/cre0301b01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0301b02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -995,6 +1185,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -1010,12 +1201,14 @@
                         android:id="@+id/cre0301a01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0301a02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1028,7 +1221,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre03pcv" />
+            android:text="@string/cre03pcv"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1043,10 +1237,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -1060,12 +1255,14 @@
                         android:id="@+id/cre0302b01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0302b02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1089,6 +1286,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -1104,12 +1302,14 @@
                         android:id="@+id/cre0302a01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0302a02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1122,7 +1322,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/cre03opv" />
+            android:text="@string/cre03opv"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1137,10 +1338,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -1154,12 +1356,14 @@
                         android:id="@+id/cre0303b01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0303b02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1183,6 +1387,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -1198,12 +1403,14 @@
                         android:id="@+id/cre0303a01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0303a02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1219,7 +1426,6 @@
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/cre04"
-            android:textAlignment="textEnd"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -1244,10 +1450,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -1261,12 +1468,14 @@
                         android:id="@+id/cre0401b01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0401b02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1290,6 +1499,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -1305,12 +1515,14 @@
                         android:id="@+id/cre0401a01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0401a02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1339,10 +1551,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -1356,12 +1569,14 @@
                         android:id="@+id/cre0402b01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0402b02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1385,6 +1600,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -1400,12 +1616,14 @@
                         android:id="@+id/cre0402a01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0402a02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1434,10 +1652,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -1451,12 +1670,14 @@
                         android:id="@+id/cre0403b01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0403b02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1480,6 +1701,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -1495,12 +1717,14 @@
                         android:id="@+id/cre0403a01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/yes" />
 
                     <RadioButton
                         android:id="@+id/cre0403a02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
                         android:text="@string/no" />
 
                 </RadioGroup>
@@ -1516,7 +1740,6 @@
             android:layout_marginTop="16dp"
             android:background="@color/colorHeading"
             android:text="@string/cre05"
-            android:textAlignment="textEnd"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -1541,10 +1764,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -1587,6 +1811,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -1636,10 +1861,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -1682,6 +1908,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -1731,10 +1958,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -1777,6 +2005,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"
@@ -1826,10 +2055,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="67dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
+                    android:gravity="center"
                     android:text="@string/mother"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
@@ -1872,6 +2102,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:text="@string/card"
                     android:textAlignment="center"

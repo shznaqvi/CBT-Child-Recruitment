@@ -29,7 +29,7 @@
             android:background="@color/colorHeading"
             android:text="@string/crmheading"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -1951,7 +1951,7 @@
             android:background="@color/colorHeading"
             android:text="@string/crnheading"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />

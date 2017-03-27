@@ -29,7 +29,7 @@
             android:background="@color/colorHeading"
             android:text="@string/crgheading"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -499,9 +499,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#efefef"
+            android:layout_marginTop="16dp"
+            android:background="#e0f2f1"
             android:text="@string/crg08"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
