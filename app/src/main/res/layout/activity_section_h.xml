@@ -28,7 +28,7 @@
             android:background="@color/colorHeading"
             android:text="@string/crhheading"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
@@ -351,6 +351,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
+            android:layout_marginTop="32dp"
             android:background="@color/colorPrimaryDark" />
 
         <TextView
@@ -361,7 +362,7 @@
             android:background="@color/colorHeading"
             android:text="@string/criheading"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif"
@@ -834,6 +835,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
+            android:layout_marginTop="32dp"
             android:background="@color/colorPrimaryDark" />
 
 
@@ -845,7 +847,7 @@
             android:background="@color/colorHeading"
             android:text="@string/crjheading"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif"
