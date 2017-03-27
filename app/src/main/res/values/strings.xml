@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CBT: Child Recruitment</string>
-    <string name="section_A"> سیکشن \'اے\': گھر کی شناخت </string>
+    <string name="section_A">  گھر کی شناخت </string>
 
     <string name="yes"> ہاں </string>
     <string name="no"> نہیں </string>
@@ -19,6 +19,8 @@
     اگر نہیں تواس گھر کو چھوڑ دیں اور لسٹ سے دوسرا گھر منتخب کریں۔
 اگر ہاں تو گھر کے کتنے افراد بینظیر انکم سپورٹ پروگرام سے استفادہ سے استفادہ کر رہےہیں۔</string>
     <string name="cra02"> جوابدہندہ کا مطالعے میں شامل ہونے کے لیے رضامندی ؟ </string>
+    <string name="crvillage">گاؤں / علاقے کا نام</string>
+    <string name="cruc">یونین کاؤنسل کا نام</string>
     <string name="cra03"> Child ID </string>
     <string name="cra0301"> Arm </string>
     <string name="cra0302"> Child </string>
@@ -45,7 +47,7 @@
     <string name="cra1601"> بچوں اور خاوند کے ساتھ رہتی ہے </string>
     <string name="cra1602"> مشترکہ خاندان /ساس اور سسر کے ساتھ </string>
     <string name="cra1603"> مشرتکہ خاندان / اپنے ماں پاب کے ساتھ </string>
-    <string name="crasub"> گھر کے تمام افراد اور مطالعے میں شامل افراد کی تعداد </string>
+    <string name="crasub">  سیکشن \'A\': گھر کے تمام افراد اور مطالعے میں شامل افراد کی تعداد </string>
     <string name="cra17"> 6 ماہ سے کم عمر بچے </string>
     <string name="cra18"> 6سے 23 ماہ کے بچے </string>
     <string name="cra19"> 24سے 59 ماہ کے بچے </string>
@@ -54,7 +56,7 @@
     <string name="cra22"> بالغ مرد </string>
     <string name="cra23"> بالغ عورتیں </string>
     <string name="cra24"> خاندان کے کل افراد </string>
-    <string name="crbheading"> بچے کی معلومات </string>
+    <string name="crbheading"> سیکشن \'B\': بچے کی معلومات </string>
     <string name="crb01"> بچے کا نام </string>
     <string name="crb02"> بچے کی جنس </string>
     <string name="crb0201"> مرد </string>
@@ -69,7 +71,7 @@
     <string name="crb07"> کیا بچے کی پیدائشی وزن کی گیا تھا ؟ </string>
     <string name="crb08"> کتنا وزن تھا ؟ </string>
     <string name="kg"> کلوگرام </string>
-    <string name="crcheading"> بچوں کی پیمائش </string>
+    <string name="crcheading">سیکشن \'C\': بچوں کی پیمائش </string>
     <string name="crcsubM1"> Measurement 1 </string>
     <string name="crcsubM2"> Measurement 2 </string>
     <string name="crcsubM3"> Measurement 3 </string>
@@ -77,7 +79,7 @@
     <string name="crc02"> وزن </string>
     <string name="crc03"> بائیں بازو کے اوپری حصے کی گولائی </string>
     <string name="cm"> cm </string>
-    <string name="crdheading"> بچے کی بیماریاںاور ان کا علاج </string>
+    <string name="crdheading">سیکشن \'D\': بچے کی بیماریاں اور ان کا علاج </string>
     <string name="crd01"> کیا بچہ پہچھلے دو ہفتوں کے دوران کسی بیماری میں مبتلہ رہا ہے ؟
     (اس کے علاوہ کوئی اور؟) </string>
     <string name="crd0101"> High grade fever </string>
@@ -88,8 +90,8 @@
     <string name="crd0106"> Skin infection </string>
     <string name="crd0107"> Worms in stool </string>
     <string name="crd0108"> Rashes </string>
-    <string name="crd02"> کیا آپ نےپہچھلے دو ہفتوں میں کسی بیماری کا علاج کروایا؟ </string>
-    <string name="crd03"> پہچھلے دو ہفتوںمیں ان میں سے کسی بیماری کا علاج کس سے کروایا؟ </string>
+    <string name="crd02"> کیا آپ نے پچھلے دو ہفتوں میں کسی بیماری کا علاج کروایا؟ </string>
+    <string name="crd03"> پچھلے دو ہفتوں میں ان میں سے کسی بیماری کا علاج کس سے کروایا؟ </string>
     <string name="crdHP"> صحت کے زمہ دار </string>
     <string name="crd0301"> ڈاکٹر </string>
     <string name="crd0302"> نرس /دائی/لیڈی ہیلتھ وسیٹر </string>
@@ -100,7 +102,7 @@
     <string name="crd0306"> ہمیوپیھتک </string>
     <string name="crd0307"> حکیم </string>
     <string name="crd0308"> کمپوڈر/ڈسپنسر </string>
-    <string name="creheading"> Child Vaccination Status </string>
+    <string name="creheading"> Section E: Child Vaccination Status  </string>
     <string name="cre01"> کیا کبھی بچے نے کسی بیماری کی ویکسین لگوائی ہے بشمول پولیو کی قومی مہم کے دوران
     اگر کارڈ موجود ہے تو اس میں سے کس طرح کی ویکسینز لگوائی ہیں درج کریں۔ </string>
     <string name="cre01a">کیا کارڈ موجود ہے؟</string>
@@ -122,7 +124,7 @@
     <string name="cre05pcv"> PCV 3 </string>
     <string name="cre05opv"> OPV 3 </string>
     <string name="cre05ipv"> IPV </string>
-    <string name="crfheading"> Infant and Young Child Feeding (IYCF) (WHO Standards) </string>
+    <string name="crfheading"> Section F: Infant and Young Child Feeding (IYCF) (WHO Standards) </string>
     <string name="crf01"> کیا آپ نے بچے کو ماں کا دودھ دیا؟ </string>
     <string name="crf01a"> کبھی کبھار بچوں کو مختلف طریقے سے دودہ پلاپا جاتاہے۔مثال کے طور پر چمچ کے ذریعئے،کپ یا بوتل میں۔یہ اس وقت ہوتا ہے جب بچیہ ہمیشہ ماں کے پاس نہیں ہوتا ہے۔کبھی کبھار دوسری عورت بچے کو دودھ پلاتی ہے۔یہ اس وقت ہوتا ہے جب ماں اپنے بچے کو دودھ نہیں پلا سکتی ہے۔
     کیا بچے کو کل دن یا رات کے وقت ان میں سے کسی طریقے سے دودھ پلایا گیا؟ </string>
@@ -181,7 +183,7 @@
     <string name="crf14"> کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نےبچوں کے لیے بننے ہوئے دودھ کا استعمال کیا تھا /کی تھی؟ </string>
     <string name="crf15"> کس عمر سے اضافی خوراک شروع کی ہے ؟ </string>
     <string name="crf1501"> عمر مہینوں میں </string>
-    <string name="crgheading"> Household Socioeconomic Information </string>
+    <string name="crgheading"> Section G: Household Socioeconomic Information </string>
     <string name="crg01"> آپ کی مادری زبان کیا ہے؟ </string>
     <string name="crg0101"> اردو </string>
     <string name="crg0102"> پنجابی </string>
@@ -354,7 +356,7 @@
     <string name="crg22a01"> پنجاب میں</string>
     <string name="crg22a02"> پنجاب سے باہر </string>
     <string name="crg22a03"> بیرون ملک </string>
-    <string name="crhheading"> H. Hand Washing (MICS + UNICEF Manuals) </string>
+    <string name="crhheading"> Section H: Hand Washing (MICS + UNICEF Manuals) </string>
     <string name="crh01"> براہ مہربانی وہ جگہ دیکھا ئیں جہاں آپ اور آپ کے گھروالے اکثر ہاتھ دھوتے ہیں؟ </string>
     <string name="crh0101"> مشاہدہ کیا </string>
     <string name="crh0102"> مشاہدہ نہیں کیا </string>
@@ -386,7 +388,7 @@
     <string name="crh0607"> بچے کی نیپی تبدیل کرنے کے بعد </string>
     <string name="crh0608"> بچوں کی گندگی کی صفا ئی کے بعد </string>
     <string name="crh0609"> لیٹرین استعمال کرنے کے بعد </string>
-    <string name="criheading"> EXPENDITURES </string>
+    <string name="criheading"> Section I: EXPENDITURES </string>
     <string name="cri01"> نیچے دئیے ہوئے چیزوں پرآپ کے گھر والے ہفتہ وار کتنے خرچ کرتے ہیں ؟ </string>
     <string name="cri01a"> روٹی؍آٹا ؍چاول؍دالیں؍اناج </string>
     <string name="cri01b"> تازہ سبزیاں </string>
@@ -416,7 +418,7 @@
     <string name="cri02l"> سماجی تقریبات،تہوار </string>
     <string name="cri03"> گزشتہ ہفتے جو کھا نا آپ نے اپنے پیداوار سے کھا ئیں ان کی قیمت روپوں میں کتنی ہوگی؟ </string>
     <string name="cri04"> Do you know any family member(s) of your household consumed meals or snacks outside your home during last week? </string>
-    <string name="crjheading"> ASSISTANCE/EXPOSURE TO INTERVENTIONS </string>
+    <string name="crjheading"> Section J: ASSISTANCE/EXPOSURE TO INTERVENTIONS </string>
     <string name="crj01"> پچھلے 3 مہینے میں آپ کے گھر میں کوئی مدد حاصل کی تھی؟
     ایک ایک کر کے پوچھو </string>
     <string name="bnf"> Number of Beneficiaries </string>
@@ -433,7 +435,7 @@
     <string name="crj01j"> تعلیمی کے امداد (فیس،وردی، کتابیں) </string>
     <string name="crj01k"> زرعی کوشش (بیج،کھاد،اوزار) </string>
     <string name="crj01l"> جانوروں کے لئے مصنوعات </string>
-    <string name="crkheading"> KNOWLEDGE ATTITUDE AND PRACTICES REGARDING MICRONUTRIENTS (Selected Mother) </string>
+    <string name="crkheading"> Section K : KNOWLEDGE ATTITUDE AND PRACTICES REGARDING MICRONUTRIENTS (Selected Mother) </string>
     <string name="crka"> منتخب شدہ عورت کا نام اور سیر یل نمبر خاندانی معلومات سےلیں۔ </string>
     <string name="crka01"> نام </string>
     <string name="crk01"> کیا آپ نے کبھی وٹامن کے بارے میں سنا ہے؟وٹامن کے گولیوں کے پیکٹ دیکھا ٗ ئیں۔ </string>
@@ -479,7 +481,7 @@
     <string name="crk1106"> Ill effects on health </string>
     <string name="crk12"> کیا آپ اپنے گھر میں کوئی غذا ئی اجزأ ملے ہویے مصنوعا ت استعمال کرتے ہیں؟ (مکس کیا ہواآٹا،گھی ،تیل، دودھ وغیرہ) </string>
     <string name="crk13"> اگر ہاں تو نام بتائیں </string>
-    <string name="crlHeading"> L. REPRODUCTIVE HISTORY OF SELECTED MOTHER </string>
+    <string name="crlHeading"> Section L: REPRODUCTIVE HISTORY OF SELECTED MOTHER </string>
     <string name="crl01"> کیا آپ اس وقت حمل سے ہیں؟ </string>
     <string name="crl0103"> یقینی نہیں۔ </string>
     <string name="crl02"> حمل کتنے مہینے کی ہے؟ مکمل مہینے لکھیں۔ </string>
@@ -541,7 +543,7 @@
     <string name="crl1306"> ہمیوپیتھک </string>
     <string name="crl1307"> حکیم </string>
     <string name="crl1308"> ڈسپینسر/کمپوڈر </string>
-    <string name="crmheading"> غذا کا استعمال اور کھپت اور خرچ کا شمار </string>
+    <string name="crmheading">  سیکشن \'M\': غذا کا استعمال اور کھپت اور خرچ کا شمار </string>
     <string name="crmheadingsub"> آپ کے گھر والوں نے گزشتہ کتنے دن نیچے دی گئی اشیاء گھر پر بنائی یا لائی اور اس کا ذریعہ یا وسیلہ کیا تھا ؟ </string>
     <string name="crm01a"> پہچلے 7دنوں میں کھانے کا ریکادڑ </string>
     <string name="crm01b"> پہچلے 7 دنوں میں کھانے حاصل کرنے کے لیے اہم اور بنیادی زریعہ لکھیں </string>
@@ -572,7 +574,7 @@
     <string name="crmfood08"> کھانے پینے کی اشیاء یا مزدوری کا تبادلہ </string>
     <string name="crmfood09"> دوستوں یا رشتہ داروں کی طرف سے خوراک کا تحفہ </string>
     <string name="crmfood10"> مشرے یا این جی اہ ، غیر سرکاری تنزیموں یا اعلمی ادارہ خوراک کی طرف سے امداد </string>
-    <string name="crnheading"> Births and Deaths in the Last One Year </string>
+    <string name="crnheading"> Section N : Births and Deaths in the Last One Year </string>
     <string name="crnheadingsub"> پہچلے سال جنوری سے دسمبر 2016 تک آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مایئں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
     <string name="crna"> Indicators </string>
     <string name="crnb"> Statistics

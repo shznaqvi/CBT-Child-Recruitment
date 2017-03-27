@@ -15,18 +15,78 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimaryDark" />
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:background="@color/colorHeading"
             android:text="@string/section_A"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crvillage" />
+
+        <Spinner
+            android:id="@+id/cravillage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:prompt="@string/crvillage"
+            android:textSize="24sp">
+
+        </Spinner>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cruc" />
+
+        <Spinner
+            android:id="@+id/crauc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:prompt="@string/cruc"
+            android:textSize="24sp">
+
+        </Spinner>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cra03" />
+
+        <EditText
+            android:id="@+id/cra03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789:"
+            android:hint="@string/cra03"
+            android:inputType="number"
+            android:maxLength="5" />
+
 
         <TextView
             android:layout_width="match_parent"
@@ -97,20 +157,6 @@
                     android:orientation="vertical"
                     android:visibility="visible">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="@string/cra03" />
-
-                    <EditText
-                        android:id="@+id/cra03"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789:"
-                        android:hint="@string/cra03"
-                        android:inputType="number"
-                        android:maxLength="5" />
 
 
                     <TextView
@@ -367,22 +413,33 @@
                             android:id="@+id/cra1603"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
+                            android:layout_marginBottom="16dp"
                             android:text="@string/cra1603" />
 
                     </RadioGroup>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorPrimaryDark" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
                         android:background="@color/colorHeading"
                         android:text="@string/crasub"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimaryDark"
+                        android:textSize="30sp"
                         android:textStyle="bold"
                         tools:typeface="serif" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorPrimaryDark" />
 
                     <TextView
                         android:layout_width="match_parent"
