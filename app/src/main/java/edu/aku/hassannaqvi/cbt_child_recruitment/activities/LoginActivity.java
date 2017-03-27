@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.cbt_child_recruitment;
+package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -42,6 +42,9 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
+import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
+import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
 
 /**

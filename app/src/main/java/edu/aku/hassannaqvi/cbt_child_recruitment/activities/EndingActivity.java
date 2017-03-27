@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.cbt_child_recruitment;
+package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import org.json.JSONException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
 public class EndingActivity extends Activity {
 
