@@ -83,7 +83,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleForm.COLUMN_GPSACC + " TEXT,"+
             singleForm.COLUMN_DEVICEID + " TEXT,"+
             singleForm.COLUMN_SYNCED + " TEXT,"+
-            singleForm.COLUMN_SYNCED_DATE + " TEXT,"
+            singleForm.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
     private static final java.lang.String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + singleForm.TABLE_NAME;
     private static final String SQL_DELETE_IMS =
