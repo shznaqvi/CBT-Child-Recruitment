@@ -449,9 +449,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Qa ====================
         if (crka.getText().toString().isEmpty()) {
-            Toast.makeText(this, "" + getString(R.string.crka), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crka), Toast.LENGTH_SHORT).show();
             crka.setError("This Data is Required");
-            Log.d(TAG, "This Data is Required: crka ");
+            Log.d(TAG, "crka : This Data is Required ");
             return false;
         } else {
             crka.setError(null);
@@ -459,9 +459,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q1 ====================
         if (crk01.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk01), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk01), Toast.LENGTH_SHORT).show();
             crk0199.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk01 ");
+            Log.d(TAG, "crk01 :This Data is Required");
             return false;
         } else {
             crk0199.setError(null);
@@ -469,9 +469,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q2a ====================
         if (crk02a.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk02a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk02a), Toast.LENGTH_SHORT).show();
             crk02a02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk02a ");
+            Log.d(TAG, "crk02a :This Data is Required ");
             return false;
         } else {
             crk02a02.setError(null);
@@ -479,9 +479,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q2b ====================
         if (crk02b.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk02b), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk02b), Toast.LENGTH_SHORT).show();
             crk02b02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk02b ");
+            Log.d(TAG, "crk02b : This Data is Required ");
             return false;
         } else {
             crk02b02.setError(null);
@@ -489,9 +489,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q2c ====================
         if (crk02c.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk02c), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk02c), Toast.LENGTH_SHORT).show();
             crk02c02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk02c ");
+            Log.d(TAG, "crk02c :This Data is Required");
             return false;
         } else {
             crk02c02.setError(null);
@@ -499,9 +499,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q2d ====================
         if (crk02d.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk02d), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk02d), Toast.LENGTH_SHORT).show();
             crk02d02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk02d ");
+            Log.d(TAG, "crk02d :This Data is Required ");
             return false;
         } else {
             crk02d02.setError(null);
@@ -509,9 +509,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q2e ====================
         if (crk02e.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk02e), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk02e), Toast.LENGTH_SHORT).show();
             crk02e02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk02e ");
+            Log.d(TAG, "crk02e :This Data is Required");
             return false;
         } else {
             crk02e02.setError(null);
@@ -519,9 +519,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q3 ====================
         if (crk03.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk03), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk03), Toast.LENGTH_SHORT).show();
             crk0399.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk03 ");
+            Log.d(TAG, "crk03 :This Data is Required");
             return false;
         } else {
             crk0399.setError(null);
@@ -530,9 +530,9 @@ public class SectionKActivity extends Activity {
         if (crk0301.isChecked()) {
             // =================== Q4a ====================
             if (crk04a.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crk04a), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk04a), Toast.LENGTH_SHORT).show();
                 crk04a02.setError("This Data is Required");
-                Log.d(TAG, "not selected: crk04a ");
+                Log.d(TAG, "crk04a :This Data is Required");
                 return false;
             } else {
                 crk04a02.setError(null);
@@ -540,9 +540,9 @@ public class SectionKActivity extends Activity {
 
             // =================== Q4b ====================
             if (crk04b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crk04b), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk04b), Toast.LENGTH_SHORT).show();
                 crk04b02.setError("This Data is Required");
-                Log.d(TAG, "not selected: crk04b ");
+                Log.d(TAG, "crk04b :This Data is Required");
                 return false;
             } else {
                 crk04b02.setError(null);
@@ -551,9 +551,9 @@ public class SectionKActivity extends Activity {
 
             // =================== Q4others ====================
             if (crk0496.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.other), Toast.LENGTH_SHORT).show();
                 crk049602.setError("This Data is Required");
-                Log.d(TAG, "not selected: crk0496 ");
+                Log.d(TAG, "crk0496 :This Data is Required ");
                 return false;
             } else {
                 crk049602.setError(null);
@@ -571,9 +571,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q5 ====================
         if (crk05.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk05), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk05), Toast.LENGTH_SHORT).show();
             crk0599.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk05 ");
+            Log.d(TAG, " crk05 :This Data is Required");
             return false;
         } else {
             crk0599.setError(null);
@@ -581,9 +581,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q6a ====================
         if (crk06a.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk06a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk06a), Toast.LENGTH_SHORT).show();
             crk06a02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk06a ");
+            Log.d(TAG, "crk06a : This Data is Required ");
             return false;
         } else {
             crk06a02.setError(null);
@@ -591,9 +591,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q6b ====================
         if (crk06b.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk06b), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk06b), Toast.LENGTH_SHORT).show();
             crk06b02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk06b ");
+            Log.d(TAG, "crk06b : This Data is Required ");
             return false;
         } else {
             crk06b02.setError(null);
@@ -601,9 +601,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q6c ====================
         if (crk06c.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk06c), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk06c), Toast.LENGTH_SHORT).show();
             crk06c02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk06c ");
+            Log.d(TAG, "crk06c : This Data is Required ");
             return false;
         } else {
             crk06c02.setError(null);
@@ -611,9 +611,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q6d ====================
         if (crk06d.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk06d), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk06d), Toast.LENGTH_SHORT).show();
             crk06d02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk06d ");
+            Log.d(TAG, " crk06d :This Data is Required");
             return false;
         } else {
             crk06d02.setError(null);
@@ -622,9 +622,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q7a ====================
         if (crk07a.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk07a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk07a), Toast.LENGTH_SHORT).show();
             crk07a02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk07a ");
+            Log.d(TAG, "crk07a : This Data is Required");
             return false;
         } else {
             crk07a02.setError(null);
@@ -632,9 +632,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q7b ====================
         if (crk07b.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk07b), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk07b), Toast.LENGTH_SHORT).show();
             crk07b02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk07b ");
+            Log.d(TAG, "crk07b : This Data is Required ");
             return false;
         } else {
             crk07b02.setError(null);
@@ -642,9 +642,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q7c ====================
         if (crk07c.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk07c), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk07c), Toast.LENGTH_SHORT).show();
             crk07c02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk07c ");
+            Log.d(TAG, "crk07c : This Data is Required ");
             return false;
         } else {
             crk07c02.setError(null);
@@ -652,9 +652,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q7d ====================
         if (crk07d.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk07d), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk07d), Toast.LENGTH_SHORT).show();
             crk07d02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk07d ");
+            Log.d(TAG, "crk07d :This Data is Required ");
             return false;
         } else {
             crk07d02.setError(null);
@@ -662,9 +662,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q7e ====================
         if (crk07d.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk07d), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk07d), Toast.LENGTH_SHORT).show();
             crk07d02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk07d ");
+            Log.d(TAG, "crk07d :This Data is Required");
             return false;
         } else {
             crk07d02.setError(null);
@@ -672,9 +672,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q7others ====================
         if (crk0796.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.other), Toast.LENGTH_SHORT).show();
             crk079602.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk0796 ");
+            Log.d(TAG, "crk0796 : This Data is Required ");
             return false;
         } else {
             crk079602.setError(null);
@@ -691,9 +691,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q8 ====================
         if (crk08.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk08), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk08), Toast.LENGTH_SHORT).show();
             crk0899.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk08 ");
+            Log.d(TAG, " crk08 : This Data is Required");
             return false;
         } else {
             crk0899.setError(null);
@@ -701,9 +701,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q9a ====================
         if (crk09a.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk09a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk09a), Toast.LENGTH_SHORT).show();
             crk09a02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk09a ");
+            Log.d(TAG, "crk09a : This Data is Required");
             return false;
         } else {
             crk09a02.setError(null);
@@ -711,9 +711,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q9b ====================
         if (crk09b.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk09b), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk09b), Toast.LENGTH_SHORT).show();
             crk09b02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk09b ");
+            Log.d(TAG, "crk09b :This Data is Required");
             return false;
         } else {
             crk09b02.setError(null);
@@ -721,9 +721,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q9c ====================
         if (crk09c.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk09c), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk09c), Toast.LENGTH_SHORT).show();
             crk09c02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk09c ");
+            Log.d(TAG, " crk09c : This Data is Required");
             return false;
         } else {
             crk09c02.setError(null);
@@ -731,9 +731,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q9d ====================
         if (crk09d.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk09d), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk09d), Toast.LENGTH_SHORT).show();
             crk09d02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk09d ");
+            Log.d(TAG, "crk09d :This Data is Required");
             return false;
         } else {
             crk09d02.setError(null);
@@ -741,9 +741,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q9e ====================
         if (crk09e.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk09e), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk09e), Toast.LENGTH_SHORT).show();
             crk09e02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk09e ");
+            Log.d(TAG, "crk09e :This Data is Required ");
             return false;
         } else {
             crk09e02.setError(null);
@@ -751,9 +751,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q9f ====================
         if (crk09f.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk09f), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk09f), Toast.LENGTH_SHORT).show();
             crk09f02.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk09f ");
+            Log.d(TAG, "crk09f : This Data is Required ");
             return false;
         } else {
             crk09f02.setError(null);
@@ -761,9 +761,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q9others ====================
         if (crk0996.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.other), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.other), Toast.LENGTH_SHORT).show();
             crk099602.setError("This Data is Required");
-            Log.d(TAG, "not selected: crk0996 ");
+            Log.d(TAG, "crk0996 :This Data is Required ");
             return false;
         } else {
             crk099602.setError(null);
@@ -780,9 +780,9 @@ public class SectionKActivity extends Activity {
 
         // =================== Q10 ====================
         if (crk10.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crk10), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk10), Toast.LENGTH_SHORT).show();
             crk1099.setError("This Data is Required");
-            Log.d(TAG, "crk10 : not selected ");
+            Log.d(TAG, "crk10 : This Data is Required ");
             return false;
         } else {
             crk1099.setError(null);
