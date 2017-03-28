@@ -100,14 +100,10 @@ public class SectionLActivity extends Activity {
     RadioButton crl0696;
     @BindView(R.id.crl0696x)
     EditText crl0696x;
-    @BindView(R.id.crl07)
-    RadioGroup crl07;
     @BindView(R.id.crl0701)
-    RadioButton crl0701;
+    EditText crl0701;
     @BindView(R.id.crl0799)
-    RadioButton crl0799;
-    @BindView(R.id.crl0701x)
-    EditText crl0701x;
+    CheckBox crl0799;
     @BindView(R.id.crl08)
     RadioGroup crl08;
     @BindView(R.id.crl0801)
@@ -231,8 +227,8 @@ public class SectionLActivity extends Activity {
                     crl0501x.setText(null);
                     crl06.clearCheck();
                     crl0696x.setText(null);
-                    crl07.clearCheck();
-                    crl0701x.setText(null);
+                    crl0701.setText(null);
+                    crl0799.setChecked(false);
                     crl08.clearCheck();
 
                 }
@@ -257,16 +253,38 @@ public class SectionLActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
+                    crl1201.setEnabled(false);
                     crl1201.setText(null);
+                    crl1202.setEnabled(false);
                     crl1202.setText(null);
+                    crl1203.setEnabled(false);
                     crl1203.setText(null);
+
                     crlGrp12.setVisibility(View.GONE);
+                    crl13.clearCheck();
+                    crl1396x.setText(null);
                 } else {
+                    crl1201.setEnabled(true);
+                    crl1202.setEnabled(true);
+                    crl1203.setEnabled(true);
                     crlGrp12.setVisibility(View.VISIBLE);
                 }
 
             }
         });
+
+        crl0799.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crl0701.setVisibility(View.GONE);
+                    crl0701.setText(null);
+                } else {
+                    crl0701.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
         
     }
 
@@ -323,23 +341,32 @@ public class SectionLActivity extends Activity {
         sl.put("crl01", crl0101.isChecked() ? "1" : crl0102.isChecked() ? "2" : crl0103.isChecked() ? "3" : "0");
         sl.put("crl02", crl02.getText().toString());
         sl.put("crl03", crl0301.isChecked() ? "1" : crl0302.isChecked() ? "2" : crl0399.isChecked() ? "3" : "0");
-        sl.put("crl04", crl0401.isChecked() ? "1" : crl0402.isChecked() ? "2" : crl0403.isChecked() ? "3" : crl0404.isChecked() ? "4" : crl0405.isChecked() ? "5" : crl0406.isChecked() ? "6" : crl0407.isChecked() ? "7" : crl0408.isChecked() ? "8" : crl0496.isChecked() ? "96" : "0");
+        sl.put("crl04", crl0401.isChecked() ? "1" : crl0402.isChecked() ? "2" : crl0403.isChecked() ? "3"
+                : crl0404.isChecked() ? "4" : crl0405.isChecked() ? "5" : crl0406.isChecked() ? "6" : crl0407.isChecked() ? "7"
+                : crl0408.isChecked() ? "8" : crl0496.isChecked() ? "96" : "0");
         sl.put("crl0496x", crl0496x.getText().toString());
         sl.put("crl05", crl0501.isChecked() ? "1" : crl0599.isChecked() ? "99" : "0");
         sl.put("crl0501x", crl0501x.getText().toString());
-        sl.put("crl06", crl0601.isChecked() ? "1" : crl0602.isChecked() ? "2" : crl0603.isChecked() ? "3" : crl0604.isChecked() ? "4" : crl0605.isChecked() ? "5" : crl0606.isChecked() ? "6" : "0");
-        sl.put("crl07", crl0701.isChecked() ? "1" : crl0799.isChecked() ? "99" : "0");
-        sl.put("crl0701x", crl0701x.getText().toString());
+        sl.put("crl06", crl0601.isChecked() ? "1" : crl0602.isChecked() ? "2" : crl0603.isChecked() ? "3"
+                : crl0604.isChecked() ? "4" : crl0605.isChecked() ? "5" : crl0606.isChecked() ? "6" : "0");
+        sl.put("crl0701", crl0701.getText().toString());
+        sl.put("crl0799", crl0799.isChecked() ? "1" : "0");
         sl.put("crl08", crl0801.isChecked() ? "1" : crl0802.isChecked() ? "2" : crl0899.isChecked() ? "99" : "0");
-        sl.put("crl09", crl0901.isChecked() ? "1" : crl0902.isChecked() ? "2" : crl0903.isChecked() ? "3" : crl0904.isChecked() ? "4" : crl0997.isChecked() ? "97" : crl0999.isChecked() ? "99" : "0");
-        sl.put("crl10", crl1001.isChecked() ? "1" : crl1002.isChecked() ? "2" : crl1003.isChecked() ? "3" : crl1004.isChecked() ? "4" : crl1005.isChecked() ? "5" : crl1006.isChecked() ? "6" : crl1096.isChecked() ? "96" : "0");
+        sl.put("crl09", crl0901.isChecked() ? "1" : crl0902.isChecked() ? "2" : crl0903.isChecked() ? "3"
+                : crl0904.isChecked() ? "4" : crl0997.isChecked() ? "97" : crl0999.isChecked() ? "99" : "0");
+        sl.put("crl10", crl1001.isChecked() ? "1" : crl1002.isChecked() ? "2" : crl1003.isChecked() ? "3"
+                : crl1004.isChecked() ? "4" : crl1005.isChecked() ? "5" : crl1006.isChecked() ? "6"
+                : crl1096.isChecked() ? "96" : "0");
         sl.put("crl1096x", crl1096x.getText().toString());
-        sl.put("crl11", crl1101.isChecked() ? "1" : crl1102.isChecked() ? "2" : crl1103.isChecked() ? "3" : crl1196.isChecked() ? "96" : "0");
+        sl.put("crl11", crl1101.isChecked() ? "1" : crl1102.isChecked() ? "2" : crl1103.isChecked() ? "3"
+                : crl1196.isChecked() ? "96" : "0");
         sl.put("crl1201", crl1201.getText().toString());
         sl.put("crl1202", crl1202.getText().toString());
         sl.put("crl1203", crl1203.getText().toString());
         sl.put("crl1204", crl1204.isChecked() ? "1" : "0");
-        sl.put("crl13", crl1301.isChecked() ? "1" : crl1302.isChecked() ? "2" : crl1303.isChecked() ? "3" : crl1304.isChecked() ? "4" : crl1305.isChecked() ? "5" : crl1306.isChecked() ? "6" : crl1307.isChecked() ? "7" : crl1308.isChecked() ? "8" : crl1396.isChecked() ? "96" : "0");
+        sl.put("crl13", crl1301.isChecked() ? "1" : crl1302.isChecked() ? "2" : crl1303.isChecked() ? "3" : crl1304.isChecked() ? "4"
+                : crl1305.isChecked() ? "5" : crl1306.isChecked() ? "6" : crl1307.isChecked() ? "7" : crl1308.isChecked() ? "8"
+                : crl1396.isChecked() ? "96" : "0");
 
 
         Toast.makeText(this, "Validation Succecful", Toast.LENGTH_SHORT).show();
@@ -439,7 +466,7 @@ public class SectionLActivity extends Activity {
 
 
             // =================== Q7 ====================
-            if (crl07.getCheckedRadioButtonId() == -1) {
+            if (crl0701.getText().toString().isEmpty() && !crl0799.isChecked()) {
                 Toast.makeText(this, "" + getString(R.string.crl07), Toast.LENGTH_SHORT).show();
                 crl0799.setError("This Data is Required");
                 Log.d(TAG, "not selected: crl07 ");
@@ -448,14 +475,7 @@ public class SectionLActivity extends Activity {
                 crl0799.setError(null);
             }
 
-            if (crl0701.isChecked() && crl0701x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crl07) + " - " + getString(R.string.crl0701), Toast.LENGTH_LONG).show();
-                crl0701x.setError("This data is Required!");    // Set Error on last radio button
-                Log.d(TAG, "cr0701x: This data is Required!");
-                return false;
-            } else {
-                crl0701x.setError(null);
-            }
+
 
             // =================== Q8 ====================
             if (crl08.getCheckedRadioButtonId() == -1) {
@@ -521,7 +541,8 @@ public class SectionLActivity extends Activity {
 
 
         // =================== Q12 ====================
-        if (crl1201.getText().toString().isEmpty()) {
+        if ((crl1201.getText().toString().isEmpty() || crl1202.getText().toString().isEmpty()
+                || crl1203.getText().toString().isEmpty()) && !crl1204.isChecked()) {
             Toast.makeText(this, "" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
             crl1201.setError("This Data is Required");
             Log.d(TAG, "not selected: crl12 ");
@@ -530,25 +551,18 @@ public class SectionLActivity extends Activity {
             crl1201.setError(null);
         }
 
-        if ((Integer.parseInt(crl1201.getText().toString()) < 1) || (Integer.parseInt(crl1201.getText().toString()) > 5)) {
+
+        if ((Integer.parseInt(crl1201.getText().toString()) < 1) || (Integer.parseInt(crl1201.getText().toString()) > 11)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1201), Toast.LENGTH_LONG).show();
-            crl1201.setError("Range is 1-5 months");
-            Log.i(TAG, "crl1201: Range is 1-5 months");
+            crl1201.setError("Range is 1-12 Hours");
+            Log.i(TAG, "crl1201: Range is 1-12 hours");
             return false;
         } else {
             crl1201.setError(null);
         }
 
-        if (crl1202.getText().toString().isEmpty()) {
-            Toast.makeText(this, "" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
-            crl1202.setError("This Data is Required");
-            Log.d(TAG, "not selected: crl1202 ");
-            return false;
-        } else {
-            crl1202.setError(null);
-        }
 
-        if ((Integer.parseInt(crl1202.getText().toString()) < 1) || (Integer.parseInt(crl1202.getText().toString()) > 30)) {
+        if ((Integer.parseInt(crl1202.getText().toString()) < 1) || (Integer.parseInt(crl1202.getText().toString()) > 29)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1202), Toast.LENGTH_LONG).show();
             crl1202.setError("Range is 1-30 days");
             Log.i(TAG, "crl1202: Range is 1-30 days");
@@ -557,33 +571,17 @@ public class SectionLActivity extends Activity {
             crl1202.setError(null);
         }
 
-        if (crl1203.getText().toString().isEmpty()) {
-            Toast.makeText(this, "" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
-            crl1203.setError("This Data is Required");
-            Log.d(TAG, "not selected: crl1203 ");
-            return false;
-        } else {
-            crl1203.setError(null);
-        }
 
         if ((Integer.parseInt(crl1203.getText().toString()) < 1) || (Integer.parseInt(crl1203.getText().toString()) > 20)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1203), Toast.LENGTH_LONG).show();
-            crl1203.setError("Range is 1-30 days");
-            Log.i(TAG, "crl1203: Range is 1-30 days");
+            crl1203.setError("Range is 1-20 days");
+            Log.i(TAG, "crl1203: Range is 1-20 days");
             return false;
         } else {
             crl1203.setError(null);
         }
 
 
-        if (!(crl1204.isChecked())) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crl12), Toast.LENGTH_LONG).show();
-            crl1204.setError("This data is Required!");    // Set Error on last radio button
-            Log.i(TAG, "crl1204: This data is Required!");
-            return false;
-        } else {
-            crl1204.setError(null);
-        }
 
         if (!(crl1204.isChecked())) {
             // =================== Q13 ====================

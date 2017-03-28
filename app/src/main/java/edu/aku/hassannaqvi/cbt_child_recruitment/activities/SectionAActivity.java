@@ -127,6 +127,7 @@ public class SectionAActivity extends Activity {
                 if (cra0101.isChecked()) {
                     fldGrpcra02.setVisibility(View.VISIBLE);
                     fldGrpcra03.setVisibility(View.VISIBLE);
+                    btnNext.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcra02.setVisibility(View.GONE);
                     fldGrpcra03.setVisibility(View.GONE);
@@ -166,6 +167,7 @@ public class SectionAActivity extends Activity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (cra0201.isChecked()) {
                     fldGrpcra03.setVisibility(View.VISIBLE);
+                    btnNext.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcra03.setVisibility(View.GONE);
                     btnNext.setVisibility(View.GONE);
