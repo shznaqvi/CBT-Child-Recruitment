@@ -350,9 +350,9 @@ public class SectionLActivity extends Activity {
 
         // =================== Q1 ====================
         if (crl01.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crl01), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl01), Toast.LENGTH_SHORT).show();
             crl0103.setError("This Data is Required");
-            Log.d(TAG, "not selected: crl01 ");
+            Log.d(TAG, "crl01:This Data is Required");
             return false;
         } else {
             crl0103.setError(null);
@@ -361,9 +361,9 @@ public class SectionLActivity extends Activity {
         if (crl0101.isChecked()) {
             // =================== Q2 ====================
             if (crl02.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.crl02), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl02), Toast.LENGTH_SHORT).show();
                 crl02.setError("This Data is Required");
-                Log.d(TAG, "not selected: crl02 ");
+                Log.d(TAG, "crl02 : This Data is Required");
                 return false;
             } else {
                 crl02.setError(null);
@@ -372,7 +372,7 @@ public class SectionLActivity extends Activity {
             if ((Integer.parseInt(crl02.getText().toString()) < 1) || (Integer.parseInt(crl02.getText().toString()) > 9)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.crl02) + getString(R.string.months), Toast.LENGTH_LONG).show();
                 crl02.setError("Range is 1-9 months");
-                Log.i(TAG, "fpb00201: Range is 1-9 months");
+                Log.i(TAG, "crl02: Range is 1-9 months");
                 return false;
             } else {
                 crl02.setError(null);
@@ -380,9 +380,9 @@ public class SectionLActivity extends Activity {
         }
         // =================== Q3 ====================
         if (crl03.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crl03), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl03), Toast.LENGTH_SHORT).show();
             crl0399.setError("This Data is Required");
-            Log.d(TAG, "not selected: crl03 ");
+            Log.d(TAG, "crl03: This Data is Required ");
             return false;
         } else {
             crl0399.setError(null);
@@ -391,9 +391,9 @@ public class SectionLActivity extends Activity {
         if (crl0301.isChecked()) {
             // =================== Q4 ====================
             if (crl04.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crl04), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl04), Toast.LENGTH_SHORT).show();
                 crl0496.setError("This Data is Required");
-                Log.d(TAG, "not selected: crl04 ");
+                Log.d(TAG, "crl04 : This Data is Required");
                 return false;
             } else {
                 crl0496.setError(null);
@@ -410,9 +410,9 @@ public class SectionLActivity extends Activity {
 
             // =================== Q5 ====================
             if (crl05.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crl05), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl05), Toast.LENGTH_SHORT).show();
                 crl0599.setError("This Data is Required");
-                Log.d(TAG, "not selected: crl05 ");
+                Log.d(TAG, "crl05 :This Data is Required");
                 return false;
             } else {
                 crl0599.setError(null);
@@ -429,9 +429,9 @@ public class SectionLActivity extends Activity {
 
             // =================== Q6 ====================
             if (crl06.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crl06), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl06), Toast.LENGTH_SHORT).show();
                 crl0696.setError("This Data is Required");
-                Log.d(TAG, "not selected: crl06 ");
+                Log.d(TAG, "crl06:This Data is Required");
                 return false;
             } else {
                 crl0696.setError(null);
@@ -440,9 +440,9 @@ public class SectionLActivity extends Activity {
 
             // =================== Q7 ====================
             if (crl07.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crl07), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl07), Toast.LENGTH_SHORT).show();
                 crl0799.setError("This Data is Required");
-                Log.d(TAG, "not selected: crl07 ");
+                Log.d(TAG, "crl07 :This Data is Required");
                 return false;
             } else {
                 crl0799.setError(null);
@@ -459,9 +459,9 @@ public class SectionLActivity extends Activity {
 
             // =================== Q8 ====================
             if (crl08.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crl08), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl08), Toast.LENGTH_SHORT).show();
                 crl0899.setError("This Data is Required");
-                Log.d(TAG, "not selected: crl08 ");
+                Log.d(TAG, " crl08 :This Data is Required");
                 return false;
             } else {
                 crl0899.setError(null);
@@ -471,9 +471,9 @@ public class SectionLActivity extends Activity {
             if (crl0801.isChecked()) {
                 // =================== Q9 ====================
                 if (crl09.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "" + getString(R.string.crl09), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl09), Toast.LENGTH_SHORT).show();
                     crl0999.setError("This Data is Required");
-                    Log.d(TAG, "not selected: crl09 ");
+                    Log.d(TAG, "crl09 : This Data is Required");
                     return false;
                 } else {
                     crl0999.setError(null);
@@ -482,9 +482,9 @@ public class SectionLActivity extends Activity {
         }
         // =================== Q10 ====================
         if (crl10.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crl10), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl10), Toast.LENGTH_SHORT).show();
             crl1096.setError("This Data is Required");
-            Log.d(TAG, "not selected: crl10 ");
+            Log.d(TAG, "crl10 : This Data is Required");
             return false;
         } else {
             crl1096.setError(null);
@@ -502,9 +502,9 @@ public class SectionLActivity extends Activity {
 
         // =================== Q11 ====================
         if (crl11.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crl11), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl11), Toast.LENGTH_SHORT).show();
             crl1196.setError("This Data is Required");
-            Log.d(TAG, "not selected: crl11 ");
+            Log.d(TAG, "crl11 : This Data is Required ");
             return false;
         } else {
             crl1196.setError(null);
@@ -522,9 +522,9 @@ public class SectionLActivity extends Activity {
 
         // =================== Q12 ====================
         if (crl1201.getText().toString().isEmpty()) {
-            Toast.makeText(this, "" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
             crl1201.setError("This Data is Required");
-            Log.d(TAG, "not selected: crl12 ");
+            Log.d(TAG, "crl12 :This Data is Required");
             return false;
         } else {
             crl1201.setError(null);
@@ -540,9 +540,9 @@ public class SectionLActivity extends Activity {
         }
 
         if (crl1202.getText().toString().isEmpty()) {
-            Toast.makeText(this, "" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
             crl1202.setError("This Data is Required");
-            Log.d(TAG, "not selected: crl1202 ");
+            Log.d(TAG, "crl1202 : This Data is Required");
             return false;
         } else {
             crl1202.setError(null);
@@ -558,9 +558,9 @@ public class SectionLActivity extends Activity {
         }
 
         if (crl1203.getText().toString().isEmpty()) {
-            Toast.makeText(this, "" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
             crl1203.setError("This Data is Required");
-            Log.d(TAG, "not selected: crl1203 ");
+            Log.d(TAG, "crl1203 :This Data is Required ");
             return false;
         } else {
             crl1203.setError(null);
@@ -588,9 +588,9 @@ public class SectionLActivity extends Activity {
         if (!(crl1204.isChecked())) {
             // =================== Q13 ====================
             if (crl13.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crl13), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl13), Toast.LENGTH_SHORT).show();
                 crl1396.setError("This Data is Required");
-                Log.d(TAG, "not selected: crl13 ");
+                Log.d(TAG, "crl13 :This Data is Required ");
                 return false;
             } else {
                 crl1396.setError(null);
