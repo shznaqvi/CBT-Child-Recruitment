@@ -27,11 +27,11 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
-import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncForms;
-import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncIMs;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetChildren;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetUsers;
+import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncForms;
+import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncIMs;
 
 public class MainActivity extends Activity {
 
@@ -112,7 +112,7 @@ public class MainActivity extends Activity {
     }
 
     public void openForm(View v) {
-        Intent oF = new Intent(this, SectionAActivity.class);
+        Intent oF = new Intent(this, SectionGActivity.class);
         startActivity(oF);
     }
 
