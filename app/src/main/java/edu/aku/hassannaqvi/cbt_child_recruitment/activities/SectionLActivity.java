@@ -74,14 +74,10 @@ public class SectionLActivity extends Activity {
     RadioButton crl0496;
     @BindView(R.id.crl0496x)
     EditText crl0496x;
-    @BindView(R.id.crl05)
-    RadioGroup crl05;
     @BindView(R.id.crl0501)
-    RadioButton crl0501;
+    EditText crl0501;
     @BindView(R.id.crl0599)
-    RadioButton crl0599;
-    @BindView(R.id.crl0501x)
-    EditText crl0501x;
+    CheckBox crl0599;
     @BindView(R.id.crl06)
     RadioGroup crl06;
     @BindView(R.id.crl0601)
@@ -223,8 +219,8 @@ public class SectionLActivity extends Activity {
                     crlGrp03.setVisibility(View.GONE);
                     crl04.clearCheck();
                     crl0496x.setText(null);
-                    crl05.clearCheck();
-                    crl0501x.setText(null);
+                    crl0501.setText(null);
+                    crl0599.setChecked(false);
                     crl06.clearCheck();
                     crl0696x.setText(null);
                     crl0701.setText(null);
@@ -253,20 +249,20 @@ public class SectionLActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    crl1201.setEnabled(false);
+                    crl1201.setVisibility(View.GONE);
                     crl1201.setText(null);
-                    crl1202.setEnabled(false);
+                    crl1202.setVisibility(View.GONE);
                     crl1202.setText(null);
-                    crl1203.setEnabled(false);
+                    crl1203.setVisibility(View.GONE);
                     crl1203.setText(null);
 
                     crlGrp12.setVisibility(View.GONE);
                     crl13.clearCheck();
                     crl1396x.setText(null);
                 } else {
-                    crl1201.setEnabled(true);
-                    crl1202.setEnabled(true);
-                    crl1203.setEnabled(true);
+                    crl1201.setVisibility(View.VISIBLE);
+                    crl1202.setVisibility(View.VISIBLE);
+                    crl1203.setVisibility(View.VISIBLE);
                     crlGrp12.setVisibility(View.VISIBLE);
                 }
 
@@ -281,6 +277,18 @@ public class SectionLActivity extends Activity {
                     crl0701.setText(null);
                 } else {
                     crl0701.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        crl0599.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crl0501.setVisibility(View.GONE);
+                    crl0501.setText(null);
+                } else {
+                    crl0501.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -345,8 +353,8 @@ public class SectionLActivity extends Activity {
                 : crl0404.isChecked() ? "4" : crl0405.isChecked() ? "5" : crl0406.isChecked() ? "6" : crl0407.isChecked() ? "7"
                 : crl0408.isChecked() ? "8" : crl0496.isChecked() ? "96" : "0");
         sl.put("crl0496x", crl0496x.getText().toString());
-        sl.put("crl05", crl0501.isChecked() ? "1" : crl0599.isChecked() ? "99" : "0");
-        sl.put("crl0501x", crl0501x.getText().toString());
+        sl.put("crl0501", crl0501.getText().toString());
+        sl.put("crl0599", crl0599.isChecked() ? "1" : "0");
         sl.put("crl06", crl0601.isChecked() ? "1" : crl0602.isChecked() ? "2" : crl0603.isChecked() ? "3"
                 : crl0604.isChecked() ? "4" : crl0605.isChecked() ? "5" : crl0606.isChecked() ? "6" : "0");
         sl.put("crl0701", crl0701.getText().toString());
@@ -396,7 +404,8 @@ public class SectionLActivity extends Activity {
                 crl02.setError(null);
             }
 
-            if ((Integer.parseInt(crl02.getText().toString()) < 1) || (Integer.parseInt(crl02.getText().toString()) > 9)) {
+            if ((Integer.parseInt(crl02.getText().toString().isEmpty() ? "0" : crl02.getText().toString()) < 1)
+                    || (Integer.parseInt(crl02.getText().toString().isEmpty() ? "0" : crl02.getText().toString()) > 9)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.crl02) + getString(R.string.months), Toast.LENGTH_LONG).show();
                 crl02.setError("Range is 1-9 months");
                 Log.i(TAG, "crl02: Range is 1-9 months");
@@ -436,7 +445,7 @@ public class SectionLActivity extends Activity {
             }
 
             // =================== Q5 ====================
-            if (crl05.getCheckedRadioButtonId() == -1) {
+            if (crl0501.getText().toString().isEmpty() && !crl0599.isChecked()) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl05), Toast.LENGTH_SHORT).show();
                 crl0599.setError("This Data is Required");
                 Log.d(TAG, "crl05 :This Data is Required");
@@ -445,14 +454,6 @@ public class SectionLActivity extends Activity {
                 crl0599.setError(null);
             }
 
-            if (crl0501.isChecked() && crl0501x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crl05) + " - " + getString(R.string.crl0501), Toast.LENGTH_LONG).show();
-                crl0501x.setError("This data is Required!");    // Set Error on last radio button
-                Log.d(TAG, "cr0501x: This data is Required!");
-                return false;
-            } else {
-                crl0501x.setError(null);
-            }
 
             // =================== Q6 ====================
             if (crl06.getCheckedRadioButtonId() == -1) {
@@ -541,8 +542,9 @@ public class SectionLActivity extends Activity {
 
 
         // =================== Q12 ====================
-        if ((crl1201.getText().toString().isEmpty() || crl1202.getText().toString().isEmpty()
-                || crl1203.getText().toString().isEmpty()) && !crl1204.isChecked()) {
+
+        if ((crl1201.getText().toString().isEmpty() && crl1202.getText().toString().isEmpty()
+                && crl1203.getText().toString().isEmpty() && !crl1204.isChecked())) {
             Toast.makeText(this, "" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
             crl1201.setError("This Data is Required");
             Log.d(TAG, "crl12 :This Data is Required");
@@ -552,7 +554,8 @@ public class SectionLActivity extends Activity {
         }
 
 
-        if ((Integer.parseInt(crl1201.getText().toString()) < 1) || (Integer.parseInt(crl1201.getText().toString()) > 11)) {
+        if ((Integer.parseInt(crl1201.getText().toString().isEmpty() ? "0" : crl1201.getText().toString()) < 1)
+                || (Integer.parseInt(crl1201.getText().toString().isEmpty() ? "0" : crl1201.getText().toString()) > 11)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1201), Toast.LENGTH_LONG).show();
             crl1201.setError("Range is 1-12 Hours");
             Log.i(TAG, "crl1201: Range is 1-12 hours");
@@ -562,7 +565,8 @@ public class SectionLActivity extends Activity {
         }
 
 
-        if ((Integer.parseInt(crl1202.getText().toString()) < 1) || (Integer.parseInt(crl1202.getText().toString()) > 29)) {
+        if ((Integer.parseInt(crl1202.getText().toString().isEmpty() ? "0" : crl1202.getText().toString()) < 1)
+                || (Integer.parseInt(crl1202.getText().toString().isEmpty() ? "0" : crl1202.getText().toString()) > 29)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1202), Toast.LENGTH_LONG).show();
             crl1202.setError("Range is 1-30 days");
             Log.i(TAG, "crl1202: Range is 1-30 days");
@@ -572,7 +576,8 @@ public class SectionLActivity extends Activity {
         }
 
 
-        if ((Integer.parseInt(crl1203.getText().toString()) < 1) || (Integer.parseInt(crl1203.getText().toString()) > 20)) {
+        if ((Integer.parseInt(crl1203.getText().toString().isEmpty() ? "0" : crl1203.getText().toString()) < 1)
+                || (Integer.parseInt(crl1203.getText().toString().isEmpty() ? "0" : crl1203.getText().toString()) > 20)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1203), Toast.LENGTH_LONG).show();
             crl1203.setError("Range is 1-20 days");
             Log.i(TAG, "crl1203: Range is 1-20 days");
@@ -580,7 +585,6 @@ public class SectionLActivity extends Activity {
         } else {
             crl1203.setError(null);
         }
-
 
 
         if (!(crl1204.isChecked())) {

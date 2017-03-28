@@ -240,34 +240,21 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/crl05" />
 
-            <RadioGroup
-                android:id="@+id/crl05"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/crl0501"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/crl0501" />
-
-                <RadioButton
-                    android:id="@+id/crl0599"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/dkn" />
-            </RadioGroup>
-
             <EditText
-                android:id="@+id/crl0501x"
+                android:id="@+id/crl0501"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:inputType="number"
-                android:maxLength="1"
-                android:visibility="gone" />
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/crl0501" />
+
+            <CheckBox
+                android:id="@+id/crl0599"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/dkn" />
+
 
             <TextView
                 android:layout_width="match_parent"
