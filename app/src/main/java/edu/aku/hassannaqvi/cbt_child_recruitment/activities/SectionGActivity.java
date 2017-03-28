@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -453,10 +454,8 @@ public class SectionGActivity extends Activity {
     EditText crg1801;
     @BindView(R.id.crg1802)
     EditText crg1802;
-    @BindView(R.id.crg18)
-    RadioGroup crg18;
     @BindView(R.id.crg1899)
-    RadioButton crg1899;
+    CheckBox crg1899;
     @BindView(R.id.crg19)
     RadioGroup crg19;
     @BindView(R.id.crg1901)
@@ -621,7 +620,7 @@ public class SectionGActivity extends Activity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     crgGrp17.setVisibility(View.GONE);
-                    crg18.clearCheck();
+                    crg1899.setChecked(false);
                     crg1801.setText(null);
                     crg1802.setText(null);
                 } else {
@@ -1515,42 +1514,23 @@ public class SectionGActivity extends Activity {
 
         if (crg1701.isChecked()) {
             // =================== Q1801 ====================
-            if (crg1801.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.crg1801), Toast.LENGTH_SHORT).show();
+            if ((crg1801.getText().toString().isEmpty() && crg1802.getText().toString().isEmpty()) || !crg1899.isChecked()) {
+                Toast.makeText(this, "ERROR(empty)" + getString(R.string.crg1801), Toast.LENGTH_SHORT).show();
                 crg1801.setError("This data is required");
-                Log.d(TAG, "empty: crg1801  ");
+                Log.d(TAG, "crg1801: This data is required  ");
                 return false;
             } else {
                 crg1801.setError(null);
             }
 
-            // =================== Q1802 ====================
-            if (crg1801.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.crg1801), Toast.LENGTH_SHORT).show();
-                crg1801.setError("This data is required");
-                Log.d(TAG, "empty: crg1801  ");
-                return false;
-            } else {
-                crg1801.setError(null);
-            }
-
-            // =================== Q1899 ====================
-            if (crg18.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crg18) + getString(R.string.dkn), Toast.LENGTH_SHORT).show();
-                crg1899.setError("This Data is required");
-                Log.d(TAG, "not selected :crg18 ");
-                return false;
-            } else {
-                crg1899.setError(null);
-            }
         }
 
         if (crg1901.isChecked()) {
             // =================== Q19 ====================
             if (crg19.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crg19), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty)" + getString(R.string.crg19), Toast.LENGTH_SHORT).show();
                 crg1902.setError("This Data is required");
-                Log.d(TAG, "not selected :crg19 ");
+                Log.d(TAG, "crg19 :This Data is required ");
                 return false;
             } else {
                 crg1902.setError(null);
