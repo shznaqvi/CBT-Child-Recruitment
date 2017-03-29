@@ -544,17 +544,17 @@ public class SectionLActivity extends Activity {
         // =================== Q12 ====================
 
         if ((crl1201.getText().toString().isEmpty() && crl1202.getText().toString().isEmpty()
-                && crl1203.getText().toString().isEmpty() && !crl1204.isChecked())) {
+                && crl1203.getText().toString().isEmpty()) && !crl1204.isChecked()) {
             Toast.makeText(this, "" + getString(R.string.crl12), Toast.LENGTH_SHORT).show();
-            crl1201.setError("This Data is Required");
+            crl1204.setError("This Data is Required");
             Log.d(TAG, "crl12 :This Data is Required");
             return false;
         } else {
-            crl1201.setError(null);
+            crl1204.setError(null);
         }
 
 
-        if ((Integer.parseInt(crl1201.getText().toString().isEmpty() ? "0" : crl1201.getText().toString()) < 1)
+        if ((Integer.parseInt(crl1201.getText().toString().isEmpty() ? "0" : crl1201.getText().toString()) < 0)
                 || (Integer.parseInt(crl1201.getText().toString().isEmpty() ? "0" : crl1201.getText().toString()) > 11)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1201), Toast.LENGTH_LONG).show();
             crl1201.setError("Range is 1-12 Hours");
@@ -565,7 +565,7 @@ public class SectionLActivity extends Activity {
         }
 
 
-        if ((Integer.parseInt(crl1202.getText().toString().isEmpty() ? "0" : crl1202.getText().toString()) < 1)
+        if ((Integer.parseInt(crl1202.getText().toString().isEmpty() ? "0" : crl1202.getText().toString()) < 0)
                 || (Integer.parseInt(crl1202.getText().toString().isEmpty() ? "0" : crl1202.getText().toString()) > 29)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1202), Toast.LENGTH_LONG).show();
             crl1202.setError("Range is 1-30 days");
@@ -576,11 +576,11 @@ public class SectionLActivity extends Activity {
         }
 
 
-        if ((Integer.parseInt(crl1203.getText().toString().isEmpty() ? "0" : crl1203.getText().toString()) < 1)
+        if ((Integer.parseInt(crl1203.getText().toString().isEmpty() ? "0" : crl1203.getText().toString()) < 0)
                 || (Integer.parseInt(crl1203.getText().toString().isEmpty() ? "0" : crl1203.getText().toString()) > 20)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crl12) + getString(R.string.crl1203), Toast.LENGTH_LONG).show();
-            crl1203.setError("Range is 1-20 days");
-            Log.i(TAG, "crl1203: Range is 1-20 days");
+            crl1203.setError("Range is 1-20 weeks");
+            Log.i(TAG, "crl1203: Range is 1-20 weeks");
             return false;
         } else {
             crl1203.setError(null);

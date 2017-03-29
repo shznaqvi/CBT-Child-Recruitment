@@ -1514,18 +1514,17 @@ public class SectionGActivity extends Activity {
 
         if (crg1701.isChecked()) {
             // =================== Q1801 ====================
-            if (!crg1899.isChecked()) {
-                if ((crg1801.getText().toString().isEmpty() || crg1802.getText().toString().isEmpty())) {
+
+            if ((crg1801.getText().toString().isEmpty() && crg1802.getText().toString().isEmpty()) && !crg1899.isChecked()) {
                     Toast.makeText(this, "ERROR(empty)" + getString(R.string.crg1801), Toast.LENGTH_SHORT).show();
-                    crg1801.setError("This data is required");
+                crg1899.setError("This data is required");
                     Log.d(TAG, "crg1801: This data is required  ");
                     return false;
                 } else {
-                    crg1801.setError(null);
+                crg1899.setError(null);
                 }
             }
 
-        }
 
         if (crg1901.isChecked()) {
             // =================== Q19 ====================

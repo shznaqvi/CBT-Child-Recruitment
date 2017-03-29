@@ -211,6 +211,10 @@ public class SectionMActivity extends AppCompatActivity {
     RadioButton crm043b07;
     @BindView(R.id.crm043b08)
     RadioButton crm043b08;
+    @BindView(R.id.crm043b09)
+    RadioButton crm043b09;
+    @BindView(R.id.crm043b10)
+    RadioButton crm043b10;
     @BindView(R.id.crm044a)
     EditText crm044a;
     @BindView(R.id.fldGrpcrm044b)
@@ -477,10 +481,10 @@ public class SectionMActivity extends AppCompatActivity {
     LinearLayout fldGrpcrn04;
     @BindView(R.id.crn04dob1)
     DatePickerInputEditText crn04dob1;
-    @BindView(R.id.crn04dob2)
-    DatePickerInputEditText crn04dob2;
     @BindView(R.id.crn04dod1)
     DatePickerInputEditText crn04dod1;
+    @BindView(R.id.crn04dob2)
+    DatePickerInputEditText crn04dob2;
     @BindView(R.id.crn04dod2)
     DatePickerInputEditText crn04dod2;
     @BindView(R.id.crn05s)
@@ -489,10 +493,12 @@ public class SectionMActivity extends AppCompatActivity {
     LinearLayout fldGrpcrn05;
     @BindView(R.id.crn05dob1)
     DatePickerInputEditText crn05dob1;
-    @BindView(R.id.crn05dob2)
-    DatePickerInputEditText crn05dob2;
     @BindView(R.id.crn05dod1)
     DatePickerInputEditText crn05dod1;
+    @BindView(R.id.fldGrpcrn05dob2)
+    LinearLayout fldGrpcrn05dob2;
+    @BindView(R.id.crn05dob2)
+    DatePickerInputEditText crn05dob2;
     @BindView(R.id.crn05dod2)
     DatePickerInputEditText crn05dod2;
     @BindView(R.id.crn06s)
@@ -501,10 +507,12 @@ public class SectionMActivity extends AppCompatActivity {
     LinearLayout fldGrpcrn06;
     @BindView(R.id.crn06dob1)
     DatePickerInputEditText crn06dob1;
-    @BindView(R.id.crn06dob2)
-    DatePickerInputEditText crn06dob2;
     @BindView(R.id.crn06dod1)
     DatePickerInputEditText crn06dod1;
+    @BindView(R.id.fldGrpcrn06dob2)
+    LinearLayout fldGrpcrn06dob2;
+    @BindView(R.id.crn06dob2)
+    DatePickerInputEditText crn06dob2;
     @BindView(R.id.crn06dod2)
     DatePickerInputEditText crn06dod2;
     @BindView(R.id.crn07s)
@@ -513,10 +521,12 @@ public class SectionMActivity extends AppCompatActivity {
     LinearLayout fldGrpcrn07;
     @BindView(R.id.crn07dob1)
     DatePickerInputEditText crn07dob1;
-    @BindView(R.id.crn07dob2)
-    DatePickerInputEditText crn07dob2;
     @BindView(R.id.crn07dod1)
     DatePickerInputEditText crn07dod1;
+    @BindView(R.id.fldGrpcrn07dob2)
+    LinearLayout fldGrpcrn07dob2;
+    @BindView(R.id.crn07dob2)
+    DatePickerInputEditText crn07dob2;
     @BindView(R.id.crn07dod2)
     DatePickerInputEditText crn07dod2;
     @BindView(R.id.crn08s)
@@ -525,18 +535,19 @@ public class SectionMActivity extends AppCompatActivity {
     LinearLayout fldGrpcrn08;
     @BindView(R.id.crn08dob1)
     DatePickerInputEditText crn08dob1;
-    @BindView(R.id.crn08dob2)
-    DatePickerInputEditText crn08dob2;
     @BindView(R.id.crn08dod1)
     DatePickerInputEditText crn08dod1;
+    @BindView(R.id.fldGrpcrn08dob2)
+    LinearLayout fldGrpcrn08dob2;
+    @BindView(R.id.crn08dob2)
+    DatePickerInputEditText crn08dob2;
     @BindView(R.id.crn08dod2)
     DatePickerInputEditText crn08dod2;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
-    @BindView(R.id.crm043b09)
-    RadioButton crm043b09;
-    @BindView(R.id.crm043b10)
-    RadioButton crm043b10;
+    @BindView(R.id.fldGrpcrn04dob2)
+    LinearLayout fldGrpcrn04dob2;
+
 
     @BindViews({R.id.crn01dod1, R.id.crn01dod2, R.id.crn02dod1, R.id.crn02dod2, R.id.crn03dob1, R.id.crn03dob2, R.id.crn03dob3,
             R.id.crn04dob1, R.id.crn04dob2, R.id.crn04dod1, R.id.crn04dod2, R.id.crn05dob1, R.id.crn05dob2, R.id.crn05dod1,
@@ -1172,7 +1183,7 @@ public class SectionMActivity extends AppCompatActivity {
 
 //*************************************** Section N ********************
 
-        //================ Q1 Skip Pattern============
+        //======================== Q1 Skip Pattern
         crn01s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -1182,14 +1193,24 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (Integer.parseInt(crn01s.getText().toString().isEmpty() ? "0" : crn01s.getText().toString()) > 0) {
-                    fldGrpcrn01.setVisibility(View.VISIBLE);
-                } else {
+                if (Integer.parseInt(crn01s.getText().toString().isEmpty() ? "0" : crn01s.getText().toString()) == 0) {
                     fldGrpcrn01.setVisibility(View.GONE);
                     crn01dod1.setText(null);
                     crn01dod2.setText(null);
+                } else {
+                    fldGrpcrn01.setVisibility(View.VISIBLE);
 
                 }
+
+                if (Integer.parseInt(crn01s.getText().toString().isEmpty() ? "0" : crn01s.getText().toString()) == 1) {
+                    fldGrpcrn01.setVisibility(View.VISIBLE);
+                    crn01dod2.setVisibility(View.GONE);
+                    crn01dod2.setText(null);
+                } else {
+                    crn01dod2.setVisibility(View.VISIBLE);
+                }
+
+
             }
 
             @Override
@@ -1198,7 +1219,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         });
 
-        //================ Q2 Skip Pattern============
+        //======================== Q2 Skip Pattern
         crn02s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -1208,15 +1229,24 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (Integer.parseInt(crn02s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) > 0) {
-                    fldGrpcrn02.setVisibility(View.VISIBLE);
-                } else {
+                if (Integer.parseInt(crn01s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) == 0) {
                     fldGrpcrn02.setVisibility(View.GONE);
                     crn02dod1.setText(null);
                     crn02dod2.setText(null);
-
+                } else {
+                    fldGrpcrn02.setVisibility(View.VISIBLE);
 
                 }
+
+                if (Integer.parseInt(crn02s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) == 1) {
+                    fldGrpcrn02.setVisibility(View.VISIBLE);
+                    crn02dod2.setVisibility(View.GONE);
+                    crn02dod2.setText(null);
+                } else {
+                    crn02dod2.setVisibility(View.VISIBLE);
+                }
+
+
             }
 
             @Override
@@ -1225,7 +1255,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         });
 
-        //================ Q3 Skip Pattern============
+        //======================== Q3 Skip Pattern
         crn03s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -1235,18 +1265,32 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) > 0) {
-                    fldGrpcrn03.setVisibility(View.VISIBLE);
-                } else {
+                if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 0) {
                     fldGrpcrn03.setVisibility(View.GONE);
                     crn03dob1.setText(null);
                     crn03dob2.setText(null);
                     crn03dob3.setText(null);
-
-
-
+                } else {
+                    fldGrpcrn03.setVisibility(View.VISIBLE);
 
                 }
+
+                if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 1) {
+                    fldGrpcrn03.setVisibility(View.VISIBLE);
+                    crn03dob2.setVisibility(View.GONE);
+                    crn03dob3.setVisibility(View.GONE);
+                    crn03dob2.setText(null);
+                    crn03dob3.setText(null);
+                } else if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 2) {
+                    fldGrpcrn03.setVisibility(View.VISIBLE);
+                    crn03dob2.setVisibility(View.VISIBLE);
+                    crn03dob3.setVisibility(View.GONE);
+                    crn03dob3.setText(null);
+                } else if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 3) {
+                    fldGrpcrn03.setVisibility(View.VISIBLE);
+                    crn03dob3.setVisibility(View.VISIBLE);
+                }
+
             }
 
             @Override
@@ -1255,7 +1299,9 @@ public class SectionMActivity extends AppCompatActivity {
             }
         });
 
-        //================ Q4 Skip Pattern============
+
+        //=================== Q4 Skip Pattern
+
         crn04s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -1265,18 +1311,22 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) > 0) {
-                    fldGrpcrn04.setVisibility(View.VISIBLE);
-                } else {
+                if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) == 0) {
                     fldGrpcrn04.setVisibility(View.GONE);
-                    crn04dob1.setText(null);
                     crn04dob2.setText(null);
-                    crn04dod1.setText(null);
                     crn04dod2.setText(null);
-
-
-
+                    crn04dob1.setText(null);
+                    crn04dod1.setText(null);
+                } else if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) == 1) {
+                    fldGrpcrn04.setVisibility(View.VISIBLE);
+                    fldGrpcrn04dob2.setVisibility(View.GONE);
+                    crn04dob2.setText(null);
+                    crn04dod2.setText(null);
+                } else if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) == 2) {
+                    fldGrpcrn04.setVisibility(View.VISIBLE);
+                    fldGrpcrn04dob2.setVisibility(View.VISIBLE);
                 }
+
             }
 
             @Override
@@ -1285,7 +1335,9 @@ public class SectionMActivity extends AppCompatActivity {
             }
         });
 
-        //================ Q5 Skip Pattern============
+
+        //=================== Q5 Skip Pattern
+
         crn05s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -1295,17 +1347,22 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (Integer.parseInt(crn05s.getText().toString().isEmpty() ? "0" : crn05s.getText().toString()) > 0) {
-                    fldGrpcrn05.setVisibility(View.VISIBLE);
-                } else {
+                if (Integer.parseInt(crn05s.getText().toString().isEmpty() ? "0" : crn05s.getText().toString()) == 0) {
                     fldGrpcrn05.setVisibility(View.GONE);
-                    crn05dob1.setText(null);
                     crn05dob2.setText(null);
-                    crn05dod1.setText(null);
                     crn05dod2.setText(null);
-
-
+                    crn05dob1.setText(null);
+                    crn05dod1.setText(null);
+                } else if (Integer.parseInt(crn05s.getText().toString().isEmpty() ? "0" : crn05s.getText().toString()) == 1) {
+                    fldGrpcrn05.setVisibility(View.VISIBLE);
+                    fldGrpcrn05dob2.setVisibility(View.GONE);
+                    crn05dob2.setText(null);
+                    crn05dod2.setText(null);
+                } else if (Integer.parseInt(crn05s.getText().toString().isEmpty() ? "0" : crn05s.getText().toString()) == 2) {
+                    fldGrpcrn05.setVisibility(View.VISIBLE);
+                    fldGrpcrn05dob2.setVisibility(View.VISIBLE);
                 }
+
             }
 
             @Override
@@ -1314,7 +1371,9 @@ public class SectionMActivity extends AppCompatActivity {
             }
         });
 
-        //================ Q6 Skip Pattern============
+
+        //=================== Q6 Skip Pattern
+
         crn06s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -1324,17 +1383,22 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (Integer.parseInt(crn06s.getText().toString().isEmpty() ? "0" : crn06s.getText().toString()) > 0) {
-                    fldGrpcrn06.setVisibility(View.VISIBLE);
-                } else {
+                if (Integer.parseInt(crn06s.getText().toString().isEmpty() ? "0" : crn06s.getText().toString()) == 0) {
                     fldGrpcrn06.setVisibility(View.GONE);
-                    crn06dob1.setText(null);
                     crn06dob2.setText(null);
-                    crn06dod1.setText(null);
                     crn06dod2.setText(null);
-
-
+                    crn06dob1.setText(null);
+                    crn06dod1.setText(null);
+                } else if (Integer.parseInt(crn06s.getText().toString().isEmpty() ? "0" : crn06s.getText().toString()) == 1) {
+                    fldGrpcrn06.setVisibility(View.VISIBLE);
+                    fldGrpcrn06dob2.setVisibility(View.GONE);
+                    crn06dob2.setText(null);
+                    crn06dod2.setText(null);
+                } else if (Integer.parseInt(crn06s.getText().toString().isEmpty() ? "0" : crn06s.getText().toString()) == 2) {
+                    fldGrpcrn06.setVisibility(View.VISIBLE);
+                    fldGrpcrn06dob2.setVisibility(View.VISIBLE);
                 }
+
             }
 
             @Override
@@ -1343,7 +1407,8 @@ public class SectionMActivity extends AppCompatActivity {
             }
         });
 
-        //================ Q7 Skip Pattern============
+        //=================== Q7 Skip Pattern
+
         crn07s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -1353,17 +1418,22 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (Integer.parseInt(crn07s.getText().toString().isEmpty() ? "0" : crn07s.getText().toString()) > 0) {
-                    fldGrpcrn07.setVisibility(View.VISIBLE);
-                } else {
+                if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) == 0) {
                     fldGrpcrn07.setVisibility(View.GONE);
-                    crn07dob1.setText(null);
                     crn07dob2.setText(null);
-                    crn07dod1.setText(null);
                     crn07dod2.setText(null);
-
-
+                    crn07dob1.setText(null);
+                    crn07dod1.setText(null);
+                } else if (Integer.parseInt(crn07s.getText().toString().isEmpty() ? "0" : crn07s.getText().toString()) == 1) {
+                    fldGrpcrn07.setVisibility(View.VISIBLE);
+                    fldGrpcrn07dob2.setVisibility(View.GONE);
+                    crn07dob2.setText(null);
+                    crn07dod2.setText(null);
+                } else if (Integer.parseInt(crn07s.getText().toString().isEmpty() ? "0" : crn07s.getText().toString()) == 2) {
+                    fldGrpcrn07.setVisibility(View.VISIBLE);
+                    fldGrpcrn07dob2.setVisibility(View.VISIBLE);
                 }
+
             }
 
             @Override
@@ -1372,7 +1442,8 @@ public class SectionMActivity extends AppCompatActivity {
             }
         });
 
-        //================ Q8 Skip Pattern============
+        //=================== Q8 Skip Pattern
+
         crn08s.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -1382,17 +1453,22 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (Integer.parseInt(crn08s.getText().toString().isEmpty() ? "0" : crn08s.getText().toString()) > 0) {
-                    fldGrpcrn08.setVisibility(View.VISIBLE);
-                } else {
+                if (Integer.parseInt(crn08s.getText().toString().isEmpty() ? "0" : crn08s.getText().toString()) == 0) {
                     fldGrpcrn08.setVisibility(View.GONE);
-                    crn08dob1.setText(null);
                     crn08dob2.setText(null);
-                    crn08dod1.setText(null);
                     crn08dod2.setText(null);
-
-
+                    crn08dob1.setText(null);
+                    crn08dod1.setText(null);
+                } else if (Integer.parseInt(crn08s.getText().toString().isEmpty() ? "0" : crn08s.getText().toString()) == 1) {
+                    fldGrpcrn08.setVisibility(View.VISIBLE);
+                    fldGrpcrn08dob2.setVisibility(View.GONE);
+                    crn08dob2.setText(null);
+                    crn08dod2.setText(null);
+                } else if (Integer.parseInt(crn08s.getText().toString().isEmpty() ? "0" : crn08s.getText().toString()) == 2) {
+                    fldGrpcrn08.setVisibility(View.VISIBLE);
+                    fldGrpcrn08dob2.setVisibility(View.VISIBLE);
                 }
+
             }
 
             @Override
@@ -1400,6 +1476,11 @@ public class SectionMActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+
+
 
 
 
