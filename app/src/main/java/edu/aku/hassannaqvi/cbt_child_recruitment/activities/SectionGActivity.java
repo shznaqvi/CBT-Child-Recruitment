@@ -967,18 +967,18 @@ public class SectionGActivity extends Activity {
 
         // =================== Q1 ====================
         if (crg01.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg01), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg01), Toast.LENGTH_SHORT).show();
             crg0196.setError("This Data is required");
-            Log.d(TAG, "not selected: crg01 ");
+            Log.d(TAG, "crg01 : This Data is required");
             return false;
         } else {
             crg0196.setError(null);
         }
 
         if (crg01.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg01), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg01), Toast.LENGTH_SHORT).show();
             crg0196.setError("This Data is required");
-            Log.d(TAG, "not selected: crg01 ");
+            Log.d(TAG, "crg01 :This Data is required ");
             return false;
         } else {
             crg0196.setError(null);
@@ -996,9 +996,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q2 ====================
         if (crg02.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg02), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg02), Toast.LENGTH_SHORT).show();
             crg0296.setError("This Data is required");
-            Log.d(TAG, "not selected: crg02 ");
+            Log.d(TAG, "crg02 :This Data is required");
             return false;
         } else {
             crg0296.setError(null);
@@ -1015,9 +1015,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q3 ====================
         if (crg03.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg03), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg03), Toast.LENGTH_SHORT).show();
             crg0302.setError("This Data is required");
-            Log.d(TAG, "not selected: crg02 ");
+            Log.d(TAG, "crg02  :This Data is required ");
             return false;
         } else {
             crg0302.setError(null);
@@ -1025,9 +1025,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q4 ====================
         if (crg04.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg04), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg04), Toast.LENGTH_SHORT).show();
             crg0496.setError("This Data is required");
-            Log.d(TAG, "not selected: crg04 ");
+            Log.d(TAG, "crg04 : This Data is required ");
             return false;
         } else {
             crg0496.setError(null);
@@ -1044,9 +1044,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q5 ====================
         if (crg05.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg05), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg05), Toast.LENGTH_SHORT).show();
             crg0596.setError("This Data is required");
-            Log.d(TAG, "not selected: crg05 ");
+            Log.d(TAG, "crg05 : This Data is required ");
             return false;
         } else {
             crg0596.setError(null);
@@ -1063,9 +1063,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q6 ====================
         if (crg06.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg06), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg06), Toast.LENGTH_SHORT).show();
             crg0602.setError("This Data is required");
-            Log.d(TAG, "not selected: crg06 ");
+            Log.d(TAG, "crg06 : This Data is required ");
             return false;
         } else {
             crg0602.setError(null);
@@ -1073,9 +1073,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q7 ====================
         if (crg07.getText().toString().isEmpty()) {
-            Toast.makeText(this, "" + getString(R.string.crg07), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg07), Toast.LENGTH_SHORT).show();
             crg07.setError("This data is required");
-            Log.d(TAG, "empty: crg07  ");
+            Log.d(TAG, "crg07  : This Data is required ");
             return false;
         } else {
             crg07.setError(null);
@@ -1092,9 +1092,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q801 ====================
         if (crg0801.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0801), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0801), Toast.LENGTH_SHORT).show();
             crg080102.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0801 ");
+            Log.d(TAG, " crg0801 :This Data is required");
             return false;
         } else {
             crg080102.setError(null);
@@ -1102,9 +1102,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q802 ====================
         if (crg0802.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0802), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0802), Toast.LENGTH_SHORT).show();
             crg080202.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0802 ");
+            Log.d(TAG, "crg0802 : This Data is required ");
             return false;
         } else {
             crg080202.setError(null);
@@ -1112,9 +1112,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q803 ====================
         if (crg0803.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0803), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0803), Toast.LENGTH_SHORT).show();
             crg080302.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0803 ");
+            Log.d(TAG, "crg0803 : This Data is required ");
             return false;
         } else {
             crg080302.setError(null);
@@ -1122,18 +1122,18 @@ public class SectionGActivity extends Activity {
 
         // =================== Q804 ====================
         if (crg0804.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0804), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0804), Toast.LENGTH_SHORT).show();
             crg080402.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0804 ");
+            Log.d(TAG, "crg0804 : This Data is required ");
             return false;
         } else {
             crg080402.setError(null);
         }
         // =================== Q805 ====================
         if (crg0805.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0805), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0805), Toast.LENGTH_SHORT).show();
             crg080502.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0805 ");
+            Log.d(TAG, "crg0805 : This Data is required ");
             return false;
         } else {
             crg080502.setError(null);
@@ -1141,9 +1141,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q806 ====================
         if (crg0806.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0806), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0806), Toast.LENGTH_SHORT).show();
             crg080602.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0806 ");
+            Log.d(TAG, "crg0806 : This Data is required ");
             return false;
         } else {
             crg080602.setError(null);
@@ -1151,9 +1151,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q807 ====================
         if (crg0807.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0807), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0807), Toast.LENGTH_SHORT).show();
             crg080702.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0807 ");
+            Log.d(TAG, "crg0807 : This Data is required ");
             return false;
         } else {
             crg080702.setError(null);
@@ -1161,9 +1161,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q807 ====================
         if (crg0807.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0807), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0807), Toast.LENGTH_SHORT).show();
             crg080702.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0807 ");
+            Log.d(TAG, "crg0807 : This Data is required ");
             return false;
         } else {
             crg080702.setError(null);
@@ -1171,9 +1171,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q808 ====================
         if (crg0808.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0808), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0808), Toast.LENGTH_SHORT).show();
             crg080802.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0808 ");
+            Log.d(TAG, "crg0808 :This Data is required ");
             return false;
         } else {
             crg080802.setError(null);
@@ -1181,9 +1181,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q809 ====================
         if (crg0809.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0809), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0809), Toast.LENGTH_SHORT).show();
             crg080902.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0809 ");
+            Log.d(TAG, "crg0809 : This Data is required ");
             return false;
         } else {
             crg080902.setError(null);
@@ -1191,9 +1191,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q810 ====================
         if (crg0810.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0810), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0810), Toast.LENGTH_SHORT).show();
             crg081002.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0810 ");
+            Log.d(TAG, "crg0810 : This Data is required");
             return false;
         } else {
             crg081002.setError(null);
@@ -1201,9 +1201,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q811 ====================
         if (crg0811.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0811), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0811), Toast.LENGTH_SHORT).show();
             crg081102.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0811 ");
+            Log.d(TAG, "crg0811 : This Data is required");
             return false;
         } else {
             crg081102.setError(null);
@@ -1211,9 +1211,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q812 ====================
         if (crg0812.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0812), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0812), Toast.LENGTH_SHORT).show();
             crg081202.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0812 ");
+            Log.d(TAG, "crg0812 : This Data is required ");
             return false;
         } else {
             crg081202.setError(null);
@@ -1221,9 +1221,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q813 ====================
         if (crg0813.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0813), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0813), Toast.LENGTH_SHORT).show();
             crg081302.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0813 ");
+            Log.d(TAG, "crg0813 : This Data is required ");
             return false;
         } else {
             crg081302.setError(null);
@@ -1233,16 +1233,16 @@ public class SectionGActivity extends Activity {
         if (crg0814.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "" + getString(R.string.crg0814), Toast.LENGTH_SHORT).show();
             crg081402.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0814 ");
+            Log.d(TAG, "crg0814 :This Data is required ");
             return false;
         } else {
             crg081402.setError(null);
         }
         // =================== Q815 ====================
         if (crg0815.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0815), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0815), Toast.LENGTH_SHORT).show();
             crg081502.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0815 ");
+            Log.d(TAG, "crg0815 : This Data is required ");
             return false;
         } else {
             crg081502.setError(null);
@@ -1250,9 +1250,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q816 ====================
         if (crg0816.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0816), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0816), Toast.LENGTH_SHORT).show();
             crg081602.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0816 ");
+            Log.d(TAG, "crg0816 :This Data is required ");
             return false;
         } else {
             crg081602.setError(null);
@@ -1260,9 +1260,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q817 ====================
         if (crg0817.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0817), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0817), Toast.LENGTH_SHORT).show();
             crg081702.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0817 ");
+            Log.d(TAG, "crg0817 :This Data is required ");
             return false;
         } else {
             crg081702.setError(null);
@@ -1270,9 +1270,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q818 ====================
         if (crg0818.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0818), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0818), Toast.LENGTH_SHORT).show();
             crg081802.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0818 ");
+            Log.d(TAG, "crg0818 : This Data is required ");
             return false;
         } else {
             crg081802.setError(null);
@@ -1280,9 +1280,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q819 ====================
         if (crg0819.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg0819), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg0819), Toast.LENGTH_SHORT).show();
             crg081902.setError("This Data is required");
-            Log.d(TAG, "not selected: crg0819 ");
+            Log.d(TAG, "crg0819 : This Data is required ");
             return false;
         } else {
             crg081902.setError(null);
@@ -1290,9 +1290,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q9 ====================
         if (crg09.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg09), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg09), Toast.LENGTH_SHORT).show();
             crg0996.setError("This Data is required");
-            Log.d(TAG, "not selected: crg09 ");
+            Log.d(TAG, "crg09 :This Data is required ");
             return false;
         } else {
             crg0996.setError(null);
@@ -1309,9 +1309,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q10 ====================
         if (crg10.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg10), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg10), Toast.LENGTH_SHORT).show();
             crg1096.setError("This Data is required");
-            Log.d(TAG, "not selected: crg10 ");
+            Log.d(TAG, "crg10 : This Data is required ");
             return false;
         } else {
             crg1096.setError(null);
@@ -1329,9 +1329,9 @@ public class SectionGActivity extends Activity {
         if (!(crg0910.isChecked())) {
             // =================== Q11 ====================
             if (crg11.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crg11), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg11), Toast.LENGTH_SHORT).show();
                 crg1102.setError("This Data is required");
-                Log.d(TAG, "not selected: crg11 ");
+                Log.d(TAG, "crg11 : This Data is required ");
                 return false;
             } else {
                 crg1102.setError(null);
@@ -1339,9 +1339,9 @@ public class SectionGActivity extends Activity {
         }
         // =================== Q12 ====================
         if (crg12.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg12), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg12), Toast.LENGTH_SHORT).show();
             crg1296.setError("This Data is required");
-            Log.d(TAG, "not selected: crg12 ");
+            Log.d(TAG, "crg12 : This Data is required ");
             return false;
         } else {
             crg1296.setError(null);
@@ -1358,9 +1358,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q13 ====================
         if (crg13.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg13), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg13), Toast.LENGTH_SHORT).show();
             crg1396.setError("This Data is required");
-            Log.d(TAG, "not selected: crg13 ");
+            Log.d(TAG, "crg13 : This Data is required ");
             return false;
         } else {
             crg1396.setError(null);
@@ -1377,9 +1377,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q14 ====================
         if (crg14.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg14), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg14), Toast.LENGTH_SHORT).show();
             crg1496.setError("This Data is required");
-            Log.d(TAG, "not selected: crg14 ");
+            Log.d(TAG, "crg14 :This Data is required ");
             return false;
         } else {
             crg1496.setError(null);
@@ -1396,9 +1396,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q15 ====================
         if (crg15.getText().toString().isEmpty()) {
-            Toast.makeText(this, "" + getString(R.string.crg15), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg15), Toast.LENGTH_SHORT).show();
             crg15.setError("This data is required");
-            Log.d(TAG, "empty: crg15  ");
+            Log.d(TAG, "crg15  : This Data is required ");
             return false;
         } else {
             crg15.setError(null);
@@ -1415,9 +1415,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q16a ====================
         if (crg16a.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg16a), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg16a), Toast.LENGTH_SHORT).show();
             crg16a02.setError("This Data is required");
-            Log.d(TAG, "not selected: crg16a ");
+            Log.d(TAG, "crg16a : This Data is required ");
             return false;
         } else {
             crg16a02.setError(null);
@@ -1425,9 +1425,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q16b ====================
         if (crg16b.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg16b), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg16b), Toast.LENGTH_SHORT).show();
             crg16b02.setError("This Data is required");
-            Log.d(TAG, "not selected: crg16b ");
+            Log.d(TAG, "crg16b : This Data is required ");
             return false;
         } else {
             crg16b02.setError(null);
@@ -1435,9 +1435,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q16c ====================
         if (crg16c.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg16c), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg16c), Toast.LENGTH_SHORT).show();
             crg16c02.setError("This Data is required");
-            Log.d(TAG, "not selected: crg16c ");
+            Log.d(TAG, "crg16c : This Data is required");
             return false;
         } else {
             crg16c02.setError(null);
@@ -1445,9 +1445,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q16d ====================
         if (crg16d.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg16d), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg16d), Toast.LENGTH_SHORT).show();
             crg16d02.setError("This Data is required");
-            Log.d(TAG, "not selected: crg16d ");
+            Log.d(TAG, "crg16d : This Data is required ");
             return false;
         } else {
             crg16d02.setError(null);
@@ -1455,9 +1455,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q16e ====================
         if (crg16e.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg16e), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg16e), Toast.LENGTH_SHORT).show();
             crg16e02.setError("This Data is required");
-            Log.d(TAG, "not selected :crg16e ");
+            Log.d(TAG, "crg16e : This Data is required");
             return false;
         } else {
             crg16e02.setError(null);
@@ -1465,9 +1465,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q16f ====================
         if (crg16f.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg16f), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg16f), Toast.LENGTH_SHORT).show();
             crg16f02.setError("This Data is required");
-            Log.d(TAG, "not selected :crg16f ");
+            Log.d(TAG, "crg16f : This Data is required");
             return false;
         } else {
             crg16f02.setError(null);
@@ -1475,18 +1475,18 @@ public class SectionGActivity extends Activity {
 
         // =================== Q16g ====================
         if (crg16g.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg16g), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg16g), Toast.LENGTH_SHORT).show();
             crg16g02.setError("This Data is required");
-            Log.d(TAG, "not selected :crg16g ");
+            Log.d(TAG, "crg16g :This Data is required");
             return false;
         } else {
             crg16g02.setError(null);
         }
         // =================== Q16h ====================
         if (crg16h.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg16h), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg16h), Toast.LENGTH_SHORT).show();
             crg16h02.setError("This Data is required");
-            Log.d(TAG, "not selected :crg16h ");
+            Log.d(TAG, "crg16h : This Data is required");
             return false;
         } else {
             crg16h02.setError(null);
@@ -1494,9 +1494,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q16i ====================
         if (crg16i.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg16i), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg16i), Toast.LENGTH_SHORT).show();
             crg16i02.setError("This Data is required");
-            Log.d(TAG, "not selected :crg16i ");
+            Log.d(TAG, "crg16i : This Data is required");
             return false;
         } else {
             crg16i02.setError(null);
@@ -1504,9 +1504,9 @@ public class SectionGActivity extends Activity {
 
         // =================== Q17 ====================
         if (crg17.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.crg17), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg17), Toast.LENGTH_SHORT).show();
             crg1702.setError("This Data is required");
-            Log.d(TAG, "not selected :crg17 ");
+            Log.d(TAG, "crg17 : This Data is required");
             return false;
         } else {
             crg1702.setError(null);
@@ -1539,9 +1539,9 @@ public class SectionGActivity extends Activity {
 
             // =================== Q20.01 ====================
             if (crg2001.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.crg20) + getString(R.string.crg2001), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg20) + getString(R.string.crg2001), Toast.LENGTH_SHORT).show();
                 crg2001.setError("This data is required");
-                Log.d(TAG, "empty: crg2001  ");
+                Log.d(TAG, "crg2001 :This Data is required");
                 return false;
             } else {
                 crg2001.setError(null);
@@ -1549,9 +1549,9 @@ public class SectionGActivity extends Activity {
 
             // =================== Q20.02 ====================
             if (crg2002.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.crg20) + getString(R.string.crg2002), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg20) + getString(R.string.crg2002), Toast.LENGTH_SHORT).show();
                 crg2002.setError("This data is required");
-                Log.d(TAG, "empty: crg2002  ");
+                Log.d(TAG, "crg2002  :This Data is required");
                 return false;
             } else {
                 crg2002.setError(null);
@@ -1559,9 +1559,9 @@ public class SectionGActivity extends Activity {
 
             // =================== Q20.03 ====================
             if (crg2003.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.crg20) + getString(R.string.crg2003), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg20) + getString(R.string.crg2003), Toast.LENGTH_SHORT).show();
                 crg2003.setError("This data is required");
-                Log.d(TAG, "empty: crg2003  ");
+                Log.d(TAG, "crg2003  : This Data is required ");
                 return false;
             } else {
                 crg2003.setError(null);
@@ -1569,9 +1569,9 @@ public class SectionGActivity extends Activity {
 
             // =================== Q20.04 ====================
             if (crg2004.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.crg20) + getString(R.string.crg2004), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg20) + getString(R.string.crg2004), Toast.LENGTH_SHORT).show();
                 crg2004.setError("This data is required");
-                Log.d(TAG, "empty: crg2004  ");
+                Log.d(TAG, "crg2004 : This Data is required ");
                 return false;
             } else {
                 crg2004.setError(null);
@@ -1580,9 +1580,9 @@ public class SectionGActivity extends Activity {
 
             // =================== Q20.05 ====================
             if (crg2005.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.crg20) + getString(R.string.crg2005), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg20) + getString(R.string.crg2005), Toast.LENGTH_SHORT).show();
                 crg2005.setError("This data is required");
-                Log.d(TAG, "empty: crg2005  ");
+                Log.d(TAG, "crg2005  : This Data is required ");
                 return false;
             } else {
                 crg2005.setError(null);
@@ -1590,9 +1590,9 @@ public class SectionGActivity extends Activity {
 
             // =================== Q20.06 ====================
             if (crg2006.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.crg20) + getString(R.string.crg2006), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg20) + getString(R.string.crg2006), Toast.LENGTH_SHORT).show();
                 crg2006.setError("This data is required");
-                Log.d(TAG, "empty: crg2006  ");
+                Log.d(TAG, "crg2006 :This Data is required ");
                 return false;
             } else {
                 crg2006.setError(null);
@@ -1600,9 +1600,9 @@ public class SectionGActivity extends Activity {
 
             // =================== Q21a ====================
             if (crg21a.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crg21) + getString(R.string.crg21a), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg21) + getString(R.string.crg21a), Toast.LENGTH_SHORT).show();
                 crg21a96.setError("This Data is required");
-                Log.d(TAG, "not selected :crg21a ");
+                Log.d(TAG, "crg21a : This Data is required");
                 return false;
             } else {
                 crg21a96.setError(null);
@@ -1619,9 +1619,9 @@ public class SectionGActivity extends Activity {
 
             // =================== Q21b ====================
             if (crg21b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crg21) + getString(R.string.crg21b), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg21) + getString(R.string.crg21b), Toast.LENGTH_SHORT).show();
                 crg21b96.setError("This Data is required");
-                Log.d(TAG, "not selected :crg21b ");
+                Log.d(TAG, "crg21b : This Data is required");
                 return false;
             } else {
                 crg21b96.setError(null);
@@ -1638,9 +1638,9 @@ public class SectionGActivity extends Activity {
 
             // =================== Q21c ====================
             if (crg21c.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crg21) + getString(R.string.crg21c), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg21) + getString(R.string.crg21c), Toast.LENGTH_SHORT).show();
                 crg21c96.setError("This Data is required");
-                Log.d(TAG, "not selected :crg21c ");
+                Log.d(TAG, "crg21c : This Data is required");
                 return false;
             } else {
                 crg21c96.setError(null);
@@ -1657,9 +1657,9 @@ public class SectionGActivity extends Activity {
 
             // =================== Q22 ====================
             if (crg22.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.crg22), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg22), Toast.LENGTH_SHORT).show();
                 crg2202.setError("This Data is required");
-                Log.d(TAG, "not selected :crg22 ");
+                Log.d(TAG, "crg22 : This Data is required");
                 return false;
             } else {
                 crg2202.setError(null);
@@ -1668,9 +1668,9 @@ public class SectionGActivity extends Activity {
             if (crg2201.isChecked()) {
                 // =================== Q22a ====================
                 if (crg22a.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "" + getString(R.string.crg22a), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg22a), Toast.LENGTH_SHORT).show();
                     crg22a03.setError("This Data is required");
-                    Log.d(TAG, "not selected :crg22a ");
+                    Log.d(TAG, "crg22a : This Data is required");
                     return false;
                 } else {
                     crg22a03.setError(null);
