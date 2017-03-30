@@ -376,11 +376,11 @@ public class SectionAActivity extends Activity {
                     cra10.setError(null);
                 }
                 //================== Check on age of mother===============
-                if ((Integer.parseInt(cra07.getText().toString().isEmpty() ? "0" : cra07.getText().toString()) < 15)
-                        || (Integer.parseInt(cra07.getText().toString().isEmpty() ? "0" : cra07.getText().toString()) > 49)) {
+                if ((Integer.parseInt(cra10.getText().toString().isEmpty() ? "0" : cra10.getText().toString()) < 15)
+                        || (Integer.parseInt(cra10.getText().toString().isEmpty() ? "0" : cra10.getText().toString()) > 49)) {
                     Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra10), Toast.LENGTH_LONG).show();
                     cra10.setError("Range is 15-49 years");
-                    Log.i(TAG, "cra10: Range is 15-49");
+                    Log.i(TAG, "cra07: Range is 15-49");
                     return false;
                 } else {
                     cra10.setError(null);

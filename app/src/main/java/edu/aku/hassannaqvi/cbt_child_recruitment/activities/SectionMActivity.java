@@ -17,6 +17,8 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import butterknife.BindView;
@@ -547,7 +549,7 @@ public class SectionMActivity extends AppCompatActivity {
     LinearLayout fldGrpbtn;
     @BindView(R.id.fldGrpcrn04dob2)
     LinearLayout fldGrpcrn04dob2;
-
+    String dateToday;
 
     @BindViews({R.id.crn01dod1, R.id.crn01dod2, R.id.crn02dod1, R.id.crn02dod2, R.id.crn03dob1, R.id.crn03dob2, R.id.crn03dob3,
             R.id.crn04dob1, R.id.crn04dob2, R.id.crn04dod1, R.id.crn04dod2, R.id.crn05dob1, R.id.crn05dob2, R.id.crn05dod1,
@@ -561,9 +563,14 @@ public class SectionMActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_m);
         ButterKnife.bind(this);
 
+        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+
+
         for (DatePickerInputEditText de : crndates) {
             de.setManager(getSupportFragmentManager());
+            de.setMaxDate(dateToday);
         }
+
 
         crn01dod1.setOnClickListener(new View.OnClickListener() {
             @Override
