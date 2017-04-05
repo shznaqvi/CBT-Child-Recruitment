@@ -24,9 +24,9 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
-import static android.content.ContentValues.TAG;
-
 public class SectionGActivity extends Activity {
+
+    private static final String TAG = SectionGActivity.class.getSimpleName();
 
     @BindView(R.id.activity_section_g)
     ScrollView activitySectionG;

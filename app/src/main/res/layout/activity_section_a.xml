@@ -245,6 +245,15 @@
                         android:layout_marginTop="16dp"
                         android:text="@string/cra07" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:background="#e1f5fe"
+                        android:text="@string/eduHint"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp" />
+
                     <EditText
                         android:id="@+id/cra07"
                         android:layout_width="match_parent"
@@ -308,6 +317,15 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="@string/cra11" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:background="#e1f5fe"
+                        android:text="@string/eduHint"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp" />
 
                     <EditText
                         android:id="@+id/cra11"

@@ -114,7 +114,7 @@
             android:layout_marginTop="1dp"
             android:hint="@string/crb0401"
             android:inputType="number"
-            android:maxLength="2" />
+            android:maxLength="1" />
 
         <EditText
             android:id="@+id/crb0402"

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -20,16 +22,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
-import static android.content.ContentValues.TAG;
-
 public class SectionBActivity extends Activity {
+
+    private static final String TAG = SectionBActivity.class.getSimpleName();
 
     @BindView(R.id.activity_section_b)
     ScrollView activitySectionB;
@@ -320,12 +325,24 @@ public class SectionBActivity extends Activity {
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
+    Calendar now = Calendar.getInstance();
+    int year = now.get(Calendar.YEAR);
+    int month = now.get(Calendar.MONTH);
+    int day = now.get(Calendar.DATE);
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_b);
         ButterKnife.bind(this);
+
+        crb03.setMaxDate(new Date().getTime());
+
+        crb03.setMinDate(new Date().getTime() - ((AppMain.MILLISECONDS_IN_6_MONTHS) + (AppMain.MILLISECONDS_IN_DAY)));
 
 //************************************Section B*********************************************************************
         // ====================== Q7 Skip Pattern =========================
@@ -342,6 +359,62 @@ public class SectionBActivity extends Activity {
             }
         });
 
+
+        crb0401.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                int currentAge = (year - (crb03.getYear())) * 12 + (month - (crb03.getMonth()));
+                int enteredAge = Integer.parseInt(crb0401.getText().toString().isEmpty() ? "0" : crb0401.getText().toString());
+
+                if (currentAge != enteredAge) {
+                    crb0401.setError("Check months");
+                } else {
+                    crb0401.setError(null);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+
+            }
+        });
+
+        /*crb0402.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                int currentAge = (month - (crb03.getMonth())) + (day - (crb03.getDayOfMonth()));
+                int enteredAge = Integer.parseInt(crb0402.getText().toString().isEmpty() ? "0" : crb0402.getText().toString());
+
+                if(currentAge != enteredAge)
+                {
+                    crb0402.setError("Check days");
+                }else{
+                    crb0402.setError(null);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+
+            }
+        });
+*/
 
 //************************************Section D*********************************************************************
         // =================== Q1 Others ====================
@@ -661,10 +734,11 @@ public class SectionBActivity extends Activity {
             crb0401.setError(null);
         }
 
-        if ((Integer.parseInt(crb0401.getText().toString()) < 1) || (Integer.parseInt(crb0401.getText().toString()) > 12)) {
+        if ((Integer.parseInt(crb0401.getText().toString().isEmpty() ? "0" : crb0401.getText().toString()) < 0)
+                || (Integer.parseInt(crb0401.getText().toString().isEmpty() ? "0" : crb0401.getText().toString()) >= 6)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crb04) + getString(R.string.months), Toast.LENGTH_LONG).show();
-            crb0401.setError("Range is 1-12 days");
-            Log.i(TAG, "crb0401: Range is 1-12 days");
+            crb0401.setError("Range is 1-6 Months");
+            Log.i(TAG, "crb0401: Range is 1-6 Months");
             return false;
         } else {
             crb0401.setError(null);
@@ -679,10 +753,10 @@ public class SectionBActivity extends Activity {
             crb0402.setError(null);
         }
 
-        if ((Integer.parseInt(crb0402.getText().toString()) < 1) || (Integer.parseInt(crb0402.getText().toString()) > 30)) {
+        if ((Integer.parseInt(crb0402.getText().toString()) < 0) || (Integer.parseInt(crb0402.getText().toString()) > 29)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crb04) + getString(R.string.crb0402), Toast.LENGTH_LONG).show();
-            crb0402.setError("Range is 1-30 days");
-            Log.i(TAG, "crb0402: Range is 1-30 days");
+            crb0402.setError("Range is 1-29 days");
+            Log.i(TAG, "crb0402: Range is 1-29 days");
             return false;
         } else {
             crb0402.setError(null);
@@ -742,10 +816,10 @@ public class SectionBActivity extends Activity {
                         return false;
                     } else {
                         crb0801.setError(null);
-                        if (Double.parseDouble(crb0801.getText().toString()) < 5 || Double.parseDouble(crb0801.getText().toString()) > 170) {
+                        if (Double.parseDouble(crb0801.getText().toString()) < 2 || Double.parseDouble(crb0801.getText().toString()) > 5) {
                             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
-                            crb0801.setError("Invalid: Range 5.0-170.0 kg");
-                            Log.i(TAG, "crb0801: Invalid Range 5.0-170.0 kg");
+                            crb0801.setError("Invalid: Range 2.0 - 5.0 kg");
+                            Log.i(TAG, "crb0801: Invalid Range 2.0 - 5.0 kg");
                             return false;
                         } else {
                             crb0801.setError(null);
@@ -879,10 +953,10 @@ public class SectionBActivity extends Activity {
                     return false;
                 } else {
                     crc02m1.setError(null);
-                    if (Double.parseDouble(crc02m1.getText().toString()) < 5 || Double.parseDouble(crc02m1.getText().toString()) > 170) {
+                    if (Double.parseDouble(crc02m1.getText().toString()) < 2 || Double.parseDouble(crc02m1.getText().toString()) > 9.1) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                        crc02m1.setError("Invalid: Range 5.0-170.0 kg");
-                        Log.i(TAG, "crc02m1: Invalid Range 5.0-170.0 kg");
+                        crc02m1.setError("Invalid: Range 2.0 - 9.1 kg");
+                        Log.i(TAG, "crc02m1: Invalid Range 2.0 - 9.1 kg");
                         return false;
                     } else {
                         crc02m1.setError(null);
@@ -913,10 +987,10 @@ public class SectionBActivity extends Activity {
                     return false;
                 } else {
                     crc02m2.setError(null);
-                    if (Double.parseDouble(crc02m2.getText().toString()) < 5 || Double.parseDouble(crc02m2.getText().toString()) > 170) {
+                    if (Double.parseDouble(crc02m2.getText().toString()) < 2 || Double.parseDouble(crc02m2.getText().toString()) > 9.1) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                        crc02m2.setError("Invalid: Range 5.0-170.0");
-                        Log.i(TAG, "crc02m2: Invalid Range 5.0-170.0");
+                        crc02m2.setError("Invalid: Range 2.0 - 9.1");
+                        Log.i(TAG, "crc02m2: Invalid Range 2.0 - 9.1");
                         return false;
                     } else {
                         crc02m2.setError(null);
@@ -947,10 +1021,10 @@ public class SectionBActivity extends Activity {
                     return false;
                 } else {
                     crc02m3.setError(null);
-                    if (Double.parseDouble(crc02m3.getText().toString()) < 5 || Double.parseDouble(crc02m3.getText().toString()) > 170) {
+                    if (Double.parseDouble(crc02m3.getText().toString()) < 2 || Double.parseDouble(crc02m3.getText().toString()) > 9.1) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                        crc02m3.setError("Invalid: Range 5.0-170.0");
-                        Log.i(TAG, "crc02m3: Invalid Range 5.0-170.0");
+                        crc02m3.setError("Invalid: Range 2.0 - 9.1");
+                        Log.i(TAG, "crc02m3: Invalid Range 2.0 - 9.1");
                         return false;
                     } else {
                         crc02m3.setError(null);
