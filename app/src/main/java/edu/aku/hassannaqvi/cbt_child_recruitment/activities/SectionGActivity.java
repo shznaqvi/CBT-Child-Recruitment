@@ -24,9 +24,9 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
-import static android.content.ContentValues.TAG;
-
 public class SectionGActivity extends Activity {
+
+    private static final String TAG = SectionGActivity.class.getSimpleName();
 
     @BindView(R.id.activity_section_g)
     ScrollView activitySectionG;
@@ -1516,7 +1516,7 @@ public class SectionGActivity extends Activity {
             // =================== Q1801 ====================
 
             if ((crg1801.getText().toString().isEmpty() && crg1802.getText().toString().isEmpty()) && !crg1899.isChecked()) {
-                    Toast.makeText(this, "ERROR(empty)" + getString(R.string.crg1801), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty)" + getString(R.string.crg18), Toast.LENGTH_SHORT).show();
                 crg1899.setError("This data is required");
                     Log.d(TAG, "crg1801: This data is required  ");
                     return false;

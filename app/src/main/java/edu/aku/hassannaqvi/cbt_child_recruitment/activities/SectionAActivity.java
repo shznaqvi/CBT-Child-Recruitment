@@ -341,7 +341,7 @@ public class SectionAActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //if (UpdateDB()) {
+            if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -350,7 +350,7 @@ public class SectionAActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        //}
+        }
 
     }
 
@@ -359,22 +359,22 @@ public class SectionAActivity extends Activity {
     void onBtnEndClick() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-*/
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
-        Intent endSec = new Intent(this, EndingActivity.class);
-        endSec.putExtra("complete", false);
-        startActivity(endSec);
-            /*} else {
+
+                Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+                Intent endSec = new Intent(this, EndingActivity.class);
+                endSec.putExtra("complete", false);
+                startActivity(endSec);
+            } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
     }
 
 
@@ -396,6 +396,16 @@ public class SectionAActivity extends Activity {
 
         Toast.makeText(this, "Validating Section A", Toast.LENGTH_SHORT).show();
 
+        //================ Q 3==================
+        if (cra03.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra03), Toast.LENGTH_SHORT).show();
+            cra03.setError("This data is Required!");
+
+            Log.i(TAG, "cra03: This Data is Required!");
+            return false;
+        } else {
+            cra03.setError(null);
+        }
         //======================= Q 1 ===============
         if (cra01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra01), Toast.LENGTH_SHORT).show();
@@ -406,6 +416,7 @@ public class SectionAActivity extends Activity {
         } else {
             cra0102.setError(null);
         }
+
 
         if (cra0101.isChecked()) {
             //========== Q2==============
@@ -420,16 +431,7 @@ public class SectionAActivity extends Activity {
             }
 
             if (cra0201.isChecked()) {
-                //================ Q 3==================
-                if (cra03.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra03), Toast.LENGTH_SHORT).show();
-                    cra03.setError("This data is Required!");
 
-                    Log.i(TAG, "cra03: This Data is Required!");
-                    return false;
-                } else {
-                    cra03.setError(null);
-                }
 
                 //================= Q4================
                 if (cra04.getCheckedRadioButtonId() == -1) {
@@ -440,6 +442,17 @@ public class SectionAActivity extends Activity {
                     return false;
                 } else {
                     cra0405.setError(null);
+                }
+
+                //======================= Q5==================
+                if (cra05.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra05), Toast.LENGTH_SHORT).show();
+                    cra05.setError("This data is Required!");
+
+                    Log.i(TAG, "cra05: This Data is Required!");
+                    return false;
+                } else {
+                    cra05.setError(null);
                 }
                 //======================= Q6==================
                 if (cra06.getText().toString().isEmpty()) {
@@ -464,7 +477,7 @@ public class SectionAActivity extends Activity {
                 }
 
                 //============== Check on Education=============
-                if ((Integer.parseInt(cra07.getText().toString().isEmpty() ? "0" : cra07.getText().toString()) < 1)
+                if ((Integer.parseInt(cra07.getText().toString().isEmpty() ? "0" : cra07.getText().toString()) < 0)
                         || (Integer.parseInt(cra07.getText().toString().isEmpty() ? "0" : cra07.getText().toString()) > 16)) {
                     Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra07), Toast.LENGTH_LONG).show();
                     cra07.setError("Range is 1-16");
@@ -473,6 +486,7 @@ public class SectionAActivity extends Activity {
                 } else {
                     cra07.setError(null);
                 }
+
 
                 //=================== Q8==============
                 if (cra08.getText().toString().isEmpty()) {
@@ -507,11 +521,11 @@ public class SectionAActivity extends Activity {
                     cra10.setError(null);
                 }
                 //================== Check on age of mother===============
-                if ((Integer.parseInt(cra07.getText().toString().isEmpty() ? "0" : cra07.getText().toString()) < 15)
-                        || (Integer.parseInt(cra07.getText().toString().isEmpty() ? "0" : cra07.getText().toString()) > 49)) {
-                    Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra10), Toast.LENGTH_LONG).show();
+                if ((Integer.parseInt(cra10.getText().toString().isEmpty() ? "0" : cra10.getText().toString()) < 15)
+                        || (Integer.parseInt(cra10.getText().toString().isEmpty() ? "0" : cra10.getText().toString()) > 49)) {
+                    Toast.makeText(this, "ERROR(Invali d) " + getString(R.string.cra10), Toast.LENGTH_LONG).show();
                     cra10.setError("Range is 15-49 years");
-                    Log.i(TAG, "cra10: Range is 15-49");
+                    Log.i(TAG, "cra07: Range is 15-49");
                     return false;
                 } else {
                     cra10.setError(null);
@@ -528,7 +542,7 @@ public class SectionAActivity extends Activity {
                 }
 
                 //=============== Check on Education of Mother================
-                if ((Integer.parseInt(cra11.getText().toString().isEmpty() ? "0" : cra11.getText().toString()) < 1)
+                if ((Integer.parseInt(cra11.getText().toString().isEmpty() ? "0" : cra11.getText().toString()) < 0)
                         || (Integer.parseInt(cra11.getText().toString().isEmpty() ? "0" : cra11.getText().toString()) > 16)) {
                     Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra11), Toast.LENGTH_LONG).show();
                     cra11.setError("Range is 1-16");
@@ -571,7 +585,7 @@ public class SectionAActivity extends Activity {
                 //================ Q14===============
                 if (cra14.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
-                    cra14.setError("This data is Required!");
+                    cra14.setError("Th is data is Required!");
 
                     Log.i(TAG, "cra14: This Data is Required!");
                     return false;
@@ -585,6 +599,17 @@ public class SectionAActivity extends Activity {
                     cra15.setError("This data is Required!");
 
                     Log.i(TAG, "cra15: This Data is Required!");
+                    return false;
+                } else {
+                    cra15.setError(null);
+                }
+
+                if (Integer.parseInt(cra15.getText().toString().isEmpty() ? "0" : cra15.getText().toString())
+                        > Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString())) {
+                    Toast.makeText(this, "ERROR(Range)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
+                    cra15.setError("Can not be greater than total pregnancies... Check again");
+
+                    Log.i(TAG, "cra15: Can not be greater than total pregnancies... Check again");
                     return false;
                 } else {
                     cra15.setError(null);

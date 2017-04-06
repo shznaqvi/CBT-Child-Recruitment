@@ -357,7 +357,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     LinearLayout fldGrpcrf06f;
     @BindView(R.id.fldGrpcrf09)
     LinearLayout fldGrpcrf09;
-
+    @BindView(R.id.crf02)
     RadioGroup crf02;
     @BindView(R.id.crf0200)
     RadioButton crf0200;
@@ -404,11 +404,10 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             }
         });
 
-        //============= Q6 B Times=========
-        crf06b01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        crf06b.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (crf06b01.isChecked()) {
                     fldGrpcrf06b.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrf06b.setVisibility(View.GONE);
@@ -417,11 +416,10 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             }
         });
 
-        //============= Q6 C Times=========
-        crf06c01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        crf06c.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (crf06c01.isChecked()) {
                     fldGrpcrf06c.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrf06c.setVisibility(View.GONE);
@@ -430,11 +428,11 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             }
         });
 
-        //============= Q6 f Times=========
-        crf06f01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        crf06f.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (crf06f01.isChecked()) {
                     fldGrpcrf06f.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrf06f.setVisibility(View.GONE);
@@ -442,6 +440,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
                 }
             }
         });
+
 
         //=============== Q8 Skip Pattern===============
 
@@ -454,6 +453,18 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
                     fldGrpcrf09.setVisibility(View.GONE);
                     crf09num.setText(null);
                     crf0999.setChecked(false);
+                }
+            }
+        });
+
+        crf0999.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crf09num.setVisibility(View.GONE);
+                    crf09num.setText(null);
+                } else {
+                    crf09num.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -600,7 +611,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             }
 
             if (Integer.parseInt(crf02h.getText().toString().isEmpty() ? "0" : crf02h.getText().toString()) < 0
-                    || Integer.parseInt(crf02h.getText().toString().isEmpty() ? "0" : crf02h.getText().toString()) < 23) {
+                    || Integer.parseInt(crf02h.getText().toString().isEmpty() ? "0" : crf02h.getText().toString()) > 23) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf0201), Toast.LENGTH_SHORT).show();
                 crf02h.setError("Range is 0 to 23 Hours");
                 Log.i(TAG, "crf02h: Range is 0 to 23 Hours");
@@ -622,7 +633,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             }
 
             if (Integer.parseInt(crf02d.getText().toString().isEmpty() ? "0" : crf02d.getText().toString()) < 1
-                    || Integer.parseInt(crf02d.getText().toString().isEmpty() ? "0" : crf02h.getText().toString()) < 29) {
+                    || Integer.parseInt(crf02d.getText().toString().isEmpty() ? "0" : crf02h.getText().toString()) > 29) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf0201), Toast.LENGTH_SHORT).show();
                 crf02d.setError("Range is 1 to 29 Days");
                 Log.i(TAG, "crf02d: Range is 1 to 29 Days");
