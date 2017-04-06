@@ -59,7 +59,7 @@ public class SyncIMs extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
         String line = "No Response";
         try {
-            return downloadUrl(AppMain._HOST_URL + "cash_basedtransferchildrecruitment/api/ims.php");
+            return downloadUrl(AppMain.PROJECT_URI + "cash_basedtransferchildrecruitment/api/ims.php");
         } catch (IOException e) {
             return "Unable to upload data. Server may be down.";
         }

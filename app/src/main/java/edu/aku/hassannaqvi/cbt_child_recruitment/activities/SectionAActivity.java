@@ -1,27 +1,45 @@
 package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.VillagesContract;
 
 public class SectionAActivity extends Activity {
 
@@ -114,6 +132,19 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.btnNext)
     Button btnNext;
 
+    @BindView(R.id.crauc)
+    Spinner crauc;
+    @BindView(R.id.cravillage)
+    Spinner cravillage;
+    @BindView(R.id.btnChangeVillage)
+    ToggleButton btnChangeVillage;
+
+    DatabaseHelper db;
+    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+
+    Map<String, String> getAllUCs,getAllVillages;
+    List<String> UCs,VillagesName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -198,6 +229,106 @@ public class SectionAActivity extends Activity {
             }
         });
 
+//        Spinner Fill
+
+        db = new DatabaseHelper(this);
+
+        UCs = new ArrayList<>();
+        getAllUCs = new HashMap<>();
+        Collection<UCsContract> allUcs = db.getAllUCsByTehsil(AppMain.tehsilCode);
+        for (UCsContract aUCs : allUcs) {
+            getAllUCs.put(aUCs.getUcName(), aUCs.getUcCode());
+            UCs.add(aUCs.getUcName());
+        }
+
+        crauc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, UCs));
+
+        crauc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                VillagesName = new ArrayList<>();
+                getAllVillages = new HashMap<>();
+                Collection<VillagesContract> allVillages = db.getAllVillagesByUc(getAllUCs.get(UCs.get(position)));
+                for (VillagesContract aVillages : allVillages) {
+                    getAllVillages.put(aVillages.getVillageName(), aVillages.getVillageCode());
+                    VillagesName.add(aVillages.getVillageName());
+                }
+                cravillage.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_dropdown_item_1line, VillagesName));
+
+                if (AppMain.UCsCodeFlag) {
+                    AppMain.UCsCode = position;
+                }
+
+                if (!AppMain.UCsCodeFlag) {
+                    crauc.setSelection(AppMain.UCsCode);
+
+                    btnChangeVillage.setChecked(false);
+                    crauc.setEnabled(false);
+                    cravillage.setEnabled(false);
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        cravillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                if (AppMain.VillageCodeFlag) {
+                    AppMain.VillageCode = position;
+                }
+
+                if (!AppMain.VillageCodeFlag) {
+                    cravillage.setSelection(AppMain.VillageCode);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        if (crauc.getItemAtPosition(0) == "...") {
+            btnChangeVillage.setChecked(true);
+            crauc.setEnabled(true);
+            cravillage.setEnabled(true);
+        } else {
+            btnChangeVillage.setChecked(false);
+            crauc.setEnabled(false);
+            cravillage.setEnabled(false);
+        }
+
+        btnChangeVillage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (btnChangeVillage.isChecked()) {
+                    Toast.makeText(getApplicationContext(), "Edit mode", Toast.LENGTH_SHORT).show();
+
+                    crauc.setEnabled(true);
+                    cravillage.setEnabled(true);
+
+                    AppMain.UCsCodeFlag = true;
+                    AppMain.VillageCodeFlag = true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "Save", Toast.LENGTH_SHORT).show();
+
+                    crauc.setEnabled(false);
+                    cravillage.setEnabled(false);
+
+                    AppMain.UCsCodeFlag = false;
+                    AppMain.VillageCodeFlag = false;
+                }
+
+            }
+        });
 
     }
 
@@ -583,6 +714,38 @@ public class SectionAActivity extends Activity {
 
     }
 
+    public void setGPS() {
+        SharedPreferences GPSPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+
+//        String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+
+        try {
+            String lat = GPSPref.getString("Latitude", "0");
+            String lang = GPSPref.getString("Longitude", "0");
+            String acc = GPSPref.getString("Accuracy", "0");
+            String dt = GPSPref.getString("Time", "0");
+
+            if (lat == "0" && lang == "0") {
+                Toast.makeText(this, "Could not obtained GPS points", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+            }
+
+            String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+
+            AppMain.fc.setGpsLat(GPSPref.getString("Latitude", "0"));
+            AppMain.fc.setGpsLng(GPSPref.getString("Longitude", "0"));
+            AppMain.fc.setGpsAcc(GPSPref.getString("Accuracy", "0"));
+            AppMain.fc.setGpsTime(date); // Timestamp is converted to date above
+
+            Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            Log.e(TAG, "setGPS: " + e.getMessage());
+        }
+
+    }
+
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
@@ -614,7 +777,7 @@ public class SectionAActivity extends Activity {
         sa.put("cra23", cra23.getText().toString());
         sa.put("cra24", cra15.getText().toString());
 
-        //DCEApp.fc.setROW_Sa(String.valueOf(sa));
+        setGPS();
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

@@ -7,5 +7,7 @@
 
     <color name="black_overlay">#66000000</color>
     <color name="white">#efefef</color>
+
+    <color name="grey_dialog_box">#808080</color>
 </resources>
 

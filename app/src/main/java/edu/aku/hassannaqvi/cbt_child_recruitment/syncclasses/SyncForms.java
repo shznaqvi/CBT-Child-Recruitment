@@ -59,7 +59,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
 
         String line = "No Response";
         try {
-            return downloadUrl(AppMain._HOST_URL + "cash_basedtransferchildrecruitment/api/forms.php");
+            return downloadUrl(AppMain.PROJECT_URI + "cash_basedtransferchildrecruitment/api/forms.php");
         } catch (IOException e) {
             return "Unable to upload data. Server may be down.";
         }

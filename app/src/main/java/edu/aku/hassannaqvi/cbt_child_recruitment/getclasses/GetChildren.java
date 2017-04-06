@@ -55,7 +55,7 @@ public class GetChildren extends AsyncTask<String, String, String> {
         StringBuilder result = new StringBuilder();
 
         try {
-            URL url = new URL(AppMain._HOST_URL + "cash_basedtransferchildrecruitment/api/children.php");
+            URL url = new URL(AppMain.PROJECT_URI + "cash_basedtransferchildrecruitment/api/children.php");
             urlConnection = (HttpURLConnection) url.openConnection();
 
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
