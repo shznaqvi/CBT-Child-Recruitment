@@ -23,7 +23,7 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract;
 public class AppMain extends Application {
 
     //public static final String _IP = "192.168.1.10"; // Test NODE server
-    public static final String _IP = "10.1.42.123"; // Test PHP server
+    public static final String _IP = "43.245.131.159"; // Test PHP server
     public static final Integer _PORT = 3000; // Port - with colon (:)
     public static final String PROJECT_URI = "http://" + AppMain._IP + ":" + AppMain._PORT + "/cbt/";
 
