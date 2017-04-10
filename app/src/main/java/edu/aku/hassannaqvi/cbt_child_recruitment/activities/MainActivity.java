@@ -9,7 +9,6 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -52,6 +51,8 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncIMs;
 
 public class MainActivity extends Activity {
 
+    public static String TAG = MainActivity.class.getSimpleName();
+    public List<String> lhwName;
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     @BindView(R.id.adminsec)
     LinearLayout adminsec;
@@ -59,20 +60,15 @@ public class MainActivity extends Activity {
     TextView recordSummary;
     @BindView(R.id.clusterNo)
     EditText clusterNo;
-    private String rSumText = "";
-
     @BindView(R.id.MN01)
     Spinner mN01;
     @BindView(R.id.MN02)
     Spinner mN02;
     @BindView(R.id.MN03)
     Spinner mN03;
-
     Map<String, String> tehsils, lhws;
     DatabaseHelper db;
-    public List<String> lhwName;
-
-    public static String TAG = MainActivity.class.getSimpleName();
+    private String rSumText = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -195,7 +191,7 @@ public class MainActivity extends Activity {
                     lhwName.add(lhw.getLHWName() + " (" + lhw.getLHWCode() + ")");
                 }
                 ArrayAdapter<String> psuAdapter = new ArrayAdapter<>(getBaseContext(),
-                        android.R.layout.simple_spinner_item, lhwName);
+                        android.R.layout.simple_spinner_dropdown_item, lhwName);
 
                 psuAdapter
                         .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

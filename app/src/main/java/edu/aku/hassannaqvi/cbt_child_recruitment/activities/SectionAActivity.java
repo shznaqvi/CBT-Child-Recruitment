@@ -241,7 +241,7 @@ public class SectionAActivity extends Activity {
             UCs.add(aUCs.getUcName());
         }
 
-        crauc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, UCs));
+        crauc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, UCs));
 
         crauc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -254,7 +254,7 @@ public class SectionAActivity extends Activity {
                     getAllVillages.put(aVillages.getVillageName(), aVillages.getVillageCode());
                     VillagesName.add(aVillages.getVillageName());
                 }
-                cravillage.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_dropdown_item_1line, VillagesName));
+                cravillage.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, VillagesName));
 
                 if (AppMain.UCsCodeFlag) {
                     AppMain.UCsCode = position;
