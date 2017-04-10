@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -42,6 +45,7 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetHFacilities;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetLHWs;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetTehsil;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetUCs;
+import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetUsers;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetVillages;
 import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncForms;
 import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncIMs;
@@ -134,7 +138,7 @@ public class MainActivity extends Activity {
         }
         recordSummary.setText(rSumText);
 
-//        Sync Spinners
+        //        Sync Spinners
 
         AppMain.fc = null;
 
@@ -190,7 +194,7 @@ public class MainActivity extends Activity {
                     lhws.put("" + (lhw.getLHWName() + " (" + lhw.getLHWCode() + ")"), lhw.getLHWCode());
                     lhwName.add(lhw.getLHWName() + " (" + lhw.getLHWCode() + ")");
                 }
-                ArrayAdapter<String> psuAdapter = new ArrayAdapter<String>(MainActivity.this,
+                ArrayAdapter<String> psuAdapter = new ArrayAdapter<>(getBaseContext(),
                         android.R.layout.simple_spinner_item, lhwName);
 
                 psuAdapter
@@ -216,6 +220,7 @@ public class MainActivity extends Activity {
 
             }
         });
+
     }
 
     public void openForm(View v) {
@@ -312,40 +317,8 @@ public class MainActivity extends Activity {
     public void syncDevice(View view) {
         if (isNetworkAvailable()) {
 
-//            GetUsers gu = new GetUsers(this);
-//            Toast.makeText(getApplicationContext(), "Syncing Users", Toast.LENGTH_SHORT).show();
-//            gu.execute();
-//
-//            GetChildren gc = new GetChildren(this);
-//            Toast.makeText(getApplicationContext(), "Syncing Children", Toast.LENGTH_SHORT).show();
-//            gc.execute();
-
-            GetTehsil gt = new GetTehsil(this);
-            Toast.makeText(getApplicationContext(), "Syncing Tehsils", Toast.LENGTH_SHORT).show();
-            gt.execute();
-
-            GetVillages gv = new GetVillages(this);
-            Toast.makeText(getApplicationContext(), "Syncing Villages", Toast.LENGTH_SHORT).show();
-            gv.execute();
-
-            GetUCs gu = new GetUCs(this);
-            Toast.makeText(getApplicationContext(), "Syncing Ucs", Toast.LENGTH_SHORT).show();
-            gu.execute();
-
-            GetHFacilities gh = new GetHFacilities(this);
-            Toast.makeText(getApplicationContext(), "Syncing Health Facilities", Toast.LENGTH_SHORT).show();
-            gh.execute();
-
-            GetLHWs gp = new GetLHWs(this);
-            Toast.makeText(getApplicationContext(), "Syncing LHWs", Toast.LENGTH_SHORT).show();
-            gp.execute();
-
-            SharedPreferences syncPref = getSharedPreferences("SyncInfo(DOWN)", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = syncPref.edit();
-
-            editor.putString("LastSyncDevice", dtToday);
-
-            editor.apply();
+            syncData sync =new syncData(this);
+            sync.execute();
         }
     }
 
@@ -378,6 +351,153 @@ public class MainActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Network not available for Update", Toast.LENGTH_SHORT).show();
             return false;
 
+        }
+    }
+
+
+    public class syncData extends AsyncTask<String, String, String> {
+
+        private Context mContext;
+
+        public syncData(Context mContext) {
+            this.mContext = mContext;
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    GetUsers us = new GetUsers(mContext);
+                    Toast.makeText(mContext, "Syncing Users", Toast.LENGTH_SHORT).show();
+                    us.execute();
+
+                    GetTehsil gt = new GetTehsil(mContext);
+                    Toast.makeText(mContext, "Syncing Tehsils", Toast.LENGTH_SHORT).show();
+                    gt.execute();
+
+                    GetVillages gv = new GetVillages(mContext);
+                    Toast.makeText(mContext, "Syncing Villages", Toast.LENGTH_SHORT).show();
+                    gv.execute();
+
+                    GetUCs gu = new GetUCs(mContext);
+                    Toast.makeText(mContext, "Syncing Ucs", Toast.LENGTH_SHORT).show();
+                    gu.execute();
+
+                    GetHFacilities gh = new GetHFacilities(mContext);
+                    Toast.makeText(mContext, "Syncing Health Facilities", Toast.LENGTH_SHORT).show();
+                    gh.execute();
+
+                    GetLHWs gp = new GetLHWs(mContext);
+                    Toast.makeText(mContext, "Syncing LHWs", Toast.LENGTH_SHORT).show();
+                    gp.execute();
+
+                    SharedPreferences syncPref = getSharedPreferences("SyncInfo(DOWN)", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = syncPref.edit();
+
+                    editor.putString("LastSyncDevice", dtToday);
+
+                    editor.apply();
+                }
+            });
+
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    //        Sync Spinners
+
+                    AppMain.fc = null;
+
+                    // Spinner Drop down elements
+                    tehsils = new HashMap<>();
+                    final List<String> Tname = new ArrayList<>();
+                    Collection<TehsilsContract> Tc = db.getAllTehsil();
+                    Log.d(TAG, "onCreate: " + Tc.size());
+                    for (TehsilsContract hf : Tc) {
+                        tehsils.put(hf.getTehsil_name(), hf.getTehsil_code());
+                        Tname.add(hf.getTehsil_name());
+                    }
+
+                    mN01.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, Tname));
+
+                    final List<String> hfCodes = new ArrayList<>();
+
+                    mN01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            // Spinner Drop down elements
+                            List<String> hfNames = new ArrayList<>();
+
+                            AppMain.tehsilCode = tehsils.get(Tname.get(position));
+
+                            Collection<HFacilitiesContract> hfc = db.getAllHFacilitiesByTehsil(AppMain.tehsilCode);
+                            Log.d(TAG, "onCreate: " + hfc.size());
+                            for (HFacilitiesContract hf : hfc) {
+                                hfNames.add(hf.gethFacilityName());
+                                hfCodes.add(hf.gethFacilityCode());
+                            }
+
+                            // attaching data adapter to spinner
+                            mN02.setAdapter(new ArrayAdapter<>(mContext,
+                                    android.R.layout.simple_spinner_dropdown_item, hfNames));
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
+                    mN02.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            AppMain.hfCode = hfCodes.get(position);
+
+                            lhwName = new ArrayList<String>();
+                            lhws = new HashMap<String, String>();
+                            Collection<LHWsContract> lhwc = db.getAllLhwsByHf(hfCodes.get(position));
+                            for (LHWsContract lhw : lhwc) {
+                                lhws.put("" + (lhw.getLHWName() + " (" + lhw.getLHWCode() + ")"), lhw.getLHWCode());
+                                lhwName.add(lhw.getLHWName() + " (" + lhw.getLHWCode() + ")");
+                            }
+                            ArrayAdapter<String> psuAdapter = new ArrayAdapter<>(mContext,
+                                    android.R.layout.simple_spinner_item, lhwName);
+
+                            psuAdapter
+                                    .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            mN03.setAdapter(psuAdapter);
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
+                    mN03.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            AppMain.lhwCode = lhws.get(lhwName.get(position));
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
+                }
+            },1200);
         }
     }
 }
