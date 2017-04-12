@@ -22,6 +22,7 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
@@ -580,7 +581,7 @@ public class SectionHActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //if (UpdateDB()) {
+            if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -589,7 +590,7 @@ public class SectionHActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        //}
+        }
 
     }
 
@@ -606,6 +607,7 @@ public class SectionHActivity extends Activity {
             }
             if (UpdateDB()) {
 */
+        finish();
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
@@ -719,7 +721,9 @@ public class SectionHActivity extends Activity {
         sj.put("crj01nsrc", crj01nsrc.getSelectedItem().toString());
 
 
-        //DCEApp.fc.setROW_Sa(String.valueOf(sa));
+        AppMain.fc.setsH(String.valueOf(sh));
+        AppMain.fc.setsI(String.valueOf(si));
+        AppMain.fc.setsJ(String.valueOf(sj));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -795,9 +799,9 @@ public class SectionHActivity extends Activity {
         }
 
         //====================== Q6 ================
-        if (!(crh0601.isChecked() && crh0602.isChecked() && crh0603.isChecked() && crh0604.isChecked()
-                && crh0605.isChecked() && crh0606.isChecked() && crh0607.isChecked() && crh0607.isChecked()
-                && crh0608.isChecked() && crh0609.isChecked() && crh0696.isChecked())) {
+        if (!(crh0601.isChecked() || crh0602.isChecked() || crh0603.isChecked() || crh0604.isChecked()
+                || crh0605.isChecked() || crh0606.isChecked() || crh0607.isChecked() || crh0607.isChecked()
+                || crh0608.isChecked() || crh0609.isChecked() || crh0696.isChecked())) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crh06), Toast.LENGTH_SHORT).show();
             crh0696.setError("This data is Required!");
             Log.i(TAG, "crh06: This data is Required!");
@@ -1399,8 +1403,6 @@ public class SectionHActivity extends Activity {
         }
 
 
-
-
         return true;
 
     }
@@ -1408,17 +1410,20 @@ public class SectionHActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateH();
+//        int updcount;
+//        updcount = db.updateSH();
+//        updcount = db.updateSI();
+//        updcount = db.updateSJ();
+        int updcount = db.updateSH() == 1 ?
+                (db.updateSI() == 1 ? (db.updateSJ() == 1 ? 1 : db.updateSJ()) : db.updateSI()) : db.updateSH();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        //}
-
-
+        }
     }
 
 

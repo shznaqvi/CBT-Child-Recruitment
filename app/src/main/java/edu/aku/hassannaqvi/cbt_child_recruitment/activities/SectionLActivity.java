@@ -21,6 +21,7 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
@@ -188,7 +189,7 @@ public class SectionLActivity extends Activity {
     EditText crl1396x;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -305,7 +306,7 @@ public class SectionLActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //if (updateDb()) {
+            if (updateDb()) {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -315,12 +316,13 @@ public class SectionLActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
             }
-        //}
+        }
     }
 
 
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
+        finish();
         Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
@@ -331,14 +333,15 @@ public class SectionLActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateA();
+        int updcount = db.updateSL();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
-        return false;
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     private void saveDrafts() throws JSONException {
@@ -376,6 +379,7 @@ public class SectionLActivity extends Activity {
                 : crl1305.isChecked() ? "5" : crl1306.isChecked() ? "6" : crl1307.isChecked() ? "7" : crl1308.isChecked() ? "8"
                 : crl1396.isChecked() ? "96" : "0");
 
+        AppMain.fc.setsL(String.valueOf(sl));
 
         Toast.makeText(this, "Validation Succecful", Toast.LENGTH_SHORT).show();
     }
@@ -475,7 +479,6 @@ public class SectionLActivity extends Activity {
             } else {
                 crl0799.setError(null);
             }
-
 
 
             // =================== Q8 ====================

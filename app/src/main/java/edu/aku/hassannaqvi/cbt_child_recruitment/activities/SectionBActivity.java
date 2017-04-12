@@ -570,7 +570,7 @@ public class SectionBActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //if (updateDB()) {
+            if (updateDB()) {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -580,13 +580,14 @@ public class SectionBActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
             }
-        //}
+        }
 
     }
 
 
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
+        finish();
         Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
@@ -597,7 +598,14 @@ public class SectionBActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateB();
+//        int updcount;
+//        updcount = db.updateSB();
+//        updcount = db.updateSC();
+//        updcount = db.updateSD();
+//        updcount = db.updateSE();
+
+        int updcount = db.updateSB() == 1 ?
+                (db.updateSC() == 1 ? (db.updateSD() == 1 ? (db.updateSE() == 1 ? 1 : db.updateSE()) : db.updateSD()) : db.updateSC()) : db.updateSB();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -605,11 +613,7 @@ public class SectionBActivity extends Activity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-
-
-        return true;
+        }
     }
 
     private void saveDrafts() throws JSONException {
@@ -695,7 +699,10 @@ public class SectionBActivity extends Activity {
         se.put("cre0504a", cre0504a01.isChecked() ? "1" : cre0504a02.isChecked() ? "2" : "0");
         se.put("cre0504b", cre0504b01.isChecked() ? "1" : cre0504b02.isChecked() ? "2" : "0");
 
-
+        AppMain.fc.setsB(String.valueOf(sb));
+        AppMain.fc.setsC(String.valueOf(sc));
+        AppMain.fc.setsD(String.valueOf(sd));
+        AppMain.fc.setsE(String.valueOf(se));
 
         Toast.makeText(this, "Validation Succecful", Toast.LENGTH_SHORT).show();
 
@@ -734,11 +741,10 @@ public class SectionBActivity extends Activity {
             crb0401.setError(null);
         }
 
-        if ((Integer.parseInt(crb0401.getText().toString().isEmpty() ? "0" : crb0401.getText().toString()) < 0)
-                || (Integer.parseInt(crb0401.getText().toString().isEmpty() ? "0" : crb0401.getText().toString()) >= 6)) {
+        if (Integer.parseInt(crb0401.getText().toString()) < 0 || Integer.parseInt(crb0401.getText().toString()) > 5){
             Toast.makeText(this, "ERROR: " + getString(R.string.crb04) + getString(R.string.months), Toast.LENGTH_LONG).show();
-            crb0401.setError("Range is 1-6 Months");
-            Log.i(TAG, "crb0401: Range is 1-6 Months");
+            crb0401.setError("Range is 0-5 Months");
+            Log.i(TAG, "crb0401: Range is 0-5 Months");
             return false;
         } else {
             crb0401.setError(null);
@@ -747,7 +753,7 @@ public class SectionBActivity extends Activity {
         if (crb0402.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crb04), Toast.LENGTH_SHORT).show();
             crb0402.setError("This data is required");
-            Log.d(TAG, "empty: crb0402  ");
+            Log.d(TAG, "empty: crb0402");
             return false;
         } else {
             crb0402.setError(null);

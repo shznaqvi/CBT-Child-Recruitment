@@ -51,6 +51,7 @@ public class EndingActivity extends Activity {
                 e.printStackTrace();
             }
             //if (UpdateDB()) {
+            finish();
                 Toast.makeText(this, "Closing Form!", Toast.LENGTH_SHORT).show();
                 Intent endSec = new Intent(this, MainActivity.class);
                 //AppMain.mnb1 = "TEST";

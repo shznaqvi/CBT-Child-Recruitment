@@ -21,6 +21,7 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
@@ -852,7 +853,7 @@ public class SectionGActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //if (updateDb()) {
+            if (updateDb()) {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -862,11 +863,12 @@ public class SectionGActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
             }
-        //}
+        }
     }
 
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
+        finish();
         Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
@@ -876,14 +878,15 @@ public class SectionGActivity extends Activity {
     private boolean updateDb() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateA();
+        int updcount = db.updateSG();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
-        return false;
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     private void saveDrafts() throws JSONException {
@@ -959,6 +962,7 @@ public class SectionGActivity extends Activity {
         sg.put("crg22", crg2201.isChecked() ? "1" : crg2202.isChecked() ? "2" : "0");
         sg.put("crg22a", crg22a01.isChecked() ? "1" : crg22a02.isChecked() ? "2" : crg22a03.isChecked() ? "3" : "0");
 
+        AppMain.fc.setsG(String.valueOf(sg));
 
         Toast.makeText(this, "Validation Succecful", Toast.LENGTH_SHORT).show();
     }

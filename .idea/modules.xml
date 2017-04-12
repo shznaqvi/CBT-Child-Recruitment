@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CBT-Child-Recruitment.iml" filepath="$PROJECT_DIR$/CBT-Child-Recruitment.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Cash-BasedTransfer(ChildRecruitment).iml" filepath="$PROJECT_DIR$/Cash-BasedTransfer(ChildRecruitment).iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

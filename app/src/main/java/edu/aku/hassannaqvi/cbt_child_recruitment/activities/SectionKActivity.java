@@ -21,6 +21,7 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
@@ -355,7 +356,7 @@ public class SectionKActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //if (updateDb()) {
+            if (updateDb()) {
             Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
             finish();
@@ -365,11 +366,12 @@ public class SectionKActivity extends Activity {
         } else {
             Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
         }
-        //}
+        }
     }
 
     @OnClick(R.id.btnEnd)
     void onBtnEndClick() {
+        finish();
         Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
@@ -381,14 +383,15 @@ public class SectionKActivity extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateA();
+        int updcount = db.updateSK();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
-        return false;
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 
@@ -441,6 +444,7 @@ public class SectionKActivity extends Activity {
         sk.put("crk12", crk1201.isChecked() ? "1" : crk1202.isChecked() ? "2" : "0");
         sk.put("crk13", crk13.getText().toString());
 
+        AppMain.fc.setsK(String.valueOf(sk));
 
         Toast.makeText(this, "Validation Succecful", Toast.LENGTH_SHORT).show();
     }

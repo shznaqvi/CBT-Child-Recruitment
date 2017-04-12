@@ -25,6 +25,7 @@ import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
@@ -1485,15 +1486,6 @@ public class SectionMActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
-
-
-
-
-
     }
 
     @OnClick(R.id.btnNext)
@@ -1504,16 +1496,16 @@ public class SectionMActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //if (UpdateDB()) {
-            Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-            finish();
+                finish();
 
-            startActivity(new Intent(this, SectionGActivity.class));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, SectionGActivity.class));
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
         }
-        // }
 
 
     }
@@ -1532,6 +1524,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
             if (UpdateDB()) {
 */
+        finish();
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
         Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
@@ -1671,8 +1664,8 @@ public class SectionMActivity extends AppCompatActivity {
         sn.put("crn08dod2", crn08dod2.getText().toString());
 
 
-
-        //DCEApp.fc.setROW_Sa(String.valueOf(sa));
+        AppMain.fc.setsM(String.valueOf(sm));
+        AppMain.fc.setsN(String.valueOf(sn));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -2338,19 +2331,18 @@ public class SectionMActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateF();
+//        int updcount = db.updateSM();
+        int updcount = db.updateSM() == 1 ?
+                (db.updateSN() == 1 ? 1 : db.updateSN()) : db.updateSM();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
-        return false;
-        //}
-
-
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
-
 
 
 }

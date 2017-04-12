@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.IdRes;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -38,8 +39,8 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.VillagesContract;
 
 public class SectionAActivity extends Activity {
 
@@ -135,21 +136,28 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.crauc)
     Spinner crauc;
     @BindView(R.id.cravillage)
-    Spinner cravillage;
+    EditText cravillage;
     @BindView(R.id.btnChangeVillage)
     ToggleButton btnChangeVillage;
 
+    String deviceId;
     DatabaseHelper db;
-    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+    String dtToday;
 
-    Map<String, String> getAllUCs,getAllVillages;
-    List<String> UCs,VillagesName;
+    Map<String, String> getAllUCs, getAllVillages;
+    List<String> UCs, VillagesName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_a);
         ButterKnife.bind(this);
+
+
+        deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+
+        dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
         //================= Q1  Skip Pattern // HH Recieving Cash from BISP =============
         cra01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -247,14 +255,14 @@ public class SectionAActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                VillagesName = new ArrayList<>();
-                getAllVillages = new HashMap<>();
-                Collection<VillagesContract> allVillages = db.getAllVillagesByUc(getAllUCs.get(UCs.get(position)));
-                for (VillagesContract aVillages : allVillages) {
-                    getAllVillages.put(aVillages.getVillageName(), aVillages.getVillageCode());
-                    VillagesName.add(aVillages.getVillageName());
-                }
-                cravillage.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, VillagesName));
+//                VillagesName = new ArrayList<>();
+//                getAllVillages = new HashMap<>();
+//                Collection<VillagesContract> allVillages = db.getAllVillagesByUc(getAllUCs.get(UCs.get(position)));
+//                for (VillagesContract aVillages : allVillages) {
+//                    getAllVillages.put(aVillages.getVillageName(), aVillages.getVillageCode());
+//                    VillagesName.add(aVillages.getVillageName());
+//                }
+//                cravillage.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, VillagesName));
 
                 if (AppMain.UCsCodeFlag) {
                     AppMain.UCsCode = position;
@@ -267,6 +275,8 @@ public class SectionAActivity extends Activity {
                     crauc.setEnabled(false);
                     cravillage.setEnabled(false);
 
+                    cravillage.setText(AppMain.VillageName);
+
                 }
             }
 
@@ -276,24 +286,24 @@ public class SectionAActivity extends Activity {
             }
         });
 
-        cravillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if (AppMain.VillageCodeFlag) {
-                    AppMain.VillageCode = position;
-                }
-
-                if (!AppMain.VillageCodeFlag) {
-                    cravillage.setSelection(AppMain.VillageCode);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+//        cravillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//
+//                if (AppMain.VillageCodeFlag) {
+//                    AppMain.VillageName = position;
+//                }
+//
+//                if (!AppMain.VillageCodeFlag) {
+//                    cravillage.setSelection(AppMain.VillageName);
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
 
         if (crauc.getItemAtPosition(0) == "...") {
             btnChangeVillage.setChecked(true);
@@ -366,7 +376,7 @@ public class SectionAActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-
+                finish();
                 Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
                 Intent endSec = new Intent(this, EndingActivity.class);
                 endSec.putExtra("complete", false);
@@ -381,15 +391,23 @@ public class SectionAActivity extends Activity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateA();
+        long updcount = db.addForm(AppMain.fc);
 
-        if (updcount == 1) {
+        AppMain.fc.setID(String.valueOf(updcount));
+
+        if (updcount != 0) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-            return true;
+
+            AppMain.fc.setUID(
+                    (AppMain.fc.getDeviceID() + AppMain.fc.getID()));
+            db.updateFormID();
+
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
-            return false;
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
         }
+        return true;
+
+    }
 
 
     public boolean ValidateForm() {
@@ -761,6 +779,7 @@ public class SectionAActivity extends Activity {
             AppMain.fc.setGpsLat(GPSPref.getString("Latitude", "0"));
             AppMain.fc.setGpsLng(GPSPref.getString("Longitude", "0"));
             AppMain.fc.setGpsAcc(GPSPref.getString("Accuracy", "0"));
+//            AppMain.fc.setGpsTime(GPSPref.getString(date, "0")); // Timestamp is converted to date above
             AppMain.fc.setGpsTime(date); // Timestamp is converted to date above
 
             Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
@@ -773,6 +792,20 @@ public class SectionAActivity extends Activity {
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+
+        AppMain.VillageName = cravillage.getText().toString();
+
+        AppMain.fc =new FormsContract();
+
+        AppMain.fc.setUserName(AppMain.username);
+        AppMain.fc.setDeviceID(deviceId);
+        AppMain.fc.setHhDT(dtToday);
+        AppMain.fc.setTehsil(AppMain.tehsilCode);
+        AppMain.fc.sethFacility(AppMain.hfCode);
+        AppMain.fc.setLhwCode(AppMain.lhwCode);
+        AppMain.fc.setUccode(getAllUCs.get(crauc.getSelectedItem().toString()));
+        AppMain.fc.setVillagename(AppMain.VillageName);
+        AppMain.fc.setChildId(cra03.getText().toString());
 
         JSONObject sa = new JSONObject();
 
@@ -803,6 +836,8 @@ public class SectionAActivity extends Activity {
         sa.put("cra24", cra15.getText().toString());
 
         setGPS();
+
+        AppMain.fc.setsA(String.valueOf(sa));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

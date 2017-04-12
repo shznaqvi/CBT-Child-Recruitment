@@ -24,6 +24,7 @@ import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
@@ -367,7 +368,6 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     RadioButton crf0202;
 
 
-
     @BindViews({R.id.crf07a, R.id.crf07b, R.id.crf07c, R.id.crf07d, R.id.crf07e, R.id.crf07f, R.id.crf07g,
             R.id.crf07h, R.id.crf07i, R.id.crf07j, R.id.crf07k, R.id.crf07l, R.id.crf07m, R.id.crf07n, R.id.crf07o,
             R.id.crf07p, R.id.crf07q})
@@ -382,7 +382,6 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             R.id.crf07h99, R.id.crf07i99, R.id.crf07j99, R.id.crf07k99, R.id.crf07l99, R.id.crf07m99, R.id.crf07n99, R.id.crf07o99,
             R.id.crf07p99, R.id.crf07q99})
     List<RadioButton> crf0799;
-
 
 
     @Override
@@ -501,7 +500,6 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         });
 
 
-
     }
 
     @OnClick(R.id.btnNext)
@@ -512,7 +510,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //if (UpdateDB()) {
+            if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -521,7 +519,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        // }
+        }
 
     }
 
@@ -530,36 +528,36 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     void onBtnEndClick() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
 
-        /*if (ValidateForm()) {
+        if (ValidateForm()) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (UpdateDB()) {
-*/
-        Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
-        Intent endSec = new Intent(this, EndingActivity.class);
-        endSec.putExtra("complete", false);
-        startActivity(endSec);
-            /*} else {
-                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-            }
-        }*/
+//            if (UpdateDB()) {
+            finish();
+            Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
+            Intent endSec = new Intent(this, EndingActivity.class);
+            endSec.putExtra("complete", false);
+            startActivity(endSec);
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+//        }
     }
 
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        /*int updcount = db.updateF();
+        int updcount = db.updateSF();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        //}
+        }
 
 
     }
@@ -1117,7 +1115,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         sf.put("crf14", crf1401.isChecked() ? "1" : crf1402.isChecked() ? "2" : crf1499.isChecked() ? "99" : "0");
         sf.put("crf15", crf15.getText().toString());
 
-        //DCEApp.fc.setROW_Sa(String.valueOf(sa));
+        AppMain.fc.setsF(String.valueOf(sf));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }

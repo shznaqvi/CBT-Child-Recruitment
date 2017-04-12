@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.cbt_child_recruitment.contracts;
 
 import android.database.Cursor;
 import android.provider.BaseColumns;
+import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,16 +17,17 @@ public class FormsContract {
 
     private final String projectName = "CBT 2016-17";
     private final String surveyType = "SN";
+    private String userName ="";
     private String ID = "";
     private String UID = "";
-    private String mna1 = ""; // Date
-    private String mna2 = "0000"; // Tehsil code
-    private String hFacility = ""; // District
+    private String hhDT = ""; // Date
+    private String tehsil = "0000"; // Tehsil code
+    private String hFacility = ""; // HF
+    private String uccode = ""; // uc code
+    private String villagename = ""; // Village code
     private String lhwCode = ""; // lhw Code
     private String houseHold = ""; // HH no.
-    private String childId = ""; // Index Child Name
-    private String uccode = ""; // uc code
-    private String villagecode = ""; // Village code
+    private String childId = ""; // Index Child ID
     private String iStatus = ""; // Form Status
     private String sA = "";
     private String sB = "";
@@ -56,15 +58,16 @@ public class FormsContract {
     public FormsContract sync(JSONObject jsonObject) throws JSONException {
         this.ID = jsonObject.getString(singleForm.COLUMN_ID);
         this.UID= jsonObject.getString(singleForm.COLUMN_UID);
-        this.mna1= jsonObject.getString(singleForm.COLUMN_MNA1);
-        this.mna2= jsonObject.getString(singleForm.COLUMN_MNA2);
+        this.hhDT = jsonObject.getString(singleForm.COLUMN_HHDT);
+        this.tehsil = jsonObject.getString(singleForm.COLUMN_TEHSIL);
         this.hFacility= jsonObject.getString(singleForm.COLUMN_HFACILITY);
         this.lhwCode= jsonObject.getString(singleForm.COLUMN_LHWCODE);
         this.houseHold= jsonObject.getString(singleForm.COLUMN_HOUSEHOLD);
         this.childId= jsonObject.getString(singleForm.COLUMN_CHILDID);
         this.uccode= jsonObject.getString(singleForm.COLUMN_UCCODE);
-        this.villagecode= jsonObject.getString(singleForm.COLUMN_VILLAGECODE);
+        this.villagename = jsonObject.getString(singleForm.COLUMN_VILLAGENAME);
         this.iStatus= jsonObject.getString(singleForm.COLUMN_ISTATUS);
+        this.userName= jsonObject.getString(singleForm.COLUMN_NAME_USERNAME);
         this.sA= jsonObject.getString(singleForm.COLUMN_SA);
         this.sB= jsonObject.getString(singleForm.COLUMN_SB);
         this.sC= jsonObject.getString(singleForm.COLUMN_SC);
@@ -91,6 +94,14 @@ public class FormsContract {
         return this;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public String getID() {
         return ID;
     }
@@ -107,20 +118,20 @@ public class FormsContract {
         this.UID = UID;
     }
 
-    public String getMna1() {
-        return mna1;
+    public String getHhDT() {
+        return hhDT;
     }
 
-    public void setMna1(String mna1) {
-        this.mna1 = mna1;
+    public void setHhDT(String hhDT) {
+        this.hhDT = hhDT;
     }
 
-    public String getMna2() {
-        return mna2;
+    public String getTehsil() {
+        return tehsil;
     }
 
-    public void setMna2(String mna2) {
-        this.mna2 = mna2;
+    public void setTehsil(String tehsil) {
+        this.tehsil = tehsil;
     }
 
     public String gethFacility() {
@@ -163,12 +174,12 @@ public class FormsContract {
         this.uccode = uccode;
     }
 
-    public String getVillagecode() {
-        return villagecode;
+    public String getVillagename() {
+        return villagename;
     }
 
-    public void setVillagecode(String villagecode) {
-        this.villagecode = villagecode;
+    public void setVillagename(String villagename) {
+        this.villagename = villagename;
     }
 
     public String getiStatus() {
@@ -350,15 +361,16 @@ public class FormsContract {
     public FormsContract hydrate(Cursor cursor) {
         this.ID = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_ID));
         this.UID = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_UID));
-        this.mna1 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA1));
-        this.mna2 = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_MNA2));
+        this.hhDT = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_HHDT));
+        this.tehsil = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_TEHSIL));
         this.hFacility = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_HFACILITY));
         this.lhwCode = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_LHWCODE));
         this.houseHold = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_HOUSEHOLD));
         this.childId = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_CHILDID));
         this.uccode = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_UCCODE));
-        this.villagecode = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_VILLAGECODE));
+        this.villagename = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_VILLAGENAME));
         this.iStatus = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_ISTATUS));
+        this.userName = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_USERNAME));
         this.sA = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SA));
         this.sB = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SB));
         this.sC = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SC));
@@ -393,15 +405,16 @@ public class FormsContract {
         json.put(singleForm.COLUMN_SURVEY_TYPE, this.surveyType == null ? JSONObject.NULL : this.surveyType);
         json.put(singleForm.COLUMN_ID, this.ID == null ? JSONObject.NULL : this.ID);
         json.put(singleForm.COLUMN_UID, this.UID == null ? JSONObject.NULL : this.UID);
-        json.put(singleForm.COLUMN_MNA1, this.mna1 == null ? JSONObject.NULL : this.mna1);
-        json.put(singleForm.COLUMN_MNA2, this.mna2 == null ? JSONObject.NULL : this.mna2);
+        json.put(singleForm.COLUMN_HHDT, this.hhDT == null ? JSONObject.NULL : this.hhDT);
+        json.put(singleForm.COLUMN_TEHSIL, this.tehsil == null ? JSONObject.NULL : this.tehsil);
         json.put(singleForm.COLUMN_HFACILITY, this.hFacility == null ? JSONObject.NULL : this.hFacility);
         json.put(singleForm.COLUMN_LHWCODE, this.lhwCode == null ? JSONObject.NULL : this.lhwCode);
         json.put(singleForm.COLUMN_HOUSEHOLD, this.houseHold == null ? JSONObject.NULL : this.houseHold);
         json.put(singleForm.COLUMN_CHILDID, this.childId == null ? JSONObject.NULL : this.childId);
         json.put(singleForm.COLUMN_UCCODE, this.uccode == null ? JSONObject.NULL : this.uccode);
-        json.put(singleForm.COLUMN_VILLAGECODE, this.villagecode == null ? JSONObject.NULL : this.villagecode);
+        json.put(singleForm.COLUMN_VILLAGENAME, this.villagename == null ? JSONObject.NULL : this.villagename);
         json.put(singleForm.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
+        json.put(singleForm.COLUMN_NAME_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
         json.put(singleForm.COLUMN_SA, this.sA == null ? JSONObject.NULL : this.sA);
         json.put(singleForm.COLUMN_SB, this.sB == null ? JSONObject.NULL : this.sB);
         json.put(singleForm.COLUMN_SC, this.sC == null ? JSONObject.NULL : this.sC);
@@ -457,15 +470,16 @@ public class FormsContract {
         public static final String COLUMN_SURVEY_TYPE = "surveytype";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "uid";
-        public static final String COLUMN_MNA1 = "mna1";
-        public static final String COLUMN_MNA2 = "mna2";
+        public static final String COLUMN_HHDT = "hhdt";
+        public static final String COLUMN_TEHSIL = "tehsil";
         public static final String COLUMN_HFACILITY = "hfacility";
         public static final String COLUMN_LHWCODE = "lhwcode";
         public static final String COLUMN_HOUSEHOLD = "household";
         public static final String COLUMN_CHILDID = "childid";
         public static final String COLUMN_UCCODE = "uccode";
-        public static final String COLUMN_VILLAGECODE = "villagecode";
+        public static final String COLUMN_VILLAGENAME = "villagename";
         public static final String COLUMN_ISTATUS = "istatus";
+        public static final String COLUMN_NAME_USERNAME = "username";
         public static final String COLUMN_SA = "sa";
         public static final String COLUMN_SB = "sb";
         public static final String COLUMN_SC = "sc";
