@@ -33,6 +33,7 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract.UcTable;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.HFacilitiesContract.HFacilityTable;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.VillagesContract.VillageTable;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.TehsilsContract.TehsilTable;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.SourceNGOContract.SourceTable;
 
 /**
  * Created by hassan.naqvi on 10/29/2016.
@@ -113,6 +114,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             UcTable.COLUMN_UC_CODE + " TEXT " +
             ");";
 
+    final String SQL_CREATE_SOURCE_TABLE = "CREATE TABLE " + SourceTable.TABLE_NAME + " (" +
+            SourceTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            SourceTable.COLUMN_SOURCE_CODE + " TEXT, " +
+            SourceTable.COLUMN_SOURCE_NAME + " TEXT " +
+            ");";
+
     final String SQL_CREATE_VILLAGE_TABLE = "CREATE TABLE " + VillageTable.TABLE_NAME + " (" +
             VillageTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             VillageTable.COLUMN_VILLAGE_CODE + " TEXT, " +
@@ -158,6 +165,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_VILLAGE_TABLE);
         db.execSQL(SQL_CREATE_H_FACILIY_TABLE);
         db.execSQL(SQL_CREATE_LHW_TABLE);
+        db.execSQL(SQL_CREATE_SOURCE_TABLE);
     }
 
     @Override
@@ -172,6 +180,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(VillageTable.TABLE_NAME);
         db.execSQL(HFacilityTable.TABLE_NAME);
         db.execSQL(LHWTable.TABLE_NAME);
+        db.execSQL(SourceTable.TABLE_NAME);
 
         onCreate(db);
     }
@@ -1185,6 +1194,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UcTable.COLUMN_TEHSIL_CODE, dc.getTehsilCode());
 
                 db.insert(UcTable.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.e(TAG, "syncUc: " + e.toString());
+        }
+    }
+
+    public void syncSources(JSONArray ucList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(SourceTable.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = ucList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectUc = jsonArray.getJSONObject(i);
+
+                SourceNGOContract dc = new SourceNGOContract();
+                dc.sync(jsonObjectUc);
+
+                ContentValues values = new ContentValues();
+
+                values.put(SourceTable.COLUMN_SOURCE_CODE, dc.getSourceCode());
+                values.put(SourceTable.COLUMN_SOURCE_NAME, dc.getSourceName());
+
+                db.insert(SourceTable.TABLE_NAME, null, values);
             }
             db.close();
 
