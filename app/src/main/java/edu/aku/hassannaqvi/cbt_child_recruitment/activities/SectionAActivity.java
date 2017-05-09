@@ -62,6 +62,10 @@ public class SectionAActivity extends Activity {
     RadioButton cra0201;
     @BindView(R.id.cra0202)
     RadioButton cra0202;
+    @BindView(R.id.fldGrpcra02res)
+    LinearLayout fldGrpcra02res;
+    @BindView(R.id.cra02res)
+    EditText cra02res;
     @BindView(R.id.fldGrpcra03)
     LinearLayout fldGrpcra03;
     @BindView(R.id.cra04)
@@ -205,9 +209,12 @@ public class SectionAActivity extends Activity {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (cra0201.isChecked()) {
+                    fldGrpcra02res.setVisibility(View.GONE);
                     fldGrpcra03.setVisibility(View.VISIBLE);
                     btnNext.setVisibility(View.VISIBLE);
+                    cra02res.setText(null);
                 } else {
+                    fldGrpcra02res.setVisibility(View.VISIBLE);
                     fldGrpcra03.setVisibility(View.GONE);
                     btnNext.setVisibility(View.GONE);
                     cra03.setText(null);
@@ -795,7 +802,7 @@ public class SectionAActivity extends Activity {
 
         AppMain.VillageName = cravillage.getText().toString();
 
-        AppMain.fc =new FormsContract();
+        AppMain.fc = new FormsContract();
 
         AppMain.fc.setUserName(AppMain.username);
         AppMain.fc.setDeviceID(deviceId);

@@ -176,6 +176,30 @@
             </RadioGroup>
 
             <LinearLayout
+                android:id="@+id/fldGrpcra02res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/cra02res" />
+
+                <EditText
+                    android:id="@+id/cra02res"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+                    android:hint="@string/cra02res"
+                    android:inputType="textPersonName" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/fldGrpcra03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
