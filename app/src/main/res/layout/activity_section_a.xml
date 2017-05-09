@@ -107,10 +107,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:digits="0123456789:"
+            android:digits="0123456789"
             android:hint="@string/cra03"
             android:inputType="number"
             android:maxLength="5" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cra25" />
+
+        <EditText
+            android:id="@+id/cra25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="0123456789"
+            android:hint="@string/cra25"
+            android:inputType="number"
+            android:maxLength="3" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cra26" />
+
+        <EditText
+            android:id="@+id/cra26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="0123456789."
+            android:hint="@string/cra26"
+            android:inputType="numberDecimal"
+            android:maxLength="4" />
 
 
         <TextView
@@ -174,6 +208,30 @@
                     android:text="@string/no" />
 
             </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/fldGrpcra02res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/cra02res" />
+
+                <EditText
+                    android:id="@+id/cra02res"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+                    android:hint="@string/cra02res"
+                    android:inputType="textPersonName" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/fldGrpcra03"

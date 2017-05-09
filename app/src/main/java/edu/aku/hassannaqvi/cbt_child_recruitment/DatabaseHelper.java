@@ -57,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + singleUser.ROW_USERNAME + " TEXT,"
             + singleUser.ROW_PASSWORD + " TEXT );";
-    private static final String DATABASE_NAME = "sero.db";
+    private static final String DATABASE_NAME = "cbt.db";
     private static final int DATABASE_VERSION = 1;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + singleForm.TABLE_NAME + "("
@@ -137,13 +137,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ");";
 
 
-    private static final java.lang.String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + singleForm.TABLE_NAME;
-    private static final String SQL_DELETE_IMS =
-            "DROP TABLE IF EXISTS " + singleIms.TABLE_NAME;
-    private static final String SQL_DELETE_USERS =
-            "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
-    private static final String SQL_DELETE_PSUS =
-            "DROP TABLE IF EXISTS " + singleChild.TABLE_NAME;
+    private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + singleForm.TABLE_NAME;
+    private static final String SQL_DELETE_IMS = "DROP TABLE IF EXISTS " + singleIms.TABLE_NAME;
+    private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
+    private static final String SQL_DELETE_PSUS = "DROP TABLE IF EXISTS " + singleChild.TABLE_NAME;
     public static String DB_FORM_ID;
     public static String DB_IMS_ID;
     private final String TAG = "DatabaseHelper";
