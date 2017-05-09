@@ -830,6 +830,8 @@ public class SectionAActivity extends Activity {
         sa.put("cra06", cra06.getText().toString());
         sa.put("cra07", cra07.getText().toString());
         sa.put("cra08", cra08.getText().toString());
+
+
         sa.put("cra09", cra09.getText().toString());
         sa.put("cra10", cra10.getText().toString());
         sa.put("cra11", cra11.getText().toString());
