@@ -490,7 +490,7 @@
     <string name="crl0103"> یقین نہیں۔ </string>
     <string name="crl02"> حمل کتنے مہینے کا ہے؟ مکمل مہینے لکھیں۔ </string>
     <string name="months"> ماہ </string>
-    <string name="crl03"> یا آپ نے اس حمل یا آخری حمل کے دوران پیدائش سے قبل معائنہ کروایا؟ </string>
+    <string name="crl03"> کیا آپ نے اس حمل یا آخری حمل کے دوران پیدائش سے قبل معائنہ کروایا؟ </string>
     <string name="crl04"> کس سے معائنہ کروایا؟اور کسی سے؟ </string>
     <string name="crl04sub"> صحت کے اہلکار </string>
     <string name="crl0401"> ڈاکٹر </string>
@@ -509,7 +509,7 @@
     <string name="crl0603"> پیشاب کا نمونہ لینے </string>
     <string name="crl0604"> خون کے نمونے کے لئے </string>
     <string name="crl0605"> الٹرا ساونڈ کےلیے </string>
-    <string name="crl0606"> Counselling on Nutrition </string>
+    <string name="crl0606"> خوراک کے لیے مشورہ </string>
     <string name="crl07"> حمل کے دوران آپ نے کتنی دفعہ ٹیٹنس کا ٹیکہ لگوایا ہے؟ </string>
     <string name="crl0701"> کتنی دفعہ </string>
     <string name="crl08"> اس حمل یا آخری حمل کے دوران آپ کو فولاد کی گولیاں دی گئی یا آپ نے خود خریدی؟

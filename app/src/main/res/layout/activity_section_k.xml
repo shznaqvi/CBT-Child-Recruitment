@@ -354,12 +354,12 @@
 
             <TextView
                 android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-            android:background="#efefef"
-            android:text="@string/other"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
+                android:background="#efefef"
+                android:text="@string/other"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
 
         <RadioGroup
             android:id="@+id/crk0496"
@@ -434,7 +434,7 @@
             android:text="@string/crk06" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:background="#efefef"
@@ -464,7 +464,7 @@
         </RadioGroup>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:background="#efefef"
@@ -494,7 +494,7 @@
         </RadioGroup>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:background="#efefef"
@@ -680,7 +680,7 @@
         </RadioGroup>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:background="#efefef"
@@ -879,7 +879,7 @@
         </RadioGroup>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:background="#efefef"
@@ -909,7 +909,7 @@
         </RadioGroup>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:background="#efefef"

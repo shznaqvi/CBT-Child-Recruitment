@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -593,6 +594,12 @@ public class SectionGActivity extends Activity {
     RadioButton crg22a03;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
+    @BindView(R.id.crg2007)
+    EditText crg2007;
+    @BindView(R.id.fldGrpcrg04)
+    LinearLayout fldGrpcrg04;
+    @BindView(R.id.fldGrpcrg07)
+    LinearLayout fldGrpcrg07;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -842,6 +849,33 @@ public class SectionGActivity extends Activity {
             }
         });
 
+        //================= Q4 Skip pattern ===============
+        crg03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (crg0301.isChecked()) {
+                    fldGrpcrg04.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcrg04.setVisibility(View.GONE);
+                    crg04.clearCheck();
+                    crg0496x.setText(null);
+                }
+            }
+        });
+
+        //================= Q6 Skip pattern ===============
+        crg06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (crg0301.isChecked()) {
+                    fldGrpcrg07.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpcrg07.setVisibility(View.GONE);
+                    crg07.setText(null);
+                }
+            }
+        });
+
     }
 
     @OnClick(R.id.btnNext)
@@ -956,6 +990,7 @@ public class SectionGActivity extends Activity {
         sg.put("crg2004", crg2004.getText().toString());
         sg.put("crg2005", crg2005.getText().toString());
         sg.put("crg2006", crg2006.getText().toString());
+        sg.put("crg2007", crg2006.getText().toString());
         sg.put("crg21a", crg21a01.isChecked() ? "1" : crg21a02.isChecked() ? "2" : crg21a03.isChecked() ? "3" : crg21a04.isChecked() ? "4" : crg21a05.isChecked() ? "5" : crg21a06.isChecked() ? "6" : crg21a07.isChecked() ? "7" : crg21a08.isChecked() ? "8" : crg21a09.isChecked() ? "9" : crg21a10.isChecked() ? "10" : crg21a11.isChecked() ? "11" : crg21a12.isChecked() ? "12" : crg21a13.isChecked() ? "13" : crg21a96.isChecked() ? "96" : "0");
         sg.put("crg21b", crg21b01.isChecked() ? "1" : crg21b02.isChecked() ? "2" : crg21b03.isChecked() ? "3" : crg21b04.isChecked() ? "4" : crg21b05.isChecked() ? "5" : crg21b06.isChecked() ? "6" : crg21b07.isChecked() ? "7" : crg21b08.isChecked() ? "8" : crg21b09.isChecked() ? "9" : crg21b10.isChecked() ? "10" : crg21b11.isChecked() ? "11" : crg21b12.isChecked() ? "12" : crg21b13.isChecked() ? "13" : crg21b96.isChecked() ? "96" : "0");
         sg.put("crg21c", crg21c01.isChecked() ? "1" : crg21c02.isChecked() ? "2" : crg21c03.isChecked() ? "3" : crg21c04.isChecked() ? "4" : crg21c05.isChecked() ? "5" : crg21c06.isChecked() ? "6" : crg21c07.isChecked() ? "7" : crg21c08.isChecked() ? "8" : crg21c09.isChecked() ? "9" : crg21c10.isChecked() ? "10" : crg21c11.isChecked() ? "11" : crg21c12.isChecked() ? "12" : crg21c13.isChecked() ? "13" : crg21c96.isChecked() ? "96" : "0");
@@ -1600,6 +1635,16 @@ public class SectionGActivity extends Activity {
                 return false;
             } else {
                 crg2006.setError(null);
+            }
+
+            // =================== Q20.07 ====================
+            if (crg2007.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg20) + getString(R.string.crg2007), Toast.LENGTH_SHORT).show();
+                crg2007.setError("This data is required");
+                Log.d(TAG, "crg2007 :This Data is required ");
+                return false;
+            } else {
+                crg2007.setError(null);
             }
 
             // =================== Q21a ====================
