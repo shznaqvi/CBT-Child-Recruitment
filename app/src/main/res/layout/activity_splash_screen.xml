@@ -18,9 +18,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
             android:contentDescription="CBT Logo"
             android:padding="10dp"
-            android:layout_marginBottom="20dp"
             android:src="@drawable/agakhan" />
 
         <TextView
@@ -29,7 +29,6 @@
             android:layout_height="match_parent"
             android:elevation="1dp"
             android:gravity="center_horizontal"
-
             android:keepScreenOn="true"
             android:text="CBT Child Recruitment"
             android:textColor="@color/colorAccent"
