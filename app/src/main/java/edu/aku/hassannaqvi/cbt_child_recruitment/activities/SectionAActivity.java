@@ -219,6 +219,10 @@ public class SectionAActivity extends Activity {
                     btnNext.setVisibility(View.GONE);
                     cra03.setText(null);
                     cra04.clearCheck();
+
+
+
+
                     cra05.setText(null);
                     cra06.setText(null);
                     cra07.setText(null);
