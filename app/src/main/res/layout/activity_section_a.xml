@@ -107,10 +107,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:digits="0123456789:"
+            android:digits="0123456789"
             android:hint="@string/cra03"
             android:inputType="number"
             android:maxLength="5" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cra25" />
+
+        <EditText
+            android:id="@+id/cra25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="0123456789"
+            android:hint="@string/cra25"
+            android:inputType="number"
+            android:maxLength="3" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cra26" />
+
+        <EditText
+            android:id="@+id/cra26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="0123456789."
+            android:hint="@string/cra26"
+            android:inputType="numberDecimal"
+            android:maxLength="4" />
 
 
         <TextView

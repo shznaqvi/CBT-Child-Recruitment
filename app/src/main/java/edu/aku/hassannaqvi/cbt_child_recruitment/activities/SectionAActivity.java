@@ -122,14 +122,19 @@ public class SectionAActivity extends Activity {
     EditText cra19;
     @BindView(R.id.cra20)
     EditText cra20;
-    @BindView(R.id.cra21)
-    EditText cra21;
+    //@BindView(R.id.cra21)
+    //EditText cra21;
     @BindView(R.id.cra22)
     EditText cra22;
     @BindView(R.id.cra23)
     EditText cra23;
     @BindView(R.id.cra24)
     EditText cra24;
+    @BindView(R.id.cra25)
+    EditText cra25;
+    @BindView(R.id.cra26)
+    EditText cra26;
+
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
     @BindView(R.id.cra03)
@@ -176,7 +181,7 @@ public class SectionAActivity extends Activity {
                     fldGrpcra03.setVisibility(View.GONE);
                     btnNext.setVisibility(View.GONE);
                     cra02.clearCheck();
-                    cra03.setText(null);
+                    //cra03.setText(null);
                     cra04.clearCheck();
                     cra05.setText(null);
                     cra06.setText(null);
@@ -194,11 +199,10 @@ public class SectionAActivity extends Activity {
                     cra18.setText(null);
                     cra19.setText(null);
                     cra20.setText(null);
-                    cra21.setText(null);
+                    //cra21.setText(null);
                     cra22.setText(null);
                     cra23.setText(null);
                     cra24.setText(null);
-
                 }
             }
         });
@@ -217,12 +221,8 @@ public class SectionAActivity extends Activity {
                     fldGrpcra02res.setVisibility(View.VISIBLE);
                     fldGrpcra03.setVisibility(View.GONE);
                     btnNext.setVisibility(View.GONE);
-                    cra03.setText(null);
+                    //cra03.setText(null);
                     cra04.clearCheck();
-
-
-
-
                     cra05.setText(null);
                     cra06.setText(null);
                     cra07.setText(null);
@@ -239,11 +239,10 @@ public class SectionAActivity extends Activity {
                     cra18.setText(null);
                     cra19.setText(null);
                     cra20.setText(null);
-                    cra21.setText(null);
+                    //cra21.setText(null);
                     cra22.setText(null);
                     cra23.setText(null);
                     cra24.setText(null);
-
                 }
             }
         });
@@ -700,7 +699,8 @@ public class SectionAActivity extends Activity {
                 }
 
                 //================ Q21===============
-                if (cra21.getText().toString().isEmpty()) {
+
+                /*if (cra21.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra21), Toast.LENGTH_SHORT).show();
                     cra21.setError("This data is Required!");
 
@@ -708,7 +708,7 @@ public class SectionAActivity extends Activity {
                     return false;
                 } else {
                     cra21.setError(null);
-                }
+                }*/
 
                 //================ Q22===============
                 if (cra22.getText().toString().isEmpty()) {
@@ -750,7 +750,7 @@ public class SectionAActivity extends Activity {
                         + (Integer.parseInt(cra18.getText().toString().isEmpty() ? "0" : cra18.getText().toString()))
                         + (Integer.parseInt(cra19.getText().toString().isEmpty() ? "0" : cra19.getText().toString()))
                         + (Integer.parseInt(cra20.getText().toString().isEmpty() ? "0" : cra20.getText().toString()))
-                        + (Integer.parseInt(cra21.getText().toString().isEmpty() ? "0" : cra21.getText().toString()))
+                        //+ (Integer.parseInt(cra21.getText().toString().isEmpty() ? "0" : cra21.getText().toString()))
                         + (Integer.parseInt(cra22.getText().toString().isEmpty() ? "0" : cra22.getText().toString()))
                         + (Integer.parseInt(cra23.getText().toString().isEmpty() ? "0" : cra23.getText().toString())))) {
                     Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
@@ -802,7 +802,7 @@ public class SectionAActivity extends Activity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Saving Draft for this Section", Toast.LENGTH_SHORT).show();
 
         AppMain.VillageName = cravillage.getText().toString();
 
@@ -822,6 +822,7 @@ public class SectionAActivity extends Activity {
 
         sa.put("cra01", cra0101.isChecked() ? "1" : cra0102.isChecked() ? "2" : "0");
         sa.put("cra02", cra0201.isChecked() ? "1" : cra0202.isChecked() ? "2" : "0");
+        sa.put("cra02res", cra02res.getText().toString());
         sa.put("cra03", cra03.getText().toString());
         sa.put("cra04", cra0401.isChecked() ? "1" : cra0402.isChecked() ? "2" : cra0403.isChecked() ? "3"
                 : cra0404.isChecked() ? "4" : cra0405.isChecked() ? "5" : "0");
@@ -841,10 +842,12 @@ public class SectionAActivity extends Activity {
         sa.put("cra18", cra18.getText().toString());
         sa.put("cra19", cra19.getText().toString());
         sa.put("cra20", cra20.getText().toString());
-        sa.put("cra21", cra21.getText().toString());
+        //sa.put("cra21", cra21.getText().toString());
         sa.put("cra22", cra22.getText().toString());
         sa.put("cra23", cra23.getText().toString());
-        sa.put("cra24", cra15.getText().toString());
+        sa.put("cra24", cra24.getText().toString());
+        sa.put("cra25", cra25.getText().toString());
+        sa.put("cra26", cra26.getText().toString());
 
         setGPS();
 

@@ -57,6 +57,8 @@
     <string name="cra22"> بالغ مرد </string>
     <string name="cra23"> بالغ عورتیں </string>
     <string name="cra24"> خاندان کے کل افراد </string>
+    <string name="cra25"> Khandan Number </string>
+    <string name="cra26"> Poverty Score </string>
     <string name="crbheading"> سیکشن \'B\': بچے کی معلومات </string>
     <string name="crb01"> بچے کا نام </string>
     <string name="crb02"> بچے کی جنس </string>
