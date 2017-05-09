@@ -82,12 +82,13 @@ public class SectionBActivity extends Activity {
     EditText crc02m2;
     @BindView(R.id.crc02m3)
     EditText crc02m3;
-    @BindView(R.id.crc03m1)
+    /*@BindView(R.id.crc03m1)
     EditText crc03m1;
     @BindView(R.id.crc03m2)
     EditText crc03m2;
     @BindView(R.id.crc03m3)
     EditText crc03m3;
+    */
     @BindView(R.id.crd0101)
     CheckBox crd0101;
     @BindView(R.id.crd0102)
@@ -322,6 +323,21 @@ public class SectionBActivity extends Activity {
     RadioButton cre0504a01;
     @BindView(R.id.cre0504a02)
     RadioButton cre0504a02;
+    @BindView(R.id.cre0601b)
+    RadioGroup cre0601b;
+    @BindView(R.id.cre0601b01)
+    RadioButton cre0601b01;
+    @BindView(R.id.cre0601b02)
+    RadioButton cre0601b02;
+    @BindView(R.id.fldGrpVitaminA)
+    LinearLayout fldGrpVitaminA;
+    @BindView(R.id.cre0601a)
+    RadioGroup cre0601a;
+    @BindView(R.id.cre0601a01)
+    RadioButton cre0601a01;
+    @BindView(R.id.cre0601a02)
+    RadioButton cre0601a02;
+
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
@@ -329,9 +345,6 @@ public class SectionBActivity extends Activity {
     int year = now.get(Calendar.YEAR);
     int month = now.get(Calendar.MONTH);
     int day = now.get(Calendar.DATE);
-
-
-
 
 
     @Override
@@ -529,6 +542,7 @@ public class SectionBActivity extends Activity {
                     fldGrppcv3.setVisibility(View.VISIBLE);
                     fldGrpopv3.setVisibility(View.VISIBLE);
                     fldGrpipv.setVisibility(View.VISIBLE);
+                    fldGrpVitaminA.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpBcg.setVisibility(View.GONE);
                     cre0201a.clearCheck();
@@ -554,6 +568,8 @@ public class SectionBActivity extends Activity {
                     cre0503a.clearCheck();
                     fldGrpipv.setVisibility(View.GONE);
                     cre0504a.clearCheck();
+                    fldGrpVitaminA.setVisibility(View.GONE);
+                    cre0601a.clearCheck();
                 }
             }
         });
@@ -641,9 +657,9 @@ public class SectionBActivity extends Activity {
         sc.put("crc02m1 ", crc02m1.getText().toString());
         sc.put("crc02m2 ", crc02m2.getText().toString());
         sc.put("crc02m3 ", crc02m3.getText().toString());
-        sc.put("crc03m1 ", crc03m1.getText().toString());
+        /*sc.put("crc03m1 ", crc03m1.getText().toString());
         sc.put("crc03m2 ", crc03m2.getText().toString());
-        sc.put("crc03m3 ", crc03m3.getText().toString());
+        sc.put("crc03m3 ", crc03m3.getText().toString());*/
 //************************************Section D*********************************************************************
         sd.put("crd0101", crd0101.isChecked() ? "1" : "0");
         sd.put("crd0102", crd0102.isChecked() ? "2" : "0");
@@ -698,6 +714,9 @@ public class SectionBActivity extends Activity {
         // IPV at 14 weeks
         se.put("cre0504a", cre0504a01.isChecked() ? "1" : cre0504a02.isChecked() ? "2" : "0");
         se.put("cre0504b", cre0504b01.isChecked() ? "1" : cre0504b02.isChecked() ? "2" : "0");
+
+        se.put("cre601a", cre0601a01.isChecked() ? "1" : cre0601a02.isChecked() ? "2" : "0");
+        se.put("cre0601b", cre0601b01.isChecked() ? "1" : cre0601b02.isChecked() ? "2" : "0");
 
         AppMain.fc.setsB(String.valueOf(sb));
         AppMain.fc.setsC(String.valueOf(sc));
@@ -1039,7 +1058,7 @@ public class SectionBActivity extends Activity {
             }
         }
         // =================== Q3 m1 ====================
-        if (crc03m1.getText().toString().isEmpty()) {
+        /*if (crc03m1.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crc03), Toast.LENGTH_SHORT).show();
             crc03m1.setError("This data is Required!");
             Log.i(TAG, "crc03m1: This data is Required!");
@@ -1139,7 +1158,7 @@ public class SectionBActivity extends Activity {
                 }
             }
         }
-
+*/
 //*****************************************Section-D****************************************************************
 
         // ====================== Q1 ===================
@@ -1337,6 +1356,17 @@ public class SectionBActivity extends Activity {
             } else {
                 cre0504a02.setError(null);
             }
+
+            //============ Vitamin / Card Present ==========
+            if (cre0601a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre06Vitamin), Toast.LENGTH_SHORT).show();
+                cre0601a02.setError("This data is Required!");
+                Log.i(TAG, "cre0601a: This data is Required!");
+                return false;
+            } else {
+                cre0601a02.setError(null);
+            }
+
         }
 
         //============ BCG / Mother ==========
@@ -1460,6 +1490,17 @@ public class SectionBActivity extends Activity {
         } else {
             cre0504b02.setError(null);
         }
+
+        //============ Vitamin A / Mother ==========
+        if (cre0601b.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre06Vitamin), Toast.LENGTH_SHORT).show();
+            cre0601b02.setError("This data is Required!");
+            Log.i(TAG, "cre0601b: This data is Required!");
+            return false;
+        } else {
+            cre0601b02.setError(null);
+        }
+
 
 
         return true;

@@ -261,6 +261,7 @@
                 android:background="#e0f2f1"
                 android:text="@string/crcsubM1"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <View
@@ -276,6 +277,7 @@
                 android:background="#e0f2f1"
                 android:text="@string/crcsubM2"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <View
@@ -291,6 +293,7 @@
                 android:background="#e0f2f1"
                 android:text="@string/crcsubM3"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -364,6 +367,7 @@
                 android:background="#e0f2f1"
                 android:text="@string/crcsubM1"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <View
@@ -379,6 +383,7 @@
                 android:background="#e0f2f1"
                 android:text="@string/crcsubM2"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <View
@@ -394,6 +399,7 @@
                 android:background="#e0f2f1"
                 android:text="@string/crcsubM3"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -448,7 +454,7 @@
 
         </LinearLayout>
 
-        <TextView
+        <!--<TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -551,7 +557,7 @@
                 android:maxLength="5" />
 
         </LinearLayout>
-
+-->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
@@ -866,7 +872,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/cre01" />
+            android:text="@string/cre01a" />
 
 
         <RadioGroup
@@ -922,7 +928,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1024,7 +1030,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1136,7 +1142,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1237,7 +1243,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1338,7 +1344,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1450,7 +1456,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1551,7 +1557,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1652,7 +1658,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1764,7 +1770,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1861,7 +1867,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1958,7 +1964,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -2055,7 +2061,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="97dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -2130,6 +2136,116 @@
             </LinearLayout>
 
         </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorHeading"
+            android:text="@string/cre06"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/cre06Vitamin"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="45"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="97dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:gravity="center"
+                    android:text="@string/mother"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/cre0601b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/cre0601b01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/cre0601b02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"></View>
+
+
+            <LinearLayout
+                android:id="@+id/fldGrpVitaminA"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:text="@string/card"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/cre0601a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/cre0601a01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/cre0601a02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/fldGrpbtn"

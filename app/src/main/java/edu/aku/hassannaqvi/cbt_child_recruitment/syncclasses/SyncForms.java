@@ -103,7 +103,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         String line = "No Response";
         // Only display the first 500 characters of the retrieved
         // web page content.
-        //int len = 500;
+        int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
         Collection<FormsContract> forms = db.getUnsyncedForms();
         Log.d(TAG, String.valueOf(forms.size()));

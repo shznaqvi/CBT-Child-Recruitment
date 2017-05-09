@@ -56,6 +56,7 @@
     <string name="cra22"> بالغ مرد </string>
     <string name="cra23"> بالغ عورتیں </string>
     <string name="cra24"> خاندان کے کل افراد </string>
+    <string name="cra25"> خاندان نمبر </string>
     <string name="crbheading"> سیکشن \'B\': بچے کی معلومات </string>
     <string name="crb01"> بچے کا نام </string>
     <string name="crb02"> بچے کی جنس </string>
@@ -82,16 +83,16 @@
     <string name="crdheading">سیکشن \'D\': بچے کی بیماریاں اور ان کا علاج </string>
     <string name="crd01"> کیا بچہ پچھلے دو ہفتوں کے دوران کسی بیماری میں مبتلہ رہا ہے ؟
     (اس کے علاوہ کوئی اور؟) </string>
-    <string name="crd0101"> High grade fever </string>
-    <string name="crd0102"> Diarrhea </string>
-    <string name="crd0103"> Cough/Flu </string>
-    <string name="crd0104"> Difficult/Fast breathing </string>
-    <string name="crd0105"> Chest in drawing </string>
-    <string name="crd0106"> Skin infection </string>
-    <string name="crd0107"> Worms in stool </string>
-    <string name="crd0108"> Rashes </string>
+    <string name="crd0101"> شدید بخار </string>
+    <string name="crd0102"> اسہال </string>
+    <string name="crd0103"> کھانسی / زکام </string>
+    <string name="crd0104"> سانس میں دشواری </string>
+    <string name="crd0105"> سینے کی تکلیف </string>
+    <string name="crd0106"> جلد کی بیماری </string>
+    <string name="crd0107"> پاخانے میں کیڑے </string>
+    <string name="crd0108"> داغ دھبے اور خارش </string>
     <string name="crd02"> کیا آپ نے پچھلے دو ہفتوں میں کسی بیماری کا علاج کروایا؟ </string>
-    <string name="crd03"> پچھلے دو ہفتوں میں ان میں سے کسی بیماری کا علاج کس سے کروایا؟ </string>
+    <string name="crd03"> پچھلے دو ہفتوں میں ان میں سے کسی بیماری کا علاج کس سے کروایا؟ ہر شخص کے بارے میں پوچھیں اور تمام بتائے ہوئے لوگوں کا اندراج کریں۔ </string>
     <string name="crdHP"> صحت کے زمہ دار </string>
     <string name="crd0301"> ڈاکٹر </string>
     <string name="crd0302"> نرس /دائی/لیڈی ہیلتھ وزیٹر </string>
@@ -124,6 +125,8 @@
     <string name="cre05pcv"> PCV 3 </string>
     <string name="cre05opv"> OPV 3 </string>
     <string name="cre05ipv"> IPV </string>
+    <string name="cre06"> 6 مہینوں کی عمر میں </string>
+    <string name="cre06Vitamin"> Vitamin A</string>
     <string name="crfheading"> Section F: Infant and Young Child Feeding (IYCF) (WHO Standards) </string>
     <string name="crf01"> کیا آپ نے بچے کو ماں کا دودھ دیا؟ </string>
     <string name="crf01a"> کبھی کبھار بچوں کو مختلف طریقے سے دودھ پلاپا جاتاہے۔مثال کے طور پر چمچ کے ذریعے،کپ یا بوتل میں۔یہ اس وقت ہوتا ہے جب بچہ ہمیشہ ماں کے پاس نہیں ہوتا ہے۔کبھی کبھار دوسری عورت بچے کو دودھ پلاتی ہے۔یہ اس وقت ہوتا ہے جب ماں اپنے بچے کو دودھ نہیں پلا سکتی ہے۔
@@ -136,7 +139,7 @@
     <string name="crf03"> کیا کل بچے کو دن اور رات کے وقت ماں کا دودھ پلایا گیا؟ </string>
     <string name="crf04"> ابھی میں آپ سے کچھ دواؤں اور وٹامنز کے بارے میں پوچھونگا جو کبھی کبھار چھوٹے بچوں کو دیے جاتے ہیں؟
     کیا بچے کو وٹامن کے قطرے یا کوئی اور دوا کل دن یا رات کے دوران دی گئی؟ </string>
-    <string name="crf05"> کیا بچے کو کل دن یا رات کے دوران نمکول دیا گیا؟ </string>
+    <string name="crf05"> کیا بچے کو کل دن یا رات کے دوران نمکول یا او۔آر۔ایس دیا گیا؟ </string>
     <string name="crf06sub"> نیچے دئے ہوئے سوال پڑھیں لسٹ میں دئے ہوئے مائعات کے سامنے ایک ایک کر کے ہاں یا نہیں مارک کریں۔لسٹ مکمل کرنے کے بعد سوال نمبر 6 پوچھتے ہوئے دائیں جانب درچ اشیأ (6B، 6C، and 6F) جہاں جواب ہاں میں ہو۔ </string>
     <string name="crf06"> میں آپ سے کچھ مائع کے بارے میں جاننا چاہتا ہوں کہ بچے نے کل دن یا رات میں مائع چیز لی؟
     کیا (نام) نے نیچے دئے ہوئے لسٹ میں سے کچھ لیا ۔لسٹ پڑھتے ہوئے پانی سے شروع کریں </string>
@@ -154,8 +157,8 @@
     کال دن کے وقت یا رات کو (نام) کے دئے ہوئے غذاؤں کے گروپ سے کچھ کھا یا؟براہ مہربانی ان اشیأ کے نام نیچے لکھیں جو اس لسٹ میں موجود نہیں ۔ </string>
     <string name="crf07a"> کھچڑی، روٹی، چاول، نوڈلس، یا دیگر اناج سے بنائے گئے کھانے کی اشیاء </string>
     <string name="crf07b"> کدو، گاجر، اسکواش، یا میٹھی آلو پیلے یا نارنجی اندر سے </string>
-    <string name="crf07c"> سفید آلو، سفید یامس،کساوا، یا جڑوں سے بنائی گئی کسی دوسرے کھانے کی اشیا </string>
-    <string name="crf07d"> کوئی بھی سیاہ ہری پتیدار سبزیاں </string>
+    <string name="crf07c"> سفید آلو، شکر کندی، سفید یامس،کساوا، یا جڑوں سے بنائی گئی کسی دوسرے کھانے کی اشیا </string>
+    <string name="crf07d"> کوئی بھی گہری ہری پتے دار سبزیاں </string>
     <string name="crf07e"> پکا ہوا آم، پکا ہوا پپیتا یا (دیگر مقامی وٹامن اے سے بھرپور پھل شامل کریں ) </string>
     <string name="crf07f"> کوئی دوسرے پھل یا سبزیاں </string>
     <string name="crf07g"> جگر، گردے، دل، یا دوسرے اعضاء کے گوشت </string>
@@ -167,17 +170,18 @@
     <string name="crf07m"> کوئی تیل، چربی، یا مکھن، یا ان میں سے کسی کے ساتھ کی گئی کھانے کی اشیاء </string>
     <string name="crf07n"> شگر سے بنی اشیأ جیسے  چاکلیٹ، مٹھائیاں، کینڈی، پیسٹری، کیک، بسکٹ یا کوئ اور </string>
     <string name="crf07o"> جیسے مرچیں، بوٹیوں، جڑی بوٹیاں، یا مچھلی پاؤڈر ذائقہ کے لئے مصالحہ جات </string>
-    <string name="crf07p"> Grubs, snails, or insects </string>
-    <string name="crf07q"> Foods made with red palm oil, red palm nut, or red palm nut pulp sauce </string>
+    <string name="crf07p"> کیڑہ، گونگاہ اور کیڑے مکوڑے </string>
+    <string name="crf07q"> سرخ پام آئل یا سرخ کھجور نٹ یا سرخ پام نٹ، گدہ یا چٹنی کے فوڈز، </string>
     <string name="crf08"> کیا بچے (نام)نے گزشتہ دن اور رات کے دوران ٹھوس یا نیم ٹھوس یا نرم غذا کھایا/کھائی تھی؟
-    اگر ہاں تو کیا ٹھوس یا نیم ٹھوس یا نرم غذا کھایا/کھائی تھی؟ </string>
+    اگر ہاں تو بار بار پوچھیں کیا ٹھوس یا نیم ٹھوس یا نرم غذا کھایا/کھائی تھی؟ </string>
     <string name="crf09"> کتنی مرتبہ ٹھوس یا نیم ٹھوس یا نرم غذا کھایا/کھائی تھی؟مائع یا پانی جیسی غذاؤں کے علاوہ۔ </string>
     <string name="crf09num"> NUMBER OF TIMES </string>
     <string name="crf10"> کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بوتل سے دودھ یا کوئی اور مائع چیز پی لی تھی؟ </string>
-    <string name="crf11sub"> اب میں آپ سے کچھ اور سوالات اضافی خوراک سے متعلق پوچھوں گی کہ مجھے یہ پتہ کرنا ہے کہ کیا آپ کے بچے نے کچھ مکس خوراک کھائی ہو؟ </string>
+    <string name="crf11sub"> شیر خوار اور چھوٹے بچے کی نشوونما کے خاکہ میں اضافے کے لیے زائد سوالات ۔ اب میں آپ سے کچھ خاص کھانوں کے بارے میں پوچھوں گی جو کہ ہوسکتا ہے کہ بچے نے کھانے کھائے ہوں، میں یہ معلوم کرنا چاہتی ہوں کہ آپ کے بچے نے وہ کھانے دوسرے کھانوں کے ساتھ کھائے ہیں
+        اب میں آپ سے کچھ اور سوالات اضافی خوراک سے متعلق پوچھوں گی کہ مجھے یہ پتہ کرنا ہے کہ کیا آپ کے بچے نے کچھ مکس خوراک کھائی ہو؟ </string>
     <string name="crf11"> کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچوں کے لیے بنائی گئی خوراک میں سے کچھ کھایا/کھائی تھی؟ </string>
-    <string name="crf12"> کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نے سپرینکل پاوڈر یا وٹامکس کھایا /کھائی تھی </string>
-    <string name="crf13"> کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نے Wawamum یا اس جیسی تیار شدہ اضافی خوراک کی پیکٹ کھایا /کھائی تھی؟ </string>
+    <string name="crf12"> کل دن اور رات سے کیا بچے نے ایسا کھانا کھایا جس میں پاؤڈر یا سپرنکلز، وٹامیکس موجود ہو۔ کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نے سپرینکل پاوڈر یا وٹامکس کھایا /کھائی تھی </string>
+    <string name="crf13">  کل دن اور رات سے کیا بچے نے نیوٹرنٹ سپلیمینٹ یا ایل، این، ایس استعمال کیں۔ سروے ایریا میں واوامیم دکھائیں۔ کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نے Wawamum یا اس جیسی تیار شدہ اضافی خوراک کی پیکٹ کھایا /کھائی تھی؟ </string>
     <string name="crf14"> کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نے بچوں کے لیے بنے ہوئے دودھ کا استعمال کیا تھا /کی تھی؟ </string>
     <string name="crf15"> کس عمر سے اضافی خوراک شروع کی ہے ؟ </string>
     <string name="crf1501"> عمر مہینوں میں </string>
@@ -325,18 +329,19 @@
     <string name="crg1802"> کنال </string>
     <string name="crg19"> کیا آپ کے اپنے مال مویشی یا مرغیاں ہیں؟ </string>
     <string name="crg20"> اگر ہاں تو کتنے مال مویشی اور مر غیاں ہیں؟ </string>
-    <string name="crg2001"> گائے ،بیل ،گدھے ، گھوڑے </string>
-    <string name="crg2002"> بکریاں </string>
-    <string name="crg2003"> بھيڑیں </string>
-    <string name="crg2004"> مرغیاں </string>
-    <string name="crg2005"> بھینسیں </string>
-    <string name="crg2006"> اونٹ </string>
+    <string name="crg2001"> گائے ،بیل </string>
+    <string name="crg2002"> گدھے، گھوڑے، خچر </string>
+    <string name="crg2003"> بکریاں </string>
+    <string name="crg2004"> بھيڑیں </string>
+    <string name="crg2005"> مرغیاں </string>
+    <string name="crg2006"> بھینسیں </string>
+    <string name="crg2007"> اونٹ </string>
     <string name="crg21"> آپ کے گھر کے تین اہم امدن کے ذرائع کون کون سے ہیں؟ نیچے دئیے ہوئے کوڈ استعمال کریں۔ </string>
     <string name="crg21a"> پہلا ذریعہ آمدن </string>
     <string name="crg21b"> دوسرا ذریعہ آمدن </string>
     <string name="crg21c"> تیسرا ذریعہ آمدن </string>
     <string name="crg2101"> زراعت </string>
-    <string name="crg2102"> مال مویشی پالنا </string>
+    <string name="crg2102"> مال مویشی پالنا اور فروخت کرنا </string>
     <string name="crg2103"> مچھلی کا کاروبار </string>
     <string name="crg2104"> ہاتھ سے بننے والی اشیاٗ کی فروخت </string>
     <string name="crg2105"> لکڑیوں کی فروخت </string>
@@ -414,21 +419,21 @@
     <string name="cri02k"> قرضوں کی واپسی </string>
     <string name="cri02l"> سماجی تقریبات، تہوار </string>
     <string name="cri03"> گزشتہ ہفتے جو کھا نا آپ نے اپنے پیداوار سے کھا یا اس کی قیمت روپوں میں کتنی ہوگی؟ </string>
-    <string name="cri04"> Do you know any family member(s) of your household consumed meals or snacks outside your home during last week? </string>
+    <string name="cri04"> کیا آپ جانتی ہیں کہ پچھلے ہفتے میں آپ کے گھرانے میں آپ کے گھر کے کسی فرد نے گھر سے باہر کھانے پر یا کھانے کی ہلکی پھلکی چیزوں پر کتنا خرچ کیا؟ </string>
     <string name="crjheading"> Section J: ASSISTANCE/EXPOSURE TO INTERVENTIONS </string>
     <string name="crj01"> پچھلے 3 مہینے میں آپ کے گھر میں کوئی مدد حاصل کی تھی؟
     ایک ایک کر کے پوچھو </string>
     <string name="bnf"> Number of Beneficiaries </string>
     <string name="src"> Source/NGO </string>
-    <string name="crj01a"> Wawamum for children </string>
-    <string name="crj01b"> RUTF for children </string>
-    <string name="crj01c"> RUSF for children </string>
-    <string name="crj01d"> وٹامکسی </string>
-    <string name="crj01e"> مامتا </string>
+    <string name="crj01a"> بچے کے لیے واوامیم </string>
+    <string name="crj01b"> بچے کے لیے آر یو ٹی ایف </string>
+    <string name="crj01c"> بچے کے لیے آر یو ایس ایف </string>
+    <string name="crj01d"> بچوں کے لیے وٹامکسی </string>
+    <string name="crj01e"> سپر سیریل، گندم، عورتوں کے لیے سویا ملی گندم </string>
     <string name="crj01f"> گندم </string>
     <string name="crj01g"> بینظیر انکم سپورٹ پروگرام سے پیسے </string>
     <string name="crj01h"> فوڈ واؤچر </string>
-    <string name="crj01i"> طبی امداد </string>
+    <string name="crj01i">دوائی، طبی امداد </string>
     <string name="crj01j"> تعلیم کے امداد (فیس،وردی، کتابیں) </string>
     <string name="crj01k"> زرعی کوشش (بیج،کھاد،اوزار) </string>
     <string name="crj01l"> جانوروں کے لئے مصنوعات </string>
@@ -446,8 +451,8 @@
     <string name="crk03"> کیا آپ نے کبھی وٹامن اے کے بارے میں سنا ہے؟
     وٹامن اے کے کیپسول دکھائیں </string>
     <string name="crk04"> آپ کے خیال میں وٹامن اے جسم میں کیا کر سکتاہے ؟ </string>
-    <string name="crk04a"> It is good for the eyes </string>
-    <string name="crk04b"> It helps prevent illness </string>
+    <string name="crk04a"> یہ آنکھوں کے لیے بہتر ہے۔ </string>
+    <string name="crk04b"> یہ بیماریوں سے بچاتا ہے۔ </string>
     <string name="crk05"> کیا آپ نے کبھی خون کی کمی کے بارے میں سنا ہے؟ </string>
     <string name="crk06"> اگر کسی کو خون کی کمی ہو تو کیا ہوتا ہے؟ جوابات نہ پڑھیں اگر جواب دیں تو ہاں پر دا ئرہ لگائیں اور جواب نہ دیں تو NR پر دائرہ لگائیں </string>
     <string name="crk06a"> بینائی کم ہوتی ہے </string>
@@ -470,12 +475,12 @@
     <string name="crk09f"> پڑوسی </string>
     <string name="crk10"> کیا آپ کھانے میں آیوڈین ملا نمک استعمال کرتے ہو؟ </string>
     <string name="crk11"> اگراستعمال نہیں کرتے ہیں تو کیوں نہیں کرتے ہیں؟ جوابات نہ پڑھیں اگرجواب دیں تو دا ئرہ لگائیں </string>
-    <string name="crk1101"> Expensive </string>
-    <string name="crk1102"> Not available </string>
-    <string name="crk1103"> Bad taste </string>
-    <string name="crk1104"> Impairs reproductive ability </string>
-    <string name="crk1105"> Birth control (Family planning) </string>
-    <string name="crk1106"> It effects on health </string>
+    <string name="crk1101"> مہنگا ہے </string>
+    <string name="crk1102"> دستیاب نہیں </string>
+    <string name="crk1103"> بے ذائقہ </string>
+    <string name="crk1104"> تولیدی صلاحیت کے عمل کو کمزور کرتے ہیں۔ </string>
+    <string name="crk1105"> خاندانی منصوبہ بندی </string>
+    <string name="crk1106"> صحت پر برے اثرات </string>
     <string name="crk12"> کیا آپ اپنے گھر میں کوئی غذا ئی اجزا ملے ہوئے مصنوعات استعمال کرتے ہیں؟ (مکس کیا ہواآٹا،گھی ،تیل، دودھ وغیرہ) </string>
     <string name="crk13"> اگر ہاں تو نام بتائیں </string>
     <string name="crlHeading"> Section L: REPRODUCTIVE HISTORY OF SELECTED MOTHER </string>

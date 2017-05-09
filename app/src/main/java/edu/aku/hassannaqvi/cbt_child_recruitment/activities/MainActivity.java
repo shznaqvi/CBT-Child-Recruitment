@@ -36,7 +36,6 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.HFacilitiesContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.LHWsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.TehsilsContract;
@@ -90,14 +89,14 @@ public class MainActivity extends Activity {
 
 
         db = new DatabaseHelper(this);
-        Collection<FormsContract> todaysForms = new ArrayList<>();
+        //Collection<FormsContract> todaysForms = new ArrayList<>();
 
-        todaysForms = db.getTodayForms();
+        //todaysForms = db.getTodayForms();
 
         rSumText += "TODAY'S RECORDS SUMMARY\r\n";
         rSumText += "=======================";
         rSumText += "\r\n\r\n";
-        rSumText += "Total Forms Today: " + todaysForms.size();
+        //rSumText += "Total Forms Today: " + todaysForms.size();
         rSumText += "\r\n";
         rSumText += "    Forms List: \r\n";
         String iStatus = "";
