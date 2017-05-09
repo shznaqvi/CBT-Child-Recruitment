@@ -721,7 +721,7 @@ public class SectionAActivity extends Activity {
                     cra22.setError(null);
                 }
 
-                //================ Q15===============
+                //================ Q23===============
                 if (cra23.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra23), Toast.LENGTH_SHORT).show();
                     cra23.setError("This data is Required!");
@@ -732,7 +732,7 @@ public class SectionAActivity extends Activity {
                     cra23.setError(null);
                 }
 
-                //================ Q15===============
+                //================ Q24===============
                 if (cra24.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra24), Toast.LENGTH_SHORT).show();
                     cra24.setError("This data is Required!");
@@ -742,6 +742,31 @@ public class SectionAActivity extends Activity {
                 } else {
                     cra24.setError(null);
                 }
+
+
+                //================ Q25===============
+                if (cra25.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(Empty) " + getString(R.string.cra25), Toast.LENGTH_SHORT).show();
+                    cra25.setError("This data is Required!");
+
+                    Log.i(TAG, "cra25: This Data is Required!");
+                    return false;
+                } else {
+                    cra25.setError(null);
+                }
+
+
+                //================ Q26===============
+                if (cra26.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(Empty) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
+                    cra26.setError("This data is Required!");
+
+                    Log.i(TAG, "cra26: This Data is Required!");
+                    return false;
+                } else {
+                    cra26.setError(null);
+                }
+
 
                 //================== Check on Total members in HH=============
 
@@ -754,13 +779,29 @@ public class SectionAActivity extends Activity {
                         + (Integer.parseInt(cra22.getText().toString().isEmpty() ? "0" : cra22.getText().toString()))
                         + (Integer.parseInt(cra23.getText().toString().isEmpty() ? "0" : cra23.getText().toString())))) {
                     Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
-                    cra17.setError("Invalid: Check all memebers again");
+                    cra17.setError("Invalid: Check all members again");
 
                     Log.i(TAG, "cra17: Check All members again!");
                     return false;
                 } else {
                     cra17.setError(null);
                 }
+
+
+                if (cra26.getText().toString().indexOf(".") < -1) {
+                    Toast.makeText(this, "ERROR(Must have a decimal point) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
+                    Log.i(TAG, "cra26: This Data is Required!");
+                    return false;
+                } else {
+
+                    if (cra26.getText().toString().length() != 5) {
+                        Toast.makeText(this, "ERROR(Invalid Format) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
+                        Log.i(TAG, "cra26: This Data is Required!");
+                        return false;
+                    }
+                }
+
+
             }
         }
 
