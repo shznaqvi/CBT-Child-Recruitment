@@ -17,10 +17,26 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
-import edu.aku.hassannaqvi.cbt_child_recruitment.FormsContract.singleForm;
-import edu.aku.hassannaqvi.cbt_child_recruitment.IMsContract.singleIms;
-import edu.aku.hassannaqvi.cbt_child_recruitment.PSUsContract.singleChild;
-import edu.aku.hassannaqvi.cbt_child_recruitment.UsersContract.singleUser;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract.singleForm;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.HFacilitiesContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.HFacilitiesContract.HFacilityTable;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract.singleIms;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.LHWsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.LHWsContract.LHWTable;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.PSUsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.PSUsContract.singleChild;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.SourceNGOContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.SourceNGOContract.SourceTable;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.TehsilsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.TehsilsContract.TehsilTable;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract.UcTable;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract.singleUser;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.VillagesContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.VillagesContract.VillageTable;
 
 /**
  * Created by hassan.naqvi on 10/29/2016.
@@ -44,46 +60,86 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + singleUser.ROW_USERNAME + " TEXT,"
             + singleUser.ROW_PASSWORD + " TEXT );";
-    private static final String DATABASE_NAME = "sero.db";
+    private static final String DATABASE_NAME = "cbt.db";
     private static final int DATABASE_VERSION = 1;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + singleForm.TABLE_NAME + "("
-            + singleForm._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + singleForm.COLUMN_UID + " TEXT,"
-            + singleForm.COLUMN_DEVICE_ID + " TEXT,"
-            + singleForm.COLUMN_PROJECT_NAME + " TEXT,"
-            + singleForm.COLUMN_SURVEY_TYPE + " TEXT,"
-            + singleForm.COLUMN_GPS_ACC + " TEXT,"
-            + singleForm.COLUMN_GPS_LAT + " TEXT,"
-            + singleForm.COLUMN_GPS_LNG + " TEXT,"
-            + singleForm.COLUMN_GPS_TIME + " TEXT,"
-            + singleForm.COLUMN_SYNCED + " TEXT,"
-            + singleForm.COLUMN_SYNCED_DATE + " TEXT,"
-            + singleForm.COLUMN_MNA1 + " TEXT,"
-            + singleForm.COLUMN_MNA2 + " TEXT,"
-            + singleForm.COLUMN_MNA3 + " TEXT,"
-            + singleForm.COLUMN_MNA4 + " TEXT,"
-            + singleForm.COLUMN_MNA5 + " TEXT,"
-            + singleForm.COLUMN_MNA6 + " TEXT,"
-            + singleForm.COLUMN_MNA6A + " TEXT,"
-            + singleForm.COLUMN_MNA7 + " TEXT,"
-            + singleForm.COLUMN_SA + " TEXT,"
-            + singleForm.COLUMN_SB + " TEXT,"
-            + singleForm.COLUMN_SC + " TEXT,"
-            + singleForm.COLUMN_SD + " TEXT,"
-            + singleForm.COLUMN_SE + " TEXT,"
-            + singleForm.COLUMN_SF + " TEXT,"
-            + singleForm.COLUMN_SG + " TEXT"
+            + singleForm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            singleForm.COLUMN_UID + " TEXT," +
+            singleForm.COLUMN_HHDT + " TEXT," +
+            singleForm.COLUMN_TEHSIL + " TEXT," +
+            singleForm.COLUMN_HFACILITY + " TEXT," +
+            singleForm.COLUMN_LHWCODE + " TEXT," +
+            singleForm.COLUMN_HOUSEHOLD + " TEXT," +
+            singleForm.COLUMN_CHILDID + " TEXT," +
+            singleForm.COLUMN_UCCODE + " TEXT," +
+            singleForm.COLUMN_VILLAGENAME + " TEXT," +
+            singleForm.COLUMN_ISTATUS + " TEXT," +
+            singleForm.COLUMN_NAME_USERNAME + " TEXT," +
+            singleForm.COLUMN_SA + " TEXT," +
+            singleForm.COLUMN_SB + " TEXT," +
+            singleForm.COLUMN_SC + " TEXT," +
+            singleForm.COLUMN_SD + " TEXT," +
+            singleForm.COLUMN_SE + " TEXT," +
+            singleForm.COLUMN_SF + " TEXT," +
+            singleForm.COLUMN_SG + " TEXT," +
+            singleForm.COLUMN_SH + " TEXT," +
+            singleForm.COLUMN_SI + " TEXT," +
+            singleForm.COLUMN_SJ + " TEXT," +
+            singleForm.COLUMN_SK + " TEXT," +
+            singleForm.COLUMN_SL + " TEXT," +
+            singleForm.COLUMN_SM + " TEXT," +
+            singleForm.COLUMN_SN + " TEXT," +
+            singleForm.COLUMN_GPSLAT + " TEXT," +
+            singleForm.COLUMN_GPSLNG + " TEXT," +
+            singleForm.COLUMN_GPSTIME + " TEXT," +
+            singleForm.COLUMN_GPSACC + " TEXT," +
+            singleForm.COLUMN_DEVICEID + " TEXT," +
+            singleForm.COLUMN_SYNCED + " TEXT," +
+            singleForm.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
-    private static final java.lang.String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + singleForm.TABLE_NAME;
-    private static final String SQL_DELETE_IMS =
-            "DROP TABLE IF EXISTS " + singleIms.TABLE_NAME;
-    private static final String SQL_DELETE_USERS =
-            "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
-    private static final String SQL_DELETE_PSUS =
-            "DROP TABLE IF EXISTS " + singleChild.TABLE_NAME;
+    private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + singleForm.TABLE_NAME;
+    private static final String SQL_DELETE_IMS = "DROP TABLE IF EXISTS " + singleIms.TABLE_NAME;
+    private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
+    private static final String SQL_DELETE_PSUS = "DROP TABLE IF EXISTS " + singleChild.TABLE_NAME;
     public static String DB_FORM_ID;
     public static String DB_IMS_ID;
+    final String SQL_CREATE_TEHSIL_TABLE = "CREATE TABLE " + TehsilTable.TABLE_NAME + " (" +
+            TehsilTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            TehsilTable.COLUMN_TEHSIL_CODE + " TEXT, " +
+            TehsilTable.COLUMN_TEHSIL_NAME + " TEXT " +
+            ");";
+    final String SQL_CREATE_H_FACILIY_TABLE = "CREATE TABLE " + HFacilityTable.TABLE_NAME + " (" +
+            HFacilityTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            HFacilityTable.COLUMN_HFACILITY_CODE + " TEXT, " +
+            HFacilityTable.COLUMN_TEHSIL_CODE + " TEXT, " +
+            HFacilityTable.COLUMN_HFACILITY_NAME + " TEXT " +
+            ");";
+    final String SQL_CREATE_UC_TABLE = "CREATE TABLE " + UcTable.TABLE_NAME + " (" +
+            UcTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            UcTable.COLUMN_TEHSIL_CODE + " TEXT, " +
+            UcTable.COLUMN_UC_NAME + " TEXT, " +
+            UcTable.COLUMN_UC_CODE + " TEXT " +
+            ");";
+    final String SQL_CREATE_SOURCE_TABLE = "CREATE TABLE " + SourceTable.TABLE_NAME + " (" +
+            SourceTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            SourceTable.COLUMN_SOURCE_CODE + " TEXT, " +
+            SourceTable.COLUMN_SOURCE_NAME + " TEXT " +
+            ");";
+    final String SQL_CREATE_VILLAGE_TABLE = "CREATE TABLE " + VillageTable.TABLE_NAME + " (" +
+            VillageTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            VillageTable.COLUMN_VILLAGE_CODE + " TEXT, " +
+            VillageTable.COLUMN_VILLAGE_NAME + " TEXT, " +
+            VillageTable.COLUMN_UC_CODE + " TEXT " +
+            ");";
+    final String SQL_CREATE_LHW_TABLE = "CREATE TABLE " + LHWTable.TABLE_NAME + " (" +
+            LHWTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            LHWTable.COLUMN_LHW_CODE + " TEXT, " +
+            LHWTable.COLUMN_LHW_NAME + " TEXT, " +
+            LHWTable.COLUMN_AREA_TYPE + " TEXT, " +
+            LHWTable.COLUMN_STATUS + " TEXT, " +
+            LHWTable.COLUMN_HF_CODE + " TEXT " +
+            ");";
     private final String TAG = "DatabaseHelper";
     public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
 
@@ -98,7 +154,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_IMS);
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_PSU);
-
+        db.execSQL(SQL_CREATE_TEHSIL_TABLE);
+        db.execSQL(SQL_CREATE_UC_TABLE);
+        db.execSQL(SQL_CREATE_VILLAGE_TABLE);
+        db.execSQL(SQL_CREATE_H_FACILIY_TABLE);
+        db.execSQL(SQL_CREATE_LHW_TABLE);
+        db.execSQL(SQL_CREATE_SOURCE_TABLE);
     }
 
     @Override
@@ -107,6 +168,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_IMS);
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_PSUS);
+
+        db.execSQL(TehsilTable.TABLE_NAME);
+        db.execSQL(UcTable.TABLE_NAME);
+        db.execSQL(VillageTable.TABLE_NAME);
+        db.execSQL(HFacilityTable.TABLE_NAME);
+        db.execSQL(LHWTable.TABLE_NAME);
+        db.execSQL(SourceTable.TABLE_NAME);
 
         onCreate(db);
     }
@@ -118,22 +186,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(singleForm.COLUMN_PROJECT_NAME, fc.getProjectName());
-        values.put(singleForm.COLUMN_SURVEY_TYPE, fc.getProjectName());
-        values.put(singleForm.COLUMN_DEVICE_ID, fc.getDeviceID());
-        values.put(singleForm.COLUMN_GPS_ACC, fc.getGpsAcc());
-        values.put(singleForm.COLUMN_GPS_LAT, fc.getGpsLat());
-        values.put(singleForm.COLUMN_GPS_LNG, fc.getGpsLng());
-        values.put(singleForm.COLUMN_GPS_TIME, fc.getGpsTime());
-        values.put(singleForm.COLUMN_MNA1, fc.getMna1());
-        values.put(singleForm.COLUMN_MNA2, fc.getMna2());
-        values.put(singleForm.COLUMN_MNA3, fc.gethFacility());
-        values.put(singleForm.COLUMN_MNA4, fc.getLhwCode());
-        values.put(singleForm.COLUMN_MNA5, fc.getHouseHold());
-        values.put(singleForm.COLUMN_MNA6, fc.getChildId());
-        values.put(singleForm.COLUMN_MNA7, fc.getiStatus());
+        values.put(singleForm.COLUMN_HHDT, fc.getHhDT());
+        values.put(singleForm.COLUMN_TEHSIL, fc.getTehsil());
+        values.put(singleForm.COLUMN_HFACILITY, fc.gethFacility());
+        values.put(singleForm.COLUMN_LHWCODE, fc.getLhwCode());
+        values.put(singleForm.COLUMN_HOUSEHOLD, fc.getHouseHold());
+        values.put(singleForm.COLUMN_CHILDID, fc.getChildId());
+        values.put(singleForm.COLUMN_UCCODE, fc.getUccode());
+        values.put(singleForm.COLUMN_VILLAGENAME, fc.getVillagename());
+        values.put(singleForm.COLUMN_ISTATUS, fc.getiStatus());
+        values.put(singleForm.COLUMN_NAME_USERNAME, fc.getUserName());
         values.put(singleForm.COLUMN_SA, fc.getsA());
-
+        values.put(singleForm.COLUMN_SB, fc.getsB());
+        values.put(singleForm.COLUMN_SC, fc.getsC());
+        values.put(singleForm.COLUMN_SD, fc.getsD());
+        values.put(singleForm.COLUMN_SE, fc.getsE());
+        values.put(singleForm.COLUMN_SF, fc.getsF());
+        values.put(singleForm.COLUMN_SG, fc.getsG());
+        values.put(singleForm.COLUMN_SH, fc.getsH());
+        values.put(singleForm.COLUMN_SI, fc.getsI());
+        values.put(singleForm.COLUMN_SJ, fc.getsJ());
+        values.put(singleForm.COLUMN_SK, fc.getsK());
+        values.put(singleForm.COLUMN_SL, fc.getsL());
+        values.put(singleForm.COLUMN_SM, fc.getsM());
+        values.put(singleForm.COLUMN_SN, fc.getsN());
+        values.put(singleForm.COLUMN_GPSLAT, fc.getGpsLat());
+        values.put(singleForm.COLUMN_GPSLNG, fc.getGpsLng());
+        values.put(singleForm.COLUMN_GPSTIME, fc.getGpsTime());
+        values.put(singleForm.COLUMN_GPSACC, fc.getGpsAcc());
+        values.put(singleForm.COLUMN_DEVICEID, fc.getDeviceID());
+        values.put(singleForm.COLUMN_SYNCED, fc.getSynced());
+        values.put(singleForm.COLUMN_SYNCED_DATE, fc.getSynced_date());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -143,6 +226,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values);
         DB_FORM_ID = String.valueOf(newRowId);
         return newRowId;
+    }
+
+    public int updateFormID() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleForm.COLUMN_UID, AppMain.fc.getUID());
+
+// Which row to update, based on the ID
+        String selection = singleForm._ID + " LIKE ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(singleForm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
     }
 
     public void updateForms(String id) {
@@ -186,25 +287,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleForm._ID,
+                singleForm.COLUMN_ID,
                 singleForm.COLUMN_UID,
-                singleForm.COLUMN_PROJECT_NAME,
-                singleForm.COLUMN_SURVEY_TYPE,
-                singleForm.COLUMN_DEVICE_ID,
-                singleForm.COLUMN_GPS_LAT,
-                singleForm.COLUMN_GPS_LNG,
-                singleForm.COLUMN_GPS_ACC,
-                singleForm.COLUMN_GPS_TIME,
-                singleForm.COLUMN_SYNCED,
-                singleForm.COLUMN_SYNCED_DATE,
-                singleForm.COLUMN_MNA1,
-                singleForm.COLUMN_MNA2,
-                singleForm.COLUMN_MNA3,
-                singleForm.COLUMN_MNA4,
-                singleForm.COLUMN_MNA5,
-                singleForm.COLUMN_MNA6,
-                singleForm.COLUMN_MNA6A,
-                singleForm.COLUMN_MNA7,
+                singleForm.COLUMN_HHDT,
+                singleForm.COLUMN_TEHSIL,
+                singleForm.COLUMN_HFACILITY,
+                singleForm.COLUMN_LHWCODE,
+                singleForm.COLUMN_HOUSEHOLD,
+                singleForm.COLUMN_CHILDID,
+                singleForm.COLUMN_UCCODE,
+                singleForm.COLUMN_VILLAGENAME,
+                singleForm.COLUMN_ISTATUS,
+                singleForm.COLUMN_NAME_USERNAME,
                 singleForm.COLUMN_SA,
                 singleForm.COLUMN_SB,
                 singleForm.COLUMN_SC,
@@ -212,8 +306,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm.COLUMN_SE,
                 singleForm.COLUMN_SF,
                 singleForm.COLUMN_SG,
-
-
+                singleForm.COLUMN_SH,
+                singleForm.COLUMN_SI,
+                singleForm.COLUMN_SJ,
+                singleForm.COLUMN_SK,
+                singleForm.COLUMN_SL,
+                singleForm.COLUMN_SM,
+                singleForm.COLUMN_SN,
+                singleForm.COLUMN_GPSLAT,
+                singleForm.COLUMN_GPSLNG,
+                singleForm.COLUMN_GPSTIME,
+                singleForm.COLUMN_GPSACC,
+                singleForm.COLUMN_DEVICEID,
+                singleForm.COLUMN_SYNCED,
+                singleForm.COLUMN_SYNCED_DATE
         };
         String whereClause = null;
         String[] whereArgs = null;
@@ -253,25 +359,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleForm._ID,
+                singleForm.COLUMN_ID,
                 singleForm.COLUMN_UID,
-                singleForm.COLUMN_PROJECT_NAME,
-                singleForm.COLUMN_SURVEY_TYPE,
-                singleForm.COLUMN_DEVICE_ID,
-                singleForm.COLUMN_GPS_LAT,
-                singleForm.COLUMN_GPS_LNG,
-                singleForm.COLUMN_GPS_ACC,
-                singleForm.COLUMN_GPS_TIME,
-                singleForm.COLUMN_SYNCED,
-                singleForm.COLUMN_SYNCED_DATE,
-                singleForm.COLUMN_MNA1,
-                singleForm.COLUMN_MNA2,
-                singleForm.COLUMN_MNA3,
-                singleForm.COLUMN_MNA4,
-                singleForm.COLUMN_MNA5,
-                singleForm.COLUMN_MNA6,
-                singleForm.COLUMN_MNA6A,
-                singleForm.COLUMN_MNA7,
+                singleForm.COLUMN_HHDT,
+                singleForm.COLUMN_TEHSIL,
+                singleForm.COLUMN_HFACILITY,
+                singleForm.COLUMN_LHWCODE,
+                singleForm.COLUMN_HOUSEHOLD,
+                singleForm.COLUMN_CHILDID,
+                singleForm.COLUMN_UCCODE,
+                singleForm.COLUMN_VILLAGENAME,
+                singleForm.COLUMN_ISTATUS,
+                singleForm.COLUMN_NAME_USERNAME,
                 singleForm.COLUMN_SA,
                 singleForm.COLUMN_SB,
                 singleForm.COLUMN_SC,
@@ -279,8 +378,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm.COLUMN_SE,
                 singleForm.COLUMN_SF,
                 singleForm.COLUMN_SG,
-
-
+                singleForm.COLUMN_SH,
+                singleForm.COLUMN_SI,
+                singleForm.COLUMN_SJ,
+                singleForm.COLUMN_SK,
+                singleForm.COLUMN_SL,
+                singleForm.COLUMN_SM,
+                singleForm.COLUMN_SN,
+                singleForm.COLUMN_GPSLAT,
+                singleForm.COLUMN_GPSLNG,
+                singleForm.COLUMN_GPSTIME,
+                singleForm.COLUMN_GPSACC,
+                singleForm.COLUMN_DEVICEID,
+                singleForm.COLUMN_SYNCED,
+                singleForm.COLUMN_SYNCED_DATE
         };
         String whereClause = singleForm.COLUMN_SYNCED + " is null OR " + singleForm.COLUMN_SYNCED + " = ''";
         String[] whereArgs = null;
@@ -321,13 +432,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleForm._ID,
-                singleForm.COLUMN_MNA4,
-                singleForm.COLUMN_MNA5,
-                singleForm.COLUMN_MNA7,
+                singleForm._ID
         };
 
-        String whereClause = singleForm.COLUMN_MNA1 + " LIKE ?";
+        String whereClause = singleForm.COLUMN_HHDT + " LIKE ?";
         String[] whereArgs = {spDateT};
         String groupBy = null;
         String having = null;
@@ -524,12 +632,145 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    public int updateSH() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleForm.COLUMN_SH, AppMain.fc.getsH());
+
+
+        // Which row to update, based on the ID
+        String selection = singleForm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(singleForm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateSI() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleForm.COLUMN_SI, AppMain.fc.getsI());
+
+
+        // Which row to update, based on the ID
+        String selection = singleForm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(singleForm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateSJ() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleForm.COLUMN_SJ, AppMain.fc.getsJ());
+
+
+        // Which row to update, based on the ID
+        String selection = singleForm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(singleForm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateSK() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleForm.COLUMN_SK, AppMain.fc.getsK());
+
+
+        // Which row to update, based on the ID
+        String selection = singleForm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(singleForm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateSL() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleForm.COLUMN_SL, AppMain.fc.getsL());
+
+
+        // Which row to update, based on the ID
+        String selection = singleForm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(singleForm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateSM() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleForm.COLUMN_SM, AppMain.fc.getsM());
+
+
+        // Which row to update, based on the ID
+        String selection = singleForm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(singleForm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateSN() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleForm.COLUMN_SN, AppMain.fc.getsN());
+
+
+        // Which row to update, based on the ID
+        String selection = singleForm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(singleForm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
     public int updateEnd() {
         SQLiteDatabase db = this.getReadableDatabase();
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(singleForm.COLUMN_MNA7, AppMain.fc.getiStatus());
+//        values.put(singleForm.COLUMN_MNA7, AppMain.fc.getiStatus());
 
 
         // Which row to update, based on the ID
@@ -616,6 +857,284 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
+    public Collection<HFacilitiesContract> getAllHFacilitiesByTehsil(String tehsil_code) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                HFacilityTable._ID,
+                HFacilityTable.COLUMN_HFACILITY_CODE,
+                HFacilityTable.COLUMN_HFACILITY_NAME,
+                HFacilityTable.COLUMN_TEHSIL_CODE,
+        };
+
+        String whereClause = HFacilityTable.COLUMN_TEHSIL_CODE + " = ?";
+        String[] whereArgs = {tehsil_code};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                HFacilityTable._ID + " ASC";
+
+        Collection<HFacilitiesContract> allHFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    HFacilityTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                HFacilitiesContract hfc = new HFacilitiesContract();
+                allHFC.add(hfc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allHFC;
+    }
+
+    public Collection<UCsContract> getAllUCsByTehsil(String tehsil_code) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                UcTable._ID,
+                UcTable.COLUMN_UC_NAME,
+                UcTable.COLUMN_UC_CODE,
+                UcTable.COLUMN_TEHSIL_CODE,
+        };
+
+        String whereClause = UcTable.COLUMN_TEHSIL_CODE + " = ?";
+        String[] whereArgs = {tehsil_code};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                UcTable._ID + " ASC";
+
+        Collection<UCsContract> allUCsC = new ArrayList<>();
+        try {
+            c = db.query(
+                    UcTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+
+            UCsContract uc1 = new UCsContract();
+            allUCsC.add(uc1.setDefaultVal("", "..."));
+
+            while (c.moveToNext()) {
+                UCsContract ucsc = new UCsContract();
+                allUCsC.add(ucsc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allUCsC;
+    }
+
+    public Collection<VillagesContract> getAllVillagesByUc(String uc_code) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                VillageTable._ID,
+                VillageTable.COLUMN_VILLAGE_CODE,
+                VillageTable.COLUMN_VILLAGE_NAME,
+                VillageTable.COLUMN_UC_CODE
+        };
+
+        String whereClause = VillageTable.COLUMN_UC_CODE + " = ?";
+        String[] whereArgs = {uc_code};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                VillageTable.COLUMN_VILLAGE_CODE + " ASC";
+
+        Collection<VillagesContract> allPC = new ArrayList<VillagesContract>();
+        try {
+            c = db.query(
+                    VillageTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+
+            VillagesContract uc1 = new VillagesContract();
+            allPC.add(uc1.setDefaultVal("", "..."));
+
+            while (c.moveToNext()) {
+                VillagesContract pc = new VillagesContract();
+                allPC.add(pc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allPC;
+    }
+
+    public Collection<LHWsContract> getAllLhwsByHf(String hf_code) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                LHWTable._ID,
+                LHWTable.COLUMN_LHW_CODE,
+                LHWTable.COLUMN_LHW_NAME,
+                LHWTable.COLUMN_HF_CODE,
+                LHWTable.COLUMN_AREA_TYPE,
+                LHWTable.COLUMN_STATUS
+        };
+
+        String whereClause = LHWTable.COLUMN_HF_CODE + " = ?";
+        String[] whereArgs = {hf_code};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                LHWTable.COLUMN_LHW_CODE + " ASC";
+
+        Collection<LHWsContract> allLhwC = new ArrayList<LHWsContract>();
+        try {
+            c = db.query(
+                    LHWTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                LHWsContract lhwc = new LHWsContract();
+                allLhwC.add(lhwc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allLhwC;
+    }
+
+
+    public Collection<TehsilsContract> getAllTehsil() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                TehsilTable._ID,
+                TehsilTable.COLUMN_TEHSIL_CODE,
+                TehsilTable.COLUMN_TEHSIL_NAME
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                TehsilTable._ID + " ASC";
+
+        Collection<TehsilsContract> allDC = new ArrayList<TehsilsContract>();
+        try {
+            c = db.query(
+                    TehsilTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                TehsilsContract dc = new TehsilsContract();
+                allDC.add(dc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
+
+    public Collection<VillagesContract> getAllVillage() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                VillageTable._ID,
+                VillageTable.COLUMN_VILLAGE_CODE,
+                VillageTable.COLUMN_VILLAGE_NAME,
+                VillageTable.COLUMN_UC_CODE
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                VillageTable._ID + " ASC";
+
+        Collection<VillagesContract> allDC = new ArrayList<VillagesContract>();
+        try {
+            c = db.query(
+                    VillageTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                VillagesContract vc = new VillagesContract();
+                allDC.add(vc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allDC;
+    }
+
+
     public void syncChild(JSONArray childlist) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(PSUsContract.singleChild.TABLE_NAME, null, null);
@@ -645,6 +1164,177 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
 
         } catch (Exception e) {
+        }
+    }
+
+
+    public void syncUc(JSONArray ucList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(UcTable.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = ucList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectUc = jsonArray.getJSONObject(i);
+
+                UCsContract dc = new UCsContract();
+                dc.sync(jsonObjectUc);
+
+                ContentValues values = new ContentValues();
+
+                values.put(UcTable.COLUMN_UC_CODE, dc.getUcCode());
+                values.put(UcTable.COLUMN_UC_NAME, dc.getUcName());
+                values.put(UcTable.COLUMN_TEHSIL_CODE, dc.getTehsilCode());
+
+                db.insert(UcTable.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.e(TAG, "syncUc: " + e.toString());
+        }
+    }
+
+    public void syncSources(JSONArray ucList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(SourceTable.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = ucList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectUc = jsonArray.getJSONObject(i);
+
+                SourceNGOContract dc = new SourceNGOContract();
+                dc.sync(jsonObjectUc);
+
+                ContentValues values = new ContentValues();
+
+                values.put(SourceTable.COLUMN_SOURCE_CODE, dc.getSourceCode());
+                values.put(SourceTable.COLUMN_SOURCE_NAME, dc.getSourceName());
+
+                db.insert(SourceTable.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.e(TAG, "syncUc: " + e.toString());
+        }
+    }
+
+
+    public void syncTehsil(JSONArray pcList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TehsilTable.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = pcList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectTehsil = jsonArray.getJSONObject(i);
+
+                TehsilsContract pc = new TehsilsContract();
+                pc.sync(jsonObjectTehsil);
+
+                ContentValues values = new ContentValues();
+
+                values.put(TehsilTable.COLUMN_TEHSIL_CODE, pc.getTehsil_code());
+                values.put(TehsilTable.COLUMN_TEHSIL_NAME, pc.getTehsil_name());
+
+                db.insert(TehsilTable.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+
+        }
+    }
+
+    public void syncHFacility(JSONArray pcList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(HFacilityTable.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = pcList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectHFacility = jsonArray.getJSONObject(i);
+
+                HFacilitiesContract hc = new HFacilitiesContract();
+                hc.sync(jsonObjectHFacility);
+
+                ContentValues values = new ContentValues();
+
+                values.put(HFacilityTable.COLUMN_HFACILITY_CODE, hc.gethFacilityCode());
+                values.put(HFacilityTable.COLUMN_HFACILITY_NAME, hc.gethFacilityName());
+                values.put(HFacilityTable.COLUMN_TEHSIL_CODE, hc.getTehsilCode());
+
+                db.insert(HFacilityTable.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+
+        }
+    }
+
+
+    public void syncVillages(JSONArray pcList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(VillageTable.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = pcList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectVillage = jsonArray.getJSONObject(i);
+
+                VillagesContract vc = new VillagesContract();
+                vc.sync(jsonObjectVillage);
+
+                ContentValues values = new ContentValues();
+
+                values.put(VillageTable.COLUMN_VILLAGE_CODE, vc.getVillageCode());
+                values.put(VillageTable.COLUMN_VILLAGE_NAME, vc.getVillageName());
+                values.put(VillageTable.COLUMN_UC_CODE, vc.getUcCode());
+
+                db.insert(VillageTable.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+
+        }
+    }
+
+    public void syncLHW(JSONArray lcList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(LHWsContract.LHWTable.TABLE_NAME, null, null);
+
+        try {
+            JSONArray jsonArray = lcList;
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectLHW = jsonArray.getJSONObject(i);
+
+                LHWsContract lc = new LHWsContract();
+                lc.sync(jsonObjectLHW);
+
+                ContentValues values = new ContentValues();
+
+                values.put(LHWTable.COLUMN_LHW_CODE, lc.getLHWCode());
+                values.put(LHWTable.COLUMN_LHW_NAME, lc.getLHWName());
+                values.put(LHWTable.COLUMN_AREA_TYPE, lc.getAreaType());
+                values.put(LHWTable.COLUMN_HF_CODE, lc.getHfCode());
+                values.put(LHWTable.COLUMN_STATUS, lc.getStatus());
+
+                db.insert(LHWTable.TABLE_NAME, null, values);
+            }
+            db.close();
+
+        } catch (Exception e) {
+
         }
     }
 
@@ -742,4 +1432,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     }
+
 }

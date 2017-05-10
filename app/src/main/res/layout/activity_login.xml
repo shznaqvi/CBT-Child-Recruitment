@@ -7,8 +7,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="72dp"
-    tools:context="edu.aku.hassannaqvi.cbt_child_recruitment.LoginActivity">
+    tools:context="edu.aku.hassannaqvi.cbt_child_recruitment.activities.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -38,7 +37,7 @@
                 android:gravity="center_horizontal"
 
                 android:keepScreenOn="true"
-                android:text="SEROPREVALENCE SURVEY PAKISTAN 2016 - 2017"
+                android:text="CBT Child Recruitment"
                 android:textColor="@color/colorAccent"
                 android:textSize="16sp"
                 android:textStyle="bold" />
