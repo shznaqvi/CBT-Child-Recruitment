@@ -69,6 +69,8 @@ public class MainActivity extends Activity {
     DatabaseHelper db;
     private String rSumText = "";
 
+    List<String> hfCodes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -424,13 +426,13 @@ public class MainActivity extends Activity {
 
                     mN01.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, Tname));
 
-                    final List<String> hfCodes = new ArrayList<>();
-
                     mN01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                             // Spinner Drop down elements
                             List<String> hfNames = new ArrayList<>();
+
+                            hfCodes = new ArrayList<>();
 
                             AppMain.tehsilCode = tehsils.get(Tname.get(position));
 
