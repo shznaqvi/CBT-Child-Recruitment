@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -18,6 +19,9 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -570,6 +574,10 @@ public class SectionHActivity extends Activity {
                 }
             }
         });
+
+        String[] ngo = {"NGO 1","NGO 2","NGO 3","NGO 4","NGO 5","NGO 6","NGO 7"};
+
+        crj01asrc.setAdapter(new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item, ngo));
 
     }
 

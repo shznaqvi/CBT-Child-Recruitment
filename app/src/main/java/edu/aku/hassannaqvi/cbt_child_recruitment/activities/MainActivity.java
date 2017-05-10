@@ -221,8 +221,13 @@ public class MainActivity extends Activity {
     }
 
     public void openForm(View v) {
-        Intent oF = new Intent(this, SectionAActivity.class);
-        startActivity(oF);
+        if (mN01.getSelectedItem() != null) {
+            Intent oF = new Intent(this, SectionAActivity.class);
+            startActivity(oF);
+        }
+        else {
+            Toast.makeText(this,"First Download Data",Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void openA(View v) {
@@ -314,7 +319,7 @@ public class MainActivity extends Activity {
     public void syncDevice(View view) {
         if (isNetworkAvailable()) {
 
-            syncData sync =new syncData(this);
+            syncData sync = new syncData(this);
             sync.execute();
         }
     }
@@ -444,8 +449,9 @@ public class MainActivity extends Activity {
                             }
 
                             // attaching data adapter to spinner
-                            mN02.setAdapter(new ArrayAdapter<>(mContext,
+                            mN02.setAdapter(new ArrayAdapter<>(getBaseContext(),
                                     android.R.layout.simple_spinner_dropdown_item, hfNames));
+
                         }
 
                         @Override
@@ -466,7 +472,7 @@ public class MainActivity extends Activity {
                                 lhws.put("" + (lhw.getLHWName() + " (" + lhw.getLHWCode() + ")"), lhw.getLHWCode());
                                 lhwName.add(lhw.getLHWName() + " (" + lhw.getLHWCode() + ")");
                             }
-                            ArrayAdapter<String> psuAdapter = new ArrayAdapter<>(mContext,
+                            ArrayAdapter<String> psuAdapter = new ArrayAdapter<String>(MainActivity.this,
                                     android.R.layout.simple_spinner_item, lhwName);
 
                             psuAdapter
@@ -485,6 +491,22 @@ public class MainActivity extends Activity {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                             AppMain.lhwCode = lhws.get(lhwName.get(position));
+                /*Collection<LHWsContract> lhwc = db.getAllLhwsByHf(AppMain.hh01txt);
+                for (LHWsContract l : lhwc) {
+                    Log.d(TAG, "onItemSelected: " + l.getLHWCode() + " -" + AppMain.hh02txt);
+
+                    if (l.getLHWCode().equals(AppMain.hh02txt)) {
+                        Log.d(TAG, "onItemSelected: " + l.getLHWName());
+                        String[] psuNameS = l.getLHWName().toString().split("\\|");
+                        districtN.setText(psuNameS[0]);
+                        Log.d(TAG, "onItemSelected: " + psuNameS[0]);
+                        ucN.setText(psuNameS[1]);
+                        Log.d(TAG, "onItemSelected: " + psuNameS[1]);
+                        psuN.setText(psuNameS[2]);
+                        Log.d(TAG, "onItemSelected: " + psuNameS[2]);
+
+                    }
+                }*/
                         }
 
                         @Override
@@ -492,9 +514,8 @@ public class MainActivity extends Activity {
 
                         }
                     });
-
                 }
-            },1200);
+            }, 1200);
         }
     }
 }

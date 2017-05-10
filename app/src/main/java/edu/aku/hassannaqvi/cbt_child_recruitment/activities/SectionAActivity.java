@@ -767,6 +767,16 @@ public class SectionAActivity extends Activity {
                     cra26.setError(null);
                 }
 
+                if (Double.parseDouble(cra26.getText().toString()) < 0 || Double.parseDouble(cra26.getText().toString()) > 20.99) {
+                    Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
+                    cra26.setError("Range 0 - 20.99");
+
+                    Log.i(TAG, "cra26: Range 0-20.99!");
+                    return false;
+                } else {
+                    cra26.setError(null);
+                }
+
 
                 //================== Check on Total members in HH=============
 
@@ -788,18 +798,18 @@ public class SectionAActivity extends Activity {
                 }
 
 
-                if (cra26.getText().toString().indexOf(".") < -1) {
-                    Toast.makeText(this, "ERROR(Must have a decimal point) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
-                    Log.i(TAG, "cra26: This Data is Required!");
-                    return false;
-                } else {
-
-                    if (cra26.getText().toString().length() != 5) {
-                        Toast.makeText(this, "ERROR(Invalid Format) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
-                        Log.i(TAG, "cra26: This Data is Required!");
-                        return false;
-                    }
-                }
+//                if (cra26.getText().toString().indexOf(".") < -1) {
+//                    Toast.makeText(this, "ERROR(Must have a decimal point) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
+//                    Log.i(TAG, "cra26: This Data is Required!");
+//                    return false;
+//                } else {
+//
+//                    if (cra26.getText().toString().length() != 5) {
+//                        Toast.makeText(this, "ERROR(Invalid Format) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
+//                        Log.i(TAG, "cra26: This Data is Required!");
+//                        return false;
+//                    }
+//                }
 
 
             }
