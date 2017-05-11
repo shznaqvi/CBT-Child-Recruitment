@@ -1,7 +1,9 @@
 package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
@@ -9,6 +11,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -66,6 +69,11 @@ public class MainActivity extends Activity {
     List<String> hfCodes;
     private String rSumText = "";
 
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor editor;
+    AlertDialog.Builder builder;
+    String m_Text= "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +91,42 @@ public class MainActivity extends Activity {
         } else {
             adminsec.setVisibility(View.GONE);
         }
+
+//        Tag Working
+
+        sharedPref = getSharedPreferences("tagName",MODE_PRIVATE);
+        editor = sharedPref.edit();
+
+        builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Tag Name");
+
+        final EditText input = new EditText(MainActivity.this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        builder.setView(input);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                m_Text = input.getText().toString();
+                if (!m_Text.equals("")) {
+                    editor.putString("tagName", m_Text);
+                    editor.commit();
+                }
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        if (sharedPref.getString("tagName",null) == "" || sharedPref.getString("tagName",null) == null){
+            builder.show();
+        }
+
+//        End Tag
+
 
 
         db = new DatabaseHelper(this);
@@ -216,13 +260,46 @@ public class MainActivity extends Activity {
     }
 
     public void openForm(View v) {
-        if (mN01.getSelectedItem() != null) {
-            Intent oF = new Intent(this, SectionAActivity.class);
+        if (sharedPref.getString("tagName",null) != "" && sharedPref.getString("tagName",null) != null){
+            Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
             startActivity(oF);
+        }else {
+
+            builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Tag Name");
+
+            final EditText input = new EditText(MainActivity.this);
+            input.setInputType(InputType.TYPE_CLASS_TEXT);
+            builder.setView(input);
+
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    m_Text = input.getText().toString();
+                    if (!m_Text.equals("")) {
+                        editor.putString("tagName", m_Text);
+                        editor.commit();
+
+                        if (mN01.getSelectedItem() != null) {
+                            Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                            startActivity(oF);
+                        }
+                        else {
+                            Toast.makeText(MainActivity.this,"First Download Data",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            builder.show();
         }
-        else {
-            Toast.makeText(this,"First Download Data",Toast.LENGTH_SHORT).show();
-        }
+
     }
 
     public void openA(View v) {
@@ -478,6 +555,7 @@ public class MainActivity extends Activity {
 
                         }
                     });
+
                 }
             }, 1200);
         }

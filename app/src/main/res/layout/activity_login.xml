@@ -57,8 +57,10 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="0dp"
                 android:contentDescription="TVI LOGO"
-                android:onClick="gotoMain"
+
                 android:src="@drawable/agakhan" />
+
+            <!--android:onClick="gotoMain"-->
 
             <AutoCompleteTextView
                 android:id="@+id/email"
@@ -88,6 +90,19 @@
                 android:singleLine="true"
                 android:textAlignment="center" />
 
+            <Button
+                android:id="@+id/syncData"
+                style="?android:textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@drawable/ic_cloud_download_black_24dp"
+                android:padding="16dp"
+                android:text=" Sync Data"
+                android:textStyle="bold"
+
+                />
             <!--<Spinner
                 android:id="@+id/spUC"
                 android:layout_width="fill_parent"

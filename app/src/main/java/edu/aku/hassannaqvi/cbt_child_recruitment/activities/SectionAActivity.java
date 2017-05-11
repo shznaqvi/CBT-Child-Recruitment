@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -791,7 +792,7 @@ public class SectionAActivity extends Activity {
                         + Integer.parseInt(cra19.getText().toString().isEmpty() ? "0" : cra19.getText().toString())
                         + Integer.parseInt(cra22.getText().toString().isEmpty() ? "0" : cra22.getText().toString())
                         + Integer.parseInt(cra23.getText().toString().isEmpty() ? "0" : cra23.getText().toString()))
-                        > Integer.parseInt(cra24.getText().toString().isEmpty() ? "0" : cra14.getText().toString())) {
+                        > Integer.parseInt(cra24.getText().toString().isEmpty() ? "0" : cra24.getText().toString())) {
                     Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
                     cra17.setError("Can not be greater than total members!");
 
@@ -926,6 +927,8 @@ public class SectionAActivity extends Activity {
 
         AppMain.VillageName = cravillage.getText().toString();
 
+        SharedPreferences sharedPref = getSharedPreferences("tagName",MODE_PRIVATE);
+
         AppMain.fc = new FormsContract();
 
         AppMain.fc.setUserName(AppMain.username);
@@ -937,6 +940,7 @@ public class SectionAActivity extends Activity {
         AppMain.fc.setUccode(getAllUCs.get(crauc.getSelectedItem().toString()));
         AppMain.fc.setVillagename(AppMain.VillageName);
         AppMain.fc.setChildId(cra03.getText().toString());
+        AppMain.fc.setTagId(sharedPref.getString("tagName",""));
 
         JSONObject sa = new JSONObject();
 
