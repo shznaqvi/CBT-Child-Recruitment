@@ -425,7 +425,7 @@ public class SectionAActivity extends Activity {
 
         Toast.makeText(this, "Validating Section A", Toast.LENGTH_SHORT).show();
 
-        if (crauc.getItemAtPosition(0) == "...") {
+        if (crauc.getSelectedItem() == "...") {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
             ((TextView) crauc.getSelectedView()).setError("This Data is Required");
 
