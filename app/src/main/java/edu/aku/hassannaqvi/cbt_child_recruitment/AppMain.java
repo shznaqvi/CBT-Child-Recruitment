@@ -17,6 +17,11 @@ import java.util.Map;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract;
 
+import java.util.Map;
+
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract;
+
 
 /**
  * Created by hassan.naqvi on 10/13/2016.
@@ -68,6 +73,17 @@ public class AppMain extends Application {
     public static String VillageName;
     public static String username = "";
     protected LocationManager locationManager;
+    public static SharedPreferences sharedPref;
+
+    //    Ali
+    public static String tehsilCode;
+    public static String hfCode = "0000";  //hf code
+    public static String lhwCode;   //LHW code
+    public static Boolean UCsCodeFlag = true;
+    public static int UCsCode;
+    public static Boolean VillageCodeFlag = true;
+    public static String VillageName;
+    public static String username="";
     Location location;
 
 

@@ -361,7 +361,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
-            <RadioGroup
+        <RadioGroup
             android:id="@+id/crk0496"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
