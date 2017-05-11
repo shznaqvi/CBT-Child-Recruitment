@@ -577,7 +577,7 @@ public class SectionHActivity extends Activity {
 
         String[] ngo = new String[]{"NGO 1","NGO 2","NGO 3","NGO 4","NGO 5","NGO 6","NGO 7"};
 
-        crj01asrc.setAdapter(new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item, ngo));
+        crj01asrc.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item, ngo));
 
     }
 
