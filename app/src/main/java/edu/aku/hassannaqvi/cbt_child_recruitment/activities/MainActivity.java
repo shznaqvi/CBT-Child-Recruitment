@@ -19,9 +19,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.SocketAddress;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -46,7 +43,6 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetUCs;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetUsers;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetVillages;
 import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncForms;
-import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncIMs;
 
 public class MainActivity extends Activity {
 
@@ -67,9 +63,8 @@ public class MainActivity extends Activity {
     Spinner mN03;
     Map<String, String> tehsils, lhws;
     DatabaseHelper db;
-    private String rSumText = "";
-
     List<String> hfCodes;
+    private String rSumText = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -288,9 +283,6 @@ public class MainActivity extends Activity {
     }*/
     public void syncServer(View view) {
 
-        String formsUrl = AppMain.PROJECT_URI + "cash_basedtransferchildrecruitment/api/forms.php";
-        String imsUrl = AppMain.PROJECT_URI + "cash_basedtransferchildrecruitment/api/ims.php";
-
         // Require permissions INTERNET & ACCESS_NETWORK_STATE
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -299,9 +291,6 @@ public class MainActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncForms(this).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
-            new SyncIMs(this).execute();
-            Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
@@ -329,31 +318,6 @@ public class MainActivity extends Activity {
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-    }
-
-    private boolean isHostAvailable() {
-
-        if (isNetworkAvailable()) {
-            try {
-                SocketAddress sockaddr = new InetSocketAddress(AppMain._IP, AppMain._PORT);
-                // Create an unbound socket
-                Socket sock = new Socket();
-
-                // This method will block no more than timeoutMs.
-                // If the timeout occurs, SocketTimeoutException is thrown.
-                int timeoutMs = 2000;   // 2 seconds
-                sock.connect(sockaddr, timeoutMs);
-                return true;
-            } catch (Exception e) {
-                Toast.makeText(getApplicationContext(), "Server Not Available for Update", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-
-        } else {
-            Toast.makeText(getApplicationContext(), "Network not available for Update", Toast.LENGTH_SHORT).show();
-            return false;
-
-        }
     }
 
 

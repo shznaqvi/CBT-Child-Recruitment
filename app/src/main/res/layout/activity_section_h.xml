@@ -86,15 +86,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/other"
-            android:visibility="gone"
+
             />
 
         <LinearLayout
             android:id="@+id/fldGrpcrh02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -207,8 +206,7 @@
             android:id="@+id/fldGrpcrh05"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -344,8 +342,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:hint="@string/other"
-            android:visibility="gone" />
+            android:hint="@string/other" />
 
         <View
             android:layout_width="match_parent"
@@ -927,8 +924,7 @@
             android:id="@+id/fldGrpcrj01a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -981,8 +977,7 @@
             android:id="@+id/fldGrpcrj01b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1035,8 +1030,7 @@
             android:id="@+id/fldGrpcrj01c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1090,8 +1084,7 @@
             android:id="@+id/fldGrpcrj01d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1145,8 +1138,7 @@
             android:id="@+id/fldGrpcrj01e"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1199,8 +1191,7 @@
             android:id="@+id/fldGrpcrj01f"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1254,8 +1245,7 @@
             android:id="@+id/fldGrpcrj01g"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1308,8 +1298,7 @@
             android:id="@+id/fldGrpcrj01h"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1361,8 +1350,7 @@
             android:id="@+id/fldGrpcrj01i"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1416,8 +1404,7 @@
             android:id="@+id/fldGrpcrj01j"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1470,8 +1457,7 @@
             android:id="@+id/fldGrpcrj01k"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1525,8 +1511,7 @@
             android:id="@+id/fldGrpcrj01l"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1581,8 +1566,7 @@
             android:id="@+id/fldGrpcrj01m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/crj01mx"
@@ -1646,8 +1630,7 @@
             android:id="@+id/fldGrpcrj01n"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/crj01nx"

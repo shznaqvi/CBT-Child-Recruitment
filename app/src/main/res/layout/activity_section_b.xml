@@ -666,8 +666,7 @@
             android:layout_marginTop="1dp"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
             android:hint="@string/other"
-            android:maxLength="30"
-            android:visibility="gone" />
+            android:maxLength="30" />
 
         <LinearLayout
             android:id="@+id/crdGrp01"
@@ -809,8 +808,7 @@
                     android:layout_marginTop="1dp"
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
                     android:hint="@string/other"
-                    android:maxLength="30"
-                    android:visibility="gone" />
+                    android:maxLength="30" />
 
             </LinearLayout>
         </LinearLayout>

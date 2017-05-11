@@ -108,8 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/other"
-            android:visibility="gone" />
+            android:hint="@string/other" />
 
         <TextView
             android:layout_width="match_parent"
@@ -250,8 +249,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/other"
-            android:visibility="gone" />
+            android:hint="@string/other" />
 
         <TextView
             android:layout_width="match_parent"
@@ -285,7 +283,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone"
+
             tools:visibility="visible">
 
             <TextView
@@ -355,8 +353,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/other"
-            android:visibility="gone" />
+            android:hint="@string/other" />
 
         </LinearLayout>
 
@@ -466,8 +463,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/other"
-            android:visibility="gone" />
+            android:hint="@string/other" />
 
         <TextView
             android:layout_width="match_parent"
@@ -501,7 +497,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone"
+
             tools:visibility="visible">
 
             <TextView
@@ -1141,8 +1137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/other"
-            android:visibility="gone" />
+            android:hint="@string/other" />
 
         <LinearLayout
             android:id="@+id/crgGrp09"
@@ -1199,8 +1194,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/other"
-                android:visibility="gone" />
+                android:hint="@string/other" />
 
         </LinearLayout>
 
@@ -1358,8 +1352,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/other"
-            android:visibility="gone" />
+            android:hint="@string/other" />
 
         <TextView
             android:layout_width="match_parent"
@@ -1488,8 +1481,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/other"
-            android:visibility="gone" />
+            android:hint="@string/other" />
 
         <TextView
             android:layout_width="match_parent"
@@ -1596,8 +1588,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/other"
-            android:visibility="gone" />
+            android:hint="@string/other" />
 
         <TextView
             android:layout_width="match_parent"
@@ -2205,8 +2196,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/other"
-                android:visibility="gone" />
+                android:hint="@string/other" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -2324,8 +2314,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/other"
-                android:visibility="gone" />
+                android:hint="@string/other" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -2443,8 +2432,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/other"
-                android:visibility="gone" />
+                android:hint="@string/other" />
 
             <TextView
                 android:layout_width="match_parent"

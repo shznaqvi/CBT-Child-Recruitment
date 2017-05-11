@@ -16,7 +16,6 @@ import android.view.View;
 import java.util.Map;
 
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract;
 
 
 /**
@@ -57,7 +56,6 @@ public class AppMain extends Application {
     public static int chTotal = 0;
     public static boolean scanned = false;
     public static FormsContract fc;
-    public static IMsContract im;
     public static SharedPreferences sharedPref;
     //    Ali
     public static String tehsilCode;

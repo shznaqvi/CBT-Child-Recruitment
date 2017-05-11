@@ -75,8 +75,7 @@
             android:id="@+id/fldGrpcrf01a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
             <TextView
             android:layout_width="match_parent"
@@ -156,8 +155,7 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/crf0201"
-            android:inputType="number"
-            android:visibility="gone" />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/crf02d"
@@ -165,8 +163,7 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/crf0202"
-            android:inputType="number"
-            android:visibility="gone" />
+            android:inputType="number" />
 
 
         <TextView
@@ -414,8 +411,7 @@
             android:id="@+id/fldGrp06c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -534,8 +530,7 @@
             android:id="@+id/fldGrp06f"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
 
             <EditText
@@ -1280,8 +1275,7 @@
             android:id="@+id/fldGrpcrf09"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"

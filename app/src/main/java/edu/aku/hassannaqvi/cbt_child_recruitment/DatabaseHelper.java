@@ -21,8 +21,6 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract.singleForm;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.HFacilitiesContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.HFacilitiesContract.HFacilityTable;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract.singleIms;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.LHWsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.LHWsContract.LHWTable;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.PSUsContract;
@@ -51,12 +49,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleChild.COLUMN_HH03 + " TEXT,"
             + singleChild.COLUMN_HH07 + " TEXT,"
             + singleChild.COLUMN_CHILD_NAME + " TEXT );";
-    public static final String SQL_CREATE_IMS = "CREATE TABLE " + singleIms.TABLE_NAME + "("
-            + singleIms._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + singleIms.COLUMN_CHID + " TEXT,"
-            + singleIms.COLUMN_UID + " TEXT,"
-            + singleIms.COLUMN_IM + " TEXT );"
-            + singleIms.COLUMN_DEVICETAGID + " TEXT );";
     public static final String SQL_CREATE_USERS = "CREATE TABLE " + singleUser.TABLE_NAME + "("
             + singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + singleUser.ROW_USERNAME + " TEXT,"
@@ -101,7 +93,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleForm.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
     private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + singleForm.TABLE_NAME;
-    private static final String SQL_DELETE_IMS = "DROP TABLE IF EXISTS " + singleIms.TABLE_NAME;
     private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
     private static final String SQL_DELETE_PSUS = "DROP TABLE IF EXISTS " + singleChild.TABLE_NAME;
     public static String DB_FORM_ID;
@@ -153,7 +144,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_FORMS);
-        db.execSQL(SQL_CREATE_IMS);
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_PSU);
         db.execSQL(SQL_CREATE_TEHSIL_TABLE);
@@ -167,7 +157,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(SQL_DELETE_FORMS);
-        db.execSQL(SQL_DELETE_IMS);
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_PSUS);
 
@@ -268,24 +257,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public long addIM(IMsContract imscontract) {
-        SQLiteDatabase db = this.getWritableDatabase();
 
-
-        ContentValues values = new ContentValues();
-        values.put(singleIms.COLUMN_UID, imscontract.getUID());
-        values.put(singleIms.COLUMN_CHID, imscontract.getChid());
-        values.put(singleIms.COLUMN_IM, imscontract.getIM());
-        values.put(singleIms.COLUMN_DEVICETAGID, imscontract.getTagId());
-
-        // Inserting Row
-        long rowId = db.insert(singleIms.TABLE_NAME, null, values);
-        db.close(); // Closing database connection
-        DB_IMS_ID = String.valueOf(rowId);
-        return rowId;
-    }
-
-    ////////////
     public Collection<FormsContract> getAllForms() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -477,51 +449,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return formList;
     }
 
-    public Collection<IMsContract> getAllIMs() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = {
-                singleIms._ID,
-                singleIms.COLUMN_UID,
-                singleIms.COLUMN_CHID,
-                singleIms.COLUMN_IM,
-                singleIms.COLUMN_DEVICETAGID,
-
-        };
-        String whereClause = null;
-        String[] whereArgs = null;
-        String groupBy = null;
-        String having = null;
-
-        String orderBy =
-                singleIms._ID + " ASC";
-
-        Collection<IMsContract> allIM = new ArrayList<IMsContract>();
-        try {
-            c = db.query(
-                    singleIms.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                IMsContract ims = new IMsContract();
-                allIM.add(ims.hydrate(c));
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return allIM;
-    }
-//////////////////////////////
 
     public int updateSB() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -1387,9 +1314,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } catch (Exception e) {
         }
         return "No Child Found";
-
     }
-
 
     // ANDROID DATABASE MANAGER
     public ArrayList<Cursor> getData(String Query) {
@@ -1435,8 +1360,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             alc.set(1, Cursor2);
             return alc;
         }
-
-
     }
-
 }
