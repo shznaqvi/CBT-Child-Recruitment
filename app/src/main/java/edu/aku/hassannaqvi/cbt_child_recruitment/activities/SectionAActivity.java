@@ -19,6 +19,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -424,6 +425,16 @@ public class SectionAActivity extends Activity {
 
         Toast.makeText(this, "Validating Section A", Toast.LENGTH_SHORT).show();
 
+        if (crauc.getItemAtPosition(0) == "...") {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+            ((TextView) crauc.getSelectedView()).setError("This Data is Required");
+
+            Log.i(TAG, "cra01: This Data is Required!");
+            return false;
+        } else {
+            ((TextView) crauc.getSelectedView()).setError(null);
+        }
+
         //================ Q 3==================
         if (cra03.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra03), Toast.LENGTH_SHORT).show();
@@ -599,6 +610,18 @@ public class SectionAActivity extends Activity {
                 } else {
                     cra12.setError(null);
                 }
+
+                if ((Integer.parseInt(cra12.getText().toString().isEmpty() ? "0" : cra12.getText().toString())
+                        >= (Integer.parseInt(cra10.getText().toString().isEmpty() ? "0" : cra10.getText().toString())))) {
+                    Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.cra12), Toast.LENGTH_LONG).show();
+                    cra12.setError("Can not be greater than current age");
+                    Log.i(TAG, "Can not be greater than current age");
+                    return false;
+                } else {
+                    cra12.setError(null);
+                }
+
+
                 //======================= Q13================
                 if (cra13.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra13), Toast.LENGTH_SHORT).show();
@@ -621,6 +644,16 @@ public class SectionAActivity extends Activity {
                     cra14.setError(null);
                 }
 
+                if (Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
+                    cra14.setError("Can not be zero!");
+
+                    Log.i(TAG, "cra14: Can not be zero");
+                    return false;
+                } else {
+                    cra14.setError(null);
+                }
+
                 //================ Q15===============
                 if (cra15.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
@@ -638,6 +671,16 @@ public class SectionAActivity extends Activity {
                     cra15.setError("Can not be greater than total pregnancies... Check again");
 
                     Log.i(TAG, "cra15: Can not be greater than total pregnancies... Check again");
+                    return false;
+                } else {
+                    cra15.setError(null);
+                }
+
+                if (Integer.parseInt(cra15.getText().toString().isEmpty() ? "0" : cra15.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
+                    cra15.setError("Can not be zero!");
+
+                    Log.i(TAG, "cra15: Can not be zero");
                     return false;
                 } else {
                     cra15.setError(null);
@@ -741,6 +784,32 @@ public class SectionAActivity extends Activity {
                     return false;
                 } else {
                     cra24.setError(null);
+                }
+
+                if ((Integer.parseInt(cra17.getText().toString().isEmpty() ? "0" : cra17.getText().toString())
+                        + Integer.parseInt(cra18.getText().toString().isEmpty() ? "0" : cra18.getText().toString())
+                        + Integer.parseInt(cra19.getText().toString().isEmpty() ? "0" : cra19.getText().toString())
+                        + Integer.parseInt(cra22.getText().toString().isEmpty() ? "0" : cra22.getText().toString())
+                        + Integer.parseInt(cra23.getText().toString().isEmpty() ? "0" : cra23.getText().toString()))
+                        > Integer.parseInt(cra24.getText().toString().isEmpty() ? "0" : cra14.getText().toString())) {
+                    Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
+                    cra17.setError("Can not be greater than total members!");
+
+                    Log.i(TAG, "cra17: Can not be greater than total members");
+                    return false;
+                } else {
+                    cra17.setError(null);
+                }
+
+                if ((Integer.parseInt(cra20.getText().toString().isEmpty() ? "0" : cra20.getText().toString()))
+                        > Integer.parseInt(cra23.getText().toString().isEmpty() ? "0" : cra23.getText().toString())) {
+                    Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra23), Toast.LENGTH_SHORT).show();
+                    cra23.setError("Can not be greater than adult females!");
+
+                    Log.i(TAG, "cra17: Can not be greater than adult females");
+                    return false;
+                } else {
+                    cra23.setError(null);
                 }
 
 

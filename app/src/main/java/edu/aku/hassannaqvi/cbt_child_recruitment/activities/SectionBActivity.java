@@ -382,7 +382,7 @@ public class SectionBActivity extends Activity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                int currentAge = (year - (crb03.getYear())) * 12 + (month - (crb03.getMonth()));
+                int currentAge = (year - (crb03.getYear())) * 12 + (month - (crb03.getMonth())) + (day - (crb03.getDayOfMonth()));
                 int enteredAge = Integer.parseInt(crb0401.getText().toString().isEmpty() ? "0" : crb0401.getText().toString());
 
                 if (currentAge != enteredAge) {
