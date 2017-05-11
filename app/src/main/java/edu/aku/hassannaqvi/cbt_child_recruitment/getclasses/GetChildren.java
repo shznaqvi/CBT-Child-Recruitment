@@ -55,8 +55,10 @@ public class GetChildren extends AsyncTask<String, String, String> {
         StringBuilder result = new StringBuilder();
 
         try {
-            URL url = new URL(AppMain.PROJECT_URI + "api/getchildrens.php");
+            URL url = new URL(AppMain.PROJECT_URI + "cbt.api/children.php");
             urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestProperty("Accept-Encoding", "gzip");
+
 
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 
