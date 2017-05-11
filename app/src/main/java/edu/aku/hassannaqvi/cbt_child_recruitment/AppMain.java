@@ -17,11 +17,6 @@ import java.util.Map;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract;
 
-import java.util.Map;
-
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract;
-
 
 /**
  * Created by hassan.naqvi on 10/13/2016.
@@ -50,7 +45,7 @@ public class AppMain extends Application {
     public static final long MILLISECONDS_IN_DAY = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
     private static final long DAYS_IN_YEAR = 365;
     public static final long MILLISECONDS_IN_YEAR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_YEAR;
-    private static final long DAYS_IN_6_MONTHS = 180;
+    private static final long DAYS_IN_6_MONTHS = 179;
     public static final long MILLISECONDS_IN_6_MONTHS = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_6_MONTHS;
     public static String deviceId;
 
@@ -71,19 +66,8 @@ public class AppMain extends Application {
     public static int UCsCode;
     public static Boolean VillageCodeFlag = true;
     public static String VillageName;
-    public static String username = "";
-    protected LocationManager locationManager;
-    public static SharedPreferences sharedPref;
-
-    //    Ali
-    public static String tehsilCode;
-    public static String hfCode = "0000";  //hf code
-    public static String lhwCode;   //LHW code
-    public static Boolean UCsCodeFlag = true;
-    public static int UCsCode;
-    public static Boolean VillageCodeFlag = true;
-    public static String VillageName;
     public static String username="";
+    protected LocationManager locationManager;
     Location location;
 
 

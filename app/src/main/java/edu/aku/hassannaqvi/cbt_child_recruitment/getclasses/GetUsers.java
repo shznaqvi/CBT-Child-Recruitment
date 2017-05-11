@@ -55,7 +55,7 @@ public class GetUsers extends AsyncTask<String, String, String> {
         StringBuilder result = new StringBuilder();
 
         try {
-            URL url = new URL(AppMain.PROJECT_URI + "cash_basedtransferchildrecruitment/api/users_login.php");
+            URL url = new URL(AppMain.PROJECT_URI + "api/users_login.php");
             urlConnection = (HttpURLConnection) url.openConnection();
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
