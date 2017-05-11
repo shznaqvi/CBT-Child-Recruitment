@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.cbt_child_recruitment.contracts;
 
 import android.database.Cursor;
 import android.provider.BaseColumns;
-import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,6 +28,7 @@ public class FormsContract {
     private String houseHold = ""; // HH no.
     private String childId = ""; // Index Child ID
     private String iStatus = ""; // Form Status
+    private String tagId = "";
     private String sA = "";
     private String sB = "";
     private String sC = "";
@@ -68,6 +68,7 @@ public class FormsContract {
         this.villagename = jsonObject.getString(singleForm.COLUMN_VILLAGENAME);
         this.iStatus= jsonObject.getString(singleForm.COLUMN_ISTATUS);
         this.userName= jsonObject.getString(singleForm.COLUMN_NAME_USERNAME);
+        this.tagId = jsonObject.getString(singleForm.COLUMN_DEVICETAGID);
         this.sA= jsonObject.getString(singleForm.COLUMN_SA);
         this.sB= jsonObject.getString(singleForm.COLUMN_SB);
         this.sC= jsonObject.getString(singleForm.COLUMN_SC);
@@ -92,6 +93,24 @@ public class FormsContract {
 
 
         return this;
+    }
+
+    public String getProjectName() {
+
+        return projectName;
+    }
+
+    public String getSurveyType() {
+        return surveyType;
+    }
+
+    public String getTagId() {
+
+        return tagId;
+    }
+
+    public void setTagId(String tagId) {
+        this.tagId = tagId;
     }
 
     public String getUserName() {
@@ -371,6 +390,7 @@ public class FormsContract {
         this.villagename = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_VILLAGENAME));
         this.iStatus = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_ISTATUS));
         this.userName = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_NAME_USERNAME));
+        this.tagId = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_DEVICETAGID));
         this.sA = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SA));
         this.sB = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SB));
         this.sC = cursor.getString(cursor.getColumnIndex(singleForm.COLUMN_SC));
@@ -415,6 +435,7 @@ public class FormsContract {
         json.put(singleForm.COLUMN_VILLAGENAME, this.villagename == null ? JSONObject.NULL : this.villagename);
         json.put(singleForm.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
         json.put(singleForm.COLUMN_NAME_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
+        json.put(singleForm.COLUMN_DEVICETAGID, this.tagId == null ? JSONObject.NULL : this.tagId);
         json.put(singleForm.COLUMN_SA, this.sA == null ? JSONObject.NULL : this.sA);
         json.put(singleForm.COLUMN_SB, this.sB == null ? JSONObject.NULL : this.sB);
         json.put(singleForm.COLUMN_SC, this.sC == null ? JSONObject.NULL : this.sC);
@@ -480,6 +501,7 @@ public class FormsContract {
         public static final String COLUMN_VILLAGENAME = "villagename";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_NAME_USERNAME = "username";
+        public static final String COLUMN_DEVICETAGID = "tagId";
         public static final String COLUMN_SA = "sa";
         public static final String COLUMN_SB = "sb";
         public static final String COLUMN_SC = "sc";

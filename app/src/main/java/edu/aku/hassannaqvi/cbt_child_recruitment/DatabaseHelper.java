@@ -19,21 +19,24 @@ import java.util.Date;
 
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract.singleForm;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.HFacilitiesContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.HFacilitiesContract.HFacilityTable;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.IMsContract.singleIms;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.LHWsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.LHWsContract.LHWTable;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.PSUsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.PSUsContract.singleChild;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.SourceNGOContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.SourceNGOContract.SourceTable;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.TehsilsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.TehsilsContract.TehsilTable;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract.UcTable;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract.singleUser;
-
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.*;
-
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.LHWsContract.LHWTable;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract.UcTable;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.HFacilitiesContract.HFacilityTable;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.VillagesContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.VillagesContract.VillageTable;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.TehsilsContract.TehsilTable;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.SourceNGOContract.SourceTable;
 
 /**
  * Created by hassan.naqvi on 10/29/2016.
@@ -52,7 +55,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleIms._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + singleIms.COLUMN_CHID + " TEXT,"
             + singleIms.COLUMN_UID + " TEXT,"
-            + singleIms.COLUMN_IM + " TEXT );";
+            + singleIms.COLUMN_IM + " TEXT );"
+            + singleIms.COLUMN_DEVICETAGID + " TEXT );";
     public static final String SQL_CREATE_USERS = "CREATE TABLE " + singleUser.TABLE_NAME + "("
             + singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + singleUser.ROW_USERNAME + " TEXT,"
@@ -73,6 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleForm.COLUMN_VILLAGENAME + " TEXT," +
             singleForm.COLUMN_ISTATUS + " TEXT," +
             singleForm.COLUMN_NAME_USERNAME + " TEXT," +
+            singleForm.COLUMN_DEVICETAGID + " TEXT," +
             singleForm.COLUMN_SA + " TEXT," +
             singleForm.COLUMN_SB + " TEXT," +
             singleForm.COLUMN_SC + " TEXT," +
@@ -95,6 +100,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             singleForm.COLUMN_SYNCED + " TEXT," +
             singleForm.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
+    private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + singleForm.TABLE_NAME;
+    private static final String SQL_DELETE_IMS = "DROP TABLE IF EXISTS " + singleIms.TABLE_NAME;
+    private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
+    private static final String SQL_DELETE_PSUS = "DROP TABLE IF EXISTS " + singleChild.TABLE_NAME;
+    public static String DB_FORM_ID;
+    public static String DB_IMS_ID;
     final String SQL_CREATE_TEHSIL_TABLE = "CREATE TABLE " + TehsilTable.TABLE_NAME + " (" +
             TehsilTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             TehsilTable.COLUMN_TEHSIL_CODE + " TEXT, " +
@@ -106,27 +117,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             HFacilityTable.COLUMN_TEHSIL_CODE + " TEXT, " +
             HFacilityTable.COLUMN_HFACILITY_NAME + " TEXT " +
             ");";
-
     final String SQL_CREATE_UC_TABLE = "CREATE TABLE " + UcTable.TABLE_NAME + " (" +
             UcTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             UcTable.COLUMN_TEHSIL_CODE + " TEXT, " +
             UcTable.COLUMN_UC_NAME + " TEXT, " +
             UcTable.COLUMN_UC_CODE + " TEXT " +
             ");";
-
     final String SQL_CREATE_SOURCE_TABLE = "CREATE TABLE " + SourceTable.TABLE_NAME + " (" +
             SourceTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             SourceTable.COLUMN_SOURCE_CODE + " TEXT, " +
             SourceTable.COLUMN_SOURCE_NAME + " TEXT " +
             ");";
-
     final String SQL_CREATE_VILLAGE_TABLE = "CREATE TABLE " + VillageTable.TABLE_NAME + " (" +
             VillageTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             VillageTable.COLUMN_VILLAGE_CODE + " TEXT, " +
             VillageTable.COLUMN_VILLAGE_NAME + " TEXT, " +
             VillageTable.COLUMN_UC_CODE + " TEXT " +
             ");";
-
     final String SQL_CREATE_LHW_TABLE = "CREATE TABLE " + LHWTable.TABLE_NAME + " (" +
             LHWTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             LHWTable.COLUMN_LHW_CODE + " TEXT, " +
@@ -135,14 +142,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             LHWTable.COLUMN_STATUS + " TEXT, " +
             LHWTable.COLUMN_HF_CODE + " TEXT " +
             ");";
-
-
-    private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + singleForm.TABLE_NAME;
-    private static final String SQL_DELETE_IMS = "DROP TABLE IF EXISTS " + singleIms.TABLE_NAME;
-    private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
-    private static final String SQL_DELETE_PSUS = "DROP TABLE IF EXISTS " + singleChild.TABLE_NAME;
-    public static String DB_FORM_ID;
-    public static String DB_IMS_ID;
     private final String TAG = "DatabaseHelper";
     public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
 
@@ -199,6 +198,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(singleForm.COLUMN_VILLAGENAME, fc.getVillagename());
         values.put(singleForm.COLUMN_ISTATUS, fc.getiStatus());
         values.put(singleForm.COLUMN_NAME_USERNAME, fc.getUserName());
+        values.put(singleForm.COLUMN_DEVICETAGID, fc.getTagId());
         values.put(singleForm.COLUMN_SA, fc.getsA());
         values.put(singleForm.COLUMN_SB, fc.getsB());
         values.put(singleForm.COLUMN_SC, fc.getsC());
@@ -276,7 +276,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(singleIms.COLUMN_UID, imscontract.getUID());
         values.put(singleIms.COLUMN_CHID, imscontract.getChid());
         values.put(singleIms.COLUMN_IM, imscontract.getIM());
-
+        values.put(singleIms.COLUMN_DEVICETAGID, imscontract.getTagId());
 
         // Inserting Row
         long rowId = db.insert(singleIms.TABLE_NAME, null, values);
@@ -302,6 +302,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm.COLUMN_VILLAGENAME,
                 singleForm.COLUMN_ISTATUS,
                 singleForm.COLUMN_NAME_USERNAME,
+                singleForm.COLUMN_DEVICETAGID,
                 singleForm.COLUMN_SA,
                 singleForm.COLUMN_SB,
                 singleForm.COLUMN_SC,
@@ -374,6 +375,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleForm.COLUMN_VILLAGENAME,
                 singleForm.COLUMN_ISTATUS,
                 singleForm.COLUMN_NAME_USERNAME,
+                singleForm.COLUMN_DEVICETAGID,
                 singleForm.COLUMN_SA,
                 singleForm.COLUMN_SB,
                 singleForm.COLUMN_SC,
@@ -483,6 +485,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleIms.COLUMN_UID,
                 singleIms.COLUMN_CHID,
                 singleIms.COLUMN_IM,
+                singleIms.COLUMN_DEVICETAGID,
 
         };
         String whereClause = null;
