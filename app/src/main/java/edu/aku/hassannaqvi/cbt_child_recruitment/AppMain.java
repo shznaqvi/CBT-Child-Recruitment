@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.cbt_child_recruitment;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -26,8 +27,8 @@ public class AppMain extends Application {
 
     //public static final String _IP = "192.168.1.10"; // Test NODE server
     public static final String _IP = "43.245.131.159"; // Test PHP server
-    public static final Integer _PORT = 3000; // Port - with colon (:)
-    public static final String PROJECT_URI = "http://" + AppMain._IP + ":" + AppMain._PORT + "/cbt/";
+    public static final Integer _PORT = 8080; // Port - with colon (:)
+    public static final String PROJECT_URI = "http://" + AppMain._IP + ":" + AppMain._PORT + "/cbt/api";
 
     /*
         public static final String _IP = "43.245.131.159"; // Test server
@@ -67,6 +68,9 @@ public class AppMain extends Application {
     public static Boolean VillageCodeFlag = true;
     public static String VillageName;
     public static String username="";
+    public static long installedOn;
+    public static Integer versionCode;
+    public static String versionName;
     protected LocationManager locationManager;
     Location location;
 
@@ -91,6 +95,22 @@ public class AppMain extends Application {
 
         sharedPref = getSharedPreferences("PSUCodes", Context.MODE_PRIVATE);
 
+        try {
+            installedOn = this
+                    .getPackageManager()
+                    .getPackageInfo(getPackageName(), 0)
+                    .lastUpdateTime;
+            versionCode = this
+                    .getPackageManager()
+                    .getPackageInfo(getPackageName(), 0)
+                    .versionCode;
+            versionName = this
+                    .getPackageManager()
+                    .getPackageInfo(getPackageName(), 0)
+                    .versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void showCurrentLocation() {

@@ -71,7 +71,7 @@ public class VillagesContract {
     public static abstract class VillageTable implements BaseColumns {
 
         public static final String TABLE_NAME = "villages";
-        public static final String URI = "villages";
+        public static final String URI = "/getvillages.php";
         public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";
         public static final String _ID = "_id";
         public static final String COLUMN_VILLAGE_CODE = "village_code";

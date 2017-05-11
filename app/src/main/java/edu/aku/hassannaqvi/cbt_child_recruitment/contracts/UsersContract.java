@@ -46,6 +46,8 @@ public class UsersContract {
 
     public static abstract class singleUser implements BaseColumns {
 
+        public static final String URI = "/getusers.php";
+
         public static final String TABLE_NAME = "users";
         public static final String _ID = "id";
         public static final String ROW_USERNAME = "username";

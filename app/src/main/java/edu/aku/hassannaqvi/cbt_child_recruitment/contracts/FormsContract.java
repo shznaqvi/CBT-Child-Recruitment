@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.cbt_child_recruitment.contracts;
 
 import android.database.Cursor;
 import android.provider.BaseColumns;
-import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -465,6 +464,8 @@ public class FormsContract {
     public static abstract class singleForm implements BaseColumns {
 
         public static final String TABLE_NAME = "forms";
+        public static final String URI = "/syncforms.php";
+
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectname";
         public static final String COLUMN_SURVEY_TYPE = "surveytype";
