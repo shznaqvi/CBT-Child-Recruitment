@@ -303,7 +303,7 @@ public class MainActivity extends Activity {
     }
 
     public void openA(View v) {
-        Intent iA = new Intent(this, SectionAActivity.class);
+        Intent iA = new Intent(this, SectionHActivity.class);
         startActivity(iA);
     }
 

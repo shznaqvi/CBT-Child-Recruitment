@@ -850,22 +850,22 @@ public class SectionAActivity extends Activity {
 
                 //================== Check on Total members in HH=============
 
-                if (Integer.parseInt(cra24.getText().toString().isEmpty() ? "0" : cra24.getText().toString())
-                        != ((Integer.parseInt(cra17.getText().toString().isEmpty() ? "0" : cra17.getText().toString()))
-                        + (Integer.parseInt(cra18.getText().toString().isEmpty() ? "0" : cra18.getText().toString()))
-                        + (Integer.parseInt(cra19.getText().toString().isEmpty() ? "0" : cra19.getText().toString()))
-                        + (Integer.parseInt(cra20.getText().toString().isEmpty() ? "0" : cra20.getText().toString()))
-                        //+ (Integer.parseInt(cra21.getText().toString().isEmpty() ? "0" : cra21.getText().toString()))
-                        + (Integer.parseInt(cra22.getText().toString().isEmpty() ? "0" : cra22.getText().toString()))
-                        + (Integer.parseInt(cra23.getText().toString().isEmpty() ? "0" : cra23.getText().toString())))) {
-                    Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
-                    cra17.setError("Invalid: Check all members again");
-
-                    Log.i(TAG, "cra17: Check All members again!");
-                    return false;
-                } else {
-                    cra17.setError(null);
-                }
+//                if (Integer.parseInt(cra24.getText().toString().isEmpty() ? "0" : cra24.getText().toString())
+//                        != ((Integer.parseInt(cra17.getText().toString().isEmpty() ? "0" : cra17.getText().toString()))
+//                        + (Integer.parseInt(cra18.getText().toString().isEmpty() ? "0" : cra18.getText().toString()))
+//                        + (Integer.parseInt(cra19.getText().toString().isEmpty() ? "0" : cra19.getText().toString()))
+//                        + (Integer.parseInt(cra20.getText().toString().isEmpty() ? "0" : cra20.getText().toString()))
+//                        //+ (Integer.parseInt(cra21.getText().toString().isEmpty() ? "0" : cra21.getText().toString()))
+//                        + (Integer.parseInt(cra22.getText().toString().isEmpty() ? "0" : cra22.getText().toString()))
+//                        + (Integer.parseInt(cra23.getText().toString().isEmpty() ? "0" : cra23.getText().toString())))) {
+//                    Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
+//                    cra17.setError("Invalid: Check all members again");
+//
+//                    Log.i(TAG, "cra17: Check All members again!");
+//                    return false;
+//                } else {
+//                    cra17.setError(null);
+//                }
 
 
 //                if (cra26.getText().toString().indexOf(".") < -1) {
