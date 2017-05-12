@@ -20,9 +20,6 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -171,178 +168,265 @@ public class SectionHActivity extends Activity {
     RadioButton cri0402;
     @BindView(R.id.cri0499)
     RadioButton cri0499;
+
     @BindView(R.id.crj01a)
     RadioGroup crj01a;
+
     @BindView(R.id.crj01a01)
     RadioButton crj01a01;
+
     @BindView(R.id.crj01a02)
     RadioButton crj01a02;
+
     @BindView(R.id.fldGrpcrj01a)
     LinearLayout fldGrpcrj01a;
+
     @BindView(R.id.crj01anum)
     EditText crj01anum;
+
     @BindView(R.id.crj01asrc)
     Spinner crj01asrc;
+
     @BindView(R.id.crj01b)
     RadioGroup crj01b;
+
     @BindView(R.id.crj01b01)
     RadioButton crj01b01;
+
     @BindView(R.id.crj01b02)
     RadioButton crj01b02;
+
     @BindView(R.id.fldGrpcrj01b)
     LinearLayout fldGrpcrj01b;
+
     @BindView(R.id.crj01bnum)
     EditText crj01bnum;
+
     @BindView(R.id.crj01bsrc)
     Spinner crj01bsrc;
+
     @BindView(R.id.crj01c)
     RadioGroup crj01c;
+
     @BindView(R.id.crj01c01)
     RadioButton crj01c01;
+
     @BindView(R.id.crj01c02)
     RadioButton crj01c02;
+
     @BindView(R.id.fldGrpcrj01c)
     LinearLayout fldGrpcrj01c;
+
     @BindView(R.id.crj01cnum)
     EditText crj01cnum;
+
     @BindView(R.id.crj01csrc)
     Spinner crj01csrc;
+
     @BindView(R.id.crj01d)
     RadioGroup crj01d;
+
     @BindView(R.id.crj01d01)
     RadioButton crj01d01;
+
     @BindView(R.id.crj01d02)
     RadioButton crj01d02;
+
     @BindView(R.id.fldGrpcrj01d)
     LinearLayout fldGrpcrj01d;
+
     @BindView(R.id.crj01dnum)
     EditText crj01dnum;
+
     @BindView(R.id.crj01dsrc)
     Spinner crj01dsrc;
+
     @BindView(R.id.crj01e)
     RadioGroup crj01e;
+
     @BindView(R.id.crj01e01)
     RadioButton crj01e01;
+
     @BindView(R.id.crj01e02)
     RadioButton crj01e02;
+
     @BindView(R.id.fldGrpcrj01e)
     LinearLayout fldGrpcrj01e;
+
     @BindView(R.id.crj01enum)
     EditText crj01enum;
+
     @BindView(R.id.crj01esrc)
     Spinner crj01esrc;
+
     @BindView(R.id.crj01f)
     RadioGroup crj01f;
+
     @BindView(R.id.crj01f01)
     RadioButton crj01f01;
+
     @BindView(R.id.crj01f02)
     RadioButton crj01f02;
+
     @BindView(R.id.fldGrpcrj01f)
     LinearLayout fldGrpcrj01f;
+
     @BindView(R.id.crj01fnum)
     EditText crj01fnum;
+
     @BindView(R.id.crj01fsrc)
     Spinner crj01fsrc;
+
     @BindView(R.id.crj01g)
     RadioGroup crj01g;
+
     @BindView(R.id.crj01g01)
     RadioButton crj01g01;
+
     @BindView(R.id.crj01g02)
     RadioButton crj01g02;
+
     @BindView(R.id.fldGrpcrj01g)
     LinearLayout fldGrpcrj01g;
+
     @BindView(R.id.crj01gnum)
     EditText crj01gnum;
+
     @BindView(R.id.crj01gsrc)
     Spinner crj01gsrc;
+
     @BindView(R.id.crj01h)
     RadioGroup crj01h;
+
     @BindView(R.id.crj01h01)
     RadioButton crj01h01;
+
     @BindView(R.id.crj01h02)
     RadioButton crj01h02;
+
     @BindView(R.id.fldGrpcrj01h)
     LinearLayout fldGrpcrj01h;
+
     @BindView(R.id.crj01hnum)
     EditText crj01hnum;
+
     @BindView(R.id.crj01hsrc)
     Spinner crj01hsrc;
+
     @BindView(R.id.crj01i)
     RadioGroup crj01i;
+
     @BindView(R.id.crj01i01)
     RadioButton crj01i01;
+
     @BindView(R.id.crj01i02)
     RadioButton crj01i02;
+
     @BindView(R.id.fldGrpcrj01i)
     LinearLayout fldGrpcrj01i;
+
     @BindView(R.id.crj01inum)
     EditText crj01inum;
+
     @BindView(R.id.crj01isrc)
     Spinner crj01isrc;
+
     @BindView(R.id.crj01j)
     RadioGroup crj01j;
+
     @BindView(R.id.crj01j01)
     RadioButton crj01j01;
+
     @BindView(R.id.crj01j02)
     RadioButton crj01j02;
+
     @BindView(R.id.fldGrpcrj01j)
     LinearLayout fldGrpcrj01j;
+
     @BindView(R.id.crj01jnum)
     EditText crj01jnum;
+
     @BindView(R.id.crj01jsrc)
     Spinner crj01jsrc;
+
     @BindView(R.id.crj01k)
     RadioGroup crj01k;
+
     @BindView(R.id.crj01k01)
     RadioButton crj01k01;
+
     @BindView(R.id.crj01k02)
     RadioButton crj01k02;
+
     @BindView(R.id.fldGrpcrj01k)
     LinearLayout fldGrpcrj01k;
+
     @BindView(R.id.crj01knum)
     EditText crj01knum;
+
     @BindView(R.id.crj01ksrc)
     Spinner crj01ksrc;
+
     @BindView(R.id.crj01l)
     RadioGroup crj01l;
+
     @BindView(R.id.crj01l01)
     RadioButton crj01l01;
+
     @BindView(R.id.crj01l02)
     RadioButton crj01l02;
+
     @BindView(R.id.fldGrpcrj01l)
     LinearLayout fldGrpcrj01l;
+
     @BindView(R.id.crj01lnum)
     EditText crj01lnum;
+
     @BindView(R.id.crj01lsrc)
     Spinner crj01lsrc;
+
     @BindView(R.id.crj01mx)
     EditText crj01mx;
+
     @BindView(R.id.crj01m)
     RadioGroup crj01m;
+
     @BindView(R.id.crj01m01)
     RadioButton crj01m01;
+
     @BindView(R.id.crj01m02)
     RadioButton crj01m02;
+
     @BindView(R.id.fldGrpcrj01m)
     LinearLayout fldGrpcrj01m;
+
     @BindView(R.id.crj01mnum)
     EditText crj01mnum;
+
     @BindView(R.id.crj01msrc)
     Spinner crj01msrc;
+
     @BindView(R.id.crj01nx)
     EditText crj01nx;
+
     @BindView(R.id.crj01n)
     RadioGroup crj01n;
+
     @BindView(R.id.crj01n01)
     RadioButton crj01n01;
+
     @BindView(R.id.crj01n02)
     RadioButton crj01n02;
+
     @BindView(R.id.fldGrpcrj01n)
     LinearLayout fldGrpcrj01n;
+
     @BindView(R.id.crj01nnum)
     EditText crj01nnum;
+
     @BindView(R.id.crj01nsrc)
     Spinner crj01nsrc;
+
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
@@ -578,6 +662,19 @@ public class SectionHActivity extends Activity {
         String[] ngo = new String[]{"NGO 1","NGO 2","NGO 3","NGO 4","NGO 5","NGO 6","NGO 7"};
 
         crj01asrc.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01bsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01csrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01dsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01esrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01fsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01gsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01hsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01isrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01jsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01ksrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01lsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01msrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        crj01nsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
 
     }
 

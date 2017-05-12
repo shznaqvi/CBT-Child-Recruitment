@@ -143,7 +143,7 @@
             android:digits="0123456789."
             android:hint="@string/cra26"
             android:inputType="numberDecimal"
-            android:maxLength="4" />
+            android:maxLength="5" />
 
 
         <TextView
@@ -596,7 +596,7 @@
                     android:inputType="number"
                     android:maxLength="2" />
 
-                <TextView
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -611,7 +611,7 @@
                     android:hint="@string/cra21"
                     android:inputType="number"
                     android:maxLength="2" />
-
+-->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
