@@ -475,11 +475,26 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
 
         //========== Q2 Skip pattern=============
 
+        crf0200.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crf02h.setVisibility(View.GONE);
+                    crf02d.setVisibility(View.GONE);
+                    crf02h.setText(null);
+                    crf02d.setText(null);
+                }
+            }
+        });
+
+
         crf0201.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     crf02h.setVisibility(View.VISIBLE);
+                    crf02d.setVisibility(View.GONE);
+                    crf02d.setText(null);
                 } else {
                     crf02h.setVisibility(View.GONE);
                     crf02h.setText(null);
@@ -492,6 +507,8 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     crf02d.setVisibility(View.VISIBLE);
+                    crf02h.setVisibility(View.GONE);
+                    crf02h.setText(null);
                 } else {
                     crf02d.setVisibility(View.GONE);
                     crf02d.setText(null);
@@ -631,8 +648,8 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             }
 
             if (Integer.parseInt(crf02d.getText().toString().isEmpty() ? "0" : crf02d.getText().toString()) < 1
-                    || Integer.parseInt(crf02d.getText().toString().isEmpty() ? "0" : crf02h.getText().toString()) > 29) {
-                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf0201), Toast.LENGTH_SHORT).show();
+                    || Integer.parseInt(crf02d.getText().toString().isEmpty() ? "0" : crf02d.getText().toString()) > 29) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf0202), Toast.LENGTH_SHORT).show();
                 crf02d.setError("Range is 1 to 29 Days");
                 Log.i(TAG, "crf02d: Range is 1 to 29 Days");
                 return false;

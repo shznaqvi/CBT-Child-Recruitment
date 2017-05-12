@@ -664,9 +664,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             android:hint="@string/other"
-            android:maxLength="30" />
+            android:maxLength="30"
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/crdGrp01"
@@ -808,7 +809,8 @@
                     android:layout_marginTop="1dp"
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMnoPQRSTUVWXYZ"
                     android:hint="@string/other"
-                    android:maxLength="30" />
+                    android:maxLength="30"
+                    android:visibility="gone" />
 
             </LinearLayout>
         </LinearLayout>
@@ -866,7 +868,13 @@
 
         </RadioGroup>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpcre01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -2239,6 +2247,8 @@
                         android:text="@string/no" />
 
                 </RadioGroup>
+
+            </LinearLayout>
 
             </LinearLayout>
 

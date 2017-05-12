@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -446,6 +445,40 @@ public class SectionAActivity extends Activity {
         } else {
             cra03.setError(null);
         }
+
+        //================ Q25===============
+        if (cra25.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty) " + getString(R.string.cra25), Toast.LENGTH_SHORT).show();
+            cra25.setError("This data is Required!");
+
+            Log.i(TAG, "cra25: This Data is Required!");
+            return false;
+        } else {
+            cra25.setError(null);
+        }
+
+
+        //================ Q26===============
+        if (cra26.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
+            cra26.setError("This data is Required!");
+
+            Log.i(TAG, "cra26: This Data is Required!");
+            return false;
+        } else {
+            cra26.setError(null);
+        }
+
+        if (Double.parseDouble(cra26.getText().toString()) < 16.18 || Double.parseDouble(cra26.getText().toString()) > 20.00) {
+            Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
+            cra26.setError("Range 16.18 - 20.00");
+
+            Log.i(TAG, "cra26: Range 0-20.00!");
+            return false;
+        } else {
+            cra26.setError(null);
+        }
+
         //======================= Q 1 ===============
         if (cra01.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra01), Toast.LENGTH_SHORT).show();
@@ -814,38 +847,8 @@ public class SectionAActivity extends Activity {
                 }
 
 
-                //================ Q25===============
-                if (cra25.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty) " + getString(R.string.cra25), Toast.LENGTH_SHORT).show();
-                    cra25.setError("This data is Required!");
-
-                    Log.i(TAG, "cra25: This Data is Required!");
-                    return false;
-                } else {
-                    cra25.setError(null);
-                }
 
 
-                //================ Q26===============
-                if (cra26.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
-                    cra26.setError("This data is Required!");
-
-                    Log.i(TAG, "cra26: This Data is Required!");
-                    return false;
-                } else {
-                    cra26.setError(null);
-                }
-
-                if (Double.parseDouble(cra26.getText().toString()) < 0 || Double.parseDouble(cra26.getText().toString()) > 20.99) {
-                    Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
-                    cra26.setError("Range 0 - 20.99");
-
-                    Log.i(TAG, "cra26: Range 0-20.99!");
-                    return false;
-                } else {
-                    cra26.setError(null);
-                }
 
 
                 //================== Check on Total members in HH=============

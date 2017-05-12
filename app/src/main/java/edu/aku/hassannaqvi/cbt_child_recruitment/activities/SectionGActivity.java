@@ -1062,23 +1062,25 @@ public class SectionGActivity extends Activity {
             crg0302.setError(null);
         }
 
-        // =================== Q4 ====================
-        if (crg04.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg04), Toast.LENGTH_SHORT).show();
-            crg0496.setError("This Data is required");
-            Log.d(TAG, "crg04 : This Data is required ");
-            return false;
-        } else {
-            crg0496.setError(null);
-        }
+        if (crg0401.isChecked()) {
+            // =================== Q4 ====================
+            if (crg04.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg04), Toast.LENGTH_SHORT).show();
+                crg0496.setError("This Data is required");
+                Log.d(TAG, "crg04 : This Data is required ");
+                return false;
+            } else {
+                crg0496.setError(null);
+            }
 
-        if (crg0496.isChecked() && crg0496x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crg04) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
-            crg0496x.setError("This data is Required!");    // Set Error on last radio button
-            Log.d(TAG, "crg0496x: This data is Required!");
-            return false;
-        } else {
-            crg0496x.setError(null);
+            if (crg0496.isChecked() && crg0496x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crg04) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                crg0496x.setError("This data is Required!");    // Set Error on last radio button
+                Log.d(TAG, "crg0496x: This data is Required!");
+                return false;
+            } else {
+                crg0496x.setError(null);
+            }
         }
 
         // =================== Q5 ====================
@@ -1110,23 +1112,25 @@ public class SectionGActivity extends Activity {
             crg0602.setError(null);
         }
 
-        // =================== Q7 ====================
-        if (crg07.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg07), Toast.LENGTH_SHORT).show();
-            crg07.setError("This data is required");
-            Log.d(TAG, "crg07  : This Data is required ");
-            return false;
-        } else {
-            crg07.setError(null);
-        }
+        if (crg0601.isChecked()) {
+            // =================== Q7 ====================
+            if (crg07.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg07), Toast.LENGTH_SHORT).show();
+                crg07.setError("This data is required");
+                Log.d(TAG, "crg07  : This Data is required ");
+                return false;
+            } else {
+                crg07.setError(null);
+            }
 
-        if ((Integer.parseInt(crg07.getText().toString()) == 0)) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.crg07), Toast.LENGTH_LONG).show();
-            crg07.setError("No. of HH cannot be zero");
-            Log.i(TAG, "crg07: No. of HH cannot  not be zero");
-            return false;
-        } else {
-            crg07.setError(null);
+            if ((Integer.parseInt(crg07.getText().toString()) == 0)) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.crg07), Toast.LENGTH_LONG).show();
+                crg07.setError("No. of HH cannot be zero");
+                Log.i(TAG, "crg07: No. of HH cannot  not be zero");
+                return false;
+            } else {
+                crg07.setError(null);
+            }
         }
 
         // =================== Q801 ====================

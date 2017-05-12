@@ -538,8 +538,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="0123456789"
+                android:hint="@string/times"
                 android:inputType="number"
-                android:text="@string/times" />
+                android:maxLength="2" />
 
         </LinearLayout>
 
