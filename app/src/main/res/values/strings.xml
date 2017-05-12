@@ -188,6 +188,8 @@
     <string name="crf14"> کیا بچے (نام)نے گزشتہ دن اور رات کے دوران بچے نے بچوں کے لیے بنے ہوئے دودھ کا استعمال کیا تھا /کی تھی؟ </string>
     <string name="crf15"> کس عمر سے اضافی خوراک شروع کی ہے ؟ </string>
     <string name="crf1501"> عمر مہینوں میں </string>
+    <string name="crf1502"> عمر دنوں  میں </string>
+    <string name="crf1503"> ابھی شروع نہیں کی </string>
     <string name="crgheading"> Section G: Household Socioeconomic Information </string>
     <string name="crg01"> آپ کی مادری زبان کیا ہے؟ </string>
     <string name="crg0101"> اردو </string>
