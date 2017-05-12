@@ -1923,6 +1923,15 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
+            <EditText
+                android:id="@+id/crg1803"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:hint="@string/crg1803"
+                android:inputType="number"
+                android:maxLength="2" />
+
             <CheckBox
                 android:id="@+id/crg1899"
                 android:layout_width="match_parent"

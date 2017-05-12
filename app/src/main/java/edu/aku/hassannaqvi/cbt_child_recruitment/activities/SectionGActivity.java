@@ -456,6 +456,8 @@ public class SectionGActivity extends Activity {
     EditText crg1801;
     @BindView(R.id.crg1802)
     EditText crg1802;
+    @BindView(R.id.crg1803)
+    EditText crg1803;
     @BindView(R.id.crg1899)
     CheckBox crg1899;
     @BindView(R.id.crg19)
@@ -631,6 +633,7 @@ public class SectionGActivity extends Activity {
                     crg1899.setChecked(false);
                     crg1801.setText(null);
                     crg1802.setText(null);
+                    crg1803.setText(null);
                 } else {
                     crgGrp17.setVisibility(View.VISIBLE);
                 }
@@ -982,6 +985,7 @@ public class SectionGActivity extends Activity {
         sg.put("crg17", crg1701.isChecked() ? "1" : crg1702.isChecked() ? "2" : "0");
         sg.put("crg1801", crg1801.getText().toString());
         sg.put("crg1802", crg1802.getText().toString());
+        sg.put("crg1803", crg1803.getText().toString());
         sg.put("crg1899", crg1899.isChecked() ? "1" : "0");
         sg.put("crg19", crg1901.isChecked() ? "1" : crg1902.isChecked() ? "2" : "0");
         sg.put("crg2001", crg2001.getText().toString());
@@ -1558,7 +1562,8 @@ public class SectionGActivity extends Activity {
         if (crg1701.isChecked()) {
             // =================== Q1801 ====================
 
-            if ((crg1801.getText().toString().isEmpty() && crg1802.getText().toString().isEmpty()) && !crg1899.isChecked()) {
+            if ((crg1801.getText().toString().isEmpty() && crg1802.getText().toString().isEmpty() && crg1803.getText().toString().isEmpty())
+                    && !crg1899.isChecked()) {
                 Toast.makeText(this, "ERROR(empty)" + getString(R.string.crg18), Toast.LENGTH_SHORT).show();
                 crg1899.setError("This data is required");
                     Log.d(TAG, "crg1801: This data is required  ");

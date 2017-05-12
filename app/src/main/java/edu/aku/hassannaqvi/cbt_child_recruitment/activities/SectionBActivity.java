@@ -68,8 +68,12 @@ public class SectionBActivity extends Activity {
     RadioButton crb0701;
     @BindView(R.id.crb0702)
     RadioButton crb0702;
+    @BindView(R.id.crb0799)
+    RadioButton crb0799;
     @BindView(R.id.crb0801)
     EditText crb0801;
+    @BindView(R.id.crb0899)
+    CheckBox crb0899;
     @BindView(R.id.crc01m1)
     EditText crc01m1;
     @BindView(R.id.crc01m2)
@@ -370,6 +374,18 @@ public class SectionBActivity extends Activity {
                     crbGrp07.setVisibility(View.GONE);
                     crb0801.setText(null);
 
+                }
+            }
+        });
+
+        crb0899.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crb0801.setVisibility(View.GONE);
+                    crb0801.setText(null);
+                } else {
+                    crb0801.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -690,8 +706,9 @@ public class SectionBActivity extends Activity {
         sb.put("crb0402", crb0402.getText().toString());
         sb.put("crb05", crb0501.isChecked() ? "1" : crb0502.isChecked() ? "2" : "0");
         sb.put("crb0601", crb0601.getText().toString());
-        sb.put("crb07", crb0701.isChecked() ? "1" : crb0702.isChecked() ? "2" : "0");
+        sb.put("crb07", crb0701.isChecked() ? "1" : crb0702.isChecked() ? "2" : crb0799.isChecked() ? "99" : "0");
         sb.put("crb08", crb0801.getText().toString());
+        sb.put("crb0899", crb0899.isChecked() ? "99" : "0");
 //************************************Section C*********************************************************************
         sc.put("crc01m1", crc01m1.getText().toString());
         sc.put("crc01m2", crc01m2.getText().toString());
@@ -872,38 +889,41 @@ public class SectionBActivity extends Activity {
         if (crb0701.isChecked()) {
 
             // =================== Q8 ====================
-            if (crb0801.getText().toString().isEmpty()) {
+            if (crb0801.getText().toString().isEmpty() && !crb0899.isChecked()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
                 crb0801.setError("This data is Required!");
                 Log.i(TAG, "crb0801: This data is Required!");
                 return false;
             } else {
                 crb0801.setError(null);
-                if (!crb0801.getText().toString().contains(".")) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
-                    crb0801.setError("Invalid: Decimal value is Required!");
-                    Log.i(TAG, "crb0801: Invalid Decimal value is Required!");
-                    return false;
-                } else {
-                    crb0801.setError(null);
-                    if (Double.parseDouble(crb0801.getText().toString()) < 1) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
-                        crb0801.setError("Invalid: Greater then 0");
-                        Log.i(TAG, "crb0801: Invalid Greater then 0");
+                if (!crb0899.isChecked()) {
+                    if (!crb0801.getText().toString().contains(".")) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
+                        crb0801.setError("Invalid: Decimal value is Required!");
+                        Log.i(TAG, "crb0801: Invalid Decimal value is Required!");
                         return false;
                     } else {
                         crb0801.setError(null);
-                        if (Double.parseDouble(crb0801.getText().toString()) < 2 || Double.parseDouble(crb0801.getText().toString()) > 5) {
+                        if (Double.parseDouble(crb0801.getText().toString()) < 1) {
                             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
-                            crb0801.setError("Invalid: Range 2.0 - 5.0 kg");
-                            Log.i(TAG, "crb0801: Invalid Range 2.0 - 5.0 kg");
+                            crb0801.setError("Invalid: Greater then 0");
+                            Log.i(TAG, "crb0801: Invalid Greater then 0");
                             return false;
                         } else {
                             crb0801.setError(null);
+                            if (Double.parseDouble(crb0801.getText().toString()) < 2 || Double.parseDouble(crb0801.getText().toString()) > 5) {
+                                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
+                                crb0801.setError("Invalid: Range 2.0 - 5.0 kg");
+                                Log.i(TAG, "crb0801: Invalid Range 2.0 - 5.0 kg");
+                                return false;
+                            } else {
+                                crb0801.setError(null);
+                            }
                         }
                     }
                 }
             }
+
         }
 //************************************Section C*********************************************************************
 

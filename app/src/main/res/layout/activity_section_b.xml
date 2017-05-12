@@ -192,6 +192,13 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/no" />
 
+            <RadioButton
+                android:id="@+id/crb0799"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/dkn" />
+
         </RadioGroup>
 
         <LinearLayout
@@ -215,6 +222,12 @@
             android:hint="@string/kg"
             android:inputType="numberDecimal"
             android:maxLength="5" />
+
+            <CheckBox
+                android:id="@+id/crb0899"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/dkn" />
 
         </LinearLayout>
 
