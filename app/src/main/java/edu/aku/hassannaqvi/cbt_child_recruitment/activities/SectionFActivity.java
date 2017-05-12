@@ -344,8 +344,12 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     RadioButton crf1402;
     @BindView(R.id.crf1499)
     RadioButton crf1499;
-    @BindView(R.id.crf15)
-    EditText crf15;
+    @BindView(R.id.crf1501)
+    EditText crf1501;
+    @BindView(R.id.crf1502)
+    EditText crf1502;
+    @BindView(R.id.crf1503)
+    CheckBox crf1503;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
     @BindView(R.id.fldGrpcrf01a)
@@ -389,6 +393,21 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_f);
         ButterKnife.bind(this);
+
+        crf1503.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crf1501.setVisibility(View.GONE);
+                    crf1502.setVisibility(View.GONE);
+                    crf1501.setText(null);
+                    crf1502.setText(null);
+                } else {
+                    crf1501.setVisibility(View.VISIBLE);
+                    crf1502.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         //================ Q1 Skip pattern ==============
         crf01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -1002,9 +1021,17 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             } else {
                 crf0999.setError(null);
             }
-        }
 
-        if (crf0802.isChecked() || crf0899.isChecked()) {
+            if (Integer.parseInt(crf09num.getText().toString().isEmpty() ? "0" : crf09num.getText().toString()) < 1
+                    && !crf0999.isChecked()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf09), Toast.LENGTH_SHORT).show();
+                crf09num.setError("Can not be zero");
+                Log.i(TAG, "crf09num: Can not be zero");
+                return false;
+            } else {
+                crf09num.setError(null);
+            }
+        } else {
             //============ Q 10 ==========
             if (crf10.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf10), Toast.LENGTH_SHORT).show();
@@ -1015,6 +1042,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
                 crf1099.setError(null);
             }
         }
+
 
         //============ Q 11 ==========
         if (crf11.getCheckedRadioButtonId() == -1) {
@@ -1047,14 +1075,28 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         }
 
         //============ Q 15 ==========
-        if (crf15.getText().toString().isEmpty()) {
+        if ((crf1501.getText().toString().isEmpty() && crf1502.getText().toString().isEmpty()) && !crf1503.isChecked()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
-            crf15.setError("This data is Required!");
+            crf1503.setError("This data is Required!");
             Log.i(TAG, "crf15: This data is Required!");
             return false;
         } else {
-            crf15.setError(null);
+            crf1503.setError(null);
         }
+
+        if (!crf1503.isChecked()) {
+            if (Integer.parseInt(crf1501.getText().toString().isEmpty() ? "0" : crf1501.getText().toString()) < 1
+                    || Integer.parseInt(crf1502.getText().toString().isEmpty() ? "0" : crf1502.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
+                crf1501.setError("Zero not allowed");
+                Log.i(TAG, "crf15: Zero not allowed");
+                return false;
+            } else {
+                crf1501.setError(null);
+            }
+        }
+
+
 
         //================ Q 7 Skip check===========
         if (is07AllNo() && crf0801.isChecked()) {
@@ -1130,7 +1172,9 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         sf.put("crf12", crf1201.isChecked() ? "1" : crf1202.isChecked() ? "2" : crf1299.isChecked() ? "99" : "0");
         sf.put("crf13", crf1301.isChecked() ? "1" : crf1302.isChecked() ? "2" : crf1399.isChecked() ? "99" : "0");
         sf.put("crf14", crf1401.isChecked() ? "1" : crf1402.isChecked() ? "2" : crf1499.isChecked() ? "99" : "0");
-        sf.put("crf15", crf15.getText().toString());
+        sf.put("crf1501", crf1501.getText().toString());
+        sf.put("crf1502", crf1502.getText().toString());
+        sf.put("crf1503", crf1503.isChecked() ? "3" : "0");
 
         AppMain.fc.setsF(String.valueOf(sf));
 
