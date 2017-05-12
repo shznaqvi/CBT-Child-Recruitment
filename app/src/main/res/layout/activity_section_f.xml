@@ -1481,12 +1481,28 @@
             android:text="@string/crf15" />
 
         <EditText
-            android:id="@+id/crf15"
+            android:id="@+id/crf1501"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="0123456789"
-            android:hint="@string/crf15"
+            android:hint="@string/crf1501"
             android:inputType="number" />
+
+
+        <EditText
+            android:id="@+id/crf1502"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:hint="@string/crf1502"
+            android:inputType="number" />
+
+        <CheckBox
+            android:id="@+id/crf1503"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crf1503" />
+
 
         <LinearLayout
             android:id="@+id/fldGrpbtn"
