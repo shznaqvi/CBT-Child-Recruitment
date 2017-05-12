@@ -646,7 +646,7 @@ public class SectionAActivity extends Activity {
                 }
 
                 if ((Integer.parseInt(cra12.getText().toString().isEmpty() ? "0" : cra12.getText().toString())
-                        >= (Integer.parseInt(cra10.getText().toString().isEmpty() ? "0" : cra10.getText().toString())))) {
+                        > (Integer.parseInt(cra10.getText().toString().isEmpty() ? "0" : cra10.getText().toString())))) {
                     Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.cra12), Toast.LENGTH_LONG).show();
                     cra12.setError("Can not be greater than current age");
                     Log.i(TAG, "Can not be greater than current age");
@@ -670,7 +670,7 @@ public class SectionAActivity extends Activity {
                 //================ Q14===============
                 if (cra14.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
-                    cra14.setError("Th is data is Required!");
+                    cra14.setError("This is data is Required!");
 
                     Log.i(TAG, "cra14: This Data is Required!");
                     return false;
