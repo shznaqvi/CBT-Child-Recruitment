@@ -272,10 +272,11 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:background="#e0f2f1"
-                android:text="@string/crcsubM1"
+                android:text="@string/crcsubM3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
 
             <View
                 android:layout_width="3dp"
@@ -304,10 +305,11 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:background="#e0f2f1"
-                android:text="@string/crcsubM3"
+                android:text="@string/crcsubM1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
 
         </LinearLayout>
 
@@ -318,7 +320,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/crc01m1"
+                android:id="@+id/crc01m3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
@@ -348,9 +350,8 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"></View>
 
-
             <EditText
-                android:id="@+id/crc01m3"
+                android:id="@+id/crc01m1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
@@ -378,10 +379,11 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:background="#e0f2f1"
-                android:text="@string/crcsubM1"
+                android:text="@string/crcsubM3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
 
             <View
                 android:layout_width="3dp"
@@ -410,7 +412,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:background="#e0f2f1"
-                android:text="@string/crcsubM3"
+                android:text="@string/crcsubM1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -422,16 +424,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-
-        <EditText
-            android:id="@+id/crc02m1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:layout_weight="1"
-            android:hint="@string/kg"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
+            <EditText
+                android:id="@+id/crc02m3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:hint="@string/kg"
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
 
             <View
                 android:layout_width="3dp"
@@ -454,9 +455,8 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimaryDark"></View>
 
-
             <EditText
-                android:id="@+id/crc02m3"
+                android:id="@+id/crc02m1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
