@@ -9,6 +9,7 @@
     <string name="other"> دیگر (وضاحت کریں) </string>
     <string name="none"> کچھ نہیں </string>
     <string name="nr"> No Response </string>
+    <string name="days"> دن </string>
 
 
     <string name="nextSection">اگلا سیکشن</string>
@@ -18,7 +19,8 @@
 
     <string name="cra01"> کیا اس گھر میں بینظیر انکم سپورٹ پروگرام کی کسی کو امدادملتی ہے۔
     اگر نہیں تواس گھر کو چھوڑ دیں اور لسٹ سے دوسرا گھر منتخب کریں۔
-اگر ہاں تو گھر کے کتنے افراد بینظیر انکم سپورٹ پروگرام سے استفادہ سے استفادہ کر رہےہیں۔</string>
+</string>
+    <string name="cra01bnf">اگر ہاں تو گھر کے کتنے افراد بینظیر انکم سپورٹ پروگرام سے استفادہ کر رہے ہیں۔</string>
     <string name="cra02"> جوابدہندہ کا مطالعے میں شامل ہونے کے لیے رضامندی ؟ </string>
     <string name="cra02res"> اگر انکار کیا تو انکار کرنے کی کیا وجہ تھی </string>
     <string name="crvillage">گاؤں / علاقے کا نام</string>

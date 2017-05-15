@@ -133,23 +133,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/cra26" />
-
-        <EditText
-            android:id="@+id/cra26"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:digits="0123456789."
-            android:hint="@string/cra26"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/cra01" />
 
         <RadioGroup
@@ -173,6 +156,45 @@
 
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/fldGrpcra01bnf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cra01bnf" />
+
+
+            <EditText
+                android:id="@+id/cra01bnf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:hint="@string/cra01bnf"
+                android:inputType="number"
+                android:maxLength="2" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cra26" />
+
+        <EditText
+            android:id="@+id/cra26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:digits="0123456789."
+            android:hint="@string/cra26"
+            android:inputType="numberDecimal"
+            android:maxLength="5" />
 
         <LinearLayout
             android:id="@+id/fldGrpcra02"

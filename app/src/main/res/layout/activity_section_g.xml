@@ -2088,6 +2088,8 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
+        </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -2521,9 +2523,8 @@
                         android:text="@string/crg22a03" />
                 </RadioGroup>
 
-            </LinearLayout>
 
-        </LinearLayout>
+            </LinearLayout>
 
 
         <LinearLayout

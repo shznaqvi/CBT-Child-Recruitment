@@ -147,8 +147,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/crl0501" />
+                android:hint="@string/crl0501"
+                android:inputType="number"
+                android:maxLength="2" />
 
             <CheckBox
                 android:id="@+id/crl0599"
@@ -340,8 +341,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/crl0701" />
+                android:hint="@string/crl0701"
+                android:inputType="number"
+                android:maxLength="2" />
 
             <CheckBox
                 android:id="@+id/crl0799"
