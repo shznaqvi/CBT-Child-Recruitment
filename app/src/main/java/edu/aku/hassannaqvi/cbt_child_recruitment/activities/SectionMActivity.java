@@ -551,6 +551,7 @@ public class SectionMActivity extends AppCompatActivity {
     @BindView(R.id.fldGrpcrn04dob2)
     LinearLayout fldGrpcrn04dob2;
     String dateToday;
+    String maxDateyear;
 
     @BindViews({R.id.crn01dod1, R.id.crn01dod2, R.id.crn02dod1, R.id.crn02dod2, R.id.crn03dob1, R.id.crn03dob2, R.id.crn03dob3,
             R.id.crn04dob1, R.id.crn04dob2, R.id.crn04dod1, R.id.crn04dod2, R.id.crn05dob1, R.id.crn05dob2, R.id.crn05dod1,
@@ -565,11 +566,14 @@ public class SectionMActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        //maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime().);
+
 
 
         for (DatePickerInputEditText de : crndates) {
             de.setManager(getSupportFragmentManager());
             de.setMaxDate(dateToday);
+            //de.setMinDate(maxDateyear);
         }
 
 

@@ -2514,7 +2514,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:digits="123456789"
+            android:digits="1234567890"
             android:hint="@string/crnba"
             android:inputType="number"
             android:textColor="@android:color/black" />
@@ -2652,7 +2652,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:digits="123456789"
+            android:digits="1234567890"
             android:hint="@string/crnba"
             android:inputType="number"
             android:textColor="@android:color/black" />
