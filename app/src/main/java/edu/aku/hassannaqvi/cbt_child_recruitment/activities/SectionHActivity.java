@@ -438,10 +438,11 @@ public class SectionHActivity extends Activity {
 
 
 //*********************************Section H***********************
-        crh0101.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        crh01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (crh0101.isChecked()) {
                     fldGrpcrh02.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrh02.setVisibility(View.GONE);
@@ -450,6 +451,7 @@ public class SectionHActivity extends Activity {
                 }
             }
         });
+
 
         crh0196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

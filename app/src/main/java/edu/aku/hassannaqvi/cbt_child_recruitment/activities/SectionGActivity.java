@@ -602,12 +602,27 @@ public class SectionGActivity extends Activity {
     LinearLayout fldGrpcrg04;
     @BindView(R.id.fldGrpcrg07)
     LinearLayout fldGrpcrg07;
+    @BindView(R.id.fldGrpcrg08)
+    LinearLayout fldGrpcrg08;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_g);
         ButterKnife.bind(this);
+
+        crg0509.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    fldGrpcrg08.setVisibility(View.GONE);
+                    crg06.clearCheck();
+                    crg07.setText(null);
+                } else {
+                    fldGrpcrg08.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
 
         // ====================== Q9 Skip Pattern =========================
@@ -1098,34 +1113,36 @@ public class SectionGActivity extends Activity {
             crg0596x.setError(null);
         }
 
-        // =================== Q6 ====================
-        if (crg06.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg06), Toast.LENGTH_SHORT).show();
-            crg0602.setError("This Data is required");
-            Log.d(TAG, "crg06 : This Data is required ");
-            return false;
-        } else {
-            crg0602.setError(null);
-        }
-
-        if (crg0601.isChecked()) {
-            // =================== Q7 ====================
-            if (crg07.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg07), Toast.LENGTH_SHORT).show();
-                crg07.setError("This data is required");
-                Log.d(TAG, "crg07  : This Data is required ");
+        if (!crg0509.isChecked()) {
+            // =================== Q6 ====================
+            if (crg06.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg06), Toast.LENGTH_SHORT).show();
+                crg0602.setError("This Data is required");
+                Log.d(TAG, "crg06 : This Data is required ");
                 return false;
             } else {
-                crg07.setError(null);
+                crg0602.setError(null);
             }
 
-            if ((Integer.parseInt(crg07.getText().toString()) == 0)) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.crg07), Toast.LENGTH_LONG).show();
-                crg07.setError("No. of HH cannot be zero");
-                Log.i(TAG, "crg07: No. of HH cannot  not be zero");
-                return false;
-            } else {
-                crg07.setError(null);
+            if (crg0601.isChecked()) {
+                // =================== Q7 ====================
+                if (crg07.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg07), Toast.LENGTH_SHORT).show();
+                    crg07.setError("This data is required");
+                    Log.d(TAG, "crg07  : This Data is required ");
+                    return false;
+                } else {
+                    crg07.setError(null);
+                }
+
+                if ((Integer.parseInt(crg07.getText().toString()) == 0)) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.crg07), Toast.LENGTH_LONG).show();
+                    crg07.setError("No. of HH cannot be zero");
+                    Log.i(TAG, "crg07: No. of HH cannot  not be zero");
+                    return false;
+                } else {
+                    crg07.setError(null);
+                }
             }
         }
 
@@ -1562,6 +1579,19 @@ public class SectionGActivity extends Activity {
                     return false;
                 } else {
                 crg1899.setError(null);
+            }
+
+            if (!crg1899.isChecked()) {
+                if ((Integer.parseInt(crg1801.getText().toString().isEmpty() ? "0" : crg1801.getText().toString()) < 1)
+                        && Integer.parseInt(crg1802.getText().toString().isEmpty() ? "0" : crg1802.getText().toString()) < 1
+                        && Integer.parseInt(crg1803.getText().toString().isEmpty() ? "0" : crg1803.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crg18), Toast.LENGTH_SHORT).show();
+                    crg1801.setError("Zero not allowed");
+                    Log.i(TAG, "crf18: Zero not allowed");
+                    return false;
+                } else {
+                    crg1801.setError(null);
+                }
                 }
             }
 

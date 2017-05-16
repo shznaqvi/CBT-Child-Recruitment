@@ -1085,8 +1085,8 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         }
 
         if (!crf1503.isChecked()) {
-            if (Integer.parseInt(crf1501.getText().toString().isEmpty() ? "0" : crf1501.getText().toString()) < 1
-                    || Integer.parseInt(crf1502.getText().toString().isEmpty() ? "0" : crf1502.getText().toString()) < 1) {
+            if ((Integer.parseInt(crf1501.getText().toString().isEmpty() ? "0" : crf1501.getText().toString()) < 1)
+                    && Integer.parseInt(crf1502.getText().toString().isEmpty() ? "0" : crf1502.getText().toString()) < 1) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
                 crf1501.setError("Zero not allowed");
                 Log.i(TAG, "crf15: Zero not allowed");
