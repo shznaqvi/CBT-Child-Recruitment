@@ -611,6 +611,7 @@ public class SectionGActivity extends Activity {
         setContentView(R.layout.activity_section_g);
         ButterKnife.bind(this);
 
+
         crg0509.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -670,10 +671,20 @@ public class SectionGActivity extends Activity {
                     crg2006.setText(null);
                     crg2006.setText(null);
                     crg2007.setText(null);
+                    crg21a02.setEnabled(false);
+                    crg21a02.setChecked(false);
+                    crg21b02.setEnabled(false);
+                    crg21b02.setChecked(false);
+                    crg21c02.setEnabled(false);
+                    crg21c02.setChecked(false);
+
 
                 } else {
                     crgGrp19.setVisibility(View.VISIBLE);
                     crgGrp22.setVisibility(View.VISIBLE);
+                    crg21a02.setEnabled(true);
+                    crg21b02.setEnabled(true);
+                    crg21c02.setEnabled(true);
                 }
             }
         });

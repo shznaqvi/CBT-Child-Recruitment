@@ -273,6 +273,7 @@
                 android:layout_weight="1"
                 android:background="#e0f2f1"
                 android:text="@string/crcsubM3"
+
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -327,6 +328,7 @@
                 android:layout_weight="1"
                 android:hint="@string/cm"
                 android:inputType="numberDecimal"
+                android:layoutDirection="ltr"
                 android:maxLength="5" />
 
             <View
@@ -343,6 +345,7 @@
                 android:layout_weight="1"
                 android:hint="@string/cm"
                 android:inputType="numberDecimal"
+                android:layoutDirection="ltr"
                 android:maxLength="5" />
 
             <View
@@ -358,6 +361,7 @@
                 android:layout_weight="1"
                 android:hint="@string/cm"
                 android:inputType="numberDecimal"
+                android:layoutDirection="ltr"
                 android:maxLength="5" />
 
         </LinearLayout>
@@ -432,6 +436,7 @@
                 android:layout_weight="1"
                 android:hint="@string/kg"
                 android:inputType="numberDecimal"
+                android:layoutDirection="ltr"
                 android:maxLength="5" />
 
             <View
@@ -448,6 +453,7 @@
                 android:layout_weight="1"
                 android:hint="@string/kg"
                 android:inputType="numberDecimal"
+                android:layoutDirection="ltr"
                 android:maxLength="5" />
 
             <View
@@ -463,6 +469,7 @@
                 android:layout_weight="1"
                 android:hint="@string/kg"
                 android:inputType="numberDecimal"
+                android:layoutDirection="ltr"
                 android:maxLength="5" />
 
         </LinearLayout>
