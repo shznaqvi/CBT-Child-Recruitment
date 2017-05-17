@@ -18,7 +18,8 @@
 
 
     <string name="cra01"> کیا اس گھر میں بینظیر انکم سپورٹ پروگرام کی کسی کو امدادملتی ہے۔</string>
-    <string name="cra01ht"> اگر نہیں تواس گھر کو چھوڑ دیں اور لسٹ سے دوسرا گھر منتخب کریں۔  اگر  ہاں تو گھر کے کتنے افراد بینظیر انکم سپورٹ پروگرام سے استفادہ سے استفادہ کر رہےہیں۔</string>
+    <string name="cra01ht"> اگر نہیں تواس گھر کو چھوڑ دیں اور لسٹ سے دوسرا گھر منتخب کریں۔ </string>
+    <string name="cra01bnf"> اگر  ہاں تو گھر کے کتنے افراد بینظیر انکم سپورٹ پروگرام سے استفادہ سے استفادہ کر رہےہیں۔</string>
     <string name="cra02"> جوابدہندہ کا مطالعے میں شامل ہونے کے لیے رضامندی ؟ </string>
     <string name="cra02res"> اگر انکار کیا تو انکار کرنے کی کیا وجہ تھی </string>
     <string name="crvillage">گاؤں / علاقے کا نام</string>
@@ -36,6 +37,18 @@
     <string name="cra06"> بچے کے والد کا نام </string>
     <string name="cra07"> بچے کے والد کی تعلیم </string>
     <string name="cra08"> والد کا پیشہ </string>
+    <string name="cra0801"> Professional/Technical/Managerial (doctors, nurses, engineers, managers in bank/companies, teachers, journalists, accountants, bankers, armed forces, polices, civil services etc) </string>
+    <string name="cra0802">Clerical (clerks, shop assistants)  </string>
+    <string name="cra0803"> Sales and services Skilled manual </string>
+    <string name="cra0804"> Skilled manual (Carpenters, drivers, cooks) (Security guards, machine operators) </string>
+    <string name="cra0805"> Unskilled manual (labourers, cleaners) </string>
+    <string name="cra0806"> Domestic service (farm or agri worker with no land holding of own) </string>
+    <string name="cra0807"> Agriculture (land owners) </string>
+    <string name="cra0808"> Business (factory, mill owner etc.) </string>
+    <string name="cra0809"> Small business/shop </string>
+    <string name="cra0810"> Unemployed </string>
+    <string name="cra0811"> Retired </string>
+    <string name="cra0812"> Housewife </string>
     <string name="cra09"> بچے کی والدہ کانام </string>
     <string name="cra10"> بچے کی والدہ کی عمر </string>
     <string name="cra11"> بچے کی والدہ کی تعلیم </string>

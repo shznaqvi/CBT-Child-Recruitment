@@ -13,10 +13,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,12 +46,30 @@ public class SectionAActivity extends Activity {
 
     private static final String TAG = SectionAActivity.class.getSimpleName();
 
+    @BindView(R.id.activity_section_a)
+    ScrollView activitySectionA;
+    @BindView(R.id.crauc)
+    Spinner crauc;
+    @BindView(R.id.btnChangeVillage)
+    ToggleButton btnChangeVillage;
+    @BindView(R.id.cravillage)
+    EditText cravillage;
+    @BindView(R.id.cra03)
+    EditText cra03;
+    @BindView(R.id.cra25)
+    EditText cra25;
     @BindView(R.id.cra01)
     RadioGroup cra01;
     @BindView(R.id.cra0101)
     RadioButton cra0101;
     @BindView(R.id.cra0102)
     RadioButton cra0102;
+    @BindView(R.id.fldGrpcra01bnf)
+    LinearLayout fldGrpcra01bnf;
+    @BindView(R.id.cra01bnf)
+    EditText cra01bnf;
+    @BindView(R.id.cra26)
+    EditText cra26;
     @BindView(R.id.fldGrpcra02)
     LinearLayout fldGrpcra02;
     @BindView(R.id.cra02)
@@ -83,7 +103,35 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.cra07)
     EditText cra07;
     @BindView(R.id.cra08)
-    EditText cra08;
+    RadioGroup cra08;
+    @BindView(R.id.cra0801)
+    RadioButton cra0801;
+    @BindView(R.id.cra0802)
+    RadioButton cra0802;
+    @BindView(R.id.cra0803)
+    RadioButton cra0803;
+    @BindView(R.id.cra0804)
+    RadioButton cra0804;
+    @BindView(R.id.cra0805)
+    RadioButton cra0805;
+    @BindView(R.id.cra0806)
+    RadioButton cra0806;
+    @BindView(R.id.cra0807)
+    RadioButton cra0807;
+    @BindView(R.id.cra0808)
+    RadioButton cra0808;
+    @BindView(R.id.cra0809)
+    RadioButton cra0809;
+    @BindView(R.id.cra0810)
+    RadioButton cra0810;
+    @BindView(R.id.cra0811)
+    RadioButton cra0811;
+    @BindView(R.id.cra0812)
+    RadioButton cra0812;
+    @BindView(R.id.cra0896)
+    RadioButton cra0896;
+    @BindView(R.id.cra0896x)
+    EditText cra0896x;
     @BindView(R.id.cra09)
     EditText cra09;
     @BindView(R.id.cra10)
@@ -118,40 +166,21 @@ public class SectionAActivity extends Activity {
     EditText cra19;
     @BindView(R.id.cra20)
     EditText cra20;
-    //@BindView(R.id.cra21)
-    //EditText cra21;
     @BindView(R.id.cra22)
     EditText cra22;
     @BindView(R.id.cra23)
     EditText cra23;
     @BindView(R.id.cra24)
     EditText cra24;
-    @BindView(R.id.cra25)
-    EditText cra25;
-    @BindView(R.id.cra26)
-    EditText cra26;
-
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
-    @BindView(R.id.cra03)
-    EditText cra03;
     @BindView(R.id.btnNext)
     Button btnNext;
 
-    @BindView(R.id.crauc)
-    Spinner crauc;
-    @BindView(R.id.cravillage)
-    EditText cravillage;
-    @BindView(R.id.btnChangeVillage)
-    ToggleButton btnChangeVillage;
 
     String deviceId;
     DatabaseHelper db;
     String dtToday;
-    @BindView(R.id.cra01bnf)
-    EditText cra01bnf;
-    @BindView(R.id.fldGrpcra01bnf)
-    LinearLayout fldGrpcra01bnf;
 
     Map<String, String> getAllUCs, getAllVillages;
     List<String> UCs, VillagesName;
@@ -217,7 +246,8 @@ public class SectionAActivity extends Activity {
                     cra05.setText(null);
                     cra06.setText(null);
                     cra07.setText(null);
-                    cra08.setText(null);
+                    cra08.clearCheck();
+                    cra0896x.setText(null);
                     cra09.setText(null);
                     cra10.setText(null);
                     cra11.setText(null);
@@ -345,6 +375,18 @@ public class SectionAActivity extends Activity {
                     AppMain.VillageCodeFlag = false;
                 }
 
+            }
+        });
+
+        cra0896.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cra0896x.setVisibility(View.VISIBLE);
+                } else {
+                    cra0896x.setVisibility(View.GONE);
+                    cra0896x.setText(null);
+                }
             }
         });
 
@@ -580,15 +622,28 @@ public class SectionAActivity extends Activity {
 
 
                 //=================== Q8==============
-                if (cra08.getText().toString().isEmpty()) {
+                if (cra08.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra08), Toast.LENGTH_SHORT).show();
-                    cra08.setError("This data is Required!");
+                    cra0896.setError("This data is Required!");
 
                     Log.i(TAG, "cra08: This Data is Required!");
                     return false;
                 } else {
-                    cra08.setError(null);
+                    cra0896.setError(null);
                 }
+
+                //=================== Q8 Others ==============
+                if (cra0896.isChecked() && cra0896x.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra08) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                    cra0896x.setError("This data is Required!");
+
+                    Log.i(TAG, "cra0896x: This Data is Required!");
+                    return false;
+                } else {
+                    cra0896x.setError(null);
+                }
+
+
                 //================== Q9=====================
                 if (cra09.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra09), Toast.LENGTH_SHORT).show();
@@ -975,7 +1030,11 @@ public class SectionAActivity extends Activity {
         sa.put("cra05", cra05.getText().toString());
         sa.put("cra06", cra06.getText().toString());
         sa.put("cra07", cra07.getText().toString());
-        sa.put("cra08", cra08.getText().toString());
+        sa.put("cra08", cra0801.isChecked() ? "1" : cra0802.isChecked() ? "2" : cra0803.isChecked() ? "3"
+                : cra0804.isChecked() ? "4" : cra0805.isChecked() ? "5" : cra0806.isChecked() ? "6" : cra0807.isChecked() ? "7"
+                : cra0808.isChecked() ? "8" : cra0809.isChecked() ? "9" : cra0810.isChecked() ? "10" : cra0811.isChecked() ? "11"
+                : cra0812.isChecked() ? "12" : cra0896.isChecked() ? "96" : "0");
+        sa.put("cra0896x", cra0896x.getText().toString());
         sa.put("cra09", cra09.getText().toString());
         sa.put("cra10", cra10.getText().toString());
         sa.put("cra11", cra11.getText().toString());

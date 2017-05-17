@@ -11,7 +11,7 @@
         <item name="android:layoutDirection">rtl</item>
         <item name="android:typeface">serif</item>
         <item name="android:dialogTheme">@style/AlertDialogStyle</item>
-        <item name="android:spinnerItemStyle">@style/spinnerItemStyle</item>
+
 
         <!-- Customize your theme here. -->
     </style>
@@ -90,6 +90,19 @@
         <item name="android:typeface">serif</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColorPrimaryDisableOnly">@color/white</item>
+
+    </style>
+
+    <style name="radiogroup">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:background">#d6d6d6</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:padding">16dp</item>
 
     </style>
 
