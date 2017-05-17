@@ -550,8 +550,16 @@ public class SectionMActivity extends AppCompatActivity {
     LinearLayout fldGrpbtn;
     @BindView(R.id.fldGrpcrn04dob2)
     LinearLayout fldGrpcrn04dob2;
+    @BindView(R.id.fldGrpcrm04)
+    LinearLayout fldGrpcrm04;
+    @BindView(R.id.fldGrpcrm05)
+    LinearLayout fldGrpcrm05;
+    @BindView(R.id.fldGrpcrm06)
+    LinearLayout fldGrpcrm06;
     String dateToday;
     String maxDateyear;
+    Calendar now = Calendar.getInstance();
+
 
     @BindViews({R.id.crn01dod1, R.id.crn01dod2, R.id.crn02dod1, R.id.crn02dod2, R.id.crn03dob1, R.id.crn03dob2, R.id.crn03dob3,
             R.id.crn04dob1, R.id.crn04dob2, R.id.crn04dod1, R.id.crn04dod2, R.id.crn05dob1, R.id.crn05dob2, R.id.crn05dod1,
@@ -566,14 +574,14 @@ public class SectionMActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
-        //maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime().);
+        maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_YEAR));
 
 
 
         for (DatePickerInputEditText de : crndates) {
             de.setManager(getSupportFragmentManager());
             de.setMaxDate(dateToday);
-            //de.setMinDate(maxDateyear);
+            de.setMinDate(maxDateyear);
         }
 
 
@@ -854,7 +862,9 @@ public class SectionMActivity extends AppCompatActivity {
 
                 if (Integer.parseInt(crm04a.getText().toString().isEmpty() ? "0" : crm04a.getText().toString()) > 0) {
                     fldGrpcrm04b.setVisibility(View.VISIBLE);
+                    fldGrpcrm04.setVisibility(View.VISIBLE);
                 } else {
+                    fldGrpcrm04.setVisibility(View.GONE);
                     fldGrpcrm04b.setVisibility(View.GONE);
                     crm04b.clearCheck();
                     crm041a.setText(null);
@@ -993,8 +1003,10 @@ public class SectionMActivity extends AppCompatActivity {
 
                 if (Integer.parseInt(crm05a.getText().toString().isEmpty() ? "0" : crm05a.getText().toString()) > 0) {
                     fldGrpcrm05b.setVisibility(View.VISIBLE);
+                    fldGrpcrm05.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrm05b.setVisibility(View.GONE);
+                    fldGrpcrm05.setVisibility(View.GONE);
                     crm05b.clearCheck();
                     crm051a.setText(null);
                     crm051b.clearCheck();
@@ -1077,8 +1089,10 @@ public class SectionMActivity extends AppCompatActivity {
 
                 if (Integer.parseInt(crm06a.getText().toString().isEmpty() ? "0" : crm06a.getText().toString()) > 0) {
                     fldGrpcrm06b.setVisibility(View.VISIBLE);
+                    fldGrpcrm06.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrm06b.setVisibility(View.GONE);
+                    fldGrpcrm06.setVisibility(View.GONE);
                     crm06b.clearCheck();
                     crm061a.setText(null);
                     crm061b.clearCheck();
@@ -1241,7 +1255,7 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (Integer.parseInt(crn01s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) == 0) {
+                if (Integer.parseInt(crn02s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) == 0) {
                     fldGrpcrn02.setVisibility(View.GONE);
                     crn02dod1.setText(null);
                     crn02dod2.setText(null);
@@ -1430,7 +1444,7 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) == 0) {
+                if (Integer.parseInt(crn07s.getText().toString().isEmpty() ? "0" : crn07s.getText().toString()) == 0) {
                     fldGrpcrn07.setVisibility(View.GONE);
                     crn07dob2.setText(null);
                     crn07dod2.setText(null);
@@ -2035,6 +2049,15 @@ public class SectionMActivity extends AppCompatActivity {
 //================================= Section N ***************************************
         //======================== Q 1 ==========================
 
+        if (crn01s.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn01), Toast.LENGTH_SHORT).show();
+            crn01s.setError("This data is Required!");
+            Log.i(TAG, "crn01s: This data is Required!");
+            return false;
+        } else {
+            crn01s.setError(null);
+        }
+
         if (Integer.parseInt(crn01s.getText().toString().isEmpty() ? "0" : crn01s.getText().toString()) == 1) {
             if (crn01dod1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn01), Toast.LENGTH_SHORT).show();
@@ -2059,6 +2082,14 @@ public class SectionMActivity extends AppCompatActivity {
 
         //======================== Q 2 ==========================
 
+        if (crn02s.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn02), Toast.LENGTH_SHORT).show();
+            crn02s.setError("This data is Required!");
+            Log.i(TAG, "crn02s: This data is Required!");
+            return false;
+        } else {
+            crn02s.setError(null);
+        }
         if (Integer.parseInt(crn02s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) == 1) {
             if (crn02dod1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn02), Toast.LENGTH_SHORT).show();
@@ -2082,6 +2113,15 @@ public class SectionMActivity extends AppCompatActivity {
         }
 
         //======================== Q 3 ==========================
+
+        if (crn03s.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn03), Toast.LENGTH_SHORT).show();
+            crn03s.setError("This data is Required!");
+            Log.i(TAG, "crn03s: This data is Required!");
+            return false;
+        } else {
+            crn03s.setError(null);
+        }
 
         if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 1) {
             if (crn03dob1.getText().toString().isEmpty()) {
@@ -2117,6 +2157,15 @@ public class SectionMActivity extends AppCompatActivity {
         }
 
         //================ Q4============
+
+        if (crn04s.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn04), Toast.LENGTH_SHORT).show();
+            crn04s.setError("This data is Required!");
+            Log.i(TAG, "crn04s: This data is Required!");
+            return false;
+        } else {
+            crn04s.setError(null);
+        }
 
         if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) == 1) {
             if (crn04dob1.getText().toString().isEmpty()) {
@@ -2161,6 +2210,15 @@ public class SectionMActivity extends AppCompatActivity {
 
         //================ Q5============
 
+        if (crn05s.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn05), Toast.LENGTH_SHORT).show();
+            crn05s.setError("This data is Required!");
+            Log.i(TAG, "crn05s: This data is Required!");
+            return false;
+        } else {
+            crn05s.setError(null);
+        }
+
         if (Integer.parseInt(crn05s.getText().toString().isEmpty() ? "0" : crn05s.getText().toString()) == 1) {
             if (crn05dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn05), Toast.LENGTH_SHORT).show();
@@ -2202,6 +2260,15 @@ public class SectionMActivity extends AppCompatActivity {
         }
 
         //================ Q6============
+
+        if (crn06s.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn06), Toast.LENGTH_SHORT).show();
+            crn06s.setError("This data is Required!");
+            Log.i(TAG, "crn06s: This data is Required!");
+            return false;
+        } else {
+            crn06s.setError(null);
+        }
 
         if (Integer.parseInt(crn06s.getText().toString().isEmpty() ? "0" : crn06s.getText().toString()) == 1) {
             if (crn04dob1.getText().toString().isEmpty()) {
@@ -2245,6 +2312,15 @@ public class SectionMActivity extends AppCompatActivity {
 
         //================ Q7============
 
+        if (crn07s.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn07), Toast.LENGTH_SHORT).show();
+            crn07s.setError("This data is Required!");
+            Log.i(TAG, "crn07s: This data is Required!");
+            return false;
+        } else {
+            crn07s.setError(null);
+        }
+
         if (Integer.parseInt(crn07s.getText().toString().isEmpty() ? "0" : crn07s.getText().toString()) == 1) {
             if (crn07dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn07), Toast.LENGTH_SHORT).show();
@@ -2286,6 +2362,15 @@ public class SectionMActivity extends AppCompatActivity {
         }
 
         //================ Q8============
+
+        if (crn08s.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn08), Toast.LENGTH_SHORT).show();
+            crn08s.setError("This data is Required!");
+            Log.i(TAG, "crn01s: This data is Required!");
+            return false;
+        } else {
+            crn08s.setError(null);
+        }
 
         if (Integer.parseInt(crn08s.getText().toString().isEmpty() ? "0" : crn08s.getText().toString()) == 1) {
             if (crn08dob1.getText().toString().isEmpty()) {

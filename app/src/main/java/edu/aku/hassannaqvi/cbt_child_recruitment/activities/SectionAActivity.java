@@ -26,10 +26,8 @@ import android.widget.ToggleButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -171,7 +169,7 @@ public class SectionAActivity extends Activity {
         deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID);
 
-        dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+        //dtToday = new SimpleDateFormat("dd-MM-yy HH:mm");
 
         ///================ Q1 Skip pattern================
 
@@ -256,6 +254,13 @@ public class SectionAActivity extends Activity {
         }
 
         crauc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, UCs));
+
+/*
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, UCs);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        crauc.setAdapter(adapter);
+*/
 
         crauc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -715,17 +720,6 @@ public class SectionAActivity extends Activity {
                     cra15.setError(null);
                 }
 
-                if (Integer.parseInt(cra15.getText().toString().isEmpty() ? "0" : cra15.getText().toString())
-                        > Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString())) {
-                    Toast.makeText(this, "ERROR(Range)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
-                    cra15.setError("Can not be greater than total pregnancies... Check again");
-
-                    Log.i(TAG, "cra15: Can not be greater than total pregnancies... Check again");
-                    return false;
-                } else {
-                    cra15.setError(null);
-                }
-
                 if (Integer.parseInt(cra15.getText().toString().isEmpty() ? "0" : cra15.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
                     cra15.setError("Can not be zero!");
@@ -734,6 +728,17 @@ public class SectionAActivity extends Activity {
                     return false;
                 } else {
                     cra15.setError(null);
+                }
+
+                if (Integer.parseInt(cra15.getText().toString().isEmpty() ? "0" : cra15.getText().toString())
+                        > (Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString()) + 1)) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
+                    cra14.setError("Check pregnancies and live births again");
+
+                    Log.i(TAG, "cra14: Check pregnancies and live births again");
+                    return false;
+                } else {
+                    cra14.setError(null);
                 }
 
                 //================ Q16===============

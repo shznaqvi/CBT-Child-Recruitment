@@ -888,7 +888,7 @@ public class SectionGActivity extends Activity {
         crg06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (crg0301.isChecked()) {
+                if (crg0601.isChecked()) {
                     fldGrpcrg07.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrg07.setVisibility(View.GONE);

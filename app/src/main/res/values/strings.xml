@@ -67,8 +67,9 @@
     <string name="crb02"> بچے کی جنس </string>
     <string name="crb0201"> مرد </string>
     <string name="crb0202"> عورت </string>
-    <string name="crb03"> بچے کی تاریخ پیدائش </string>
-    <string name="crb04"> اندراج کے وقت بچے کی عمر </string>
+    <string name="crbAge">بچے کی تاریخ پیدائش / اندراج کے وقت بچے کی عمر </string>
+    <string name="crb03"> تاریخ پیدائش </string>
+    <string name="crb04">  عمر </string>
     <string name="crb0401"> ماہ </string>
     <string name="crb0402"> دن </string>
     <string name="crb05"> بچہ اپنی مدت پوری کر کے پیدا ہوا تھا؟ </string>

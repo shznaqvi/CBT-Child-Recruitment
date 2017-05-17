@@ -398,10 +398,10 @@ public class SectionKActivity extends Activity {
             }
         });
 
-        crk1201.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        crk12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (crk1201.isChecked()) {
                     fldGrpcrk13.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpcrk13.setVisibility(View.GONE);
@@ -409,7 +409,6 @@ public class SectionKActivity extends Activity {
                 }
             }
         });
-
     }
 
     @OnClick(R.id.btnNext)

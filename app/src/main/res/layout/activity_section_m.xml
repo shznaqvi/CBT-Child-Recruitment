@@ -474,6 +474,12 @@
             android:textColor="@android:color/black" />
 
         <LinearLayout
+            android:id="@+id/fldGrpcrm04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
             android:id="@+id/fldGrpcrm04b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1080,6 +1086,8 @@
 
         </LinearLayout>
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1118,6 +1126,12 @@
             android:textColor="@android:color/black" />
 
         <LinearLayout
+            android:id="@+id/fldGrpcrm05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
             android:id="@+id/fldGrpcrm05b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1468,6 +1482,8 @@
 
         </LinearLayout>
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1504,6 +1520,12 @@
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:id="@+id/fldGrpcrm06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/fldGrpcrm06b"
@@ -1725,6 +1747,8 @@
 
 
             </RadioGroup>
+
+        </LinearLayout>
 
         </LinearLayout>
 
@@ -2827,7 +2851,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="#efefef"
+                    android:background="#e0f2f1"
                     android:text="@string/crnd"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />

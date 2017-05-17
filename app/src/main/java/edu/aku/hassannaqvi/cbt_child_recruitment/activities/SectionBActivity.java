@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -46,8 +44,18 @@ public class SectionBActivity extends Activity {
     RadioButton crb0201;
     @BindView(R.id.crb0202)
     RadioButton crb0202;
+    @BindView(R.id.crbdob)
+    RadioGroup crbdob;
+    @BindView(R.id.crbdob01)
+    RadioButton crbdob01;
+    @BindView(R.id.crbAge02)
+    RadioButton crbAge02;
+    @BindView(R.id.fldGrpcrbdob)
+    LinearLayout fldGrpcrbdob;
     @BindView(R.id.crb03)
     DatePicker crb03;
+    @BindView(R.id.fldGrpcrbAge)
+    LinearLayout fldGrpcrbAge;
     @BindView(R.id.crb0401)
     EditText crb0401;
     @BindView(R.id.crb0402)
@@ -58,8 +66,6 @@ public class SectionBActivity extends Activity {
     RadioButton crb0501;
     @BindView(R.id.crb0502)
     RadioButton crb0502;
-    @BindView(R.id.crbGrp07)
-    LinearLayout crbGrp07;
     @BindView(R.id.crb0601)
     EditText crb0601;
     @BindView(R.id.crb07)
@@ -70,29 +76,24 @@ public class SectionBActivity extends Activity {
     RadioButton crb0702;
     @BindView(R.id.crb0799)
     RadioButton crb0799;
+    @BindView(R.id.crbGrp07)
+    LinearLayout crbGrp07;
     @BindView(R.id.crb0801)
     EditText crb0801;
     @BindView(R.id.crb0899)
     CheckBox crb0899;
-    @BindView(R.id.crc01m1)
-    EditText crc01m1;
-    @BindView(R.id.crc01m2)
-    EditText crc01m2;
     @BindView(R.id.crc01m3)
     EditText crc01m3;
-    @BindView(R.id.crc02m1)
-    EditText crc02m1;
-    @BindView(R.id.crc02m2)
-    EditText crc02m2;
+    @BindView(R.id.crc01m2)
+    EditText crc01m2;
+    @BindView(R.id.crc01m1)
+    EditText crc01m1;
     @BindView(R.id.crc02m3)
     EditText crc02m3;
-    /*@BindView(R.id.crc03m1)
-    EditText crc03m1;
-    @BindView(R.id.crc03m2)
-    EditText crc03m2;
-    @BindView(R.id.crc03m3)
-    EditText crc03m3;
-    */
+    @BindView(R.id.crc02m2)
+    EditText crc02m2;
+    @BindView(R.id.crc02m1)
+    EditText crc02m1;
     @BindView(R.id.crd0101)
     CheckBox crd0101;
     @BindView(R.id.crd0102)
@@ -115,12 +116,16 @@ public class SectionBActivity extends Activity {
     CheckBox crd0196;
     @BindView(R.id.crd0196x)
     EditText crd0196x;
+    @BindView(R.id.crdGrp01)
+    LinearLayout crdGrp01;
     @BindView(R.id.crd02)
     RadioGroup crd02;
     @BindView(R.id.crd0201)
     RadioButton crd0201;
     @BindView(R.id.crd0202)
     RadioButton crd0202;
+    @BindView(R.id.crdGrp02)
+    LinearLayout crdGrp02;
     @BindView(R.id.crd03)
     RadioGroup crd03;
     @BindView(R.id.crd0301)
@@ -143,16 +148,14 @@ public class SectionBActivity extends Activity {
     RadioButton crd0396;
     @BindView(R.id.crd0396x)
     EditText crd0396x;
-    @BindView(R.id.crdGrp01)
-    LinearLayout crdGrp01;
-    @BindView(R.id.crdGrp02)
-    LinearLayout crdGrp02;
     @BindView(R.id.cre01)
     RadioGroup cre01;
     @BindView(R.id.cre0101)
     RadioButton cre0101;
     @BindView(R.id.cre0102)
     RadioButton cre0102;
+    @BindView(R.id.fldGrpcre01)
+    LinearLayout fldGrpcre01;
     @BindView(R.id.cre01a)
     RadioGroup cre01a;
     @BindView(R.id.cre01a01)
@@ -341,11 +344,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0601a01;
     @BindView(R.id.cre0601a02)
     RadioButton cre0601a02;
-
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
-    @BindView(R.id.fldGrpcre01)
-    LinearLayout fldGrpcre01;
 
     Calendar now = Calendar.getInstance();
     int year = now.get(Calendar.YEAR);
@@ -364,6 +364,21 @@ public class SectionBActivity extends Activity {
         crb03.setMinDate(new Date().getTime() - ((AppMain.MILLISECONDS_IN_6_MONTHS) + (AppMain.MILLISECONDS_IN_DAY)));
 
 //************************************Section B*********************************************************************
+        crbdob.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (crbdob01.isChecked()) {
+                    fldGrpcrbdob.setVisibility(View.VISIBLE);
+                    fldGrpcrbAge.setVisibility(View.GONE);
+                    crb0401.setText(null);
+                    crb0402.setText(null);
+                } else {
+                    fldGrpcrbAge.setVisibility(View.VISIBLE);
+                    fldGrpcrbdob.setVisibility(View.GONE);
+                }
+            }
+        });
+
         // ====================== Q7 Skip Pattern =========================
         crb07.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -391,7 +406,7 @@ public class SectionBActivity extends Activity {
         });
 
 
-        crb0401.addTextChangedListener(new TextWatcher() {
+        /*crb0401.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -417,7 +432,7 @@ public class SectionBActivity extends Activity {
 
             }
         });
-
+*/
         /*crb0402.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -809,41 +824,44 @@ public class SectionBActivity extends Activity {
             crb0202.setError(null);
         }
 
-        // =================== Q4 ====================
-        if (crb0401.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crb04), Toast.LENGTH_SHORT).show();
-            crb0401.setError("This data is required");
-            Log.d(TAG, "empty: crb0401  ");
-            return false;
-        } else {
-            crb0401.setError(null);
-        }
 
-        if (Integer.parseInt(crb0401.getText().toString()) < 0 || Integer.parseInt(crb0401.getText().toString()) > 5){
-            Toast.makeText(this, "ERROR: " + getString(R.string.crb04) + getString(R.string.months), Toast.LENGTH_LONG).show();
-            crb0401.setError("Range is 0-5 Months");
-            Log.i(TAG, "crb0401: Range is 0-5 Months");
-            return false;
-        } else {
-            crb0401.setError(null);
-        }
+        if (crbAge02.isChecked()) {
+            // =================== Q4 ====================
+            if (crb0401.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crb04), Toast.LENGTH_SHORT).show();
+                crb0401.setError("This data is required");
+                Log.d(TAG, "empty: crb0401  ");
+                return false;
+            } else {
+                crb0401.setError(null);
+            }
 
-        if (crb0402.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crb04), Toast.LENGTH_SHORT).show();
-            crb0402.setError("This data is required");
-            Log.d(TAG, "empty: crb0402");
-            return false;
-        } else {
-            crb0402.setError(null);
-        }
+            if (Integer.parseInt(crb0401.getText().toString()) < 0 || Integer.parseInt(crb0401.getText().toString()) > 5) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.crb04) + getString(R.string.months), Toast.LENGTH_LONG).show();
+                crb0401.setError("Range is 0-5 Months");
+                Log.i(TAG, "crb0401: Range is 0-5 Months");
+                return false;
+            } else {
+                crb0401.setError(null);
+            }
 
-        if ((Integer.parseInt(crb0402.getText().toString()) < 0) || (Integer.parseInt(crb0402.getText().toString()) > 29)) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.crb04) + getString(R.string.crb0402), Toast.LENGTH_LONG).show();
-            crb0402.setError("Range is 1-29 days");
-            Log.i(TAG, "crb0402: Range is 1-29 days");
-            return false;
-        } else {
-            crb0402.setError(null);
+            if (crb0402.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crb04), Toast.LENGTH_SHORT).show();
+                crb0402.setError("This data is required");
+                Log.d(TAG, "empty: crb0402");
+                return false;
+            } else {
+                crb0402.setError(null);
+            }
+
+            if ((Integer.parseInt(crb0402.getText().toString()) < 0) || (Integer.parseInt(crb0402.getText().toString()) > 29)) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.crb04) + getString(R.string.crb0402), Toast.LENGTH_LONG).show();
+                crb0402.setError("Range is 1-29 days");
+                Log.i(TAG, "crb0402: Range is 1-29 days");
+                return false;
+            } else {
+                crb0402.setError(null);
+            }
         }
 
         // =================== Q5 ====================
