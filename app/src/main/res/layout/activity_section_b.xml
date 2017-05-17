@@ -127,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-            android:text="@string/crb03" />
+                android:text="@string/crb03" />
 
 
         <DatePicker
@@ -152,28 +152,28 @@
 
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/crb04" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/crb04" />
 
-        <EditText
-            android:id="@+id/crb0401"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:hint="@string/crb0401"
-            android:inputType="number"
-            android:maxLength="1" />
+            <EditText
+                android:id="@+id/crb0401"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:hint="@string/crb0401"
+                android:inputType="number"
+                android:maxLength="1" />
 
-        <EditText
-            android:id="@+id/crb0402"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:hint="@string/crb0402"
-            android:inputType="number"
-            android:maxLength="2" />
+            <EditText
+                android:id="@+id/crb0402"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:hint="@string/crb0402"
+                android:inputType="number"
+                android:maxLength="2" />
 
         </LinearLayout>
 
@@ -795,84 +795,80 @@
                     android:text="@string/crdHP"
                     android:textColor="@color/colorPrimaryDark" />
 
-                <RadioGroup
-                    android:id="@+id/crd03"
+
+                <CheckBox
+                    android:id="@+id/crd0301"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crd0301" />
 
-                    <RadioButton
-                        android:id="@+id/crd0301"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/crd0301" />
+                <CheckBox
+                    android:id="@+id/crd0302"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crd0302" />
 
-                    <RadioButton
-                        android:id="@+id/crd0302"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/crd0302" />
+                <CheckBox
+                    android:id="@+id/crd0303"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crd0303" />
 
-                    <RadioButton
-                        android:id="@+id/crd0303"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/crd0303" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:padding="2dp"
+                    android:text="@string/crdOP"
+                    android:textColor="@color/colorPrimaryDark" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="5dp"
-                        android:background="#efefef"
-                        android:padding="2dp"
-                        android:text="@string/crdOP"
-                        android:textColor="@color/colorPrimaryDark" />
+                <CheckBox
+                    android:id="@+id/crd0304"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crd0304" />
 
-                    <RadioButton
-                        android:id="@+id/crd0304"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/crd0304" />
+                <CheckBox
+                    android:id="@+id/crd0305"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crd0305" />
 
-                    <RadioButton
-                        android:id="@+id/crd0305"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/crd0305" />
+                <CheckBox
+                    android:id="@+id/crd0306"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crd0306" />
 
-                    <RadioButton
-                        android:id="@+id/crd0306"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/crd0306" />
+                <CheckBox
+                    android:id="@+id/crd0307"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crd0307" />
 
-                    <RadioButton
-                        android:id="@+id/crd0307"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/crd0307" />
+                <CheckBox
+                    android:id="@+id/crd0308"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/crd0308" />
 
-                    <RadioButton
-                        android:id="@+id/crd0308"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/crd0308" />
+                <CheckBox
+                    android:id="@+id/crd0396"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/other" />
 
-                    <RadioButton
-                        android:id="@+id/crd0396"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/other" />
-                </RadioGroup>
 
                 <EditText
                     android:id="@+id/crd0396x"
@@ -1000,6 +996,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrpBcgM"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -1101,6 +1098,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrpPolioM"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -1213,6 +1211,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrpPenta1M"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -1314,6 +1313,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrppcv1M"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -1415,6 +1415,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrpopv1M"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -1527,6 +1528,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrppenta2M"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -1628,6 +1630,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrppcv2M"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -1729,6 +1732,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrpopv2M"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -1841,6 +1845,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrpPenta3M"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -1938,6 +1943,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrppcv3M"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -2035,6 +2041,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrpopv3M"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -2132,6 +2139,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrpipvM"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"
@@ -2241,6 +2249,7 @@
             android:weightSum="100">
 
             <LinearLayout
+                android:id="@+id/fldGrpVitaminAM"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="45"

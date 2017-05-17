@@ -530,21 +530,21 @@ public class SectionAActivity extends Activity {
                 cra01bnf.setError(null);
             }
 
-            if (Double.parseDouble(cra26.getText().toString()) < 10.00 || Double.parseDouble(cra26.getText().toString()) >= 16.18) {
+            if (Double.parseDouble(cra26.getText().toString()) < 16.18 || Double.parseDouble(cra26.getText().toString()) >= 20.00) {
                 Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
-                cra26.setError("Range 10.18 - 16.17");
+                cra26.setError("Range 16.18 - 20.00");
 
-                Log.i(TAG, "cra26: Range 10.18 - 16.17!");
+                Log.i(TAG, "cra26: Range 16.18 - 20.00!");
                 return false;
             } else {
                 cra26.setError(null);
             }
         } else {
-            if (Double.parseDouble(cra26.getText().toString()) < 16.18 || Double.parseDouble(cra26.getText().toString()) > 20.00) {
+            if (Double.parseDouble(cra26.getText().toString()) < 8.0 || Double.parseDouble(cra26.getText().toString()) > 16.17) {
                 Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
-                cra26.setError("Range 16.18 - 20.00");
+                cra26.setError("Range 8.0 - 16.17");
 
-                Log.i(TAG, "cra26: Range 16.18 - 20.00!");
+                Log.i(TAG, "cra26: Range 8.0 - 16.17!");
                 return false;
             } else {
                 cra26.setError(null);
@@ -751,11 +751,12 @@ public class SectionAActivity extends Activity {
                     cra14.setError(null);
                 }
 
-                if (Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString()) < 1) {
+                if (Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString()) < 1
+                        || Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString()) > 15) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
-                    cra14.setError("Can not be zero!");
+                    cra14.setError("Range is 1 - 15");
 
-                    Log.i(TAG, "cra14: Can not be zero");
+                    Log.i(TAG, "cra14: Range is 1 - 15");
                     return false;
                 } else {
                     cra14.setError(null);
@@ -821,6 +822,16 @@ public class SectionAActivity extends Activity {
                     cra18.setError("This data is Required!");
 
                     Log.i(TAG, "cra18: This Data is Required!");
+                    return false;
+                } else {
+                    cra18.setError(null);
+                }
+
+                if (Integer.parseInt(cra18.getText().toString().isEmpty() ? "0" : cra18.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra18), Toast.LENGTH_SHORT).show();
+                    cra18.setError("Can not be zero!");
+
+                    Log.i(TAG, "cra18: Can not be zero");
                     return false;
                 } else {
                     cra18.setError(null);

@@ -126,26 +126,24 @@ public class SectionBActivity extends Activity {
     RadioButton crd0202;
     @BindView(R.id.crdGrp02)
     LinearLayout crdGrp02;
-    @BindView(R.id.crd03)
-    RadioGroup crd03;
     @BindView(R.id.crd0301)
-    RadioButton crd0301;
+    CheckBox crd0301;
     @BindView(R.id.crd0302)
-    RadioButton crd0302;
+    CheckBox crd0302;
     @BindView(R.id.crd0303)
-    RadioButton crd0303;
+    CheckBox crd0303;
     @BindView(R.id.crd0304)
-    RadioButton crd0304;
+    CheckBox crd0304;
     @BindView(R.id.crd0305)
-    RadioButton crd0305;
+    CheckBox crd0305;
     @BindView(R.id.crd0306)
-    RadioButton crd0306;
+    CheckBox crd0306;
     @BindView(R.id.crd0307)
-    RadioButton crd0307;
+    CheckBox crd0307;
     @BindView(R.id.crd0308)
-    RadioButton crd0308;
+    CheckBox crd0308;
     @BindView(R.id.crd0396)
-    RadioButton crd0396;
+    CheckBox crd0396;
     @BindView(R.id.crd0396x)
     EditText crd0396x;
     @BindView(R.id.cre01)
@@ -162,6 +160,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre01a01;
     @BindView(R.id.cre01a02)
     RadioButton cre01a02;
+    @BindView(R.id.fldGrpBcgM)
+    LinearLayout fldGrpBcgM;
     @BindView(R.id.cre0201b)
     RadioGroup cre0201b;
     @BindView(R.id.cre0201b01)
@@ -176,6 +176,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0201a01;
     @BindView(R.id.cre0201a02)
     RadioButton cre0201a02;
+    @BindView(R.id.fldGrpPolioM)
+    LinearLayout fldGrpPolioM;
     @BindView(R.id.cre0202b)
     RadioGroup cre0202b;
     @BindView(R.id.cre0202b01)
@@ -190,6 +192,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0202a01;
     @BindView(R.id.cre0202a02)
     RadioButton cre0202a02;
+    @BindView(R.id.fldGrpPenta1M)
+    LinearLayout fldGrpPenta1M;
     @BindView(R.id.cre0301b)
     RadioGroup cre0301b;
     @BindView(R.id.cre0301b01)
@@ -204,6 +208,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0301a01;
     @BindView(R.id.cre0301a02)
     RadioButton cre0301a02;
+    @BindView(R.id.fldGrppcv1M)
+    LinearLayout fldGrppcv1M;
     @BindView(R.id.cre0302b)
     RadioGroup cre0302b;
     @BindView(R.id.cre0302b01)
@@ -218,6 +224,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0302a01;
     @BindView(R.id.cre0302a02)
     RadioButton cre0302a02;
+    @BindView(R.id.fldGrpopv1M)
+    LinearLayout fldGrpopv1M;
     @BindView(R.id.cre0303b)
     RadioGroup cre0303b;
     @BindView(R.id.cre0303b01)
@@ -232,6 +240,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0303a01;
     @BindView(R.id.cre0303a02)
     RadioButton cre0303a02;
+    @BindView(R.id.fldGrppenta2M)
+    LinearLayout fldGrppenta2M;
     @BindView(R.id.cre0401b)
     RadioGroup cre0401b;
     @BindView(R.id.cre0401b01)
@@ -246,6 +256,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0401a01;
     @BindView(R.id.cre0401a02)
     RadioButton cre0401a02;
+    @BindView(R.id.fldGrppcv2M)
+    LinearLayout fldGrppcv2M;
     @BindView(R.id.cre0402b)
     RadioGroup cre0402b;
     @BindView(R.id.cre0402b01)
@@ -260,6 +272,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0402a01;
     @BindView(R.id.cre0402a02)
     RadioButton cre0402a02;
+    @BindView(R.id.fldGrpopv2M)
+    LinearLayout fldGrpopv2M;
     @BindView(R.id.cre0403b)
     RadioGroup cre0403b;
     @BindView(R.id.cre0403b01)
@@ -274,6 +288,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0403a01;
     @BindView(R.id.cre0403a02)
     RadioButton cre0403a02;
+    @BindView(R.id.fldGrpPenta3M)
+    LinearLayout fldGrpPenta3M;
     @BindView(R.id.cre0501b)
     RadioGroup cre0501b;
     @BindView(R.id.cre0501b01)
@@ -288,6 +304,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0501a01;
     @BindView(R.id.cre0501a02)
     RadioButton cre0501a02;
+    @BindView(R.id.fldGrppcv3M)
+    LinearLayout fldGrppcv3M;
     @BindView(R.id.cre0502b)
     RadioGroup cre0502b;
     @BindView(R.id.cre0502b01)
@@ -302,6 +320,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0502a01;
     @BindView(R.id.cre0502a02)
     RadioButton cre0502a02;
+    @BindView(R.id.fldGrpopv3M)
+    LinearLayout fldGrpopv3M;
     @BindView(R.id.cre0503b)
     RadioGroup cre0503b;
     @BindView(R.id.cre0503b01)
@@ -316,6 +336,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0503a01;
     @BindView(R.id.cre0503a02)
     RadioButton cre0503a02;
+    @BindView(R.id.fldGrpipvM)
+    LinearLayout fldGrpipvM;
     @BindView(R.id.cre0504b)
     RadioGroup cre0504b;
     @BindView(R.id.cre0504b01)
@@ -330,6 +352,8 @@ public class SectionBActivity extends Activity {
     RadioButton cre0504a01;
     @BindView(R.id.cre0504a02)
     RadioButton cre0504a02;
+    @BindView(R.id.fldGrpVitaminAM)
+    LinearLayout fldGrpVitaminAM;
     @BindView(R.id.cre0601b)
     RadioGroup cre0601b;
     @BindView(R.id.cre0601b01)
@@ -346,6 +370,7 @@ public class SectionBActivity extends Activity {
     RadioButton cre0601a02;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
+
 
     Calendar now = Calendar.getInstance();
     int year = now.get(Calendar.YEAR);
@@ -499,10 +524,17 @@ public class SectionBActivity extends Activity {
                 if (isChecked) {
                     crdGrp01.setVisibility(View.GONE);
                     crd02.clearCheck();
-                    crd03.clearCheck();
-                    crdGrp02.setVisibility(View.GONE);
-                    crd0196x.setText(null);
+                    crd0301.setChecked(false);
+                    crd0302.setChecked(false);
+                    crd0303.setChecked(false);
+                    crd0304.setChecked(false);
+                    crd0305.setChecked(false);
+                    crd0306.setChecked(false);
+                    crd0307.setChecked(false);
+                    crd0308.setChecked(false);
+                    crd0396.setChecked(false);
                     crd0396x.setText(null);
+                    crdGrp02.setVisibility(View.GONE);
                     crd0101.setEnabled(false);
                     crd0101.setChecked(false);
                     crd0102.setEnabled(false);
@@ -548,7 +580,15 @@ public class SectionBActivity extends Activity {
                 if (isChecked) {
 
                     crdGrp02.setVisibility(View.GONE);
-                    crd03.clearCheck();
+                    crd0301.setChecked(false);
+                    crd0302.setChecked(false);
+                    crd0303.setChecked(false);
+                    crd0304.setChecked(false);
+                    crd0305.setChecked(false);
+                    crd0306.setChecked(false);
+                    crd0307.setChecked(false);
+                    crd0308.setChecked(false);
+                    crd0396.setChecked(false);
                     crd0396x.setText(null);
 
                 } else {
@@ -604,44 +644,82 @@ public class SectionBActivity extends Activity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (cre01a01.isChecked()) {
                     fldGrpBcg.setVisibility(View.VISIBLE);
+                    fldGrpBcgM.setVisibility(View.GONE);
+                    cre0201b.clearCheck();
+                    cre0202b.clearCheck();
                     fldGrpPolio.setVisibility(View.VISIBLE);
+                    fldGrpPolioM.setVisibility(View.GONE);
+                    cre0301b.clearCheck();
+                    cre0302b.clearCheck();
+                    cre0303b.clearCheck();
                     fldGrpPenta1.setVisibility(View.VISIBLE);
+                    fldGrpPenta1M.setVisibility(View.GONE);
+                    cre0401b.clearCheck();
+                    cre0402b.clearCheck();
+                    cre0403b.clearCheck();
                     fldGrppcv1.setVisibility(View.VISIBLE);
+                    fldGrppcv1M.setVisibility(View.GONE);
+                    cre0501b.clearCheck();
+                    cre0502b.clearCheck();
+                    cre0503b.clearCheck();
                     fldGrpopv1.setVisibility(View.VISIBLE);
+                    fldGrpopv1M.setVisibility(View.GONE);
+                    cre0601b.clearCheck();
                     fldGrppenta2.setVisibility(View.VISIBLE);
+                    fldGrppenta2M.setVisibility(View.GONE);
                     fldGrppcv2.setVisibility(View.VISIBLE);
+                    fldGrppcv2M.setVisibility(View.GONE);
                     fldGrpopv2.setVisibility(View.VISIBLE);
+                    fldGrpopv2M.setVisibility(View.GONE);
                     fldGrpenta3.setVisibility(View.VISIBLE);
+                    fldGrpPenta3M.setVisibility(View.GONE);
                     fldGrppcv3.setVisibility(View.VISIBLE);
+                    fldGrppcv3M.setVisibility(View.GONE);
                     fldGrpopv3.setVisibility(View.VISIBLE);
+                    fldGrpopv3M.setVisibility(View.GONE);
                     fldGrpipv.setVisibility(View.VISIBLE);
+                    fldGrpipvM.setVisibility(View.GONE);
                     fldGrpVitaminA.setVisibility(View.VISIBLE);
+                    fldGrpVitaminAM.setVisibility(View.GONE);
                 } else {
                     fldGrpBcg.setVisibility(View.GONE);
+                    fldGrpBcgM.setVisibility(View.VISIBLE);
                     cre0201a.clearCheck();
                     fldGrpPolio.setVisibility(View.GONE);
+                    fldGrpPolioM.setVisibility(View.VISIBLE);
                     cre0202a.clearCheck();
                     fldGrpPenta1.setVisibility(View.GONE);
+                    fldGrpPenta1M.setVisibility(View.VISIBLE);
                     cre0301a.clearCheck();
                     fldGrppcv1.setVisibility(View.GONE);
+                    fldGrppcv1M.setVisibility(View.VISIBLE);
                     cre0302a.clearCheck();
                     fldGrpopv1.setVisibility(View.GONE);
+                    fldGrpopv1M.setVisibility(View.VISIBLE);
                     cre0303a.clearCheck();
                     fldGrppenta2.setVisibility(View.GONE);
+                    fldGrppenta2M.setVisibility(View.VISIBLE);
                     cre0401a.clearCheck();
                     fldGrppcv2.setVisibility(View.GONE);
+                    fldGrppcv2M.setVisibility(View.VISIBLE);
                     cre0402a.clearCheck();
                     fldGrpopv2.setVisibility(View.GONE);
+                    fldGrpopv2M.setVisibility(View.VISIBLE);
                     cre0403a.clearCheck();
                     fldGrpenta3.setVisibility(View.GONE);
+                    fldGrpPenta3M.setVisibility(View.VISIBLE);
                     cre0501a.clearCheck();
                     fldGrppcv3.setVisibility(View.GONE);
+                    fldGrppcv3M.setVisibility(View.VISIBLE);
                     cre0502a.clearCheck();
                     fldGrpopv3.setVisibility(View.GONE);
+                    fldGrpopv3M.setVisibility(View.VISIBLE);
                     cre0503a.clearCheck();
                     fldGrpipv.setVisibility(View.GONE);
+                    fldGrpopv3M.setVisibility(View.VISIBLE);
                     cre0504a.clearCheck();
                     fldGrpVitaminA.setVisibility(View.GONE);
+                    fldGrpVitaminAM.setVisibility(View.VISIBLE);
                     cre0601a.clearCheck();
                 }
             }
@@ -747,7 +825,14 @@ public class SectionBActivity extends Activity {
         sd.put("crd0196", crd0196.isChecked() ? "88" : "0");
         sd.put("crd0196x", crd0196x.getText().toString());
         sd.put("crd02", crd0201.isChecked() ? "1" : crd0202.isChecked() ? "2" : "0");
-        sd.put("crd03", crd0301.isChecked() ? "1" : crd0302.isChecked() ? "2" : crd0303.isChecked() ? "3" : crd0304.isChecked() ? "4" : crd0305.isChecked() ? "5" : crd0306.isChecked() ? "6" : crd0307.isChecked() ? "7" : crd0308.isChecked() ? "8" : crd0396.isChecked() ? "96" : "0");
+        sd.put("crd0301", crd0301.isChecked() ? "1" : "0");
+        sd.put("crd0302", crd0302.isChecked() ? "1" : "0");
+        sd.put("crd0303", crd0303.isChecked() ? "1" : "0");
+        sd.put("crd0304", crd0304.isChecked() ? "1" : "0");
+        sd.put("crd0305", crd0305.isChecked() ? "1" : "0");
+        sd.put("crd0306", crd0306.isChecked() ? "1" : "0");
+        sd.put("crd0307", crd0307.isChecked() ? "1" : "0");
+        sd.put("crd0308", crd0308.isChecked() ? "1" : "0");
         sd.put("crd0396x", crd0396x.getText().toString());
 //************************************Section E*********************************************************************
         se.put("cre01", cre0101.isChecked() ? "1" : cre0102.isChecked() ? "2" : "0");
@@ -929,10 +1014,10 @@ public class SectionBActivity extends Activity {
                             return false;
                         } else {
                             crb0801.setError(null);
-                            if (Double.parseDouble(crb0801.getText().toString()) < 2 || Double.parseDouble(crb0801.getText().toString()) > 5) {
+                            if (Double.parseDouble(crb0801.getText().toString()) < 0.9 || Double.parseDouble(crb0801.getText().toString()) > 6.0) {
                                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
-                                crb0801.setError("Invalid: Range 2.0 - 5.0 kg");
-                                Log.i(TAG, "crb0801: Invalid Range 2.0 - 5.0 kg");
+                                crb0801.setError("Invalid: Range 0.9 - 6.0 kg");
+                                Log.i(TAG, "crb0801: Invalid Range 0.9 - 6.0 kg");
                                 return false;
                             } else {
                                 crb0801.setError(null);
@@ -1284,15 +1369,17 @@ public class SectionBActivity extends Activity {
 
             if (crd0201.isChecked()) {
                 // ====================== Q 3 ===================
-                if (crd03.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "" + getString(R.string.crd03), Toast.LENGTH_SHORT).show();
-                    crd0396.setError("This Data is required");
-                    Log.d(TAG, "not selected: crd03 ");
+
+                if (!(crd0301.isChecked() || crd0302.isChecked() || crd0303.isChecked() || crd0304.isChecked()
+                        || crd0305.isChecked() || crd0306.isChecked() || crd0307.isChecked() || crd0308.isChecked()
+                        || crd0196.isChecked())) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crd01), Toast.LENGTH_LONG).show();
+                    crd0196.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "crd01: This data is Required!");
                     return false;
                 } else {
-                    crd0396.setError(null);
+                    crd0196.setError(null);
                 }
-
                 if (crd0396.isChecked() && crd0396x.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.crd03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                     crd0396x.setError("This data is Required!");    // Set Error on last radio button
