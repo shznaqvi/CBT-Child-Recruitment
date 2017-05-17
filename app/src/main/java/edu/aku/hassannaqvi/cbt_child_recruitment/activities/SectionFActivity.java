@@ -737,6 +737,15 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             } else {
                 crf06btime.setError(null);
             }
+
+            if (Integer.parseInt(crf06btime.getText().toString().isEmpty() ? "0" : crf06btime.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.times), Toast.LENGTH_SHORT).show();
+                crf06btime.setError("Zero not allowed...");
+                Log.i(TAG, "crf06btime: Zero not allowed..");
+                return false;
+            } else {
+                crf06btime.setError(null);
+            }
         }
 
         //============ Q 6c ==========
@@ -754,6 +763,15 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.times), Toast.LENGTH_SHORT).show();
                 crf06ctime.setError("This data is Required!");
                 Log.i(TAG, "crf06ctime: This data is Required!");
+                return false;
+            } else {
+                crf06ctime.setError(null);
+            }
+
+            if (Integer.parseInt(crf06ctime.getText().toString().isEmpty() ? "0" : crf06ctime.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.times), Toast.LENGTH_SHORT).show();
+                crf06ctime.setError("Zero not allowed...");
+                Log.i(TAG, "crf06ctime: Zero not allowed..");
                 return false;
             } else {
                 crf06ctime.setError(null);
@@ -796,6 +814,15 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.times), Toast.LENGTH_SHORT).show();
                 crf06ftime.setError("This data is Required!");
                 Log.i(TAG, "crf06ftime: This data is Required!");
+                return false;
+            } else {
+                crf06ftime.setError(null);
+            }
+
+            if (Integer.parseInt(crf06ftime.getText().toString().isEmpty() ? "0" : crf06ftime.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.times), Toast.LENGTH_SHORT).show();
+                crf06ftime.setError("Zero not allowed...");
+                Log.i(TAG, "crf06ftime: Zero not allowed..");
                 return false;
             } else {
                 crf06ftime.setError(null);
@@ -1085,8 +1112,8 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         }
 
         if (!crf1503.isChecked()) {
-            if (Integer.parseInt(crf1501.getText().toString().isEmpty() ? "0" : crf1501.getText().toString()) < 1
-                    || Integer.parseInt(crf1502.getText().toString().isEmpty() ? "0" : crf1502.getText().toString()) < 1) {
+            if ((Integer.parseInt(crf1501.getText().toString().isEmpty() ? "0" : crf1501.getText().toString()) < 1)
+                    && Integer.parseInt(crf1502.getText().toString().isEmpty() ? "0" : crf1502.getText().toString()) < 1) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
                 crf1501.setError("Zero not allowed");
                 Log.i(TAG, "crf15: Zero not allowed");
@@ -1094,6 +1121,25 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             } else {
                 crf1501.setError(null);
             }
+
+            if ((Integer.parseInt(crf1501.getText().toString().isEmpty() ? "0" : crf1501.getText().toString()) > 11)) {
+                Toast.makeText(this, "ERROR(Range): " + getString(R.string.crf1501), Toast.LENGTH_SHORT).show();
+                crf1501.setError("Range is 0 - 11 months");
+                Log.i(TAG, "crf1501: Range is 0 - 11 months");
+                return false;
+            } else {
+                crf1501.setError(null);
+            }
+
+            if ((Integer.parseInt(crf1502.getText().toString().isEmpty() ? "0" : crf1502.getText().toString()) > 29)) {
+                Toast.makeText(this, "ERROR(Range): " + getString(R.string.crf1502), Toast.LENGTH_SHORT).show();
+                crf1502.setError("Range is 0 - 29 days");
+                Log.i(TAG, "crf1502: Range is 0 - 29 days");
+                return false;
+            } else {
+                crf1502.setError(null);
+            }
+
         }
 
 

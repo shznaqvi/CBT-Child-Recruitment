@@ -209,7 +209,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -338,7 +338,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -468,12 +468,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
 
         <LinearLayout
+            android:id="@+id/fldGrpcrm04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
             android:id="@+id/fldGrpcrm04b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -598,7 +604,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -727,7 +733,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -854,7 +860,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -982,7 +988,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -1080,6 +1086,8 @@
 
         </LinearLayout>
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1112,12 +1120,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
 
         <LinearLayout
+            android:id="@+id/fldGrpcrm05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
             android:id="@+id/fldGrpcrm05b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1241,7 +1255,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -1370,7 +1384,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -1468,6 +1482,8 @@
 
         </LinearLayout>
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1500,10 +1516,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:id="@+id/fldGrpcrm06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/fldGrpcrm06b"
@@ -1629,7 +1651,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -1728,6 +1750,8 @@
 
         </LinearLayout>
 
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1760,7 +1784,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -1887,7 +1911,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -2014,7 +2038,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:digits="0123456789"
-            android:hint="@string/crm01a"
+            android:hint="@string/days"
             android:inputType="number"
             android:maxLength="1"
             android:textColor="@android:color/black" />
@@ -2298,7 +2322,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:digits="123456789"
+            android:digits="1234567890"
             android:hint="@string/crnba"
             android:inputType="number"
             android:textColor="@android:color/black" />
@@ -2376,7 +2400,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:digits="123456789"
+            android:digits="1234567890"
             android:hint="@string/crnba"
             android:inputType="number"
             android:textColor="@android:color/black" />
@@ -2514,7 +2538,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:digits="123456789"
+            android:digits="1234567890"
             android:hint="@string/crnba"
             android:inputType="number"
             android:textColor="@android:color/black" />
@@ -2652,7 +2676,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:digits="123456789"
+            android:digits="1234567890"
             android:hint="@string/crnba"
             android:inputType="number"
             android:textColor="@android:color/black" />
@@ -2827,7 +2851,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="#efefef"
+                    android:background="#e0f2f1"
                     android:text="@string/crnd"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />

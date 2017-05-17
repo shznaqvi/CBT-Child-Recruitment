@@ -155,7 +155,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/crf0201"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="2" />
 
         <EditText
             android:id="@+id/crf02d"
@@ -163,7 +164,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/crf0202"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="2" />
 
 
         <TextView
@@ -368,7 +370,8 @@
                 android:layout_height="wrap_content"
                 android:digits="0123456789"
                 android:hint="@string/times"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2" />
 
         </LinearLayout>
 
@@ -420,7 +423,8 @@
                 android:layout_height="wrap_content"
                 android:digits="0123456789"
                 android:hint="@string/times"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="2" />
 
         </LinearLayout>
 
@@ -1296,7 +1300,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/crf09num"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="2" />
 
         </LinearLayout>
 
@@ -1486,7 +1491,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/crf1501"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="1" />
 
 
         <EditText
@@ -1495,7 +1501,8 @@
             android:layout_height="wrap_content"
             android:digits="0123456789"
             android:hint="@string/crf1502"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="2" />
 
         <CheckBox
             android:id="@+id/crf1503"

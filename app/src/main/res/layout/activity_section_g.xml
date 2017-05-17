@@ -469,6 +469,12 @@
             android:hint="@string/other"
             android:visibility="gone" />
 
+        <LinearLayout
+            android:id="@+id/fldGrpcrg08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -496,12 +502,12 @@
 
         </RadioGroup>
 
-        <LinearLayout
+
+            <LinearLayout
             android:id="@+id/fldGrpcrg07"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-
             tools:visibility="visible">
 
             <TextView
@@ -518,7 +524,9 @@
             android:layout_marginTop="1dp"
             android:hint="@string/crg07"
             android:inputType="number"
-            android:maxLength="3" />
+            android:maxLength="2" />
+
+        </LinearLayout>
 
         </LinearLayout>
 
@@ -2088,6 +2096,8 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
+        </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -2521,9 +2531,8 @@
                         android:text="@string/crg22a03" />
                 </RadioGroup>
 
-            </LinearLayout>
 
-        </LinearLayout>
+            </LinearLayout>
 
 
         <LinearLayout

@@ -25,10 +25,8 @@ import android.widget.ToggleButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -150,6 +148,10 @@ public class SectionAActivity extends Activity {
     String deviceId;
     DatabaseHelper db;
     String dtToday;
+    @BindView(R.id.cra01bnf)
+    EditText cra01bnf;
+    @BindView(R.id.fldGrpcra01bnf)
+    LinearLayout fldGrpcra01bnf;
 
     Map<String, String> getAllUCs, getAllVillages;
     List<String> UCs, VillagesName;
@@ -164,43 +166,34 @@ public class SectionAActivity extends Activity {
         deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID);
 
-        dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+        //dtToday = new SimpleDateFormat("dd-MM-yy HH:mm");
 
-        //================= Q1  Skip Pattern // HH Recieving Cash from BISP =============
+        ///================ Q1 Skip pattern================
+
         cra01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (cra0101.isChecked()) {
-                    fldGrpcra02.setVisibility(View.VISIBLE);
-                    fldGrpcra03.setVisibility(View.VISIBLE);
-                    btnNext.setVisibility(View.VISIBLE);
+                    fldGrpcra01bnf.setVisibility(View.VISIBLE);
+                    cra0401.setEnabled(false);
+                    cra0401.setChecked(false);
+                    cra0402.setEnabled(true);
+                    cra0403.setEnabled(true);
+                    cra0404.setEnabled(true);
+                    cra0405.setEnabled(true);
                 } else {
-                    fldGrpcra02.setVisibility(View.GONE);
-                    fldGrpcra03.setVisibility(View.GONE);
-                    btnNext.setVisibility(View.GONE);
-                    cra02.clearCheck();
-                    //cra03.setText(null);
-                    cra04.clearCheck();
-                    cra05.setText(null);
-                    cra06.setText(null);
-                    cra07.setText(null);
-                    cra08.setText(null);
-                    cra09.setText(null);
-                    cra10.setText(null);
-                    cra11.setText(null);
-                    cra12.setText(null);
-                    cra13.clearCheck();
-                    cra14.setText(null);
-                    cra15.setText(null);
-                    cra16.clearCheck();
-                    cra17.setText(null);
-                    cra18.setText(null);
-                    cra19.setText(null);
-                    cra20.setText(null);
-                    //cra21.setText(null);
-                    cra22.setText(null);
-                    cra23.setText(null);
-                    cra24.setText(null);
+                    fldGrpcra01bnf.setVisibility(View.GONE);
+                    cra01bnf.setText(null);
+                    cra0401.setEnabled(true);
+                    cra0402.setEnabled(false);
+                    cra0402.setChecked(false);
+                    cra0403.setEnabled(false);
+                    cra0403.setChecked(false);
+                    cra0404.setEnabled(false);
+                    cra0404.setChecked(false);
+                    cra0405.setEnabled(false);
+                    cra0405.setChecked(false);
+
                 }
             }
         });
@@ -258,6 +251,13 @@ public class SectionAActivity extends Activity {
         }
 
         crauc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, UCs));
+
+/*
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, UCs);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        crauc.setAdapter(adapter);
+*/
 
         crauc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -432,6 +432,7 @@ public class SectionAActivity extends Activity {
             ((TextView) crauc.getSelectedView()).setError(null);
         }
 
+
         //================ Q 3==================
         if (cra03.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra03), Toast.LENGTH_SHORT).show();
@@ -454,6 +455,16 @@ public class SectionAActivity extends Activity {
             cra25.setError(null);
         }
 
+        //======================= Q 1 ===============
+        if (cra01.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra01), Toast.LENGTH_SHORT).show();
+            cra0102.setError("This data is Required!");
+
+            Log.i(TAG, "cra01: This Data is Required!");
+            return false;
+        } else {
+            cra0102.setError(null);
+        }
 
         //================ Q26===============
         if (cra26.getText().toString().isEmpty()) {
@@ -466,29 +477,39 @@ public class SectionAActivity extends Activity {
             cra26.setError(null);
         }
 
-        if (Double.parseDouble(cra26.getText().toString()) < 16.18 || Double.parseDouble(cra26.getText().toString()) > 20.00) {
-            Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
-            cra26.setError("Range 16.18 - 20.00");
-
-            Log.i(TAG, "cra26: Range 0-20.00!");
-            return false;
-        } else {
-            cra26.setError(null);
-        }
-
-        //======================= Q 1 ===============
-        if (cra01.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra01), Toast.LENGTH_SHORT).show();
-            cra0102.setError("This data is Required!");
-
-            Log.i(TAG, "cra01: This Data is Required!");
-            return false;
-        } else {
-            cra0102.setError(null);
-        }
-
-
         if (cra0101.isChecked()) {
+            if (cra01bnf.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra01bnf), Toast.LENGTH_SHORT).show();
+                cra01bnf.setError("This data is Required!");
+
+                Log.i(TAG, "cra01bnf: This Data is Required!");
+                return false;
+            } else {
+                cra01bnf.setError(null);
+            }
+
+            if (Double.parseDouble(cra26.getText().toString()) < 10.00 || Double.parseDouble(cra26.getText().toString()) >= 16.18) {
+                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
+                cra26.setError("Range 10.18 - 16.17");
+
+                Log.i(TAG, "cra26: Range 10.18 - 16.17!");
+                return false;
+            } else {
+                cra26.setError(null);
+            }
+        } else {
+            if (Double.parseDouble(cra26.getText().toString()) < 16.18 || Double.parseDouble(cra26.getText().toString()) > 20.00) {
+                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
+                cra26.setError("Range 16.18 - 20.00");
+
+                Log.i(TAG, "cra26: Range 16.18 - 20.00!");
+                return false;
+            } else {
+                cra26.setError(null);
+            }
+        }
+
+
             //========== Q2==============
             if (cra02.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra02), Toast.LENGTH_SHORT).show();
@@ -696,17 +717,6 @@ public class SectionAActivity extends Activity {
                     cra15.setError(null);
                 }
 
-                if (Integer.parseInt(cra15.getText().toString().isEmpty() ? "0" : cra15.getText().toString())
-                        > Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString())) {
-                    Toast.makeText(this, "ERROR(Range)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
-                    cra15.setError("Can not be greater than total pregnancies... Check again");
-
-                    Log.i(TAG, "cra15: Can not be greater than total pregnancies... Check again");
-                    return false;
-                } else {
-                    cra15.setError(null);
-                }
-
                 if (Integer.parseInt(cra15.getText().toString().isEmpty() ? "0" : cra15.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
                     cra15.setError("Can not be zero!");
@@ -715,6 +725,17 @@ public class SectionAActivity extends Activity {
                     return false;
                 } else {
                     cra15.setError(null);
+                }
+
+                if (Integer.parseInt(cra15.getText().toString().isEmpty() ? "0" : cra15.getText().toString())
+                        > (Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString()) + 1)) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
+                    cra14.setError("Check pregnancies and live births again");
+
+                    Log.i(TAG, "cra14: Check pregnancies and live births again");
+                    return false;
+                } else {
+                    cra14.setError(null);
                 }
 
                 //================ Q16===============
@@ -883,7 +904,7 @@ public class SectionAActivity extends Activity {
 
 
             }
-        }
+
 
         return true;
 
@@ -945,6 +966,7 @@ public class SectionAActivity extends Activity {
         JSONObject sa = new JSONObject();
 
         sa.put("cra01", cra0101.isChecked() ? "1" : cra0102.isChecked() ? "2" : "0");
+        sa.put("cra01bnf", cra01bnf.getText().toString());
         sa.put("cra02", cra0201.isChecked() ? "1" : cra0202.isChecked() ? "2" : "0");
         sa.put("cra02res", cra02res.getText().toString());
         sa.put("cra03", cra03.getText().toString());
