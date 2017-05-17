@@ -4,6 +4,7 @@
     android:id="@+id/activity_section_a"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="rtl"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -23,13 +24,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:background="@color/colorHeading"
             android:text="@string/section_A"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
 
@@ -41,25 +39,23 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="@string/cruc" />
 
         <Spinner
             android:id="@+id/crauc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="10dp"
             android:background="@color/colorHeading"
             android:popupBackground="#d6d6d6"
-            android:prompt="@string/cruc"
-            android:textSize="24sp" />
+            android:prompt="@string/cruc" />
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
+
             android:text="@string/crvillage" />
 
         <LinearLayout
@@ -80,32 +76,29 @@
                 android:gravity="center"
                 android:padding="5dp"
                 android:textOff=""
-                android:textOn=""
-                android:textSize="22sp" />
+                android:textOn="" />
 
             <EditText
                 android:id="@+id/cravillage"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
                 android:layout_weight="2"
                 android:background="@color/colorHeading"
-                android:hint="@string/crvillage"
-                android:textSize="24sp" />
+                android:hint="@string/crvillage" />
 
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
+
             android:text="@string/cra03" />
 
         <EditText
             android:id="@+id/cra03"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
             android:digits="0123456789"
             android:hint="@string/cra03"
             android:inputType="number"
@@ -115,14 +108,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
+
             android:text="@string/cra25" />
 
         <EditText
             android:id="@+id/cra25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
             android:digits="0123456789"
             android:hint="@string/cra25"
             android:inputType="number"
@@ -132,7 +125,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
+
             android:text="@string/cra26" />
 
         <EditText
@@ -149,9 +143,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
+
             android:text="@string/cra01" />
 
+        <TextView
+            style="@style/helperText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cra01ht" />
         <RadioGroup
             android:id="@+id/cra01"
             android:layout_width="match_parent"
@@ -184,7 +184,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/cra02" />
 
             <RadioGroup
@@ -217,14 +217,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:text="@string/cra02res" />
 
                 <EditText
                     android:id="@+id/cra02res"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
                     android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
                     android:hint="@string/cra02res"
                     android:inputType="textPersonName" />
@@ -242,7 +240,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:text="@string/cra04" />
 
 
@@ -291,7 +288,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra05" />
 
                 <EditText
@@ -306,7 +303,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra06" />
 
                 <EditText
@@ -337,7 +334,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra08" />
 
                 <EditText
@@ -354,7 +351,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra09" />
 
                 <EditText
@@ -369,7 +366,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra10" />
 
                 <EditText
@@ -402,7 +399,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra12" />
 
                 <EditText
@@ -418,7 +415,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra13" />
 
                 <RadioGroup
@@ -445,7 +442,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra14" />
 
                 <EditText
@@ -461,7 +458,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra15" />
 
                 <EditText
@@ -477,7 +474,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra16" />
 
                 <RadioGroup
@@ -522,7 +519,6 @@
                     android:text="@string/crasub"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="30sp"
                     android:textStyle="bold"
                     tools:typeface="serif" />
 
@@ -534,7 +530,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra17" />
 
 
@@ -551,7 +547,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra18" />
 
                 <EditText
@@ -567,7 +563,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra19" />
 
                 <EditText
@@ -583,7 +579,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra20" />
 
                 <EditText
@@ -615,7 +611,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra22" />
 
                 <EditText
@@ -631,7 +627,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra23" />
 
                 <EditText
@@ -647,7 +643,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/cra24" />
 
                 <EditText
@@ -667,28 +663,32 @@
             android:id="@+id/fldGrpbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
+            android:paddingTop="32dp"
             android:visibility="visible">
 
             <Button
                 android:id="@+id/btnNext"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:onClick="submitSecA"
                 android:text="@string/nextSection"
-                android:textColor="#00ef00" />
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/btnEnd"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:onClick="endForm"
                 android:text="@string/endForm"
-                android:textColor="#000" />
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

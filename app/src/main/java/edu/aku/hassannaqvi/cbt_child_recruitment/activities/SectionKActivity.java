@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -29,8 +28,6 @@ public class SectionKActivity extends Activity {
 
     private static final String TAG = SectionKActivity.class.getSimpleName();
 
-    @BindView(R.id.activity_section_b)
-    ScrollView activitySectionB;
     @BindView(R.id.crka)
     EditText crka;
     @BindView(R.id.crk01)

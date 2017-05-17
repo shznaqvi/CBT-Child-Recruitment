@@ -41,7 +41,7 @@ public class GetLHWs extends AsyncTask<String, String, String> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        pd = new ProgressDialog(mContext, R.style.AppCompatAlertDialogStyle);
+        pd = new ProgressDialog(mContext, R.style.AlertDialogStyle);
         pd.setTitle("Getting LHWs");
         pd.setMessage("Preparing...");
         pd.show();

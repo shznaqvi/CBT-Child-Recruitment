@@ -41,7 +41,7 @@ public class GetTehsil extends AsyncTask<String, String, String> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        pd = new ProgressDialog(mContext, R.style.AppCompatAlertDialogStyle);
+        pd = new ProgressDialog(mContext, R.style.AlertDialogStyle);
         pd.setTitle("Getting Tehsil");
         pd.setMessage("Preparing...");
         pd.show();

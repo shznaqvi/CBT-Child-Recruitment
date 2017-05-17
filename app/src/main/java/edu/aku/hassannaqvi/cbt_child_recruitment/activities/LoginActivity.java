@@ -30,7 +30,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -57,7 +56,6 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetUsers;
-import edu.aku.hassannaqvi.cbt_child_recruitment.syncclasses.SyncForms;
 
 
 /**
@@ -82,7 +80,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     @BindView(R.id.login_form)
     ScrollView mLoginFormView;
     @BindView(R.id.email)
-    AutoCompleteTextView mEmailView;
+    EditText mEmailView;
     @BindView(R.id.password)
     EditText mPasswordView;
     @BindView(R.id.txtinstalldate)
@@ -128,7 +126,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
 
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        mEmailView = (EditText) findViewById(R.id.email);
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -471,21 +469,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             cursor.moveToNext();
         }
 
-        addEmailsToAutoComplete(emails);
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
 
-    }
-
-    private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
-        //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(LoginActivity.this,
-                        android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
-
-        mEmailView.setAdapter(adapter);
     }
 
     public void gotoMain(View v) {

@@ -41,7 +41,7 @@ public class GetVillages extends AsyncTask<String, String, String> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        pd = new ProgressDialog(mContext, R.style.AppCompatAlertDialogStyle);
+        pd = new ProgressDialog(mContext, R.style.AlertDialogStyle);
         pd.setTitle("Getting Villages");
         pd.setMessage("Preparing...");
         pd.show();

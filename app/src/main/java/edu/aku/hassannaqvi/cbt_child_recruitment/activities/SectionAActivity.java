@@ -17,7 +17,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,8 +46,6 @@ public class SectionAActivity extends Activity {
 
     private static final String TAG = SectionAActivity.class.getSimpleName();
 
-    @BindView(R.id.activity_section_a)
-    ScrollView activitySectionA;
     @BindView(R.id.cra01)
     RadioGroup cra01;
     @BindView(R.id.cra0101)
