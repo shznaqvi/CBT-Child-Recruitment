@@ -716,7 +716,7 @@ public class SectionBActivity extends Activity {
                     fldGrpopv3M.setVisibility(View.VISIBLE);
                     cre0503a.clearCheck();
                     fldGrpipv.setVisibility(View.GONE);
-                    fldGrpopv3M.setVisibility(View.VISIBLE);
+                    fldGrpipvM.setVisibility(View.VISIBLE);
                     cre0504a.clearCheck();
                     fldGrpVitaminA.setVisibility(View.GONE);
                     fldGrpVitaminAM.setVisibility(View.VISIBLE);
@@ -921,10 +921,10 @@ public class SectionBActivity extends Activity {
                 crb0401.setError(null);
             }
 
-            if (Integer.parseInt(crb0401.getText().toString()) < 0 || Integer.parseInt(crb0401.getText().toString()) > 5) {
+            if (Integer.parseInt(crb0401.getText().toString()) < 0 || Integer.parseInt(crb0401.getText().toString()) > 6) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.crb04) + getString(R.string.months), Toast.LENGTH_LONG).show();
-                crb0401.setError("Range is 0-5 Months");
-                Log.i(TAG, "crb0401: Range is 0-5 Months");
+                crb0401.setError("Range is 0-6 Months");
+                Log.i(TAG, "crb0401: Range is 0-6 Months");
                 return false;
             } else {
                 crb0401.setError(null);
@@ -1545,137 +1545,137 @@ public class SectionBActivity extends Activity {
                     cre0601a02.setError(null);
                 }
 
-            }
-
-            //============ BCG / Mother ==========
-            if (cre0201b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre02bcg), Toast.LENGTH_SHORT).show();
-                cre0201b02.setError("This data is Required!");
-                Log.i(TAG, "cre0201b: This data is Required!");
-                return false;
             } else {
-                cre0201b02.setError(null);
-            }
+                //============ BCG / Mother ==========
+                if (cre0201b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre02bcg), Toast.LENGTH_SHORT).show();
+                    cre0201b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0201b: This data is Required!");
+                    return false;
+                } else {
+                    cre0201b02.setError(null);
+                }
 
-            //============ Polio 0 / Mother ==========
-            if (cre0202b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre02polio), Toast.LENGTH_SHORT).show();
-                cre0202b02.setError("This data is Required!");
-                Log.i(TAG, "cre0202b: This data is Required!");
-                return false;
-            } else {
-                cre0202b02.setError(null);
-            }
+                //============ Polio 0 / Mother ==========
+                if (cre0202b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre02polio), Toast.LENGTH_SHORT).show();
+                    cre0202b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0202b: This data is Required!");
+                    return false;
+                } else {
+                    cre0202b02.setError(null);
+                }
 
-            //============ Penta 1 / Mother ==========
-            if (cre0301b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03penta), Toast.LENGTH_SHORT).show();
-                cre0301b02.setError("This data is Required!");
-                Log.i(TAG, "cre0301b: This data is Required!");
-                return false;
-            } else {
-                cre0301b02.setError(null);
-            }
+                //============ Penta 1 / Mother ==========
+                if (cre0301b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03penta), Toast.LENGTH_SHORT).show();
+                    cre0301b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0301b: This data is Required!");
+                    return false;
+                } else {
+                    cre0301b02.setError(null);
+                }
 
-            //============ PCV 1 / Mother ==========
-            if (cre0302b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03pcv), Toast.LENGTH_SHORT).show();
-                cre0302b02.setError("This data is Required!");
-                Log.i(TAG, "cre0302b: This data is Required!");
-                return false;
-            } else {
-                cre0302b02.setError(null);
-            }
+                //============ PCV 1 / Mother ==========
+                if (cre0302b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03pcv), Toast.LENGTH_SHORT).show();
+                    cre0302b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0302b: This data is Required!");
+                    return false;
+                } else {
+                    cre0302b02.setError(null);
+                }
 
-            //============ OPV 1 / Mother ==========
-            if (cre0303b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03opv), Toast.LENGTH_SHORT).show();
-                cre0303b02.setError("This data is Required!");
-                Log.i(TAG, "cre0303b: This data is Required!");
-                return false;
-            } else {
-                cre0303b02.setError(null);
-            }
+                //============ OPV 1 / Mother ==========
+                if (cre0303b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre03opv), Toast.LENGTH_SHORT).show();
+                    cre0303b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0303b: This data is Required!");
+                    return false;
+                } else {
+                    cre0303b02.setError(null);
+                }
 
-            //============ Penta 2 / Mother ==========
-            if (cre0401b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04penta), Toast.LENGTH_SHORT).show();
-                cre0401b02.setError("This data is Required!");
-                Log.i(TAG, "cre0401b: This data is Required!");
-                return false;
-            } else {
-                cre0401b02.setError(null);
-            }
+                //============ Penta 2 / Mother ==========
+                if (cre0401b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04penta), Toast.LENGTH_SHORT).show();
+                    cre0401b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0401b: This data is Required!");
+                    return false;
+                } else {
+                    cre0401b02.setError(null);
+                }
 
-            //============ PCV 2 / Mother ==========
-            if (cre0402b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04pcv), Toast.LENGTH_SHORT).show();
-                cre0402b02.setError("This data is Required!");
-                Log.i(TAG, "cre0402b: This data is Required!");
-                return false;
-            } else {
-                cre0402b02.setError(null);
-            }
+                //============ PCV 2 / Mother ==========
+                if (cre0402b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04pcv), Toast.LENGTH_SHORT).show();
+                    cre0402b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0402b: This data is Required!");
+                    return false;
+                } else {
+                    cre0402b02.setError(null);
+                }
 
-            //============ OPV 2 / Mother ==========
-            if (cre0403b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04opv), Toast.LENGTH_SHORT).show();
-                cre0403b02.setError("This data is Required!");
-                Log.i(TAG, "cre0403b: This data is Required!");
-                return false;
-            } else {
-                cre0403b02.setError(null);
-            }
+                //============ OPV 2 / Mother ==========
+                if (cre0403b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre04opv), Toast.LENGTH_SHORT).show();
+                    cre0403b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0403b: This data is Required!");
+                    return false;
+                } else {
+                    cre0403b02.setError(null);
+                }
 
-            //============ Penta 3 / Mother ==========
-            if (cre0501b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05penta), Toast.LENGTH_SHORT).show();
-                cre0501b02.setError("This data is Required!");
-                Log.i(TAG, "cre0501b: This data is Required!");
-                return false;
-            } else {
-                cre0501b02.setError(null);
-            }
+                //============ Penta 3 / Mother ==========
+                if (cre0501b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05penta), Toast.LENGTH_SHORT).show();
+                    cre0501b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0501b: This data is Required!");
+                    return false;
+                } else {
+                    cre0501b02.setError(null);
+                }
 
-            //============ PCV / Mother ==========
-            if (cre0502b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05pcv), Toast.LENGTH_SHORT).show();
-                cre0502b02.setError("This data is Required!");
-                Log.i(TAG, "cre0502b: This data is Required!");
-                return false;
-            } else {
-                cre0502b02.setError(null);
-            }
+                //============ PCV / Mother ==========
+                if (cre0502b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05pcv), Toast.LENGTH_SHORT).show();
+                    cre0502b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0502b: This data is Required!");
+                    return false;
+                } else {
+                    cre0502b02.setError(null);
+                }
 
 
-            //============ OPV 3 / Mother ==========
-            if (cre0503b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05opv), Toast.LENGTH_SHORT).show();
-                cre0503b02.setError("This data is Required!");
-                Log.i(TAG, "cre0503b: This data is Required!");
-                return false;
-            } else {
-                cre0503b02.setError(null);
-            }
+                //============ OPV 3 / Mother ==========
+                if (cre0503b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05opv), Toast.LENGTH_SHORT).show();
+                    cre0503b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0503b: This data is Required!");
+                    return false;
+                } else {
+                    cre0503b02.setError(null);
+                }
 
-            //============ IPV / Mother ==========
-            if (cre0504b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05ipv), Toast.LENGTH_SHORT).show();
-                cre0504b02.setError("This data is Required!");
-                Log.i(TAG, "cre0504b: This data is Required!");
-                return false;
-            } else {
-                cre0504b02.setError(null);
-            }
+                //============ IPV / Mother ==========
+                if (cre0504b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre05ipv), Toast.LENGTH_SHORT).show();
+                    cre0504b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0504b: This data is Required!");
+                    return false;
+                } else {
+                    cre0504b02.setError(null);
+                }
 
-            //============ Vitamin A / Mother ==========
-            if (cre0601b.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre06Vitamin), Toast.LENGTH_SHORT).show();
-                cre0601b02.setError("This data is Required!");
-                Log.i(TAG, "cre0601b: This data is Required!");
-                return false;
-            } else {
-                cre0601b02.setError(null);
+                //============ Vitamin A / Mother ==========
+                if (cre0601b.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre06Vitamin), Toast.LENGTH_SHORT).show();
+                    cre0601b02.setError("This data is Required!");
+                    Log.i(TAG, "cre0601b: This data is Required!");
+                    return false;
+                } else {
+                    cre0601b02.setError(null);
+                }
             }
         }
 

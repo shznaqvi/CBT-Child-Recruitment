@@ -56,13 +56,26 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/crh0101" />
 
+            <!--<RadioButton
+                android:id="@+id/crh0102"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/crh0102" />-->
+
+            <TextView
+                style="@style/helperText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crhht" />
+
+
             <RadioButton
                 android:id="@+id/crh0102"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/crh0102" />
-
 
             <RadioButton
                 android:id="@+id/crh0103"
@@ -71,13 +84,12 @@
                 android:layout_marginBottom="1dp"
                 android:text="@string/crh0103" />
 
-
             <RadioButton
                 android:id="@+id/crh0196"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text="@string/other" />
+                android:text="@string/crh0104" />
 
         </RadioGroup>
 
