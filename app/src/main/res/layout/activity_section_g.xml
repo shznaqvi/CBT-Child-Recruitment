@@ -1483,6 +1483,14 @@
                 android:text="@string/crg1311" />
 
             <RadioButton
+                android:id="@+id/crg1312"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/crg1312" />
+
+
+            <RadioButton
                 android:id="@+id/crg1396"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

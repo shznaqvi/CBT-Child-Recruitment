@@ -356,6 +356,8 @@ public class SectionGActivity extends Activity {
     RadioButton crg1310;
     @BindView(R.id.crg1311)
     RadioButton crg1311;
+    @BindView(R.id.crg1312)
+    RadioButton crg1312;
     @BindView(R.id.crg1396)
     RadioButton crg1396;
     @BindView(R.id.crg1396x)
@@ -678,7 +680,6 @@ public class SectionGActivity extends Activity {
                     crg21c02.setEnabled(false);
                     crg21c02.setChecked(false);
 
-
                 } else {
                     crgGrp19.setVisibility(View.VISIBLE);
                     crgGrp22.setVisibility(View.VISIBLE);
@@ -897,6 +898,24 @@ public class SectionGActivity extends Activity {
             }
         });
 
+        crg1899.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crg1801.setVisibility(View.GONE);
+                    crg1801.setText(null);
+                    crg1802.setVisibility(View.GONE);
+                    crg1802.setText(null);
+                    crg1803.setVisibility(View.GONE);
+                    crg1803.setText(null);
+                } else {
+                    crg1801.setVisibility(View.VISIBLE);
+                    crg1802.setVisibility(View.VISIBLE);
+                    crg1803.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
     }
 
     @OnClick(R.id.btnNext)
@@ -949,14 +968,26 @@ public class SectionGActivity extends Activity {
 
         JSONObject sg = new JSONObject();
 
-        sg.put("crg01", crg0101.isChecked() ? "1" : crg0102.isChecked() ? "2" : crg0103.isChecked() ? "3" : crg0104.isChecked() ? "4" : crg0105.isChecked() ? "5" : crg0106.isChecked() ? "6" : crg0196.isChecked() ? "96" : "0");
+        sg.put("crg01", crg0101.isChecked() ? "1" : crg0102.isChecked() ? "2" : crg0103.isChecked() ? "3"
+                : crg0104.isChecked() ? "4" : crg0105.isChecked() ? "5" : crg0106.isChecked() ? "6"
+                : crg0196.isChecked() ? "96" : "0");
         sg.put("crg96x", crg0196x.getText().toString());
-        sg.put("crg02", crg0201.isChecked() ? "1" : crg0202.isChecked() ? "2" : crg0203.isChecked() ? "3" : crg0204.isChecked() ? "4" : crg0205.isChecked() ? "5" : crg0206.isChecked() ? "6" : crg0207.isChecked() ? "7" : crg0208.isChecked() ? "8" : crg0209.isChecked() ? "9" : crg0210.isChecked() ? "10" : crg0211.isChecked() ? "11" : crg0212.isChecked() ? "12" : crg0213.isChecked() ? "13" : crg0214.isChecked() ? "14" : crg0215.isChecked() ? "15" : crg0296.isChecked() ? "96" : "0");
+        sg.put("crg02", crg0201.isChecked() ? "1" : crg0202.isChecked() ? "2" : crg0203.isChecked() ? "3"
+                : crg0204.isChecked() ? "4" : crg0205.isChecked() ? "5" : crg0206.isChecked() ? "6"
+                : crg0207.isChecked() ? "7" : crg0208.isChecked() ? "8" : crg0209.isChecked() ? "9"
+                : crg0210.isChecked() ? "10" : crg0211.isChecked() ? "11" : crg0212.isChecked() ? "12"
+                : crg0213.isChecked() ? "13" : crg0214.isChecked() ? "14" : crg0215.isChecked() ? "15"
+                : crg0296.isChecked() ? "96" : "0");
         sg.put("crg0296x", crg0296x.getText().toString());
         sg.put("crg03", crg0301.isChecked() ? "1" : crg0302.isChecked() ? "2" : "0");
-        sg.put("crg04", crg0401.isChecked() ? "1" : crg0402.isChecked() ? "2" : crg0403.isChecked() ? "3" : crg0404.isChecked() ? "4" : crg0405.isChecked() ? "5" : crg0406.isChecked() ? "6" : crg0496.isChecked() ? "96" : "0");
+        sg.put("crg04", crg0401.isChecked() ? "1" : crg0402.isChecked() ? "2" : crg0403.isChecked() ? "3"
+                : crg0404.isChecked() ? "4" : crg0405.isChecked() ? "5" : crg0406.isChecked() ? "6"
+                : crg0496.isChecked() ? "96" : "0");
         sg.put("crg04x", crg0496x.getText().toString());
-        sg.put("crg05", crg0501.isChecked() ? "1" : crg0502.isChecked() ? "2" : crg0503.isChecked() ? "3" : crg0504.isChecked() ? "4" : crg0505.isChecked() ? "5" : crg0506.isChecked() ? "6" : crg0507.isChecked() ? "7" : crg0508.isChecked() ? "8" : crg0509.isChecked() ? "9" : crg0596.isChecked() ? "96" : "0");
+        sg.put("crg05", crg0501.isChecked() ? "1" : crg0502.isChecked() ? "2" : crg0503.isChecked() ? "3"
+                : crg0504.isChecked() ? "4" : crg0505.isChecked() ? "5" : crg0506.isChecked() ? "6"
+                : crg0507.isChecked() ? "7" : crg0508.isChecked() ? "8" : crg0509.isChecked() ? "9"
+                : crg0596.isChecked() ? "96" : "0");
         sg.put("crg0596x", crg0596x.getText().toString());
         sg.put("crg06", crg0601.isChecked() ? "1" : crg0602.isChecked() ? "2" : "0");
         sg.put("crg07", crg07.getText().toString());
@@ -979,16 +1010,29 @@ public class SectionGActivity extends Activity {
         sg.put("crg0817", crg081701.isChecked() ? "1" : crg081702.isChecked() ? "2" : "0");
         sg.put("crg0818", crg081801.isChecked() ? "1" : crg081802.isChecked() ? "2" : "0");
         sg.put("crg0819", crg081901.isChecked() ? "1" : crg081902.isChecked() ? "2" : "0");
-        sg.put("crg09", crg0901.isChecked() ? "1" : crg0902.isChecked() ? "2" : crg0903.isChecked() ? "3" : crg0904.isChecked() ? "4" : crg0905.isChecked() ? "5" : crg0906.isChecked() ? "6" : crg0907.isChecked() ? "7" : crg0908.isChecked() ? "8" : crg0909.isChecked() ? "9" : crg0910.isChecked() ? "10" : crg0996.isChecked() ? "96" : "0");
+        sg.put("crg09", crg0901.isChecked() ? "1" : crg0902.isChecked() ? "2" : crg0903.isChecked() ? "3"
+                : crg0904.isChecked() ? "4" : crg0905.isChecked() ? "5" : crg0906.isChecked() ? "6"
+                : crg0907.isChecked() ? "7" : crg0908.isChecked() ? "8" : crg0909.isChecked() ? "9"
+                : crg0910.isChecked() ? "10" : crg0996.isChecked() ? "96" : "0");
         sg.put("crg0996x", crg0996x.getText().toString());
         sg.put("crg10", crg1001.isChecked() ? "1" : crg1002.isChecked() ? "2" : crg1003.isChecked() ? "3" : "0");
         sg.put("crg1096x", crg1096x.getText().toString());
         sg.put("crg11", crg1101.isChecked() ? "1" : crg1102.isChecked() ? "2" : "0");
-        sg.put("crg12", crg1201.isChecked() ? "1" : crg1202.isChecked() ? "2" : crg1203.isChecked() ? "3" : crg1204.isChecked() ? "4" : crg1205.isChecked() ? "5" : crg1206.isChecked() ? "6" : crg1207.isChecked() ? "7" : crg1208.isChecked() ? "8" : crg1209.isChecked() ? "9" : crg1210.isChecked() ? "10" : crg1211.isChecked() ? "11" : crg1296.isChecked() ? "96" : "0");
+        sg.put("crg12", crg1201.isChecked() ? "1" : crg1202.isChecked() ? "2" : crg1203.isChecked() ? "3"
+                : crg1204.isChecked() ? "4" : crg1205.isChecked() ? "5" : crg1206.isChecked() ? "6"
+                : crg1207.isChecked() ? "7" : crg1208.isChecked() ? "8" : crg1209.isChecked() ? "9"
+                : crg1210.isChecked() ? "10" : crg1211.isChecked() ? "11" : crg1296.isChecked() ? "96" : "0");
         sg.put("crg1296x", crg1296x.getText().toString());
-        sg.put("crg13", crg1301.isChecked() ? "1" : crg1302.isChecked() ? "2" : crg1303.isChecked() ? "3" : crg1304.isChecked() ? "4" : crg1305.isChecked() ? "5" : crg1306.isChecked() ? "6" : crg1307.isChecked() ? "7" : crg1308.isChecked() ? "8" : crg1309.isChecked() ? "9" : crg1310.isChecked() ? "10" : crg1311.isChecked() ? "11" : crg1396.isChecked() ? "96" : "0");
+        sg.put("crg13", crg1301.isChecked() ? "1" : crg1302.isChecked() ? "2" : crg1303.isChecked() ? "3"
+                : crg1304.isChecked() ? "4" : crg1305.isChecked() ? "5" : crg1306.isChecked() ? "6"
+                : crg1307.isChecked() ? "7" : crg1308.isChecked() ? "8" : crg1309.isChecked() ? "9"
+                : crg1310.isChecked() ? "10" : crg1311.isChecked() ? "11" : crg1312.isChecked() ? "12"
+                : crg1396.isChecked() ? "96" : "0");
         sg.put("crg1396x", crg1396x.getText().toString());
-        sg.put("crg14", crg1401.isChecked() ? "1" : crg1402.isChecked() ? "2" : crg1403.isChecked() ? "3" : crg1404.isChecked() ? "4" : crg1405.isChecked() ? "5" : crg1406.isChecked() ? "6" : crg1407.isChecked() ? "7" : crg1408.isChecked() ? "8" : crg1409.isChecked() ? "9" : crg1410.isChecked() ? "10" : crg1411.isChecked() ? "11" : crg1496.isChecked() ? "96" : "0");
+        sg.put("crg14", crg1401.isChecked() ? "1" : crg1402.isChecked() ? "2" : crg1403.isChecked() ? "3"
+                : crg1404.isChecked() ? "4" : crg1405.isChecked() ? "5" : crg1406.isChecked() ? "6"
+                : crg1407.isChecked() ? "7" : crg1408.isChecked() ? "8" : crg1409.isChecked() ? "9"
+                : crg1410.isChecked() ? "10" : crg1411.isChecked() ? "11" : crg1496.isChecked() ? "96" : "0");
         sg.put("crg1496x", crg1496x.getText().toString());
         sg.put("crg15", crg15.getText().toString());
         sg.put("crg16a", crg16a01.isChecked() ? "1" : crg16a02.isChecked() ? "2" : "0");
@@ -1013,9 +1057,21 @@ public class SectionGActivity extends Activity {
         sg.put("crg2005", crg2005.getText().toString());
         sg.put("crg2006", crg2006.getText().toString());
         sg.put("crg2007", crg2006.getText().toString());
-        sg.put("crg21a", crg21a01.isChecked() ? "1" : crg21a02.isChecked() ? "2" : crg21a03.isChecked() ? "3" : crg21a04.isChecked() ? "4" : crg21a05.isChecked() ? "5" : crg21a06.isChecked() ? "6" : crg21a07.isChecked() ? "7" : crg21a08.isChecked() ? "8" : crg21a09.isChecked() ? "9" : crg21a10.isChecked() ? "10" : crg21a11.isChecked() ? "11" : crg21a12.isChecked() ? "12" : crg21a13.isChecked() ? "13" : crg21a96.isChecked() ? "96" : "0");
-        sg.put("crg21b", crg21b01.isChecked() ? "1" : crg21b02.isChecked() ? "2" : crg21b03.isChecked() ? "3" : crg21b04.isChecked() ? "4" : crg21b05.isChecked() ? "5" : crg21b06.isChecked() ? "6" : crg21b07.isChecked() ? "7" : crg21b08.isChecked() ? "8" : crg21b09.isChecked() ? "9" : crg21b10.isChecked() ? "10" : crg21b11.isChecked() ? "11" : crg21b12.isChecked() ? "12" : crg21b13.isChecked() ? "13" : crg21b96.isChecked() ? "96" : "0");
-        sg.put("crg21c", crg21c01.isChecked() ? "1" : crg21c02.isChecked() ? "2" : crg21c03.isChecked() ? "3" : crg21c04.isChecked() ? "4" : crg21c05.isChecked() ? "5" : crg21c06.isChecked() ? "6" : crg21c07.isChecked() ? "7" : crg21c08.isChecked() ? "8" : crg21c09.isChecked() ? "9" : crg21c10.isChecked() ? "10" : crg21c11.isChecked() ? "11" : crg21c12.isChecked() ? "12" : crg21c13.isChecked() ? "13" : crg21c96.isChecked() ? "96" : "0");
+        sg.put("crg21a", crg21a01.isChecked() ? "1" : crg21a02.isChecked() ? "2" : crg21a03.isChecked() ? "3"
+                : crg21a04.isChecked() ? "4" : crg21a05.isChecked() ? "5" : crg21a06.isChecked() ? "6"
+                : crg21a07.isChecked() ? "7" : crg21a08.isChecked() ? "8" : crg21a09.isChecked() ? "9"
+                : crg21a10.isChecked() ? "10" : crg21a11.isChecked() ? "11" : crg21a12.isChecked() ? "12"
+                : crg21a13.isChecked() ? "13" : crg21a96.isChecked() ? "96" : "0");
+        sg.put("crg21b", crg21b01.isChecked() ? "1" : crg21b02.isChecked() ? "2" : crg21b03.isChecked() ? "3"
+                : crg21b04.isChecked() ? "4" : crg21b05.isChecked() ? "5" : crg21b06.isChecked() ? "6"
+                : crg21b07.isChecked() ? "7" : crg21b08.isChecked() ? "8" : crg21b09.isChecked() ? "9"
+                : crg21b10.isChecked() ? "10" : crg21b11.isChecked() ? "11" : crg21b12.isChecked() ? "12"
+                : crg21b13.isChecked() ? "13" : crg21b96.isChecked() ? "96" : "0");
+        sg.put("crg21c", crg21c01.isChecked() ? "1" : crg21c02.isChecked() ? "2" : crg21c03.isChecked() ? "3"
+                : crg21c04.isChecked() ? "4" : crg21c05.isChecked() ? "5" : crg21c06.isChecked() ? "6"
+                : crg21c07.isChecked() ? "7" : crg21c08.isChecked() ? "8" : crg21c09.isChecked() ? "9"
+                : crg21c10.isChecked() ? "10" : crg21c11.isChecked() ? "11" : crg21c12.isChecked() ? "12"
+                : crg21c13.isChecked() ? "13" : crg21c96.isChecked() ? "96" : "0");
         sg.put("crg22", crg2201.isChecked() ? "1" : crg2202.isChecked() ? "2" : "0");
         sg.put("crg22a", crg22a01.isChecked() ? "1" : crg22a02.isChecked() ? "2" : crg22a03.isChecked() ? "3" : "0");
 
@@ -1582,7 +1638,8 @@ public class SectionGActivity extends Activity {
         if (crg1701.isChecked()) {
             // =================== Q1801 ====================
 
-            if ((crg1801.getText().toString().isEmpty() && crg1802.getText().toString().isEmpty() && crg1803.getText().toString().isEmpty())
+            if ((crg1801.getText().toString().isEmpty() && crg1802.getText().toString().isEmpty()
+                    && crg1803.getText().toString().isEmpty())
                     && !crg1899.isChecked()) {
                 Toast.makeText(this, "ERROR(empty)" + getString(R.string.crg18), Toast.LENGTH_SHORT).show();
                 crg1899.setError("This data is required");
@@ -1598,7 +1655,7 @@ public class SectionGActivity extends Activity {
                         && Integer.parseInt(crg1803.getText().toString().isEmpty() ? "0" : crg1803.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crg18), Toast.LENGTH_SHORT).show();
                     crg1801.setError("Zero not allowed");
-                    Log.i(TAG, "crf18: Zero not allowed");
+                    Log.i(TAG, "crg18: Zero not allowed");
                     return false;
                 } else {
                     crg1801.setError(null);

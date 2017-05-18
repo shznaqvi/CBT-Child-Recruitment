@@ -67,12 +67,11 @@ public class MainActivity extends Activity {
     Map<String, String> tehsils, lhws;
     DatabaseHelper db;
     List<String> hfCodes;
-    private String rSumText = "";
-
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
     AlertDialog.Builder builder;
     String m_Text= "";
+    private String rSumText = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -303,7 +302,7 @@ public class MainActivity extends Activity {
     }
 
     public void openA(View v) {
-        Intent iA = new Intent(this, SectionHActivity.class);
+        Intent iA = new Intent(this, SectionAActivity.class);
         startActivity(iA);
     }
 
@@ -312,20 +311,20 @@ public class MainActivity extends Activity {
         startActivity(iB);
     }
 
-    /*public void openC(View v) {
-        Intent iC = new Intent(this, SectionCActivity.class);
+    public void openC(View v) {
+        Intent iC = new Intent(this, SectionBActivity.class);
         startActivity(iC);
     }
 
     public void openD(View v) {
-        Intent iD = new Intent(this, SectionDActivity.class);
+        Intent iD = new Intent(this, SectionBActivity.class);
         startActivity(iD);
     }
 
     public void openE(View v) {
-        Intent iD = new Intent(this, SectionEActivity.class);
+        Intent iD = new Intent(this, SectionBActivity.class);
         startActivity(iD);
-*/    //}
+    }
 
     public void openF(View v) {
         Intent iD = new Intent(this, SectionFActivity.class);
@@ -338,7 +337,7 @@ public class MainActivity extends Activity {
     }*/
 
     public void openG(View v) {
-        Intent iG = new Intent(this, SectionGActivity.class);
+        Intent iG = new Intent(this, SectionMActivity.class);
         startActivity(iG);
     }
 

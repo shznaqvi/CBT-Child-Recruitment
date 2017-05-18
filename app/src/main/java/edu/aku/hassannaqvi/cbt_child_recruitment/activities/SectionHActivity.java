@@ -85,7 +85,6 @@ public class SectionHActivity extends Activity {
     RadioButton crh0504;
     @BindView(R.id.crh0505)
     RadioButton crh0505;
-
     @BindView(R.id.crh0601)
     CheckBox crh0601;
     @BindView(R.id.crh0602)

@@ -816,6 +816,16 @@ public class SectionAActivity extends Activity {
                     cra17.setError(null);
                 }
 
+                if (Integer.parseInt(cra17.getText().toString().isEmpty() ? "0" : cra17.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
+                    cra17.setError("Can not be zero!");
+
+                    Log.i(TAG, "cra17: Can not be zero");
+                    return false;
+                } else {
+                    cra17.setError(null);
+                }
+
                 //================ Q18===============
                 if (cra18.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra18), Toast.LENGTH_SHORT).show();
@@ -827,15 +837,7 @@ public class SectionAActivity extends Activity {
                     cra18.setError(null);
                 }
 
-                if (Integer.parseInt(cra18.getText().toString().isEmpty() ? "0" : cra18.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra18), Toast.LENGTH_SHORT).show();
-                    cra18.setError("Can not be zero!");
 
-                    Log.i(TAG, "cra18: Can not be zero");
-                    return false;
-                } else {
-                    cra18.setError(null);
-                }
 
                 //================ Q19===============
                 if (cra19.getText().toString().isEmpty()) {
