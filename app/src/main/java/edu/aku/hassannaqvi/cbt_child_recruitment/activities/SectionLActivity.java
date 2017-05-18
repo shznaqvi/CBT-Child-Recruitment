@@ -272,7 +272,7 @@ public class SectionLActivity extends Activity {
                     crl0902.setText(null);
                     crl0998.setChecked(false);
 
-                } else {
+                } else if (!crl0998.isChecked()) {
                     crl0901.setVisibility(View.VISIBLE);
                     crl0902.setVisibility(View.VISIBLE);
                 }
@@ -288,7 +288,7 @@ public class SectionLActivity extends Activity {
                     crl0902.setVisibility(View.GONE);
                     crl0902.setText(null);
                     crl0997.setChecked(false);
-                } else {
+                } else if (!crl0997.isChecked()) {
                     crl0901.setVisibility(View.VISIBLE);
                     crl0902.setVisibility(View.VISIBLE);
                 }
@@ -585,11 +585,11 @@ public class SectionLActivity extends Activity {
                 if ((crl0901.getText().toString().isEmpty() && crl0902.getText().toString().isEmpty())
                         && !crl0997.isChecked() && !crl0998.isChecked()) {
                     Toast.makeText(this, "ERROR(empty)" + getString(R.string.crl09), Toast.LENGTH_SHORT).show();
-                    crl0998.setError("This data is required");
+                    crl0901.setError("This data is required");
                     Log.d(TAG, "crl09: This data is required  ");
                     return false;
                 } else {
-                    crl0998.setError(null);
+                    crl0901.setError(null);
                 }
 
                 if (!crl0997.isChecked() || !crl0998.isChecked()) {

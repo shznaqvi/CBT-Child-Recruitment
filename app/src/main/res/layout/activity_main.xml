@@ -246,6 +246,46 @@
                 android:onClick="openG"
                 android:text="Section G" />
 
+
+            <Button
+                android:id="@+id/openH"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openH"
+                android:text="Section H" />
+
+
+            <Button
+                android:id="@+id/openK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openK"
+                android:text="Section K" />
+
+
+            <Button
+                android:id="@+id/openL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openL"
+                android:text="Section L" />
+
+
+            <Button
+                android:id="@+id/openM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openM"
+                android:text="Section M" />
+
             <Button
                 android:id="@+id/openEnd"
                 android:layout_width="match_parent"

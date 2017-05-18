@@ -1037,7 +1037,15 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         } else {
             crf0899.setError(null);
         }
-
+        //================ Q 7-8 Skip check===========
+        if (is07AllNo() && crf0801.isChecked()) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.crf07a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
+            crf0801.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.crf08));
+            Log.i(TAG, "crf07: This data is Required!");
+            return false;
+        } else {
+            crf0801.setError(null);
+        }
         if (crf0801.isChecked()) {
             //============ Q 9 ==========
             if (crf09num.getText().toString().isEmpty() && !crf0999.isChecked()) {
@@ -1142,17 +1150,6 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
 
         }
 
-
-
-        //================ Q 7 Skip check===========
-        if (is07AllNo() && crf0801.isChecked()) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.crf07a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
-            crf0801.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.crf08));
-            Log.i(TAG, "crf07: This data is Required!");
-            return false;
-        } else {
-            crf0801.setError(null);
-        }
 
         return true;
 

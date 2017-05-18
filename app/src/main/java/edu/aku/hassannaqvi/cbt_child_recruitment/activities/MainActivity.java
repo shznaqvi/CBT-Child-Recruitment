@@ -337,8 +337,28 @@ public class MainActivity extends Activity {
     }*/
 
     public void openG(View v) {
-        Intent iG = new Intent(this, SectionMActivity.class);
+        Intent iG = new Intent(this, SectionGActivity.class);
         startActivity(iG);
+    }
+
+    public void openH(View v) {
+        Intent iH = new Intent(this, SectionHActivity.class);
+        startActivity(iH);
+    }
+
+    public void openK(View v) {
+        Intent iK = new Intent(this, SectionKActivity.class);
+        startActivity(iK);
+    }
+
+    public void openL(View v) {
+        Intent iL = new Intent(this, SectionLActivity.class);
+        startActivity(iL);
+    }
+
+    public void openM(View v) {
+        Intent iM = new Intent(this, SectionMActivity.class);
+        startActivity(iM);
     }
 
     public void openEnd(View v) {
