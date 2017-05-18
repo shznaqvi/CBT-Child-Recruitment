@@ -337,7 +337,7 @@ public class MainActivity extends Activity {
     }*/
 
     public void openG(View v) {
-        Intent iG = new Intent(this, SectionLActivity.class);
+        Intent iG = new Intent(this, SectionMActivity.class);
         startActivity(iG);
     }
 
