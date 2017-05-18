@@ -567,6 +567,12 @@ public class SectionMActivity extends AppCompatActivity {
             R.id.crn07dod1, R.id.crn07dod2, R.id.crn08dob1, R.id.crn08dob2, R.id.crn08dod1, R.id.crn08dod2})
     List<DatePickerInputEditText> crndates;
 
+    @BindViews({R.id.crn01dod1, R.id.crn01dod2, R.id.crn02dod1, R.id.crn02dod2,
+            R.id.crn04dod1, R.id.crn04dod2, R.id.crn05dod1,
+            R.id.crn05dod2, R.id.crn06dod1, R.id.crn06dod2,
+            R.id.crn07dod1, R.id.crn07dod2, R.id.crn08dod1, R.id.crn08dod2})
+    List<DatePickerInputEditText> crndateofDeath;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -581,8 +587,14 @@ public class SectionMActivity extends AppCompatActivity {
         for (DatePickerInputEditText de : crndates) {
             de.setManager(getSupportFragmentManager());
             de.setMaxDate(dateToday);
+        }
+
+        for (DatePickerInputEditText de : crndateofDeath) {
+            de.setManager(getSupportFragmentManager());
+            de.setMaxDate(dateToday);
             de.setMinDate(maxDateyear);
         }
+
 
 
         crn01dod1.setOnClickListener(new View.OnClickListener() {
@@ -1702,7 +1714,16 @@ public class SectionMActivity extends AppCompatActivity {
             crm01a.setError(null);
         }
 
-        if (Integer.parseInt(crm01a.getText().toString().isEmpty() ? "0" : crm01a.getText().toString()) > 0) {
+        if (Integer.valueOf(crm01a.getText().toString()) < 0 || Integer.valueOf(crm01a.getText().toString()) > 7) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm01a.setError("Range is 0 - 7 days");
+            Log.i(TAG, "crm01a: This data is Required!");
+            return false;
+        } else {
+            crm01a.setError(null);
+        }
+
+        if (Integer.valueOf(crm01a.getText().toString()) > 0) {
             if (crm01b.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                 crm01b10.setError("This data is Required!");
@@ -1711,8 +1732,8 @@ public class SectionMActivity extends AppCompatActivity {
             } else {
                 crm01b10.setError(null);
             }
-
         }
+
 
         //======================= Q 2 ===============
         if (crm02a.getText().toString().isEmpty()) {
@@ -1724,7 +1745,16 @@ public class SectionMActivity extends AppCompatActivity {
             crm02a.setError(null);
         }
 
-        if (Integer.parseInt(crm02a.getText().toString().isEmpty() ? "0" : crm02a.getText().toString()) > 0) {
+        if (Integer.valueOf(crm02a.getText().toString()) < 0 || Integer.valueOf(crm02a.getText().toString()) > 7) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm02a.setError("Range is 0 - 7 days");
+            Log.i(TAG, "crm02a: This data is Required!");
+            return false;
+        } else {
+            crm02a.setError(null);
+        }
+
+        if (Integer.valueOf(crm02a.getText().toString()) > 0) {
             if (crm02b.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                 crm02b10.setError("This data is Required!");
@@ -1736,6 +1766,7 @@ public class SectionMActivity extends AppCompatActivity {
 
         }
 
+
         //======================= Q 3 ===============
         if (crm03a.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
@@ -1746,7 +1777,16 @@ public class SectionMActivity extends AppCompatActivity {
             crm03a.setError(null);
         }
 
-        if (Integer.parseInt(crm03a.getText().toString().isEmpty() ? "0" : crm03a.getText().toString()) > 0) {
+        if (Integer.valueOf(crm03a.getText().toString()) < 0 || Integer.valueOf(crm03a.getText().toString()) > 7) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm03a.setError("Range is 0 - 7 days");
+            Log.i(TAG, "crm03a: This data is Required!");
+            return false;
+        } else {
+            crm03a.setError(null);
+        }
+
+        if (Integer.valueOf(crm03a.getText().toString()) > 0) {
             if (crm03b.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                 crm03b10.setError("This data is Required!");
@@ -1768,7 +1808,16 @@ public class SectionMActivity extends AppCompatActivity {
             crm04a.setError(null);
         }
 
-        if (Integer.parseInt(crm04a.getText().toString().isEmpty() ? "0" : crm01a.getText().toString()) > 0) {
+        if (Integer.valueOf(crm04a.getText().toString()) < 0 || Integer.valueOf(crm04a.getText().toString()) > 7) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm04a.setError("Range is 0 - 7 days");
+            Log.i(TAG, "crm04a: This data is Required!");
+            return false;
+        } else {
+            crm04a.setError(null);
+        }
+
+        if (Integer.valueOf(crm04a.getText().toString()) > 0) {
             if (crm04b.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                 crm04b10.setError("This data is Required!");
@@ -1788,7 +1837,16 @@ public class SectionMActivity extends AppCompatActivity {
                 crm041a.setError(null);
             }
 
-            if (Integer.parseInt(crm041a.getText().toString().isEmpty() ? "0" : crm041a.getText().toString()) > 0) {
+            if (Integer.valueOf(crm041a.getText().toString()) < 0 || Integer.valueOf(crm041a.getText().toString()) > 7) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm041a.setError("Range is 0 - 7 days");
+                Log.i(TAG, "crm01a: This data is Required!");
+                return false;
+            } else {
+                crm041a.setError(null);
+            }
+
+            if (Integer.valueOf(crm041a.getText().toString()) > 0) {
                 if (crm041b.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                     crm041b10.setError("This data is Required!");
@@ -1810,7 +1868,16 @@ public class SectionMActivity extends AppCompatActivity {
                 crm042a.setError(null);
             }
 
-            if (Integer.parseInt(crm042a.getText().toString().isEmpty() ? "0" : crm042a.getText().toString()) > 0) {
+            if (Integer.valueOf(crm042a.getText().toString()) < 0 || Integer.valueOf(crm042a.getText().toString()) > 7) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm042a.setError("Range is 0 - 7 days");
+                Log.i(TAG, "crm042a: This data is Required!");
+                return false;
+            } else {
+                crm042a.setError(null);
+            }
+
+            if (Integer.valueOf(crm042a.getText().toString()) > 0) {
                 if (crm042b.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                     crm042b10.setError("This data is Required!");
@@ -1832,7 +1899,16 @@ public class SectionMActivity extends AppCompatActivity {
                 crm043a.setError(null);
             }
 
-            if (Integer.parseInt(crm043a.getText().toString().isEmpty() ? "0" : crm043a.getText().toString()) > 0) {
+            if (Integer.valueOf(crm043a.getText().toString()) < 0 || Integer.valueOf(crm043a.getText().toString()) > 7) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm043a.setError("Range is 0 - 7 days");
+                Log.i(TAG, "crm043a: This data is Required!");
+                return false;
+            } else {
+                crm043a.setError(null);
+            }
+
+            if (Integer.valueOf(crm043a.getText().toString()) > 0) {
                 if (crm043b.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                     crm043b10.setError("This data is Required!");
@@ -1854,7 +1930,16 @@ public class SectionMActivity extends AppCompatActivity {
                 crm044a.setError(null);
             }
 
-            if (Integer.parseInt(crm044a.getText().toString().isEmpty() ? "0" : crm044a.getText().toString()) > 0) {
+            if (Integer.valueOf(crm044a.getText().toString()) < 0 || Integer.valueOf(crm044a.getText().toString()) > 7) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm044a.setError("Range is 0 - 7 days");
+                Log.i(TAG, "crm044a: This data is Required!");
+                return false;
+            } else {
+                crm044a.setError(null);
+            }
+
+            if (Integer.valueOf(crm044a.getText().toString()) > 0) {
                 if (crm044b.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                     crm044b10.setError("This data is Required!");
@@ -1878,7 +1963,16 @@ public class SectionMActivity extends AppCompatActivity {
             crm05a.setError(null);
         }
 
-        if (Integer.parseInt(crm05a.getText().toString().isEmpty() ? "0" : crm05a.getText().toString()) > 0) {
+        if (Integer.valueOf(crm05a.getText().toString()) < 0 || Integer.valueOf(crm05a.getText().toString()) > 7) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm05a.setError("Range is 0 - 7 days");
+            Log.i(TAG, "crm05a: This data is Required!");
+            return false;
+        } else {
+            crm05a.setError(null);
+        }
+
+        if (Integer.valueOf(crm05a.getText().toString()) > 0) {
             if (crm05b.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                 crm05b10.setError("This data is Required!");
@@ -1898,7 +1992,16 @@ public class SectionMActivity extends AppCompatActivity {
                 crm051a.setError(null);
             }
 
-            if (Integer.parseInt(crm051a.getText().toString().isEmpty() ? "0" : crm051a.getText().toString()) > 0) {
+            if (Integer.valueOf(crm051a.getText().toString()) < 0 || Integer.valueOf(crm051a.getText().toString()) > 7) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm051a.setError("Range is 0 - 7 days");
+                Log.i(TAG, "crm051a: This data is Required!");
+                return false;
+            } else {
+                crm051a.setError(null);
+            }
+
+            if (Integer.valueOf(crm051a.getText().toString()) > 0) {
                 if (crm051b.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                     crm051b10.setError("This data is Required!");
@@ -1920,7 +2023,17 @@ public class SectionMActivity extends AppCompatActivity {
                 crm052a.setError(null);
             }
 
-            if (Integer.parseInt(crm052a.getText().toString().isEmpty() ? "0" : crm052a.getText().toString()) > 0) {
+
+            if (Integer.valueOf(crm052a.getText().toString()) < 0 || Integer.valueOf(crm052a.getText().toString()) > 7) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm052a.setError("Range is 0 - 7 days");
+                Log.i(TAG, "crm052a: This data is Required!");
+                return false;
+            } else {
+                crm052a.setError(null);
+            }
+
+            if (Integer.valueOf(crm052a.getText().toString()) > 0) {
                 if (crm052b.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                     crm052b10.setError("This data is Required!");
@@ -1945,7 +2058,16 @@ public class SectionMActivity extends AppCompatActivity {
             crm06a.setError(null);
         }
 
-        if (Integer.parseInt(crm06a.getText().toString().isEmpty() ? "0" : crm06a.getText().toString()) > 0) {
+        if (Integer.valueOf(crm06a.getText().toString()) < 0 || Integer.valueOf(crm06a.getText().toString()) > 7) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm06a.setError("Range is 0 - 7 days");
+            Log.i(TAG, "crm06a: This data is Required!");
+            return false;
+        } else {
+            crm06a.setError(null);
+        }
+
+        if (Integer.valueOf(crm06a.getText().toString()) > 0) {
             if (crm06b.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                 crm06b10.setError("This data is Required!");
@@ -1965,7 +2087,16 @@ public class SectionMActivity extends AppCompatActivity {
                 crm061a.setError(null);
             }
 
-            if (Integer.parseInt(crm061a.getText().toString().isEmpty() ? "0" : crm061a.getText().toString()) > 0) {
+            if (Integer.valueOf(crm061a.getText().toString()) < 0 || Integer.valueOf(crm061a.getText().toString()) > 7) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+                crm061a.setError("Range is 0 - 7 days");
+                Log.i(TAG, "crm061a: This data is Required!");
+                return false;
+            } else {
+                crm061a.setError(null);
+            }
+
+            if (Integer.valueOf(crm061a.getText().toString()) > 0) {
                 if (crm061b.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                     crm061b10.setError("This data is Required!");
@@ -1990,7 +2121,16 @@ public class SectionMActivity extends AppCompatActivity {
             crm07a.setError(null);
         }
 
-        if (Integer.parseInt(crm07a.getText().toString().isEmpty() ? "0" : crm07a.getText().toString()) > 0) {
+        if (Integer.valueOf(crm07a.getText().toString()) < 0 || Integer.valueOf(crm07a.getText().toString()) > 7) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm07a.setError("Range is 0 - 7 days");
+            Log.i(TAG, "crm07a: This data is Required!");
+            return false;
+        } else {
+            crm07a.setError(null);
+        }
+
+        if (Integer.valueOf(crm07a.getText().toString()) > 0) {
             if (crm07b.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                 crm07b10.setError("This data is Required!");
@@ -2012,7 +2152,16 @@ public class SectionMActivity extends AppCompatActivity {
             crm08a.setError(null);
         }
 
-        if (Integer.parseInt(crm08a.getText().toString().isEmpty() ? "0" : crm08a.getText().toString()) > 0) {
+        if (Integer.valueOf(crm08a.getText().toString()) < 0 || Integer.valueOf(crm08a.getText().toString()) > 7) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm08a.setError("Range is 0 - 7 days");
+            Log.i(TAG, "crm08a: This data is Required!");
+            return false;
+        } else {
+            crm08a.setError(null);
+        }
+
+        if (Integer.valueOf(crm08a.getText().toString()) > 0) {
             if (crm08b.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                 crm08b10.setError("This data is Required!");
@@ -2034,7 +2183,16 @@ public class SectionMActivity extends AppCompatActivity {
             crm09a.setError(null);
         }
 
-        if (Integer.parseInt(crm09a.getText().toString().isEmpty() ? "0" : crm09a.getText().toString()) > 0) {
+        if (Integer.valueOf(crm09a.getText().toString()) < 0 || Integer.valueOf(crm09a.getText().toString()) > 7) {
+            Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crm01a), Toast.LENGTH_SHORT).show();
+            crm09a.setError("Range is 0 - 7 days");
+            Log.i(TAG, "crm09a: This data is Required!");
+            return false;
+        } else {
+            crm09a.setError(null);
+        }
+
+        if (Integer.valueOf(crm09a.getText().toString()) > 0) {
             if (crm09b.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crm01b), Toast.LENGTH_SHORT).show();
                 crm09b10.setError("This data is Required!");
@@ -2090,7 +2248,7 @@ public class SectionMActivity extends AppCompatActivity {
         } else {
             crn02s.setError(null);
         }
-        if (Integer.parseInt(crn02s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) == 1) {
+        if (Integer.valueOf(crn02s.getText().toString()) == 1) {
             if (crn02dod1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn02), Toast.LENGTH_SHORT).show();
                 crn02dod1.setError("This data is Required!");
@@ -2101,7 +2259,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         }
 
-        if (Integer.parseInt(crn02s.getText().toString().isEmpty() ? "0" : crn02s.getText().toString()) == 2) {
+        if (Integer.valueOf(crn02s.getText().toString()) == 2) {
             if (crn02dod2.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn02), Toast.LENGTH_SHORT).show();
                 crn02dod2.setError("This data is Required!");
@@ -2123,7 +2281,7 @@ public class SectionMActivity extends AppCompatActivity {
             crn03s.setError(null);
         }
 
-        if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 1) {
+        if (Integer.valueOf(crn03s.getText().toString()) == 1) {
             if (crn03dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn03), Toast.LENGTH_SHORT).show();
                 crn03dob1.setError("This data is Required!");
@@ -2134,7 +2292,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         }
 
-        if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 2) {
+        if (Integer.valueOf(crn03s.getText().toString()) == 2) {
             if (crn03dob2.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn03), Toast.LENGTH_SHORT).show();
                 crn03dob2.setError("This data is Required!");
@@ -2145,7 +2303,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         }
 
-        if (Integer.parseInt(crn03s.getText().toString().isEmpty() ? "0" : crn03s.getText().toString()) == 3) {
+        if (Integer.valueOf(crn03s.getText().toString()) == 3) {
             if (crn03dob3.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn03), Toast.LENGTH_SHORT).show();
                 crn03dob3.setError("This data is Required!");
@@ -2167,7 +2325,7 @@ public class SectionMActivity extends AppCompatActivity {
             crn04s.setError(null);
         }
 
-        if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) == 1) {
+        if (Integer.valueOf(crn04s.getText().toString()) == 1) {
             if (crn04dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn04), Toast.LENGTH_SHORT).show();
                 crn04dob1.setError("This data is Required!");
@@ -2187,7 +2345,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         }
 
-        if (Integer.parseInt(crn04s.getText().toString().isEmpty() ? "0" : crn04s.getText().toString()) == 2) {
+        if (Integer.valueOf(crn04s.getText().toString()) == 2) {
             if (crn04dob2.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn04), Toast.LENGTH_SHORT).show();
                 crn04dob2.setError("This data is Required!");
@@ -2219,7 +2377,7 @@ public class SectionMActivity extends AppCompatActivity {
             crn05s.setError(null);
         }
 
-        if (Integer.parseInt(crn05s.getText().toString().isEmpty() ? "0" : crn05s.getText().toString()) == 1) {
+        if (Integer.valueOf(crn05s.getText().toString()) == 1) {
             if (crn05dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn05), Toast.LENGTH_SHORT).show();
                 crn05dob1.setError("This data is Required!");
@@ -2239,7 +2397,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         }
 
-        if (Integer.parseInt(crn05s.getText().toString().isEmpty() ? "0" : crn05s.getText().toString()) == 2) {
+        if (Integer.valueOf(crn05s.getText().toString()) == 2) {
             if (crn05dob2.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn05), Toast.LENGTH_SHORT).show();
                 crn05dob2.setError("This data is Required!");
@@ -2270,7 +2428,7 @@ public class SectionMActivity extends AppCompatActivity {
             crn06s.setError(null);
         }
 
-        if (Integer.parseInt(crn06s.getText().toString().isEmpty() ? "0" : crn06s.getText().toString()) == 1) {
+        if (Integer.valueOf(crn06s.getText().toString()) == 1) {
             if (crn04dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn06), Toast.LENGTH_SHORT).show();
                 crn06dob1.setError("This data is Required!");
@@ -2290,7 +2448,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         }
 
-        if (Integer.parseInt(crn06s.getText().toString().isEmpty() ? "0" : crn06s.getText().toString()) == 2) {
+        if (Integer.valueOf(crn06s.getText().toString()) == 2) {
             if (crn06dob2.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn06), Toast.LENGTH_SHORT).show();
                 crn06dob2.setError("This data is Required!");
@@ -2321,7 +2479,7 @@ public class SectionMActivity extends AppCompatActivity {
             crn07s.setError(null);
         }
 
-        if (Integer.parseInt(crn07s.getText().toString().isEmpty() ? "0" : crn07s.getText().toString()) == 1) {
+        if (Integer.valueOf(crn07s.getText().toString()) == 1) {
             if (crn07dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn07), Toast.LENGTH_SHORT).show();
                 crn07dob1.setError("This data is Required!");
@@ -2341,7 +2499,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         }
 
-        if (Integer.parseInt(crn07s.getText().toString().isEmpty() ? "0" : crn07s.getText().toString()) == 2) {
+        if (Integer.valueOf(crn07s.getText().toString()) == 2) {
             if (crn07dob2.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn07), Toast.LENGTH_SHORT).show();
                 crn07dob2.setError("This data is Required!");
@@ -2372,7 +2530,7 @@ public class SectionMActivity extends AppCompatActivity {
             crn08s.setError(null);
         }
 
-        if (Integer.parseInt(crn08s.getText().toString().isEmpty() ? "0" : crn08s.getText().toString()) == 1) {
+        if (Integer.valueOf(crn08s.getText().toString()) == 1) {
             if (crn08dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn08), Toast.LENGTH_SHORT).show();
                 crn08dob1.setError("This data is Required!");
@@ -2392,7 +2550,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         }
 
-        if (Integer.parseInt(crn08s.getText().toString().isEmpty() ? "0" : crn08s.getText().toString()) == 2) {
+        if (Integer.valueOf(crn08s.getText().toString()) == 2) {
             if (crn08dob2.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn08), Toast.LENGTH_SHORT).show();
                 crn08dob2.setError("This data is Required!");

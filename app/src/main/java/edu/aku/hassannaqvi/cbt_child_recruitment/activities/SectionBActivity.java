@@ -413,6 +413,7 @@ public class SectionBActivity extends Activity {
                 } else {
                     crbGrp07.setVisibility(View.GONE);
                     crb0801.setText(null);
+                    crb0899.setChecked(false);
 
                 }
             }
@@ -1052,10 +1053,10 @@ public class SectionBActivity extends Activity {
                     return false;
                 } else {
                     crc01m1.setError(null);
-                    if (Double.parseDouble(crc01m1.getText().toString()) < 38.0 || Double.parseDouble(crc01m1.getText().toString()) > 139.0) {
+                    if (Double.parseDouble(crc01m1.getText().toString()) < 38.0 || Double.parseDouble(crc01m1.getText().toString()) > 70.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                        crc01m1.setError("Invalid: Range 38.0 - 139.0");
-                        Log.i(TAG, "crc01m1: Invalid Range 38.0 - 139.0");
+                        crc01m1.setError("Invalid: Range 38.0 - 70.0");
+                        Log.i(TAG, "crc01m1: Invalid Range 38.0 - 70.0");
                         return false;
                     } else {
                         crc01m1.setError(null);
@@ -1085,10 +1086,10 @@ public class SectionBActivity extends Activity {
                     return false;
                 } else {
                     crc01m2.setError(null);
-                    if (Double.parseDouble(crc01m2.getText().toString()) < 38.0 || Double.parseDouble(crc01m2.getText().toString()) > 139.0) {
+                    if (Double.parseDouble(crc01m2.getText().toString()) < 38.0 || Double.parseDouble(crc01m2.getText().toString()) > 70.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                        crc01m2.setError("Invalid: Range 38.0 - 139.0");
-                        Log.i(TAG, "crc01m2: Invalid Range 38.0 - 139.0");
+                        crc01m2.setError("Invalid: Range 38.0 - 70.0");
+                        Log.i(TAG, "crc01m2: Invalid Range 38.0 - 70.0");
                         return false;
                     } else {
                         crc01m2.setError(null);
@@ -1119,10 +1120,10 @@ public class SectionBActivity extends Activity {
                     return false;
                 } else {
                     crc01m3.setError(null);
-                    if (Double.parseDouble(crc01m3.getText().toString()) < 38.0 || Double.parseDouble(crc01m3.getText().toString()) > 139.0) {
+                    if (Double.parseDouble(crc01m3.getText().toString()) < 38.0 || Double.parseDouble(crc01m3.getText().toString()) > 70.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                        crc01m3.setError("Invalid: Range 38.0 - 139.0");
-                        Log.i(TAG, "crc01m3: Invalid Range 38.0 - 139.0");
+                        crc01m3.setError("Invalid: Range 38.0 - 70.0");
+                        Log.i(TAG, "crc01m3: Invalid Range 38.0 - 70.0");
                         return false;
                     } else {
                         crc01m3.setError(null);
@@ -1153,10 +1154,10 @@ public class SectionBActivity extends Activity {
                     return false;
                 } else {
                     crc02m1.setError(null);
-                    if (Double.parseDouble(crc02m1.getText().toString()) < 0.9 || Double.parseDouble(crc02m1.getText().toString()) > 40.0) {
+                    if (Double.parseDouble(crc02m1.getText().toString()) < 0.9 || Double.parseDouble(crc02m1.getText().toString()) > 25.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                        crc02m1.setError("Invalid: Range 0.9 - 40.0 kg");
-                        Log.i(TAG, "crc02m1: Invalid Range 0.9 - 40.0 kg");
+                        crc02m1.setError("Invalid: Range 0.9 - 25.0 kg");
+                        Log.i(TAG, "crc02m1: Invalid Range 0.9 - 25.0 kg");
                         return false;
                     } else {
                         crc02m1.setError(null);
@@ -1187,10 +1188,10 @@ public class SectionBActivity extends Activity {
                     return false;
                 } else {
                     crc02m2.setError(null);
-                    if (Double.parseDouble(crc02m2.getText().toString()) < 0.9 || Double.parseDouble(crc02m2.getText().toString()) > 40.0) {
+                    if (Double.parseDouble(crc02m2.getText().toString()) < 0.9 || Double.parseDouble(crc02m2.getText().toString()) > 25.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                        crc02m2.setError("Invalid: Range 0.9 - 40.0 kg");
-                        Log.i(TAG, "crc02m2: Invalid Range 0.9 - 40.0");
+                        crc02m2.setError("Invalid: Range 0.9 - 25.0 kg");
+                        Log.i(TAG, "crc02m2: Invalid Range 0.9 - 25.0");
                         return false;
                     } else {
                         crc02m2.setError(null);
@@ -1221,10 +1222,10 @@ public class SectionBActivity extends Activity {
                     return false;
                 } else {
                     crc02m3.setError(null);
-                    if (Double.parseDouble(crc02m3.getText().toString()) < 0.9 || Double.parseDouble(crc02m3.getText().toString()) > 40.0) {
+                    if (Double.parseDouble(crc02m3.getText().toString()) < 0.9 || Double.parseDouble(crc02m3.getText().toString()) > 25.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                        crc02m3.setError("Invalid: Range 0.9 - 40.0");
-                        Log.i(TAG, "crc02m3: Invalid Range 0.9 - 40.0");
+                        crc02m3.setError("Invalid: Range 0.9 - 25.0");
+                        Log.i(TAG, "crc02m3: Invalid Range 0.9 - 25.0");
                         return false;
                     } else {
                         crc02m3.setError(null);

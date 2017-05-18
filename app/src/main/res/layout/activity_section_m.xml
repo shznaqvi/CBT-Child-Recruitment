@@ -1132,11 +1132,11 @@
             android:orientation="vertical">
 
             <LinearLayout
-            android:id="@+id/fldGrpcrm05b"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="visible">
+                android:id="@+id/fldGrpcrm05b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
 
             <TextView
                 android:layout_width="match_parent"
@@ -2191,6 +2191,7 @@
             android:digits="0123456789"
             android:hint="@string/crnba"
             android:inputType="number"
+            android:maxLength="1"
             android:textColor="@android:color/black" />
 
         <LinearLayout
@@ -2257,6 +2258,7 @@
             android:digits="0123456789"
             android:hint="@string/crnba"
             android:inputType="number"
+            android:maxLength="1"
             android:textColor="@android:color/black" />
 
         <LinearLayout
@@ -2325,6 +2327,7 @@
             android:digits="1234567890"
             android:hint="@string/crnba"
             android:inputType="number"
+            android:maxLength="1"
             android:textColor="@android:color/black" />
 
         <LinearLayout
@@ -2403,6 +2406,7 @@
             android:digits="1234567890"
             android:hint="@string/crnba"
             android:inputType="number"
+            android:maxLength="1"
             android:textColor="@android:color/black" />
 
         <LinearLayout
@@ -2541,6 +2545,7 @@
             android:digits="1234567890"
             android:hint="@string/crnba"
             android:inputType="number"
+            android:maxLength="1"
             android:textColor="@android:color/black" />
 
         <LinearLayout
@@ -2679,6 +2684,7 @@
             android:digits="1234567890"
             android:hint="@string/crnba"
             android:inputType="number"
+            android:maxLength="1"
             android:textColor="@android:color/black" />
 
         <LinearLayout
@@ -2817,6 +2823,7 @@
             android:digits="0123456789"
             android:hint="@string/crnba"
             android:inputType="number"
+            android:maxLength="1"
             android:textColor="@android:color/black" />
 
         <LinearLayout
@@ -2958,6 +2965,7 @@
             android:digits="0123456789"
             android:hint="@string/crnba"
             android:inputType="number"
+            android:maxLength="1"
             android:textColor="@android:color/black" />
 
         <LinearLayout
