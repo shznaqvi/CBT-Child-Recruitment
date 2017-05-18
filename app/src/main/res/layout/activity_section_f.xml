@@ -282,12 +282,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="#e0f2f1"
-            android:text="@string/crf06"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
+            android:text="@string/crf06" />
 
+        <TextView
 
+            style="@style/helperText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crf06ht" />
+
+        <LinearLayout
+            style="@style/fieldGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -649,17 +658,26 @@
                 android:text="@string/dkn" />
 
         </RadioGroup>
-
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="#e0f2f1"
-            android:text="@string/crf07sub"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
+            android:text="@string/crf07" />
 
+        <TextView
+            style="@style/helperText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crf07ht" />
+
+        <LinearLayout
+            style="@style/fieldGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1241,7 +1259,7 @@
 
         </RadioGroup>
 
-
+        </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

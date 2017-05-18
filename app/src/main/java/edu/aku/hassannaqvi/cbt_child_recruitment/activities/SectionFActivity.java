@@ -1147,22 +1147,12 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         //================ Q 7 Skip check===========
         if (is07AllNo() && crf0801.isChecked()) {
             Toast.makeText(this, "ERROR: " + getString(R.string.crf07a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
-            crf07a02.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.crf08));
+            crf0801.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.crf08));
             Log.i(TAG, "crf07: This data is Required!");
             return false;
         } else {
-            crf07a02.setError(null);
+            crf0801.setError(null);
         }
-
-        if (is07Alldontknow() && crf0802.isChecked()) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.crf08) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
-            crf0802.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.crf08));
-            Log.i(TAG, "crf08: This data is Required!");
-            return false;
-        } else {
-            crf0802.setError(null);
-        }
-
 
         return true;
 
