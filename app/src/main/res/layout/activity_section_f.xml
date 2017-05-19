@@ -1323,6 +1323,12 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/fldGrpcrf10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
 
         <TextView
             android:layout_width="match_parent"
@@ -1357,6 +1363,8 @@
                 android:text="@string/dkn" />
 
         </RadioGroup>
+
+        </LinearLayout>
 
 
         <TextView

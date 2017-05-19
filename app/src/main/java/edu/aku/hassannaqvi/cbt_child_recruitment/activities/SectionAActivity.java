@@ -474,6 +474,15 @@ public class SectionAActivity extends Activity {
             ((TextView) crauc.getSelectedView()).setError(null);
         }
 
+        if (cravillage.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crvillage), Toast.LENGTH_SHORT).show();
+            cravillage.setError("This data is Required!");
+
+            Log.i(TAG, "cravillage: This Data is Required!");
+            return false;
+        } else {
+            cravillage.setError(null);
+        }
 
         //================ Q 3==================
         if (cra03.getText().toString().isEmpty()) {
@@ -529,6 +538,28 @@ public class SectionAActivity extends Activity {
             } else {
                 cra01bnf.setError(null);
             }
+
+            if (Integer.valueOf(cra01bnf.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra01bnf), Toast.LENGTH_SHORT).show();
+                cra01bnf.setError("Zero not allowed...");
+
+                Log.i(TAG, "cra01bnf: zero not allowed...");
+                return false;
+            } else {
+                cra01bnf.setError(null);
+            }
+
+            if (Integer.valueOf(cra01bnf.getText().toString()) > 9) {
+                Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra01bnf), Toast.LENGTH_SHORT).show();
+                cra01bnf.setError("Range is 1 - 9 ");
+
+                Log.i(TAG, "cra01bnf: Range is 1 - 9 ");
+                return false;
+            } else {
+                cra01bnf.setError(null);
+            }
+
+
 
             if (Double.parseDouble(cra26.getText().toString()) < 16.18 || Double.parseDouble(cra26.getText().toString()) >= 20.00) {
                 Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra26), Toast.LENGTH_SHORT).show();
@@ -610,8 +641,8 @@ public class SectionAActivity extends Activity {
                 }
 
                 //============== Check on Education=============
-                if ((Integer.parseInt(cra07.getText().toString().isEmpty() ? "0" : cra07.getText().toString()) < 0)
-                        || (Integer.parseInt(cra07.getText().toString().isEmpty() ? "0" : cra07.getText().toString()) > 16)) {
+                if ((Integer.valueOf(cra07.getText().toString()) < 0)
+                        || (Integer.valueOf(cra07.getText().toString()) > 16)) {
                     Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra07), Toast.LENGTH_LONG).show();
                     cra07.setError("Range is 1-16");
                     Log.i(TAG, "cra07: Range is 1-16");
@@ -667,8 +698,8 @@ public class SectionAActivity extends Activity {
                     cra10.setError(null);
                 }
                 //================== Check on age of mother===============
-                if ((Integer.parseInt(cra10.getText().toString().isEmpty() ? "0" : cra10.getText().toString()) < 15)
-                        || (Integer.parseInt(cra10.getText().toString().isEmpty() ? "0" : cra10.getText().toString()) > 49)) {
+                if ((Integer.valueOf(cra10.getText().toString()) < 15)
+                        || (Integer.valueOf(cra10.getText().toString()) > 49)) {
                     Toast.makeText(this, "ERROR(Invali d) " + getString(R.string.cra10), Toast.LENGTH_LONG).show();
                     cra10.setError("Range is 15-49 years");
                     Log.i(TAG, "cra07: Range is 15-49");
@@ -688,8 +719,8 @@ public class SectionAActivity extends Activity {
                 }
 
                 //=============== Check on Education of Mother================
-                if ((Integer.parseInt(cra11.getText().toString().isEmpty() ? "0" : cra11.getText().toString()) < 0)
-                        || (Integer.parseInt(cra11.getText().toString().isEmpty() ? "0" : cra11.getText().toString()) > 16)) {
+                if ((Integer.valueOf(cra11.getText().toString()) < 0)
+                        || (Integer.valueOf(cra11.getText().toString()) > 16)) {
                     Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra11), Toast.LENGTH_LONG).show();
                     cra11.setError("Range is 1-16");
                     Log.i(TAG, "cra11: Range is 1-16");
@@ -708,8 +739,8 @@ public class SectionAActivity extends Activity {
                     cra12.setError(null);
                 }
                 //===================== Check on age of mother at time of marriage===================
-                if ((Integer.parseInt(cra12.getText().toString().isEmpty() ? "0" : cra12.getText().toString()) < 15)
-                        || (Integer.parseInt(cra12.getText().toString().isEmpty() ? "0" : cra12.getText().toString()) > 49)) {
+                if ((Integer.valueOf(cra12.getText().toString()) < 15)
+                        || (Integer.valueOf(cra12.getText().toString()) > 49)) {
                     Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.cra12), Toast.LENGTH_LONG).show();
                     cra12.setError("Range is 15-49 years");
                     Log.i(TAG, "cra12: Range is 15-49");
@@ -718,8 +749,8 @@ public class SectionAActivity extends Activity {
                     cra12.setError(null);
                 }
 
-                if ((Integer.parseInt(cra12.getText().toString().isEmpty() ? "0" : cra12.getText().toString())
-                        > (Integer.parseInt(cra10.getText().toString().isEmpty() ? "0" : cra10.getText().toString())))) {
+                if ((Integer.valueOf(cra12.getText().toString())
+                        > (Integer.valueOf(cra10.getText().toString())))) {
                     Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.cra12), Toast.LENGTH_LONG).show();
                     cra12.setError("Can not be greater than current age");
                     Log.i(TAG, "Can not be greater than current age");
@@ -751,8 +782,8 @@ public class SectionAActivity extends Activity {
                     cra14.setError(null);
                 }
 
-                if (Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString()) < 1
-                        || Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString()) > 15) {
+                if (Integer.valueOf(cra14.getText().toString()) < 1
+                        || Integer.valueOf(cra14.getText().toString()) > 15) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
                     cra14.setError("Range is 1 - 15");
 
@@ -773,7 +804,7 @@ public class SectionAActivity extends Activity {
                     cra15.setError(null);
                 }
 
-                if (Integer.parseInt(cra15.getText().toString().isEmpty() ? "0" : cra15.getText().toString()) < 1) {
+                if (Integer.valueOf(cra15.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
                     cra15.setError("Can not be zero!");
 
@@ -783,8 +814,8 @@ public class SectionAActivity extends Activity {
                     cra15.setError(null);
                 }
 
-                if (Integer.parseInt(cra15.getText().toString().isEmpty() ? "0" : cra15.getText().toString())
-                        > (Integer.parseInt(cra14.getText().toString().isEmpty() ? "0" : cra14.getText().toString()) + 1)) {
+                if (Integer.valueOf(cra15.getText().toString())
+                        > (Integer.valueOf(cra14.getText().toString()) + 1)) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
                     cra14.setError("Check pregnancies and live births again");
 
@@ -816,7 +847,7 @@ public class SectionAActivity extends Activity {
                     cra17.setError(null);
                 }
 
-                if (Integer.parseInt(cra17.getText().toString().isEmpty() ? "0" : cra17.getText().toString()) < 1) {
+                if (Integer.valueOf(cra17.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
                     cra17.setError("Can not be zero!");
 
@@ -906,12 +937,10 @@ public class SectionAActivity extends Activity {
                     cra24.setError(null);
                 }
 
-                if ((Integer.parseInt(cra17.getText().toString().isEmpty() ? "0" : cra17.getText().toString())
-                        + Integer.parseInt(cra18.getText().toString().isEmpty() ? "0" : cra18.getText().toString())
-                        + Integer.parseInt(cra19.getText().toString().isEmpty() ? "0" : cra19.getText().toString())
-                        + Integer.parseInt(cra22.getText().toString().isEmpty() ? "0" : cra22.getText().toString())
-                        + Integer.parseInt(cra23.getText().toString().isEmpty() ? "0" : cra23.getText().toString()))
-                        > Integer.parseInt(cra24.getText().toString().isEmpty() ? "0" : cra24.getText().toString())) {
+                if ((Integer.valueOf(cra17.getText().toString()) + Integer.valueOf(cra18.getText().toString())
+                        + Integer.valueOf(cra19.getText().toString()) + Integer.valueOf(cra22.getText().toString())
+                        + Integer.valueOf(cra23.getText().toString()))
+                        > Integer.valueOf(cra24.getText().toString())) {
                     Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
                     cra17.setError("Can not be greater than total members!");
 
@@ -921,8 +950,8 @@ public class SectionAActivity extends Activity {
                     cra17.setError(null);
                 }
 
-                if ((Integer.parseInt(cra20.getText().toString().isEmpty() ? "0" : cra20.getText().toString()))
-                        > Integer.parseInt(cra23.getText().toString().isEmpty() ? "0" : cra23.getText().toString())) {
+                if ((Integer.valueOf(cra20.getText().toString()))
+                        > Integer.valueOf(cra23.getText().toString())) {
                     Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra23), Toast.LENGTH_SHORT).show();
                     cra23.setError("Can not be greater than adult females!");
 

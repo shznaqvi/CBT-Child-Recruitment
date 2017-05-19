@@ -359,6 +359,42 @@ public class SectionLActivity extends Activity {
             }
         });
 
+        crl1096.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crl1096x.setVisibility(View.VISIBLE);
+                } else {
+                    crl1096x.setVisibility(View.GONE);
+                    crl1096x.setText(null);
+                }
+            }
+        });
+
+        crl1196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crl1196x.setVisibility(View.VISIBLE);
+                } else {
+                    crl1196x.setVisibility(View.GONE);
+                    crl1196x.setText(null);
+                }
+            }
+        });
+
+        crl1196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crl1196x.setVisibility(View.VISIBLE);
+                } else {
+                    crl1196x.setVisibility(View.GONE);
+                    crl1196x.setText(null);
+                }
+            }
+        });
+
 
     }
 

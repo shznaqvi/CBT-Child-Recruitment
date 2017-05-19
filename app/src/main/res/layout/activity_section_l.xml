@@ -329,7 +329,7 @@
                 android:layout_marginTop="1dp"
                 android:digits="1234567890"
                 android:hint="@string/crl0701"
-                android:maxLength="2" />
+                android:maxLength="1" />
 
             <CheckBox
                 android:id="@+id/crl0799"

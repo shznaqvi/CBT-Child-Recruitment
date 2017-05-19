@@ -1497,13 +1497,13 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01nx.setError(null);
             }
-            if (crj01mnum.getText().toString().isEmpty()) {
+            if (crj01nnum.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.bnf), Toast.LENGTH_SHORT).show();
-                crj01mnum.setError("This data is Required!");
+                crj01nnum.setError("This data is Required!");
                 Log.i(TAG, "crj01mnum: This data is Required!");
                 return false;
             } else {
-                crj01mnum.setError(null);
+                crj01nnum.setError(null);
             }
 
         }

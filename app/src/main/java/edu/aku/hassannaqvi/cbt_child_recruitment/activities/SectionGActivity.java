@@ -635,7 +635,8 @@ public class SectionGActivity extends Activity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     crgGrp09.setVisibility(View.GONE);
-                    crg11.clearCheck();
+                    crg10.clearCheck();
+                    crg1096x.setText(null);
                 } else {
                     crgGrp09.setVisibility(View.VISIBLE);
                 }
@@ -916,6 +917,7 @@ public class SectionGActivity extends Activity {
             }
         });
 
+
     }
 
     @OnClick(R.id.btnNext)
@@ -1140,7 +1142,8 @@ public class SectionGActivity extends Activity {
             crg0302.setError(null);
         }
 
-        if (crg0401.isChecked()) {
+
+        if (crg0301.isChecked()) {
             // =================== Q4 ====================
             if (crg04.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg04), Toast.LENGTH_SHORT).show();

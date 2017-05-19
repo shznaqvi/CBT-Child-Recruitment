@@ -406,6 +406,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01a"
             android:inputType="number"
+            android:maxLength="5"
             />
 
         <TextView
@@ -424,6 +425,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01b"
             android:inputType="number"
+            android:maxLength="5"
             />
 
         <TextView
@@ -440,6 +442,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01c"
             android:inputType="number"
+            android:maxLength="5"
             />
 
         <TextView
@@ -456,6 +459,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01d"
             android:inputType="number"
+            android:maxLength="5"
             />
 
         <TextView
@@ -472,6 +476,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01e"
             android:inputType="number"
+            android:maxLength="5"
             />
 
 
@@ -489,6 +494,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01f"
             android:inputType="number"
+            android:maxLength="5"
             />
 
         <TextView
@@ -505,6 +511,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01g"
             android:inputType="number"
+            android:maxLength="5"
             />
 
         <TextView
@@ -521,6 +528,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01h"
             android:inputType="number"
+            android:maxLength="5"
             />
 
         <TextView
@@ -537,6 +545,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01i"
             android:inputType="number"
+            android:maxLength="5"
             />
 
         <TextView
@@ -553,6 +562,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01j"
             android:inputType="number"
+            android:maxLength="5"
             />
 
         <TextView
@@ -569,6 +579,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01k"
             android:inputType="number"
+            android:maxLength="5"
             />
 
 
@@ -586,6 +597,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01l"
             android:inputType="number"
+            android:maxLength="5"
             />
 
 
@@ -603,6 +615,7 @@
             android:digits="0123456789"
             android:hint="@string/cri01m"
             android:inputType="number"
+            android:maxLength="5"
             />
 
 
@@ -630,6 +643,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02a"
             android:inputType="number"
+            android:maxLength="6"
             />
 
 
@@ -647,6 +661,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02b"
             android:inputType="number"
+            android:maxLength="6"
             />
 
 
@@ -664,6 +679,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02c"
             android:inputType="number"
+            android:maxLength="6"
             />
 
         <TextView
@@ -680,6 +696,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02d"
             android:inputType="number"
+            android:maxLength="6"
             />
 
 
@@ -697,6 +714,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02e"
             android:inputType="number"
+            android:maxLength="6"
             />
 
         <TextView
@@ -713,6 +731,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02f"
             android:inputType="number"
+            android:maxLength="6"
             />
 
         <TextView
@@ -729,6 +748,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02g"
             android:inputType="number"
+            android:maxLength="6"
             />
 
         <TextView
@@ -745,6 +765,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02h"
             android:inputType="number"
+            android:maxLength="6"
             />
 
         <TextView
@@ -761,6 +782,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02i"
             android:inputType="number"
+            android:maxLength="6"
             />
 
 
@@ -780,6 +802,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02j"
             android:inputType="number"
+            android:maxLength="6"
             />
 
 
@@ -797,6 +820,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02k"
             android:inputType="number"
+            android:maxLength="6"
             />
 
         <TextView
@@ -813,6 +837,7 @@
             android:digits="0123456789"
             android:hint="@string/cri02l"
             android:inputType="number"
+            android:maxLength="6"
             />
 
 
@@ -831,7 +856,8 @@
             android:layout_marginTop="1dp"
             android:digits="0123456789"
             android:hint="@string/cri03"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="5" />
 
         <TextView
             android:layout_width="match_parent"
