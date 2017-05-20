@@ -1268,8 +1268,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:text="@string/crf08ht"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/crf08" />
 
+        <TextView
+            style="@style/helperText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/crf08ht"
+            android:visibility="gone" />
         <RadioGroup
             android:id="@+id/crf08"
             android:layout_width="match_parent"
