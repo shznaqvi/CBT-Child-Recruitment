@@ -156,7 +156,8 @@
             android:digits="0123456789"
             android:hint="@string/crf0201"
             android:inputType="number"
-            android:maxLength="2" />
+            android:maxLength="2"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/crf02d"
@@ -165,7 +166,8 @@
             android:digits="0123456789"
             android:hint="@string/crf0202"
             android:inputType="number"
-            android:maxLength="2" />
+            android:maxLength="2"
+            android:visibility="gone" />
 
 
         <TextView

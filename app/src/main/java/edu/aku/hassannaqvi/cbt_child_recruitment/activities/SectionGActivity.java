@@ -1433,26 +1433,27 @@ public class SectionGActivity extends Activity {
             crg0996x.setError(null);
         }
 
-        // =================== Q10 ====================
-        if (crg10.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg10), Toast.LENGTH_SHORT).show();
-            crg1096.setError("This Data is required");
-            Log.d(TAG, "crg10 : This Data is required ");
-            return false;
-        } else {
-            crg1096.setError(null);
+        if (!crg0910.isChecked()) {
+            // =================== Q10 ====================
+            if (crg10.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg10), Toast.LENGTH_SHORT).show();
+                crg1096.setError("This Data is required");
+                Log.d(TAG, "crg10 : This Data is required ");
+                return false;
+            } else {
+                crg1096.setError(null);
+            }
+
+            if (crg1096.isChecked() && crg1096x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crg10) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                crg1096x.setError("This data is Required!");    // Set Error on last radio button
+                Log.d(TAG, "crg1096x: This data is Required!");
+                return false;
+            } else {
+                crg1096x.setError(null);
+            }
         }
 
-        if (crg1096.isChecked() && crg1096x.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crg10) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
-            crg1096x.setError("This data is Required!");    // Set Error on last radio button
-            Log.d(TAG, "crg1096x: This data is Required!");
-            return false;
-        } else {
-            crg1096x.setError(null);
-        }
-
-        if (!(crg0910.isChecked())) {
             // =================== Q11 ====================
             if (crg11.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg11), Toast.LENGTH_SHORT).show();
@@ -1462,7 +1463,7 @@ public class SectionGActivity extends Activity {
             } else {
                 crg1102.setError(null);
             }
-        }
+
         // =================== Q12 ====================
         if (crg12.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg12), Toast.LENGTH_SHORT).show();
