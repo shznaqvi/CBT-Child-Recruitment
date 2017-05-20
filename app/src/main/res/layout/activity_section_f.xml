@@ -1264,6 +1264,12 @@
         </RadioGroup>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fldGrpcrf08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -1312,6 +1318,8 @@
 
         </RadioGroup>
 
+        </LinearLayout>
+
         <LinearLayout
             android:id="@+id/fldGrpcrf09"
             android:layout_width="match_parent"
@@ -1340,12 +1348,6 @@
             android:maxLength="2" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/fldGrpcrf10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
 
         <TextView
@@ -1382,7 +1384,6 @@
 
         </RadioGroup>
 
-        </LinearLayout>
 
 
         <TextView

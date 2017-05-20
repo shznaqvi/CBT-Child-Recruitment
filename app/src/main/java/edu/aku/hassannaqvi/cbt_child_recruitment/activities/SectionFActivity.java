@@ -370,8 +370,8 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     RadioButton crf0201;
     @BindView(R.id.crf0202)
     RadioButton crf0202;
-    @BindView(R.id.fldGrpcrf10)
-    LinearLayout fldGrpcrf10;
+    @BindView(R.id.fldGrpcrf08)
+    LinearLayout fldGrpcrf08;
 
 
     @BindViews({R.id.crf07a, R.id.crf07b, R.id.crf07c, R.id.crf07d, R.id.crf07e, R.id.crf07f, R.id.crf07g,
@@ -464,7 +464,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
 
         //=============== Q8 Skip Pattern===============
 
-        crf08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        /*crf08.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (crf0801.isChecked()) {
@@ -475,7 +475,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
                     crf0999.setChecked(false);
                 }
             }
-        });
+        });*/
 
         crf0999.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -1057,42 +1057,43 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             crf07q99.setError(null);
         }
 
-        //============ Q 8 ==========
-        if (crf08.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf08), Toast.LENGTH_SHORT).show();
-            crf0899.setError("This data is Required!");
-            Log.i(TAG, "crf08: This data is Required!");
-            return false;
-        } else {
-            crf0899.setError(null);
-        }
+
         //================ Q 7-8 Skip check===========
-        if (is07AllNo() && crf0801.isChecked()) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.crf07a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
-            crf0801.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.crf08));
-            Log.i(TAG, "crf07: This data is Required!");
-            return false;
-        } else {
-            crf0801.setError(null);
-        }
-        if (!is07AllNo() && crf0802.isChecked()) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.crf07a) + "Check Again!", Toast.LENGTH_SHORT).show();
-            crf0801.setError("Cehck again " + getString(R.string.crf08));
-            Log.i(TAG, "crf08: This data is Required!");
-            return false;
-        } else {
-            crf0801.setError(null);
-        }
-        if (crf0801.isChecked()) {
-            //============ Q 9 ==========
-            if (crf09num.getText().toString().isEmpty() && !crf0999.isChecked()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf09), Toast.LENGTH_SHORT).show();
-                crf0999.setError("This data is Required!");
-                Log.i(TAG, "crf09: This data is Required!");
+
+        if (is07AllNo()) {
+            //============ Q 8 ==========
+            if (crf08.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf08), Toast.LENGTH_SHORT).show();
+                crf0899.setError("This data is Required!");
+                Log.i(TAG, "crf08: This data is Required!");
                 return false;
             } else {
-                crf0999.setError(null);
+                crf0899.setError(null);
             }
+
+            if (is07AllNo() && crf0801.isChecked()) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.crf07a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
+                crf0801.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.crf08));
+                Log.i(TAG, "crf07: This data is Required!");
+                return false;
+            } else {
+                crf0801.setError(null);
+            }
+        }
+
+
+        if (!is07AllNo()) {
+            //============ Q 9 ==========
+
+//            if (crf0801.isChecked()) {
+            if (crf09num.getText().toString().isEmpty() && !crf0999.isChecked()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf09), Toast.LENGTH_SHORT).show();
+                crf0999.setError("This data is Required!");
+                Log.i(TAG, "crf09: This data is Required!");
+                    return false;
+                } else {
+                crf0999.setError(null);
+                }
 
             if (!crf0999.isChecked()) {
                 if (Integer.valueOf(crf09num.getText().toString()) < 1) {
@@ -1112,8 +1113,9 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
                 } else {
                     crf09num.setError(null);
                 }
+                }
             }
-        }
+//        }
         //============ Q 10 ==========
         if (crf10.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf10), Toast.LENGTH_SHORT).show();
@@ -1274,10 +1276,18 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     @Override
     public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
 
-        if (is07AllNo() && is07Alldontknow()) {
+        if (is07AllNo()) {
             // Show answer here
-            fldGrpcrf09.setVisibility(View.VISIBLE);
+            fldGrpcrf08.setVisibility(View.VISIBLE);
+            fldGrpcrf09.setVisibility(View.GONE);
+            crf09num.setText(null);
+            crf0999.setChecked(false);
 
+
+        } else {
+            fldGrpcrf08.setVisibility(View.GONE);
+            fldGrpcrf09.setVisibility(View.VISIBLE);
+            crf08.clearCheck();
         }
 
     }
