@@ -523,6 +523,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             }
         });
 
+
         crf0202.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -536,7 +537,6 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
                 }
             }
         });
-
 
     }
 
@@ -1175,9 +1175,9 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         } else {
             crf1499.setError(null);
         }
-
-        //============ Q 15 ==========
-        if ((crf1501.getText().toString().isEmpty() && crf1502.getText().toString().isEmpty()) && !crf1503.isChecked()) {
+//============ Q 15 ==========
+        if (!crf1503.isChecked()) {
+            if ((crf1501.getText().toString().isEmpty() && crf1502.getText().toString().isEmpty())) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
             crf1503.setError("This data is Required!");
             Log.i(TAG, "crf15: This data is Required!");
@@ -1186,7 +1186,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             crf1503.setError(null);
         }
 
-        if (!crf1503.isChecked()) {
+
             if ((Integer.valueOf(crf1501.getText().toString()) < 1)
                     && Integer.valueOf(crf1502.getText().toString()) < 1) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
