@@ -1079,6 +1079,15 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             } else {
                 crf0801.setError(null);
             }
+
+            if (!is07AllNo() && crf0802.isChecked()) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.crf08) + "Can not be no", Toast.LENGTH_SHORT).show();
+                crf0801.setError("Can not be no in " + getString(R.string.crf08));
+                Log.i(TAG, "crf08: This data is Required!");
+                return false;
+            } else {
+                crf0801.setError(null);
+            }
         }
 
 
