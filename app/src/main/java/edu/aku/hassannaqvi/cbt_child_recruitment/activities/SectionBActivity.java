@@ -1008,7 +1008,7 @@ public class SectionBActivity extends Activity {
                         return false;
                     } else {
                         crb0801.setError(null);
-                        if (Double.parseDouble(crb0801.getText().toString()) < 1) {
+                        if (Double.parseDouble(crb0801.getText().toString()) == 0) {
                             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
                             crb0801.setError("Invalid: Greater then 0");
                             Log.i(TAG, "crb0801: Invalid Greater then 0");
@@ -1017,8 +1017,8 @@ public class SectionBActivity extends Activity {
                             crb0801.setError(null);
                             if (Double.parseDouble(crb0801.getText().toString()) < 0.9 || Double.parseDouble(crb0801.getText().toString()) > 6.0) {
                                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
-                                crb0801.setError("Invalid: Range 0.9 - 6.0 kg");
-                                Log.i(TAG, "crb0801: Invalid Range 0.9 - 6.0 kg");
+                                crb0801.setError("Invalid: Range is 0.9 - 6.0 kg");
+                                Log.i(TAG, "crb0801: Invalid Range is 0.9 - 6.0 kg");
                                 return false;
                             } else {
                                 crb0801.setError(null);
@@ -1147,7 +1147,7 @@ public class SectionBActivity extends Activity {
                 return false;
             } else {
                 crc02m1.setError(null);
-                if (Double.parseDouble(crc02m1.getText().toString()) < 1) {
+                if (Double.parseDouble(crc02m1.getText().toString()) == 0) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
                     crc02m1.setError("Invalid: Greater then 0");
                     Log.i(TAG, "crc02m1: Invalid Greater then 0");
@@ -1181,7 +1181,7 @@ public class SectionBActivity extends Activity {
                 return false;
             } else {
                 crc02m2.setError(null);
-                if (Double.parseDouble(crc02m2.getText().toString()) < 1) {
+                if (Double.parseDouble(crc02m2.getText().toString()) == 0) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
                     crc02m2.setError("Invalid: Greater then 0");
                     Log.i(TAG, "crc02m2: Invalid Greater then 0");
@@ -1215,7 +1215,7 @@ public class SectionBActivity extends Activity {
                 return false;
             } else {
                 crc02m3.setError(null);
-                if (Double.parseDouble(crc02m3.getText().toString()) < 1) {
+                if (Double.parseDouble(crc02m3.getText().toString()) == 0) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
                     crc02m3.setError("Invalid: Greater then 0");
                     Log.i(TAG, "crc02m3: Invalid Greater then 0");
@@ -1373,13 +1373,13 @@ public class SectionBActivity extends Activity {
 
                 if (!(crd0301.isChecked() || crd0302.isChecked() || crd0303.isChecked() || crd0304.isChecked()
                         || crd0305.isChecked() || crd0306.isChecked() || crd0307.isChecked() || crd0308.isChecked()
-                        || crd0196.isChecked())) {
+                        || crd0396.isChecked())) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.crd01), Toast.LENGTH_LONG).show();
-                    crd0196.setError("This data is Required!");    // Set Error on last radio button
+                    crd0396.setError("This data is Required!");    // Set Error on last radio button
                     Log.i(TAG, "crd01: This data is Required!");
                     return false;
                 } else {
-                    crd0196.setError(null);
+                    crd0396.setError(null);
                 }
                 if (crd0396.isChecked() && crd0396x.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.crd03) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
