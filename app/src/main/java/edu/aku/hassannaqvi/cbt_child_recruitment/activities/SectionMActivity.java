@@ -17,8 +17,10 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -33,7 +35,7 @@ import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 public class SectionMActivity extends AppCompatActivity {
 
     private static final String TAG = SectionMActivity.class.getSimpleName();
-
+    final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     @BindView(R.id.activity_section_h)
     ScrollView activitySectionH;
     @BindView(R.id.crm01a)
@@ -559,8 +561,6 @@ public class SectionMActivity extends AppCompatActivity {
     String dateToday;
     String maxDateyear;
     Calendar now = Calendar.getInstance();
-
-
     @BindViews({R.id.crn01dod1, R.id.crn01dod2, R.id.crn02dod1, R.id.crn02dod2, R.id.crn03dob1, R.id.crn03dob2, R.id.crn03dob3,
             R.id.crn04dob1, R.id.crn04dob2, R.id.crn04dod1, R.id.crn04dod2, R.id.crn05dob1, R.id.crn05dob2, R.id.crn05dod1,
             R.id.crn05dod2, R.id.crn06dob1, R.id.crn06dob2, R.id.crn06dod1, R.id.crn06dod2, R.id.crn07dob1, R.id.crn07dob2,
@@ -579,21 +579,174 @@ public class SectionMActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_m);
         ButterKnife.bind(this);
 
+        //now.add(Calendar.DAY_OF_MONTH, -28);
+
         dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
         maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_YEAR));
+
+
+        crn04dob1.setMinDate(maxDateyear);
+        //crn04dob1.setMaxDate(dateToday);
+
 
 
 
         for (DatePickerInputEditText de : crndates) {
             de.setManager(getSupportFragmentManager());
             de.setMaxDate(dateToday);
+
         }
 
-        for (DatePickerInputEditText de : crndateofDeath) {
-            de.setManager(getSupportFragmentManager());
-            de.setMaxDate(dateToday);
-            de.setMinDate(maxDateyear);
-        }
+
+        crn04dob1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                crn04dod1.setMinDate(crn04dob1.getText().toString());
+                Calendar cal = getCalendarDate(crn04dob1.getText().toString());
+                cal.add(Calendar.DAY_OF_MONTH, 7);
+                crn04dod1.setMaxDate(sdf.format(cal.getTime()));
+                crn04dod1.setEnabled(true);
+
+
+            }
+        });
+
+        crn04dob2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                crn04dod2.setMinDate(crn04dob2.getText().toString());
+                Calendar cal = getCalendarDate(crn04dob2.getText().toString());
+                cal.add(Calendar.DAY_OF_MONTH, 7);
+                crn04dod2.setMaxDate(sdf.format(cal.getTime()));
+                crn04dod2.setEnabled(true);
+
+
+            }
+        });
+
+        crn05dob1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                Calendar cal = getCalendarDate(crn05dob1.getText().toString());
+                cal.add(Calendar.DAY_OF_MONTH, 8);
+                crn05dod1.setMinDate(sdf.format(cal.getTime()));
+                cal.add(Calendar.DAY_OF_MONTH, 20);
+                crn05dod1.setMaxDate(sdf.format(cal.getTime()));
+                crn05dod1.setEnabled(true);
+
+            }
+        });
+
+        crn05dob2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                Calendar cal = getCalendarDate(crn05dob2.getText().toString());
+                cal.add(Calendar.DAY_OF_MONTH, 8);
+                crn05dod2.setMinDate(sdf.format(cal.getTime()));
+                cal.add(Calendar.DAY_OF_MONTH, 20);
+                crn05dod2.setMaxDate(sdf.format(cal.getTime()));
+                crn05dod2.setEnabled(true);
+
+            }
+        });
+
+        crn06dob1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                Calendar cal = getCalendarDate(crn06dob1.getText().toString());
+                cal.add(Calendar.DAY_OF_MONTH, 29);
+                crn06dod1.setMinDate(sdf.format(cal.getTime()));
+                cal.add(Calendar.DAY_OF_MONTH, 335);
+                crn06dod1.setMaxDate(sdf.format(cal.getTime()));
+                crn06dod1.setEnabled(true);
+
+            }
+        });
+
+
+        crn06dob1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                Calendar cal = getCalendarDate(crn06dob1.getText().toString());
+                cal.add(Calendar.DAY_OF_MONTH, 29);
+                crn06dod1.setMinDate(sdf.format(cal.getTime()));
+                cal.add(Calendar.DAY_OF_MONTH, 335);
+                crn06dod1.setMaxDate(sdf.format(cal.getTime()));
+                crn06dod1.setEnabled(true);
+
+            }
+        });
+
+
+
+
+
 
 
 
@@ -653,6 +806,7 @@ public class SectionMActivity extends AppCompatActivity {
             }
         });
 
+
         crn04dob2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -664,6 +818,7 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 crn04dod1.onFocusChange(v, true);
+
             }
         });
 
@@ -2590,6 +2745,21 @@ public class SectionMActivity extends AppCompatActivity {
             return false;
         }
     }
+
+    public Calendar getCalendarDate(String value) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date = sdf.parse(value);
+            calendar.setTime(date);
+            return calendar;
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return calendar;
+    }
+
 
 
 }

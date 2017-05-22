@@ -395,6 +395,18 @@ public class SectionLActivity extends Activity {
             }
         });
 
+        crl1396.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crl1396x.setVisibility(View.VISIBLE);
+                } else {
+                    crl1396x.setVisibility(View.GONE);
+                    crl1396x.setText(null);
+                }
+            }
+        });
+
 
     }
 
@@ -563,14 +575,27 @@ public class SectionLActivity extends Activity {
                 crl0496x.setError(null);
             }
 
-            // =================== Q5 ====================
-            if (crl0501.getText().toString().isEmpty() && !crl0599.isChecked()) {
-                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl05), Toast.LENGTH_SHORT).show();
-                crl0599.setError("This Data is Required");
-                Log.d(TAG, "crl05 :This Data is Required");
-                return false;
-            } else {
-                crl0599.setError(null);
+            if (!crl0599.isChecked()) {
+                // =================== Q5 ====================
+                if (crl0501.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl05), Toast.LENGTH_SHORT).show();
+                    crl0599.setError("This Data is Required");
+                    Log.d(TAG, "crl05 :This Data is Required");
+                    return false;
+                } else {
+                    crl0599.setError(null);
+                }
+
+
+                // =================== Q5 ====================
+                if (Integer.valueOf(crl0501.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crl05), Toast.LENGTH_SHORT).show();
+                    crl0501.setError("Zero not allowed..");
+                    Log.d(TAG, "crl05 :Zero not allowed");
+                    return false;
+                } else {
+                    crl0501.setError(null);
+                }
             }
 
 

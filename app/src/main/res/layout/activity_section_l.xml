@@ -149,6 +149,7 @@
                 android:layout_marginTop="1dp"
                 android:digits="1234567890"
                 android:hint="@string/crl0501"
+                android:inputType="number"
                 android:maxLength="2" />
 
             <CheckBox
@@ -329,6 +330,7 @@
                 android:layout_marginTop="1dp"
                 android:digits="1234567890"
                 android:hint="@string/crl0701"
+                android:inputType="number"
                 android:maxLength="1" />
 
             <CheckBox
@@ -390,14 +392,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:hint="@string/days" />
+                    android:digits="0123456789"
+                    android:hint="@string/days"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/crl0902"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:hint="@string/months" />
+                    android:digits="0123456789"
+                    android:hint="@string/months"
+                    android:inputType="number" />
 
                 <CheckBox
                     android:id="@+id/crl0997"
@@ -412,10 +418,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/dkn" />
-
-
-
-
 
             </LinearLayout>
 
