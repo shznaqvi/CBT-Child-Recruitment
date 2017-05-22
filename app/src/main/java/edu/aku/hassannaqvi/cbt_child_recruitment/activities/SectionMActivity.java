@@ -2584,7 +2584,7 @@ public class SectionMActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(crn06s.getText().toString()) == 1) {
-            if (crn04dob1.getText().toString().isEmpty()) {
+            if (crn06dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn06), Toast.LENGTH_SHORT).show();
                 crn06dob1.setError("This data is Required!");
                 Log.i(TAG, "crn06dob1: This data is Required!");

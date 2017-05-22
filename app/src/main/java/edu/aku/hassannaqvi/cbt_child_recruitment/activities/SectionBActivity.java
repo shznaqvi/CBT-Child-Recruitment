@@ -1001,30 +1001,23 @@ public class SectionBActivity extends Activity {
             } else {
                 crb0801.setError(null);
                 if (!crb0899.isChecked()) {
-                    if (!crb0801.getText().toString().contains(".")) {
-                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
-                        crb0801.setError("Invalid: Decimal value is Required!");
-                        Log.i(TAG, "crb0801: Invalid Decimal value is Required!");
-                        return false;
-                    } else {
-                        crb0801.setError(null);
-                        if (Double.parseDouble(crb0801.getText().toString()) == 0) {
+                    if (Double.parseDouble(crb0801.getText().toString()) == 0) {
                             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
-                            crb0801.setError("Invalid: Greater then 0");
-                            Log.i(TAG, "crb0801: Invalid Greater then 0");
+                        crb0801.setError("Invalid: Data cannot be Zero");
+                        Log.i(TAG, "crb0801: Invalid data is 0");
                             return false;
                         } else {
                             crb0801.setError(null);
                             if (Double.parseDouble(crb0801.getText().toString()) < 0.9 || Double.parseDouble(crb0801.getText().toString()) > 6.0) {
                                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crb08), Toast.LENGTH_SHORT).show();
-                                crb0801.setError("Invalid: Range is 0.9 - 6.0 kg");
+                                crb0801.setError("Invalid: Range is 0.9 - 6.0");
                                 Log.i(TAG, "crb0801: Invalid Range is 0.9 - 6.0 kg");
                                 return false;
                             } else {
                                 crb0801.setError(null);
                             }
                         }
-                    }
+
                 }
             }
 
@@ -1039,20 +1032,7 @@ public class SectionBActivity extends Activity {
             return false;
         } else {
             crc01m1.setError(null);
-            if (!crc01m1.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                crc01m1.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "crc01m1: Invalid Decimal value is Required!");
-                return false;
-            } else {
-                crc01m1.setError(null);
-                if (Double.parseDouble(crc01m1.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                    crc01m1.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "crc01m1: Invalid Greater then 0");
-                    return false;
-                } else {
-                    crc01m1.setError(null);
+
                     if (Double.parseDouble(crc01m1.getText().toString()) < 38.0 || Double.parseDouble(crc01m1.getText().toString()) > 70.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
                         crc01m1.setError("Invalid: Range 38.0 - 70.0");
@@ -1062,8 +1042,8 @@ public class SectionBActivity extends Activity {
                         crc01m1.setError(null);
                     }
                 }
-            }
-        }
+
+
         // =================== Q1 m2 ====================
         if (crc01m2.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
@@ -1072,20 +1052,7 @@ public class SectionBActivity extends Activity {
             return false;
         } else {
             crc01m2.setError(null);
-            if (!crc01m2.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                crc01m2.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "crc01m2: Invalid Decimal value is Required!");
-                return false;
-            } else {
-                crc01m2.setError(null);
-                if (Double.parseDouble(crc01m2.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                    crc01m2.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "crc01m2: Invalid Greater then 0");
-                    return false;
-                } else {
-                    crc01m2.setError(null);
+
                     if (Double.parseDouble(crc01m2.getText().toString()) < 38.0 || Double.parseDouble(crc01m2.getText().toString()) > 70.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
                         crc01m2.setError("Invalid: Range 38.0 - 70.0");
@@ -1095,8 +1062,7 @@ public class SectionBActivity extends Activity {
                         crc01m2.setError(null);
                     }
                 }
-            }
-        }
+
 
         // =================== Q1 m3 ====================
         if (crc01m3.getText().toString().isEmpty()) {
@@ -1106,20 +1072,7 @@ public class SectionBActivity extends Activity {
             return false;
         } else {
             crc01m3.setError(null);
-            if (!crc01m3.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                crc01m3.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "crc01m3: Invalid Decimal value is Required!");
-                return false;
-            } else {
-                crc01m3.setError(null);
-                if (Double.parseDouble(crc01m3.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                    crc01m3.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "crc01m3: Invalid Greater then 0");
-                    return false;
-                } else {
-                    crc01m3.setError(null);
+
                     if (Double.parseDouble(crc01m3.getText().toString()) < 38.0 || Double.parseDouble(crc01m3.getText().toString()) > 70.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
                         crc01m3.setError("Invalid: Range 38.0 - 70.0");
@@ -1129,8 +1082,7 @@ public class SectionBActivity extends Activity {
                         crc01m3.setError(null);
                     }
                 }
-            }
-        }
+
 
         // =================== Q2 m1 ====================
         if (crc02m1.getText().toString().isEmpty()) {
@@ -1140,20 +1092,6 @@ public class SectionBActivity extends Activity {
             return false;
         } else {
             crc02m1.setError(null);
-            if (!crc02m1.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                crc02m1.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "crc02m1: Invalid Decimal value is Required!");
-                return false;
-            } else {
-                crc02m1.setError(null);
-                if (Double.parseDouble(crc02m1.getText().toString()) == 0) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                    crc02m1.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "crc02m1: Invalid Greater then 0");
-                    return false;
-                } else {
-                    crc02m1.setError(null);
                     if (Double.parseDouble(crc02m1.getText().toString()) < 0.9 || Double.parseDouble(crc02m1.getText().toString()) > 25.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
                         crc02m1.setError("Invalid: Range 0.9 - 25.0 kg");
@@ -1163,8 +1101,7 @@ public class SectionBActivity extends Activity {
                         crc02m1.setError(null);
                     }
                 }
-            }
-        }
+
 
         // =================== Q2 m2 ====================
         if (crc02m2.getText().toString().isEmpty()) {
@@ -1174,21 +1111,8 @@ public class SectionBActivity extends Activity {
             return false;
         } else {
             crc02m2.setError(null);
-            if (!crc02m2.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                crc02m2.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "crc02m2: Invalid Decimal value is Required!");
-                return false;
-            } else {
-                crc02m2.setError(null);
-                if (Double.parseDouble(crc02m2.getText().toString()) == 0) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                    crc02m2.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "crc02m2: Invalid Greater then 0");
-                    return false;
-                } else {
-                    crc02m2.setError(null);
-                    if (Double.parseDouble(crc02m2.getText().toString()) < 0.9 || Double.parseDouble(crc02m2.getText().toString()) > 25.0) {
+
+            if (Double.parseDouble(crc02m2.getText().toString()) < 0.9 || Double.parseDouble(crc02m2.getText().toString()) > 25.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
                         crc02m2.setError("Invalid: Range 0.9 - 25.0 kg");
                         Log.i(TAG, "crc02m2: Invalid Range 0.9 - 25.0");
@@ -1197,8 +1121,7 @@ public class SectionBActivity extends Activity {
                         crc02m2.setError(null);
                     }
                 }
-            }
-        }
+
 
         // =================== Q2 m3 ====================
         if (crc02m3.getText().toString().isEmpty()) {
@@ -1208,20 +1131,6 @@ public class SectionBActivity extends Activity {
             return false;
         } else {
             crc02m3.setError(null);
-            if (!crc02m3.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                crc02m3.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "crc02m3: Invalid Decimal value is Required!");
-                return false;
-            } else {
-                crc02m3.setError(null);
-                if (Double.parseDouble(crc02m3.getText().toString()) == 0) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
-                    crc02m3.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "crc02m3: Invalid Greater then 0");
-                    return false;
-                } else {
-                    crc02m3.setError(null);
                     if (Double.parseDouble(crc02m3.getText().toString()) < 0.9 || Double.parseDouble(crc02m3.getText().toString()) > 25.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc02), Toast.LENGTH_SHORT).show();
                         crc02m3.setError("Invalid: Range 0.9 - 25.0");
@@ -1231,8 +1140,8 @@ public class SectionBActivity extends Activity {
                         crc02m3.setError(null);
                     }
                 }
-            }
-        }
+
+
         // =================== Q3 m1 ====================
         /*if (crc03m1.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crc03), Toast.LENGTH_SHORT).show();
