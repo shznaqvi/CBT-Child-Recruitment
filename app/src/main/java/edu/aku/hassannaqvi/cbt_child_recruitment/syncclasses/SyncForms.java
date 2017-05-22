@@ -36,13 +36,13 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         mContext = context;
     }
 
-    /*public static void longInfo(String str) {
+    public static void longInfo(String str) {
         if (str.length() > 4000) {
             Log.i("TAG: ", str.substring(0, 4000));
             longInfo(str.substring(4000));
         } else
             Log.i("TAG: ", str);
-    }*/
+    }
 
     @Override
     protected void onPreExecute() {
@@ -59,7 +59,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
 
         String line = "No Response";
         try {
-            return downloadUrl(AppMain.PROJECT_URI + "cash_basedtransferchildrecruitment/api/forms.php");
+            return downloadUrl(AppMain.PROJECT_URI + FormsContract.singleForm.URI);
         } catch (IOException e) {
             return "Unable to upload data. Server may be down.";
         }
@@ -131,7 +131,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
 
                     }
                     wr.writeBytes(jsonSync.toString().replace("\uFEFF", "") + "\n");
-                    //longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
+                    longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
                     wr.flush();
                 } catch (JSONException e) {
                     // TODO Auto-generated catch block
