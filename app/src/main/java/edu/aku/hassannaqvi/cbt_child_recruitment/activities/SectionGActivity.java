@@ -1752,13 +1752,13 @@ public class SectionGActivity extends Activity {
             }
 
         // =================== Q21a ====================
-        if (crg21a.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg21) + getString(R.string.crg21a), Toast.LENGTH_SHORT).show();
-            crg21a96.setError("This Data is required");
+        if (crg21a.getCheckedRadioButtonId() == -1 && crg21b.getCheckedRadioButtonId() == -1 && crg21c.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg21) + getString(R.string.crg21a) + getString(R.string.crg21b) + getString(R.string.crg21c), Toast.LENGTH_SHORT).show();
+            crg21c96.setError("This Data is required");
             Log.d(TAG, "crg21a : This Data is required");
             return false;
         } else {
-            crg21a96.setError(null);
+            crg21c96.setError(null);
         }
 
         if (crg21a96.isChecked() && crg21a96x.getText().toString().isEmpty()) {
@@ -1771,14 +1771,14 @@ public class SectionGActivity extends Activity {
         }
 
         // =================== Q21b ====================
-        if (crg21b.getCheckedRadioButtonId() == -1) {
+       /* if (crg21b.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg21) + getString(R.string.crg21b), Toast.LENGTH_SHORT).show();
             crg21b96.setError("This Data is required");
             Log.d(TAG, "crg21b : This Data is required");
             return false;
         } else {
             crg21b96.setError(null);
-        }
+        }*/
 
         if (crg21b96.isChecked() && crg21b96x.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crg21) + " - " + getString(R.string.crg21b), Toast.LENGTH_LONG).show();
@@ -1790,14 +1790,14 @@ public class SectionGActivity extends Activity {
         }
 
         // =================== Q21c ====================
-        if (crg21c.getCheckedRadioButtonId() == -1) {
+        /*if (crg21c.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crg21) + getString(R.string.crg21c), Toast.LENGTH_SHORT).show();
             crg21c96.setError("This Data is required");
             Log.d(TAG, "crg21c : This Data is required");
             return false;
         } else {
             crg21c96.setError(null);
-        }
+        }*/
 
         if (crg21c96.isChecked() && crg21c96x.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crg21) + " - " + getString(R.string.crg21c), Toast.LENGTH_LONG).show();

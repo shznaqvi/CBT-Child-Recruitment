@@ -560,6 +560,9 @@ public class SectionMActivity extends AppCompatActivity {
     LinearLayout fldGrpcrm06;
     String dateToday;
     String maxDateyear;
+    String maxDate5Years;
+    String maxDate49Years;
+    String maxDate15Years;
     Calendar now = Calendar.getInstance();
     @BindViews({R.id.crn01dod1, R.id.crn01dod2, R.id.crn02dod1, R.id.crn02dod2, R.id.crn03dob1, R.id.crn03dob2, R.id.crn03dob3,
             R.id.crn04dob1, R.id.crn04dob2, R.id.crn04dod1, R.id.crn04dod2, R.id.crn05dob1, R.id.crn05dob2, R.id.crn05dod1,
@@ -583,20 +586,34 @@ public class SectionMActivity extends AppCompatActivity {
 
         dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
         maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_YEAR));
+        maxDate5Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_5Years));
+        maxDate49Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_49Years));
+        maxDate15Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_15Years));
 
 
-        crn04dob1.setMinDate(maxDateyear);
+
         //crn04dob1.setMaxDate(dateToday);
-
-
-
 
         for (DatePickerInputEditText de : crndates) {
             de.setManager(getSupportFragmentManager());
             de.setMaxDate(dateToday);
+            de.setMinDate(maxDateyear);
 
         }
 
+
+        crn07dob1.setMinDate(maxDate5Years);
+        crn07dob1.setMaxDate(maxDateyear);
+        crn07dob2.setMinDate(maxDate5Years);
+        crn07dob2.setMaxDate(maxDateyear);
+        crn08dob1.setMaxDate(maxDate15Years);
+        crn08dob1.setMinDate(maxDate49Years);
+        crn08dob2.setMaxDate(maxDate15Years);
+        crn08dob2.setMinDate(maxDate49Years);
+        crn08dod1.setMaxDate(dateToday);
+        crn08dod1.setMinDate(maxDateyear);
+        crn08dod2.setMaxDate(dateToday);
+        crn08dod2.setMinDate(maxDateyear);
 
         crn04dob1.addTextChangedListener(new TextWatcher() {
             @Override
@@ -743,8 +760,49 @@ public class SectionMActivity extends AppCompatActivity {
             }
         });
 
+        crn06dob2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                Calendar cal = getCalendarDate(crn06dob2.getText().toString());
+                cal.add(Calendar.DAY_OF_MONTH, 29);
+                crn06dod2.setMinDate(sdf.format(cal.getTime()));
+                cal.add(Calendar.DAY_OF_MONTH, 335);
+                crn06dod2.setMaxDate(sdf.format(cal.getTime()));
+                crn06dod2.setEnabled(true);
+
+            }
+        });
+
+        crn07dob1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                crn07dod1.setMinDate(maxDateyear);
+                crn07dod1.setEnabled(true);
+
+            }
+        });
 
 
 

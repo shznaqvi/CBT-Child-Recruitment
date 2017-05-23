@@ -16,6 +16,14 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="AlertDialogStyle1" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
     <style name="AlertDialogStyle" parent="android:Theme.Material.Light.Dialog.Alert">
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/white</item>
@@ -23,7 +31,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="AppTheme1" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme1" parent="Theme.AppCompat.Light">
         <item name="android:scrollViewStyle">@style/BackgroundStyle</item>
         <item name="android:textViewStyle">@style/lblTextView</item>
         <item name="android:editTextStyle">@style/txtEditText</item>
@@ -32,6 +40,8 @@
         <item name="android:checkboxStyle">@style/chkBox</item>
         <item name="android:layoutDirection">rtl</item>
         <item name="android:typeface">serif</item>
+        <item name="android:dialogTheme">@style/AlertDialogStyle1
+        </item>
 
 
     </style>
