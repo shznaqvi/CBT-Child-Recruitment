@@ -704,7 +704,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-//        values.put(singleForm.COLUMN_MNA7, AppMain.fc.getiStatus());
+        values.put(singleForm.COLUMN_ISTATUS, AppMain.fc.getiStatus());
 
 
         // Which row to update, based on the ID

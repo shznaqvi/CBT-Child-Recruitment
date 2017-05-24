@@ -3,6 +3,9 @@ package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -11,34 +14,45 @@ import org.json.JSONException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
+import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 
 public class EndingActivity extends Activity {
 
     private static final String TAG = EndingActivity.class.getSimpleName();
 
-    @BindView(R.id.activity_section_a)
-    ScrollView activitySectionA;
+    @BindView(R.id.activity_section_ending)
+    ScrollView activitySectionEnding;
 
-    /*@BindView(R.id.iStatus)
+    @BindView(R.id.iStatus)
     RadioGroup iStatus;
-    @BindView(R.id.mna7a)
-    RadioButton mna7a;
-    @BindView(R.id.mna7b)
-    RadioButton mna7b;
-    @BindView(R.id.mna7c)
-    RadioButton mna7c;
-    @BindView(R.id.mna7d)
-    RadioButton mna7d;
-*/
+    @BindView(R.id.status01)
+    RadioButton status01;
+    @BindView(R.id.status02)
+    RadioButton status02;
+    @BindView(R.id.status03)
+    RadioButton status03;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ending);
         ButterKnife.bind(this);
 
-        //mna7a.setEnabled(getIntent().getBooleanExtra("complete", true));
+        Boolean check = getIntent().getExtras().getBoolean("check");
 
+        if (check) {
+            status01.setEnabled(true);
+            status02.setEnabled(false);
+
+        } else {
+            //fldGrpmn0823Reason.setVisibility(View.GONE);
+            status01.setEnabled(false);
+            status02.setEnabled(true);
+
+
+        }
     }
 
     @OnClick(R.id.btnEnd)
@@ -50,8 +64,8 @@ public class EndingActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //if (UpdateDB()) {
-            finish();
+            if (UpdateDB()) {
+                finish();
                 Toast.makeText(this, "Closing Form!", Toast.LENGTH_SHORT).show();
                 Intent endSec = new Intent(this, MainActivity.class);
                 //AppMain.mnb1 = "TEST";
@@ -59,57 +73,43 @@ public class EndingActivity extends Activity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        //}
+            //}
+        }
     }
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = new DatabaseHelper(this);
+        DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateEnd();
 
-        if (updcount == 1) {
+        if (updcount > 0) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();*/
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        //}
+            //}
+        }
     }
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
-        /*switch (mna7.getCheckedRadioButtonId()) {
-            case R.id.mna7a:
-                AppMain.fc.setiStatus("1");
-                break;
-            case R.id.mna7b:
-                AppMain.fc.setiStatus("2");
-                break;
-            case R.id.mna7c:
-                AppMain.fc.setiStatus("3");
-                break;
-            case R.id.mna7d:
-                AppMain.fc.setiStatus("4");
-                break;
-            default:
-                AppMain.fc.setiStatus("default");
-                break;
-        }*/
+        AppMain.fc.setiStatus(status01.isChecked() ? "1" : status02.isChecked() ? "2" : status03.isChecked() ? "3" : "0");
 
     }
 
     private boolean formValidation() {
         Toast.makeText(this, "Validating Closing Section", Toast.LENGTH_SHORT).show();
 
-        /*if (mna7.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(not selected): " + getResources().getResourceTypeName(R.string.mna7), Toast.LENGTH_LONG).show();
-            mna7d.setError("This data is Required!");
+        if (iStatus.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(not selected): " + getResources().getResourceTypeName(R.string.endForm), Toast.LENGTH_LONG).show();
+            status03.setError("This data is Required!");
             Log.i(TAG, "mnd9: This data is Required!");
             return false;
         } else {
-            mna7d.setError(null);
-        }*/
+            status03.setError(null);
+        }
         return true;
     }
 }

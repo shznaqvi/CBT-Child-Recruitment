@@ -538,6 +538,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             }
         });
 
+
     }
 
     @OnClick(R.id.btnNext)

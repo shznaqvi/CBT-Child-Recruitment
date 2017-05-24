@@ -518,6 +518,7 @@ public class FormsContract {
         public static final String COLUMN_SL = "sl";
         public static final String COLUMN_SM = "sm";
         public static final String COLUMN_SN = "sn";
+
         public static final String COLUMN_GPSLAT = "gpslat";
         public static final String COLUMN_GPSLNG = "gpslng";
         public static final String COLUMN_GPSTIME = "gpstime";

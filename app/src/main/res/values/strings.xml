@@ -624,6 +624,9 @@
     <string name="crn06">  29 سے 364 دنوں کے اندر بچوں کی اموات </string>
     <string name="crn07">    12 سے 59 ماہ کے اندر بچوں کی اموات </string>
     <string name="crn08"> ماں کی حمل کے دوران یا زچگی کے دوران یا زچگی کے 42 دن تک کی اموات </string>
+    <string name="status01">مکمل</string>
+    <string name="status02">نا مکمل</string>
+    <string name="status03">گھر بند تھا</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
