@@ -266,7 +266,7 @@ public class MainActivity extends Activity {
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
 
             if (mN01.getSelectedItem() != null) {
-                Intent oF = new Intent(MainActivity.this, SectionHActivity.class);
+                Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
                 startActivity(oF);
             } else {
                 Toast.makeText(getApplicationContext(), "First click on Download Data", Toast.LENGTH_SHORT).show();
