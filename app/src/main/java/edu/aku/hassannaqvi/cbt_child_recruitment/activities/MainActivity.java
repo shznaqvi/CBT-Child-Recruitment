@@ -73,6 +73,8 @@ public class MainActivity extends Activity {
     String m_Text= "";
     private String rSumText = "";
 
+    //boolean check = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -259,10 +261,12 @@ public class MainActivity extends Activity {
     }
 
     public void openForm(View v) {
-        if (sharedPref.getString("tagName",null) != "" && sharedPref.getString("tagName",null) != null){
+
+
+        if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
             Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
             startActivity(oF);
-        }else {
+        } else {
 
             builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle("Tag Name");
@@ -282,12 +286,11 @@ public class MainActivity extends Activity {
                         if (mN01.getSelectedItem() != null) {
                             Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
                             startActivity(oF);
+                        } else {
+
                         }
-                        else {
-                            Toast.makeText(MainActivity.this,"First Download Data",Toast.LENGTH_SHORT).show();
                         }
                     }
-                }
             });
             builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                 @Override
@@ -298,6 +301,7 @@ public class MainActivity extends Activity {
 
             builder.show();
         }
+
 
     }
 
@@ -402,11 +406,13 @@ public class MainActivity extends Activity {
     }
 
     public void syncDevice(View view) {
+
         if (isNetworkAvailable()) {
 
             syncData sync = new syncData(this);
             sync.execute();
         }
+
     }
 
     private boolean isNetworkAvailable() {

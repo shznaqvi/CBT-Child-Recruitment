@@ -606,13 +606,14 @@
     <string name="crmfood08"> کھانے پینے کی اشیاء یا مزدوری کا تبادلہ </string>
     <string name="crmfood09"> دوستوں یا رشتہ داروں کی طرف سے خوراک کا تحفہ </string>
     <string name="crmfood10"> مشرے یا این جی او ، غیر سرکاری تنظیموں یا عالمی ادارہ خوراک کی طرف سے امداد </string>
+    <string name="hint">اگر نہیں کھایا تو 0 لکھیں</string>
+    <string name="eduHint">اگر اسکول نہیں گئے تو 0 لکھیں</string>
+
     <string name="crnheading"> Section N : Births and Deaths in the Last One Year </string>
     <string name="crnheadingsub"> پہچلے سال جنوری سے دسمبر 2016 تک آپ کے گھر میں کتنی پیدائشیں ہوئی اور 5 سال سے کم بچوں کی اموات کتنی ہوئی ۔اور وہ مائیں جن کا حمل کے دوران ،زچگی کے دوران یا پھر زچگی کے بعد 42 دن کے اندر اموات ہوئی ہوں؟ </string>
     <string name="crna"> Indicators </string>
     <string name="crnb"> Statistics
     None = 0 </string>
-    <string name="hint">اگر نہیں کھایا تو 0 لکھیں</string>
-    <string name="eduHint">اگر اسکول نہیں گئے تو 0 لکھیں</string>
     <string name="crnba"> Number </string>
     <string name="crnc"> تاریخ پیدائش </string>
     <string name="crnd"> تاریخ وفات </string>

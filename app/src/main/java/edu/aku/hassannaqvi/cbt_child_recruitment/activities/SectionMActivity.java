@@ -804,10 +804,6 @@ public class SectionMActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
         crn01dod1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
