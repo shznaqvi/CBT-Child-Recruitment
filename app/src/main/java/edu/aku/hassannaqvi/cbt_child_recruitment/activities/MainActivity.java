@@ -41,6 +41,7 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.LHWsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.TehsilsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetHFacilities;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetLHWs;
+import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetSources;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetTehsil;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetUCs;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetUsers;
@@ -70,7 +71,7 @@ public class MainActivity extends Activity {
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
     AlertDialog.Builder builder;
-    String m_Text= "";
+    String m_Text = "";
     private String rSumText = "";
 
     //boolean check = false;
@@ -95,7 +96,7 @@ public class MainActivity extends Activity {
 
 //        Tag Working
 
-        sharedPref = getSharedPreferences("tagName",MODE_PRIVATE);
+        sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         editor = sharedPref.edit();
 
         builder = new AlertDialog.Builder(MainActivity.this);
@@ -122,12 +123,11 @@ public class MainActivity extends Activity {
             }
         });
 
-        if (sharedPref.getString("tagName",null) == "" || sharedPref.getString("tagName",null) == null){
+        if (sharedPref.getString("tagName", null) == "" || sharedPref.getString("tagName", null) == null) {
             builder.show();
         }
 
 //        End Tag
-
 
 
         db = new DatabaseHelper(this);
@@ -264,8 +264,13 @@ public class MainActivity extends Activity {
 
 
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
-            Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
-            startActivity(oF);
+
+            if (mN01.getSelectedItem() != null) {
+                Intent oF = new Intent(MainActivity.this, SectionHActivity.class);
+                startActivity(oF);
+            } else {
+                Toast.makeText(getApplicationContext(), "First click on Download Data", Toast.LENGTH_SHORT).show();
+            }
         } else {
 
             builder = new AlertDialog.Builder(MainActivity.this);
@@ -287,10 +292,10 @@ public class MainActivity extends Activity {
                             Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
                             startActivity(oF);
                         } else {
-
-                        }
+                            Toast.makeText(getApplicationContext(), "First click on Download Data", Toast.LENGTH_SHORT).show();
                         }
                     }
+                }
             });
             builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                 @Override
@@ -460,6 +465,10 @@ public class MainActivity extends Activity {
                     GetLHWs gp = new GetLHWs(mContext);
                     Toast.makeText(mContext, "Syncing LHWs", Toast.LENGTH_SHORT).show();
                     gp.execute();
+
+                    GetSources sr = new GetSources(mContext);
+                    Toast.makeText(mContext, "Syncing NGOs", Toast.LENGTH_SHORT).show();
+                    sr.execute();
 
                     SharedPreferences syncPref = getSharedPreferences("SyncInfo(DOWN)", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = syncPref.edit();

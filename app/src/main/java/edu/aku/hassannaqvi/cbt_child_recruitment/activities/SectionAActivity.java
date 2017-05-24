@@ -274,20 +274,15 @@ public class SectionAActivity extends Activity {
 
         UCs = new ArrayList<>();
         getAllUCs = new HashMap<>();
+
         Collection<UCsContract> allUcs = db.getAllUCsByTehsil(AppMain.tehsilCode);
+
         for (UCsContract aUCs : allUcs) {
             getAllUCs.put(aUCs.getUcName(), aUCs.getUcCode());
             UCs.add(aUCs.getUcName());
         }
 
         crauc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, UCs));
-
-/*
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, UCs);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        crauc.setAdapter(adapter);
-*/
 
         crauc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -323,6 +318,7 @@ public class SectionAActivity extends Activity {
 
             }
         });
+
 
 //        cravillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 //            @Override
@@ -582,318 +578,316 @@ public class SectionAActivity extends Activity {
         }
 
 
-            //========== Q2==============
-            if (cra02.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra02), Toast.LENGTH_SHORT).show();
-                cra0202.setError("This data is Required!");
+        //========== Q2==============
+        if (cra02.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra02), Toast.LENGTH_SHORT).show();
+            cra0202.setError("This data is Required!");
 
-                Log.i(TAG, "cra02: This Data is Required!");
+            Log.i(TAG, "cra02: This Data is Required!");
+            return false;
+        } else {
+            cra0202.setError(null);
+        }
+
+        if (cra0201.isChecked()) {
+
+
+            //================= Q4================
+            if (cra04.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra04), Toast.LENGTH_SHORT).show();
+                cra0405.setError("This data is Required!");
+
+                Log.i(TAG, "cra04: This Data is Required!");
                 return false;
             } else {
-                cra0202.setError(null);
+                cra0405.setError(null);
             }
 
-            if (cra0201.isChecked()) {
+            //======================= Q5==================
+            if (cra05.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra05), Toast.LENGTH_SHORT).show();
+                cra05.setError("This data is Required!");
+
+                Log.i(TAG, "cra05: This Data is Required!");
+                return false;
+            } else {
+                cra05.setError(null);
+            }
+            //======================= Q6==================
+            if (cra06.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra06), Toast.LENGTH_SHORT).show();
+                cra06.setError("This data is Required!");
+
+                Log.i(TAG, "cra06: This Data is Required!");
+                return false;
+            } else {
+                cra06.setError(null);
+            }
+
+            //==================== Q7====================
+            if (cra07.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra07), Toast.LENGTH_SHORT).show();
+                cra07.setError("This data is Required!");
+
+                Log.i(TAG, "cra07: This Data is Required!");
+                return false;
+            } else {
+                cra07.setError(null);
+            }
+
+            //============== Check on Education=============
+            if ((Integer.valueOf(cra07.getText().toString()) < 0)
+                    || (Integer.valueOf(cra07.getText().toString()) > 16)) {
+                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra07), Toast.LENGTH_LONG).show();
+                cra07.setError("Range is 1-16");
+                Log.i(TAG, "cra07: Range is 1-16");
+                return false;
+            } else {
+                cra07.setError(null);
+            }
 
 
-                //================= Q4================
-                if (cra04.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra04), Toast.LENGTH_SHORT).show();
-                    cra0405.setError("This data is Required!");
+            //=================== Q8==============
+            if (cra08.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra08), Toast.LENGTH_SHORT).show();
+                cra0896.setError("This data is Required!");
 
-                    Log.i(TAG, "cra04: This Data is Required!");
-                    return false;
-                } else {
-                    cra0405.setError(null);
-                }
+                Log.i(TAG, "cra08: This Data is Required!");
+                return false;
+            } else {
+                cra0896.setError(null);
+            }
 
-                //======================= Q5==================
-                if (cra05.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra05), Toast.LENGTH_SHORT).show();
-                    cra05.setError("This data is Required!");
+            //=================== Q8 Others ==============
+            if (cra0896.isChecked() && cra0896x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra08) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
+                cra0896x.setError("This data is Required!");
 
-                    Log.i(TAG, "cra05: This Data is Required!");
-                    return false;
-                } else {
-                    cra05.setError(null);
-                }
-                //======================= Q6==================
-                if (cra06.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra06), Toast.LENGTH_SHORT).show();
-                    cra06.setError("This data is Required!");
-
-                    Log.i(TAG, "cra06: This Data is Required!");
-                    return false;
-                } else {
-                    cra06.setError(null);
-                }
-
-                //==================== Q7====================
-                if (cra07.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra07), Toast.LENGTH_SHORT).show();
-                    cra07.setError("This data is Required!");
-
-                    Log.i(TAG, "cra07: This Data is Required!");
-                    return false;
-                } else {
-                    cra07.setError(null);
-                }
-
-                //============== Check on Education=============
-                if ((Integer.valueOf(cra07.getText().toString()) < 0)
-                        || (Integer.valueOf(cra07.getText().toString()) > 16)) {
-                    Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra07), Toast.LENGTH_LONG).show();
-                    cra07.setError("Range is 1-16");
-                    Log.i(TAG, "cra07: Range is 1-16");
-                    return false;
-                } else {
-                    cra07.setError(null);
-                }
+                Log.i(TAG, "cra0896x: This Data is Required!");
+                return false;
+            } else {
+                cra0896x.setError(null);
+            }
 
 
-                //=================== Q8==============
-                if (cra08.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra08), Toast.LENGTH_SHORT).show();
-                    cra0896.setError("This data is Required!");
+            //================== Q9=====================
+            if (cra09.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra09), Toast.LENGTH_SHORT).show();
+                cra09.setError("This data is Required!");
 
-                    Log.i(TAG, "cra08: This Data is Required!");
-                    return false;
-                } else {
-                    cra0896.setError(null);
-                }
-
-                //=================== Q8 Others ==============
-                if (cra0896.isChecked() && cra0896x.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra08) + " - " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                    cra0896x.setError("This data is Required!");
-
-                    Log.i(TAG, "cra0896x: This Data is Required!");
-                    return false;
-                } else {
-                    cra0896x.setError(null);
-                }
+                Log.i(TAG, "cra09: This Data is Required!");
+                return false;
+            } else {
+                cra09.setError(null);
+            }
 
 
-                //================== Q9=====================
-                if (cra09.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra09), Toast.LENGTH_SHORT).show();
-                    cra09.setError("This data is Required!");
+            //======================= Q10===============
+            if (cra10.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra10), Toast.LENGTH_SHORT).show();
+                cra10.setError("This data is Required!");
 
-                    Log.i(TAG, "cra09: This Data is Required!");
-                    return false;
-                } else {
-                    cra09.setError(null);
-                }
+                Log.i(TAG, "cra10: This Data is Required!");
+                return false;
+            } else {
+                cra10.setError(null);
+            }
+            //================== Check on age of mother===============
+            if ((Integer.valueOf(cra10.getText().toString()) < 15)
+                    || (Integer.valueOf(cra10.getText().toString()) > 49)) {
+                Toast.makeText(this, "ERROR(Invali d) " + getString(R.string.cra10), Toast.LENGTH_LONG).show();
+                cra10.setError("Range is 15-49 years");
+                Log.i(TAG, "cra07: Range is 15-49");
+                return false;
+            } else {
+                cra10.setError(null);
+            }
+            //==================== Q11=================
+            if (cra11.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra11), Toast.LENGTH_SHORT).show();
+                cra11.setError("This data is Required!");
 
+                Log.i(TAG, "cra11: This Data is Required!");
+                return false;
+            } else {
+                cra11.setError(null);
+            }
 
-                //======================= Q10===============
-                if (cra10.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra10), Toast.LENGTH_SHORT).show();
-                    cra10.setError("This data is Required!");
+            //=============== Check on Education of Mother================
+            if ((Integer.valueOf(cra11.getText().toString()) < 0)
+                    || (Integer.valueOf(cra11.getText().toString()) > 16)) {
+                Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra11), Toast.LENGTH_LONG).show();
+                cra11.setError("Range is 1-16");
+                Log.i(TAG, "cra11: Range is 1-16");
+                return false;
+            } else {
+                cra11.setError(null);
+            }
+            //================= Q12===================
+            if (cra12.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra12), Toast.LENGTH_SHORT).show();
+                cra12.setError("This data is Required!");
 
-                    Log.i(TAG, "cra10: This Data is Required!");
-                    return false;
-                } else {
-                    cra10.setError(null);
-                }
-                //================== Check on age of mother===============
-                if ((Integer.valueOf(cra10.getText().toString()) < 15)
-                        || (Integer.valueOf(cra10.getText().toString()) > 49)) {
-                    Toast.makeText(this, "ERROR(Invali d) " + getString(R.string.cra10), Toast.LENGTH_LONG).show();
-                    cra10.setError("Range is 15-49 years");
-                    Log.i(TAG, "cra07: Range is 15-49");
-                    return false;
-                } else {
-                    cra10.setError(null);
-                }
-                //==================== Q11=================
-                if (cra11.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra11), Toast.LENGTH_SHORT).show();
-                    cra11.setError("This data is Required!");
+                Log.i(TAG, "cra12: This Data is Required!");
+                return false;
+            } else {
+                cra12.setError(null);
+            }
+            //===================== Check on age of mother at time of marriage===================
+            if ((Integer.valueOf(cra12.getText().toString()) < 15)
+                    || (Integer.valueOf(cra12.getText().toString()) > 49)) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.cra12), Toast.LENGTH_LONG).show();
+                cra12.setError("Range is 15-49 years");
+                Log.i(TAG, "cra12: Range is 15-49");
+                return false;
+            } else {
+                cra12.setError(null);
+            }
 
-                    Log.i(TAG, "cra11: This Data is Required!");
-                    return false;
-                } else {
-                    cra11.setError(null);
-                }
-
-                //=============== Check on Education of Mother================
-                if ((Integer.valueOf(cra11.getText().toString()) < 0)
-                        || (Integer.valueOf(cra11.getText().toString()) > 16)) {
-                    Toast.makeText(this, "ERROR(Invalid) " + getString(R.string.cra11), Toast.LENGTH_LONG).show();
-                    cra11.setError("Range is 1-16");
-                    Log.i(TAG, "cra11: Range is 1-16");
-                    return false;
-                } else {
-                    cra11.setError(null);
-                }
-                //================= Q12===================
-                if (cra12.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra12), Toast.LENGTH_SHORT).show();
-                    cra12.setError("This data is Required!");
-
-                    Log.i(TAG, "cra12: This Data is Required!");
-                    return false;
-                } else {
-                    cra12.setError(null);
-                }
-                //===================== Check on age of mother at time of marriage===================
-                if ((Integer.valueOf(cra12.getText().toString()) < 15)
-                        || (Integer.valueOf(cra12.getText().toString()) > 49)) {
-                    Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.cra12), Toast.LENGTH_LONG).show();
-                    cra12.setError("Range is 15-49 years");
-                    Log.i(TAG, "cra12: Range is 15-49");
-                    return false;
-                } else {
-                    cra12.setError(null);
-                }
-
-                if ((Integer.valueOf(cra12.getText().toString())
-                        > (Integer.valueOf(cra10.getText().toString())))) {
-                    Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.cra12), Toast.LENGTH_LONG).show();
-                    cra12.setError("Can not be greater than current age");
-                    Log.i(TAG, "Can not be greater than current age");
-                    return false;
-                } else {
-                    cra12.setError(null);
-                }
+            if ((Integer.valueOf(cra12.getText().toString())
+                    > (Integer.valueOf(cra10.getText().toString())))) {
+                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.cra12), Toast.LENGTH_LONG).show();
+                cra12.setError("Can not be greater than current age");
+                Log.i(TAG, "Can not be greater than current age");
+                return false;
+            } else {
+                cra12.setError(null);
+            }
 
 
-                //======================= Q13================
-                if (cra13.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra13), Toast.LENGTH_SHORT).show();
-                    cra1302.setError("This data is Required!");
+            //======================= Q13================
+            if (cra13.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra13), Toast.LENGTH_SHORT).show();
+                cra1302.setError("This data is Required!");
 
-                    Log.i(TAG, "cra13: This Data is Required!");
-                    return false;
-                } else {
-                    cra1302.setError(null);
-                }
+                Log.i(TAG, "cra13: This Data is Required!");
+                return false;
+            } else {
+                cra1302.setError(null);
+            }
 
-                //================ Q14===============
-                if (cra14.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
-                    cra14.setError("This is data is Required!");
+            //================ Q14===============
+            if (cra14.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
+                cra14.setError("This is data is Required!");
 
-                    Log.i(TAG, "cra14: This Data is Required!");
-                    return false;
-                } else {
-                    cra14.setError(null);
-                }
+                Log.i(TAG, "cra14: This Data is Required!");
+                return false;
+            } else {
+                cra14.setError(null);
+            }
 
-                if (Integer.valueOf(cra14.getText().toString()) < 1
-                        || Integer.valueOf(cra14.getText().toString()) > 15) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
-                    cra14.setError("Range is 1 - 15");
+            if (Integer.valueOf(cra14.getText().toString()) < 1
+                    || Integer.valueOf(cra14.getText().toString()) > 15) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
+                cra14.setError("Range is 1 - 15");
 
-                    Log.i(TAG, "cra14: Range is 1 - 15");
-                    return false;
-                } else {
-                    cra14.setError(null);
-                }
+                Log.i(TAG, "cra14: Range is 1 - 15");
+                return false;
+            } else {
+                cra14.setError(null);
+            }
 
-                //================ Q15===============
-                if (cra15.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
-                    cra15.setError("This data is Required!");
+            //================ Q15===============
+            if (cra15.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
+                cra15.setError("This data is Required!");
 
-                    Log.i(TAG, "cra15: This Data is Required!");
-                    return false;
-                } else {
-                    cra15.setError(null);
-                }
+                Log.i(TAG, "cra15: This Data is Required!");
+                return false;
+            } else {
+                cra15.setError(null);
+            }
 
-                if (Integer.valueOf(cra15.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
-                    cra15.setError("Can not be zero!");
+            if (Integer.valueOf(cra15.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra15), Toast.LENGTH_SHORT).show();
+                cra15.setError("Can not be zero!");
 
-                    Log.i(TAG, "cra15: Can not be zero");
-                    return false;
-                } else {
-                    cra15.setError(null);
-                }
+                Log.i(TAG, "cra15: Can not be zero");
+                return false;
+            } else {
+                cra15.setError(null);
+            }
 
-                if (Integer.valueOf(cra15.getText().toString())
-                        > (Integer.valueOf(cra14.getText().toString()) + 1)) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
-                    cra14.setError("Check pregnancies and live births again");
+            if (Integer.valueOf(cra15.getText().toString())
+                    > (Integer.valueOf(cra14.getText().toString()) + 1)) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra14), Toast.LENGTH_SHORT).show();
+                cra14.setError("Check pregnancies and live births again");
 
-                    Log.i(TAG, "cra14: Check pregnancies and live births again");
-                    return false;
-                } else {
-                    cra14.setError(null);
-                }
+                Log.i(TAG, "cra14: Check pregnancies and live births again");
+                return false;
+            } else {
+                cra14.setError(null);
+            }
 
-                //================ Q16===============
-                if (cra16.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra16), Toast.LENGTH_SHORT).show();
-                    cra1603.setError("This data is Required!");
+            //================ Q16===============
+            if (cra16.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra16), Toast.LENGTH_SHORT).show();
+                cra1603.setError("This data is Required!");
 
-                    Log.i(TAG, "cra16: This Data is Required!");
-                    return false;
-                } else {
-                    cra1603.setError(null);
-                }
+                Log.i(TAG, "cra16: This Data is Required!");
+                return false;
+            } else {
+                cra1603.setError(null);
+            }
 
-                //================ Q17===============
-                if (cra17.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
-                    cra17.setError("This data is Required!");
+            //================ Q17===============
+            if (cra17.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
+                cra17.setError("This data is Required!");
 
-                    Log.i(TAG, "cra17: This Data is Required!");
-                    return false;
-                } else {
-                    cra17.setError(null);
-                }
-
-
-                //================ Q18===============
-                if (cra18.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra18), Toast.LENGTH_SHORT).show();
-                    cra18.setError("This data is Required!");
-
-                    Log.i(TAG, "cra18: This Data is Required!");
-                    return false;
-                } else {
-                    cra18.setError(null);
-                }
-
-                if (Integer.valueOf(cra18.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra18), Toast.LENGTH_SHORT).show();
-                    cra18.setError("Can not be zero!");
-
-                    Log.i(TAG, "cra18: Can not be zero");
-                    return false;
-                } else {
-                    cra18.setError(null);
-                }
+                Log.i(TAG, "cra17: This Data is Required!");
+                return false;
+            } else {
+                cra17.setError(null);
+            }
 
 
+            //================ Q18===============
+            if (cra18.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra18), Toast.LENGTH_SHORT).show();
+                cra18.setError("This data is Required!");
+
+                Log.i(TAG, "cra18: This Data is Required!");
+                return false;
+            } else {
+                cra18.setError(null);
+            }
+
+            if (Integer.valueOf(cra18.getText().toString()) < 1) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra18), Toast.LENGTH_SHORT).show();
+                cra18.setError("Can not be zero!");
+
+                Log.i(TAG, "cra18: Can not be zero");
+                return false;
+            } else {
+                cra18.setError(null);
+            }
 
 
-                //================ Q19===============
-                if (cra19.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra19), Toast.LENGTH_SHORT).show();
-                    cra19.setError("This data is Required!");
+            //================ Q19===============
+            if (cra19.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra19), Toast.LENGTH_SHORT).show();
+                cra19.setError("This data is Required!");
 
-                    Log.i(TAG, "cra19: This Data is Required!");
-                    return false;
-                } else {
-                    cra19.setError(null);
-                }
+                Log.i(TAG, "cra19: This Data is Required!");
+                return false;
+            } else {
+                cra19.setError(null);
+            }
 
-                //================ Q20===============
-                if (cra20.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra20), Toast.LENGTH_SHORT).show();
-                    cra20.setError("This data is Required!");
+            //================ Q20===============
+            if (cra20.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra20), Toast.LENGTH_SHORT).show();
+                cra20.setError("This data is Required!");
 
-                    Log.i(TAG, "cra20: This Data is Required!");
-                    return false;
-                } else {
-                    cra20.setError(null);
-                }
+                Log.i(TAG, "cra20: This Data is Required!");
+                return false;
+            } else {
+                cra20.setError(null);
+            }
 
-                //================ Q21===============
+            //================ Q21===============
 
                 /*if (cra21.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra21), Toast.LENGTH_SHORT).show();
@@ -905,69 +899,65 @@ public class SectionAActivity extends Activity {
                     cra21.setError(null);
                 }*/
 
-                //================ Q22===============
-                if (cra22.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra22), Toast.LENGTH_SHORT).show();
-                    cra22.setError("This data is Required!");
+            //================ Q22===============
+            if (cra22.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra22), Toast.LENGTH_SHORT).show();
+                cra22.setError("This data is Required!");
 
-                    Log.i(TAG, "cra22: This Data is Required!");
-                    return false;
-                } else {
-                    cra22.setError(null);
-                }
+                Log.i(TAG, "cra22: This Data is Required!");
+                return false;
+            } else {
+                cra22.setError(null);
+            }
 
-                //================ Q23===============
-                if (cra23.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra23), Toast.LENGTH_SHORT).show();
-                    cra23.setError("This data is Required!");
+            //================ Q23===============
+            if (cra23.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra23), Toast.LENGTH_SHORT).show();
+                cra23.setError("This data is Required!");
 
-                    Log.i(TAG, "cra23: This Data is Required!");
-                    return false;
-                } else {
-                    cra23.setError(null);
-                }
+                Log.i(TAG, "cra23: This Data is Required!");
+                return false;
+            } else {
+                cra23.setError(null);
+            }
 
-                //================ Q24===============
-                if (cra24.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra24), Toast.LENGTH_SHORT).show();
-                    cra24.setError("This data is Required!");
+            //================ Q24===============
+            if (cra24.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cra24), Toast.LENGTH_SHORT).show();
+                cra24.setError("This data is Required!");
 
-                    Log.i(TAG, "cra24: This Data is Required!");
-                    return false;
-                } else {
-                    cra24.setError(null);
-                }
+                Log.i(TAG, "cra24: This Data is Required!");
+                return false;
+            } else {
+                cra24.setError(null);
+            }
 
-                if ((Integer.valueOf(cra17.getText().toString()) + Integer.valueOf(cra18.getText().toString())
-                        + Integer.valueOf(cra19.getText().toString()) + Integer.valueOf(cra22.getText().toString())
-                        + Integer.valueOf(cra23.getText().toString()))
-                        > Integer.valueOf(cra24.getText().toString())) {
-                    Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
-                    cra17.setError("Can not be greater than total members!");
+            if ((Integer.valueOf(cra17.getText().toString()) + Integer.valueOf(cra18.getText().toString())
+                    + Integer.valueOf(cra19.getText().toString()) + Integer.valueOf(cra22.getText().toString())
+                    + Integer.valueOf(cra23.getText().toString()))
+                    > Integer.valueOf(cra24.getText().toString())) {
+                Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra17), Toast.LENGTH_SHORT).show();
+                cra17.setError("Can not be greater than total members!");
 
-                    Log.i(TAG, "cra17: Can not be greater than total members");
-                    return false;
-                } else {
-                    cra17.setError(null);
-                }
+                Log.i(TAG, "cra17: Can not be greater than total members");
+                return false;
+            } else {
+                cra17.setError(null);
+            }
 
-                if ((Integer.valueOf(cra20.getText().toString()))
-                        > Integer.valueOf(cra23.getText().toString())) {
-                    Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra23), Toast.LENGTH_SHORT).show();
-                    cra23.setError("Can not be greater than adult females!");
+            if ((Integer.valueOf(cra20.getText().toString()))
+                    > Integer.valueOf(cra23.getText().toString())) {
+                Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra23), Toast.LENGTH_SHORT).show();
+                cra23.setError("Can not be greater than adult females!");
 
-                    Log.i(TAG, "cra17: Can not be greater than adult females");
-                    return false;
-                } else {
-                    cra23.setError(null);
-                }
-
-
+                Log.i(TAG, "cra17: Can not be greater than adult females");
+                return false;
+            } else {
+                cra23.setError(null);
+            }
 
 
-
-
-                //================== Check on Total members in HH=============
+            //================== Check on Total members in HH=============
 
 //                if (Integer.parseInt(cra24.getText().toString().isEmpty() ? "0" : cra24.getText().toString())
 //                        != ((Integer.parseInt(cra17.getText().toString().isEmpty() ? "0" : cra17.getText().toString()))
@@ -1001,7 +991,7 @@ public class SectionAActivity extends Activity {
 //                }
 
 
-            }
+        }
 
 
         return true;
@@ -1046,7 +1036,7 @@ public class SectionAActivity extends Activity {
 
         AppMain.VillageName = cravillage.getText().toString();
 
-        SharedPreferences sharedPref = getSharedPreferences("tagName",MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
         AppMain.fc = new FormsContract();
 
@@ -1059,7 +1049,7 @@ public class SectionAActivity extends Activity {
         AppMain.fc.setUccode(getAllUCs.get(crauc.getSelectedItem().toString()));
         AppMain.fc.setVillagename(AppMain.VillageName);
         AppMain.fc.setChildId(cra03.getText().toString());
-        AppMain.fc.setTagId(sharedPref.getString("tagName",""));
+        AppMain.fc.setTagId(sharedPref.getString("tagName", ""));
 
         JSONObject sa = new JSONObject();
 

@@ -15,10 +15,17 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +33,8 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.SourceNGOContract;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract;
 
 public class SectionHActivity extends Activity {
 
@@ -429,6 +438,9 @@ public class SectionHActivity extends Activity {
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
+    Map<String, String> getAllNGOs;
+    List<String> NGOs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -660,23 +672,37 @@ public class SectionHActivity extends Activity {
             }
         });
 
-        String[] ngo = new String[]{"NGO 1","NGO 2","NGO 3","NGO 4","NGO 5","NGO 6","NGO 7"};
+        DatabaseHelper db = new DatabaseHelper(this);
+        Collection<SourceNGOContract> allNGOs = db.getAllNGOs();
 
-        crj01asrc.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01bsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01csrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01dsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01esrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01fsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01gsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01hsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01isrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01jsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01ksrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01lsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01msrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
-        crj01nsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, ngo));
+        getAllNGOs = new HashMap<>();
+        NGOs = new ArrayList<>();
+        if(allNGOs.size()!=0) {
 
+            NGOs.add("...");
+
+            for (SourceNGOContract aNGO : allNGOs) {
+                getAllNGOs.put(aNGO.getSourceName(), aNGO.getSourceId());
+                NGOs.add(aNGO.getSourceName());
+            }
+
+//            String[] ngo = new String[]{"NGO 1", "NGOs 2", "NGO 3", "NGO 4", "NGO 5", "NGO 6", "NGO 7"};
+
+            crj01asrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01bsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01csrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01dsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01esrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01fsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01gsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01hsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01isrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01jsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01ksrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01lsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01msrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+            crj01nsrc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, NGOs));
+        }
     }
 
     @OnClick(R.id.btnNext)
@@ -783,48 +809,48 @@ public class SectionHActivity extends Activity {
 
         sj.put("crj01a", crj01a01.isChecked() ? "1" : crj01a02.isChecked() ? "2" : "0");
         sj.put("crj01anum", crj01anum.getText().toString());
-        sj.put("crj01asrc", crj01asrc.getSelectedItem().toString());
+        sj.put("crj01asrc", getAllNGOs.get(crj01asrc.getSelectedItem().toString()));
         sj.put("crj01b", crj01b01.isChecked() ? "1" : crj01b02.isChecked() ? "2" : "0");
         sj.put("crj01bnum", crj01bnum.getText().toString());
-        sj.put("crj01bsrc", crj01bsrc.getSelectedItem().toString());
+        sj.put("crj01bsrc", getAllNGOs.get(crj01bsrc.getSelectedItem().toString()));
         sj.put("crj01c", crj01c01.isChecked() ? "1" : crj01c02.isChecked() ? "2" : "0");
         sj.put("crj01cnum", crj01cnum.getText().toString());
-        sj.put("crj01csrc", crj01csrc.getSelectedItem().toString());
+        sj.put("crj01csrc", getAllNGOs.get(crj01csrc.getSelectedItem().toString()));
         sj.put("crj01d", crj01d01.isChecked() ? "1" : crj01d02.isChecked() ? "2" : "0");
         sj.put("crj01dnum", crj01dnum.getText().toString());
-        sj.put("crj01dsrc", crj01dsrc.getSelectedItem().toString());
+        sj.put("crj01dsrc", getAllNGOs.get(crj01dsrc.getSelectedItem().toString()));
         sj.put("crj01e", crj01e01.isChecked() ? "1" : crj01e02.isChecked() ? "2" : "0");
         sj.put("crj01enum", crj01enum.getText().toString());
-        sj.put("crj01esrc", crj01esrc.getSelectedItem().toString());
+        sj.put("crj01esrc", getAllNGOs.get(crj01esrc.getSelectedItem().toString()));
         sj.put("crj01f", crj01f01.isChecked() ? "1" : crj01f02.isChecked() ? "2" : "0");
         sj.put("crj01fnum", crj01fnum.getText().toString());
-        sj.put("crj01fsrc", crj01fsrc.getSelectedItem().toString());
+        sj.put("crj01fsrc", getAllNGOs.get(crj01fsrc.getSelectedItem().toString()));
         sj.put("crj01g", crj01g01.isChecked() ? "1" : crj01g02.isChecked() ? "2" : "0");
         sj.put("crj01gnum", crj01gnum.getText().toString());
-        sj.put("crj01gsrc", crj01gsrc.getSelectedItem().toString());
+        sj.put("crj01gsrc", getAllNGOs.get(crj01gsrc.getSelectedItem().toString()));
         sj.put("crj01h", crj01h01.isChecked() ? "1" : crj01h02.isChecked() ? "2" : "0");
         sj.put("crj01hnum", crj01hnum.getText().toString());
-        sj.put("crj01hsrc", crj01hsrc.getSelectedItem().toString());
+        sj.put("crj01hsrc", getAllNGOs.get(crj01hsrc.getSelectedItem().toString()));
         sj.put("crj01i", crj01i01.isChecked() ? "1" : crj01i02.isChecked() ? "2" : "0");
         sj.put("crj01inum", crj01inum.getText().toString());
-        sj.put("crj01isrc", crj01isrc.getSelectedItem().toString());
+        sj.put("crj01isrc", getAllNGOs.get(crj01isrc.getSelectedItem().toString()));
         sj.put("crj01j", crj01j01.isChecked() ? "1" : crj01j02.isChecked() ? "2" : "0");
         sj.put("crj01jnum", crj01jnum.getText().toString());
-        sj.put("crj01jsrc", crj01jsrc.getSelectedItem().toString());
+        sj.put("crj01jsrc", getAllNGOs.get(crj01jsrc.getSelectedItem().toString()));
         sj.put("crj01k", crj01k01.isChecked() ? "1" : crj01k02.isChecked() ? "2" : "0");
         sj.put("crj01knum", crj01knum.getText().toString());
-        sj.put("crj01ksrc", crj01ksrc.getSelectedItem().toString());
+        sj.put("crj01ksrc", getAllNGOs.get(crj01ksrc.getSelectedItem().toString()));
         sj.put("crj01l", crj01l01.isChecked() ? "1" : crj01l02.isChecked() ? "2" : "0");
         sj.put("crj01lnum", crj01lnum.getText().toString());
-        sj.put("crj01lsrc", crj01lsrc.getSelectedItem().toString());
+        sj.put("crj01lsrc", getAllNGOs.get(crj01lsrc.getSelectedItem().toString()));
         sj.put("crj01m", crj01m01.isChecked() ? "1" : crj01m02.isChecked() ? "2" : "0");
         sj.put("crj01mx", crj01mx.getText().toString());
         sj.put("crj01mnum", crj01mnum.getText().toString());
-        sj.put("crj01msrc", crj01msrc.getSelectedItem().toString());
+        sj.put("crj01msrc", getAllNGOs.get(crj01msrc.getSelectedItem().toString()));
         sj.put("crj01n", crj01n01.isChecked() ? "1" : crj01n02.isChecked() ? "2" : "0");
         sj.put("crj01nx", crj01nx.getText().toString());
         sj.put("crj01nnum", crj01nnum.getText().toString());
-        sj.put("crj01nsrc", crj01nsrc.getSelectedItem().toString());
+        sj.put("crj01nsrc", getAllNGOs.get(crj01nsrc.getSelectedItem().toString()));
 
 
         AppMain.fc.setsH(String.valueOf(sh));
@@ -1218,6 +1244,16 @@ public class SectionHActivity extends Activity {
                 crj01anum.setError(null);
             }
 
+            if (crj01asrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01asrc.getSelectedView()).setError("This Data is Required");
+
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01asrc.getSelectedView()).setError(null);
+            }
+
         }
 
         //================== 1.2===================
@@ -1237,6 +1273,15 @@ public class SectionHActivity extends Activity {
                 return false;
             } else {
                 crj01bnum.setError(null);
+            }
+            if (crj01bsrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01bsrc.getSelectedView()).setError("This Data is Required");
+
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01bsrc.getSelectedView()).setError(null);
             }
         }
 
@@ -1258,7 +1303,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01cnum.setError(null);
             }
+            if (crj01csrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01csrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01csrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.4===================
@@ -1279,7 +1332,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01dnum.setError(null);
             }
+            if (crj01dsrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01dsrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01dsrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.5===================
@@ -1300,7 +1361,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01enum.setError(null);
             }
+            if (crj01esrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01esrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01esrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.6===================
@@ -1321,7 +1390,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01fnum.setError(null);
             }
+            if (crj01fsrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01fsrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01fsrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.7===================
@@ -1342,7 +1419,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01gnum.setError(null);
             }
+            if (crj01gsrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01gsrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01gsrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.8===================
@@ -1363,7 +1448,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01hnum.setError(null);
             }
+            if (crj01hsrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01hsrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01hsrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.9===================
@@ -1384,7 +1477,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01inum.setError(null);
             }
+            if (crj01isrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01isrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01isrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.10 ===================
@@ -1405,7 +1506,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01jnum.setError(null);
             }
+            if (crj01jsrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01jsrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01jsrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.11 ===================
@@ -1426,7 +1535,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01knum.setError(null);
             }
+            if (crj01ksrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01ksrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01ksrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.12 ===================
@@ -1447,7 +1564,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01lnum.setError(null);
             }
+            if (crj01lsrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01lsrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01lsrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.13 ===================
@@ -1476,7 +1601,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01mnum.setError(null);
             }
+            if (crj01msrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01msrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01msrc.getSelectedView()).setError(null);
+            }
         }
 
         //================== 1.14 ===================
@@ -1505,7 +1638,15 @@ public class SectionHActivity extends Activity {
             } else {
                 crj01nnum.setError(null);
             }
+            if (crj01nsrc.getSelectedItem() == "...") {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.cruc), Toast.LENGTH_SHORT).show();
+                ((TextView) crj01nsrc.getSelectedView()).setError("This Data is Required");
 
+                Log.i(TAG, "cra01: This Data is Required!");
+                return false;
+            } else {
+                ((TextView) crj01nsrc.getSelectedView()).setError(null);
+            }
         }
 
 
