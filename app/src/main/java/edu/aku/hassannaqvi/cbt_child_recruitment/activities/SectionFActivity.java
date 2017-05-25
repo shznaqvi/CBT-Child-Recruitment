@@ -1187,35 +1187,35 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             crf1503.setError(null);
         }
 
+            if (crf1503.isChecked()) {
+                if ((Integer.valueOf(crf1501.getText().toString()) < 1)
+                        && Integer.valueOf(crf1502.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
+                    crf1501.setError("Zero not allowed");
+                    Log.i(TAG, "crf15: Zero not allowed");
+                    return false;
+                } else {
+                    crf1501.setError(null);
+                }
 
-            if ((Integer.valueOf(crf1501.getText().toString()) < 1)
-                    && Integer.valueOf(crf1502.getText().toString()) < 1) {
-                Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
-                crf1501.setError("Zero not allowed");
-                Log.i(TAG, "crf15: Zero not allowed");
-                return false;
-            } else {
-                crf1501.setError(null);
+                if (Integer.valueOf(crf1501.getText().toString()) > 11) {
+                    Toast.makeText(this, "ERROR(Range): " + getString(R.string.crf1501), Toast.LENGTH_SHORT).show();
+                    crf1501.setError("Range is 0 - 11 months");
+                    Log.i(TAG, "crf1501: Range is 0 - 11 months");
+                    return false;
+                } else {
+                    crf1501.setError(null);
+                }
+
+                if ((Integer.valueOf(crf1502.getText().toString()) > 29)) {
+                    Toast.makeText(this, "ERROR(Range): " + getString(R.string.crf1502), Toast.LENGTH_SHORT).show();
+                    crf1502.setError("Range is 0 - 29 days");
+                    Log.i(TAG, "crf1502: Range is 0 - 29 days");
+                    return false;
+                } else {
+                    crf1502.setError(null);
+                }
             }
-
-            if (Integer.valueOf(crf1501.getText().toString()) > 11) {
-                Toast.makeText(this, "ERROR(Range): " + getString(R.string.crf1501), Toast.LENGTH_SHORT).show();
-                crf1501.setError("Range is 0 - 11 months");
-                Log.i(TAG, "crf1501: Range is 0 - 11 months");
-                return false;
-            } else {
-                crf1501.setError(null);
-            }
-
-            if ((Integer.valueOf(crf1502.getText().toString()) > 29)) {
-                Toast.makeText(this, "ERROR(Range): " + getString(R.string.crf1502), Toast.LENGTH_SHORT).show();
-                crf1502.setError("Range is 0 - 29 days");
-                Log.i(TAG, "crf1502: Range is 0 - 29 days");
-                return false;
-            } else {
-                crf1502.setError(null);
-            }
-
         }
 
 
