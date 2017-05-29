@@ -1033,10 +1033,10 @@ public class SectionBActivity extends Activity {
         } else {
             crc01m1.setError(null);
 
-                    if (Double.parseDouble(crc01m1.getText().toString()) < 38.0 || Double.parseDouble(crc01m1.getText().toString()) > 70.0) {
+            if (Double.parseDouble(crc01m1.getText().toString()) < 38.0 || Double.parseDouble(crc01m1.getText().toString()) > 80.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                        crc01m1.setError("Invalid: Range 38.0 - 70.0");
-                        Log.i(TAG, "crc01m1: Invalid Range 38.0 - 70.0");
+                crc01m1.setError("Invalid: Range 38.0 - 80.0");
+                Log.i(TAG, "crc01m1: Invalid Range 38.0 - 80.0");
                         return false;
                     } else {
                         crc01m1.setError(null);
@@ -1053,10 +1053,10 @@ public class SectionBActivity extends Activity {
         } else {
             crc01m2.setError(null);
 
-                    if (Double.parseDouble(crc01m2.getText().toString()) < 38.0 || Double.parseDouble(crc01m2.getText().toString()) > 70.0) {
+            if (Double.parseDouble(crc01m2.getText().toString()) < 38.0 || Double.parseDouble(crc01m2.getText().toString()) > 80.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                        crc01m2.setError("Invalid: Range 38.0 - 70.0");
-                        Log.i(TAG, "crc01m2: Invalid Range 38.0 - 70.0");
+                crc01m2.setError("Invalid: Range 38.0 - 80.0");
+                Log.i(TAG, "crc01m2: Invalid Range 38.0 - 80.0");
                         return false;
                     } else {
                         crc01m2.setError(null);
@@ -1073,10 +1073,10 @@ public class SectionBActivity extends Activity {
         } else {
             crc01m3.setError(null);
 
-                    if (Double.parseDouble(crc01m3.getText().toString()) < 38.0 || Double.parseDouble(crc01m3.getText().toString()) > 70.0) {
+            if (Double.parseDouble(crc01m3.getText().toString()) < 38.0 || Double.parseDouble(crc01m3.getText().toString()) > 80.0) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.crc01), Toast.LENGTH_SHORT).show();
-                        crc01m3.setError("Invalid: Range 38.0 - 70.0");
-                        Log.i(TAG, "crc01m3: Invalid Range 38.0 - 70.0");
+                crc01m3.setError("Invalid: Range 38.0 - 80.0");
+                Log.i(TAG, "crc01m3: Invalid Range 38.0 - 80.0");
                         return false;
                     } else {
                         crc01m3.setError(null);
