@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 public class SourceNGOContract {
 
-    private String sourceCode;
+    private String sourceId;
     private String sourceName;
 
     public SourceNGOContract() {
@@ -20,25 +20,25 @@ public class SourceNGOContract {
 
     public SourceNGOContract sync(JSONObject jsonObject) throws JSONException {
 
-        this.sourceCode = jsonObject.getString(SourceTable.COLUMN_SOURCE_CODE);
+        this.sourceId = jsonObject.getString(SourceTable.COLUMN_SOURCE_ID);
         this.sourceName = jsonObject.getString(SourceTable.COLUMN_SOURCE_NAME);
 
         return this;
     }
 
     public SourceNGOContract hydrate(Cursor cursor) {
-        this.sourceCode = cursor.getString(cursor.getColumnIndex(SourceTable.COLUMN_SOURCE_CODE));
+        this.sourceId = cursor.getString(cursor.getColumnIndex(SourceTable.COLUMN_SOURCE_ID));
         this.sourceName = cursor.getString(cursor.getColumnIndex(SourceTable.COLUMN_SOURCE_NAME));
 
         return this;
     }
 
-    public String getSourceCode() {
-        return sourceCode;
+    public String getSourceId() {
+        return sourceId;
     }
 
-    public void setSourceCode(String sourceCode) {
-        this.sourceCode = sourceCode;
+    public void setSourceId(String sourceId) {
+        this.sourceId = sourceId;
     }
 
     public String getSourceName() {
@@ -50,7 +50,7 @@ public class SourceNGOContract {
     }
 
     public SourceNGOContract setDefaultVal(String code, String name) {
-        this.sourceCode = code;
+        this.sourceId = code;
         this.sourceName = name;
 
         return this;
@@ -64,8 +64,8 @@ public class SourceNGOContract {
         public static final String COLUMN_NAME_NULLABLE = "nullColumnHack";
 
         public static final String _ID = "_ID";
-        public static final String COLUMN_SOURCE_CODE = "uc_code";
-        public static final String COLUMN_SOURCE_NAME = "uc_name";
+        public static final String COLUMN_SOURCE_ID = "id";
+        public static final String COLUMN_SOURCE_NAME = "ngo";
 
     }
 

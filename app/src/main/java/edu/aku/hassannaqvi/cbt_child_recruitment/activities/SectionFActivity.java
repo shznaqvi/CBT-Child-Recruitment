@@ -1097,13 +1097,13 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
 
 //            if (crf0801.isChecked()) {
             if (crf09num.getText().toString().isEmpty() && !crf0999.isChecked()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf09), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf09), Toast.LENGTH_SHORT).show();
                 crf0999.setError("This data is Required!");
                 Log.i(TAG, "crf09: This data is Required!");
-                    return false;
-                } else {
+                return false;
+            } else {
                 crf0999.setError(null);
-                }
+            }
 
             if (!crf0999.isChecked()) {
                 if (Integer.valueOf(crf09num.getText().toString()) < 1) {
@@ -1123,8 +1123,8 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
                 } else {
                     crf09num.setError(null);
                 }
-                }
             }
+        }
 //        }
         //============ Q 10 ==========
         if (crf10.getCheckedRadioButtonId() == -1) {
@@ -1135,7 +1135,6 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         } else {
             crf1099.setError(null);
         }
-
 
 
         //============ Q 11 ==========
@@ -1178,21 +1177,21 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         }
 //============ Q 15 ==========
         if (!crf1503.isChecked()) {
-            if ((crf1501.getText().toString().isEmpty() && crf1502.getText().toString().isEmpty())) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
-            crf1503.setError("This data is Required!");
-            Log.i(TAG, "crf15: This data is Required!");
-            return false;
-        } else {
-            crf1503.setError(null);
-        }
+            if ((crf1501.getText().toString().isEmpty() || crf1502.getText().toString().isEmpty())) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
+                crf1503.setError("This data is Required!");
+                Log.i(TAG, "crf15: This data is Required!");
+                return false;
+            } else {
+                crf1503.setError(null);
+            }
 
 
             if ((Integer.valueOf(crf1501.getText().toString()) < 1)
                     && Integer.valueOf(crf1502.getText().toString()) < 1) {
                 Toast.makeText(this, "ERROR(Invalid): " + getString(R.string.crf15), Toast.LENGTH_SHORT).show();
-                crf1501.setError("Zero not allowed");
-                Log.i(TAG, "crf15: Zero not allowed");
+                crf1501.setError("Both Zero not allowed");
+                Log.i(TAG, "crf15: Both Zero not allowed");
                 return false;
             } else {
                 crf1501.setError(null);

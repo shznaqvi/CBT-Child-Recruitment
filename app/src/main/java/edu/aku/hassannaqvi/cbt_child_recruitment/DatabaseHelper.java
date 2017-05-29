@@ -117,7 +117,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ");";
     final String SQL_CREATE_SOURCE_TABLE = "CREATE TABLE " + SourceTable.TABLE_NAME + " (" +
             SourceTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            SourceTable.COLUMN_SOURCE_CODE + " TEXT, " +
+            SourceTable.COLUMN_SOURCE_ID + " TEXT, " +
             SourceTable.COLUMN_SOURCE_NAME + " TEXT " +
             ");";
     final String SQL_CREATE_VILLAGE_TABLE = "CREATE TABLE " + VillageTable.TABLE_NAME + " (" +
@@ -1068,6 +1068,48 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allDC;
     }
 
+    public Collection<SourceNGOContract> getAllNGOs() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                SourceTable.COLUMN_SOURCE_ID,
+                SourceTable.COLUMN_SOURCE_NAME
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                SourceTable.COLUMN_SOURCE_ID + " ASC";
+
+        Collection<SourceNGOContract> allSR = new ArrayList<>();
+        try {
+            c = db.query(
+                    SourceTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                SourceNGOContract sr = new SourceNGOContract();
+                allSR.add(sr.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allSR;
+    }
+
 
     public void syncChild(JSONArray childlist) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -1145,7 +1187,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 ContentValues values = new ContentValues();
 
-                values.put(SourceTable.COLUMN_SOURCE_CODE, dc.getSourceCode());
+                values.put(SourceTable.COLUMN_SOURCE_ID, dc.getSourceId());
                 values.put(SourceTable.COLUMN_SOURCE_NAME, dc.getSourceName());
 
                 db.insert(SourceTable.TABLE_NAME, null, values);
