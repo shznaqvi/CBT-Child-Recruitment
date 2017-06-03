@@ -1214,9 +1214,7 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             } else {
                 crf1502.setError(null);
             }
-
         }
-
 
         return true;
 
@@ -1292,18 +1290,14 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             crf09num.setText(null);
             crf0999.setChecked(false);
 
-
         } else {
             fldGrpcrf08.setVisibility(View.GONE);
             fldGrpcrf09.setVisibility(View.VISIBLE);
             crf08.clearCheck();
         }
-
     }
 
-
     public boolean is07AllNo() {
-
 
         int i = 0;
         for (RadioButton rg : crf0702) {
@@ -1313,24 +1307,17 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
 
         // Show answer here
         return i == crf0702.size();
-
     }
 
     public boolean is07Alldontknow() {
-
 
         int i = 0;
         for (RadioButton rg : crf0799) {
             if (rg.isChecked())
                 i++;
         }
-
         // Show answer here
         return i == crf0799.size();
-
     }
 
-
 }
-
-

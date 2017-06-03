@@ -950,7 +950,7 @@ public class SectionAActivity extends Activity {
                 Toast.makeText(this, "ERROR(Invalid)" + getString(R.string.cra23), Toast.LENGTH_SHORT).show();
                 cra23.setError("Can not be greater than adult females!");
 
-                Log.i(TAG, "cra17: Can not be greater than adult females");
+                Log.i(TAG, "cra20: Can not be greater than adult females");
                 return false;
             } else {
                 cra23.setError(null);
