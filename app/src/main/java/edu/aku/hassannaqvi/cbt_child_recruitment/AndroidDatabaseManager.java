@@ -681,7 +681,6 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
                     }
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
             }
@@ -703,6 +702,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
             } while (c5.moveToNext());
             indexInfo.emptytablecolumnnames = emptytablecolumnnames;
         }
+
 
 
     }
@@ -781,9 +781,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
         crudadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         crud_dropdown.setAdapter(crudadapter);
-        int my_var = 0;
-        my_var = my_var + 299;
-        lcrud.setId(my_var);
+        lcrud.setId(299);
         lcrud.addView(crud_dropdown, paramcrudtext);
 
         RelativeLayout.LayoutParams rlcrudparam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -1191,7 +1189,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 
     //a static class to save cursor,table values etc which is used by functions to share data in the program.
     static class indexInfo {
-        public static int index = 10;
+        public static int index = 50;
         public static int numberofpages = 0;
         public static int currentpage = 0;
         public static String table_name = "";

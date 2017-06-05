@@ -73,7 +73,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FormsContract> forms = db.getUnsyncedForms();
+        Collection<FormsContract> forms = db.getAllForms();
         Log.d(TAG, String.valueOf(forms.size()));
         if (forms.size() > 0) {
             try {
@@ -96,7 +96,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
                     for (FormsContract fc : forms) {
 
                         jsonSync.put(fc.toJSONObject());
-
+                        Log.d(TAG, "downloadUrl: " + fc.toJSONObject());
                     }
                     wr.writeBytes(jsonSync.toString().replace("\uFEFF", "") + "\n");
                     //longInfo(jsonSync.toString().replace("\uFEFF", "") + "\n");
@@ -143,20 +143,22 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         int sSynced = 0;
-        JSONArray json = null;
+        String sError = "";
         try {
-            json = new JSONArray(result);
+            JSONArray json = new JSONArray(result);
             DatabaseHelper db = new DatabaseHelper(mContext);
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1")) {
                     db.updateForms(jsonObject.getString("id"));
                     sSynced++;
+                } else if (jsonObject.getString("error").equals("1")) {
+                    sError += "[" + jsonObject.getString("id") + "] " + jsonObject.getString("message") + "\n";
                 }
             }
             Toast.makeText(mContext, sSynced + " Forms synced." + String.valueOf(json.length() - sSynced) + " Errors.", Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(sSynced + " Forms synced." + String.valueOf(json.length() - sSynced) + " Errors.");
+            pd.setMessage(sSynced + " Forms synced." + String.valueOf(json.length() - sSynced) + " Errors.\n" + sError);
             pd.setTitle("Done uploading Forms data");
             pd.show();
         } catch (JSONException e) {

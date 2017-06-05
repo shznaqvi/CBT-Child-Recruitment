@@ -27,8 +27,10 @@ import android.widget.ToggleButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +47,7 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract;
 public class SectionAActivity extends Activity {
 
     private static final String TAG = SectionAActivity.class.getSimpleName();
+    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
@@ -180,7 +183,6 @@ public class SectionAActivity extends Activity {
 
     String deviceId;
     DatabaseHelper db;
-    String dtToday;
 
     Map<String, String> getAllUCs, getAllVillages;
     List<String> UCs, VillagesName;
