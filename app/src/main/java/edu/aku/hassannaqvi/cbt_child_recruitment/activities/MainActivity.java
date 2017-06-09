@@ -35,7 +35,9 @@ import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.cbt_child_recruitment.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
+import edu.aku.hassannaqvi.cbt_child_recruitment.FormsList;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.HFacilitiesContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.LHWsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.TehsilsContract;
@@ -57,8 +59,8 @@ public class MainActivity extends Activity {
     LinearLayout adminsec;
     @BindView(R.id.recordSummary)
     TextView recordSummary;
-    @BindView(R.id.clusterNo)
-    EditText clusterNo;
+//    @BindView(R.id.clusterNo)
+//    EditText clusterNo;
     @BindView(R.id.MN01)
     Spinner mN01;
     @BindView(R.id.MN02)
@@ -131,48 +133,65 @@ public class MainActivity extends Activity {
 
 
         db = new DatabaseHelper(this);
-        //Collection<FormsContract> todaysForms = new ArrayList<>();
-
-        //todaysForms = db.getTodayForms();
+        Collection<FormsContract> todaysForms = db.getTodayForms();
+        Collection<FormsContract> unsyncedForms = db.getUnsyncedForms();
 
         rSumText += "TODAY'S RECORDS SUMMARY\r\n";
-        rSumText += "=======================";
-        rSumText += "\r\n\r\n";
-        //rSumText += "Total Forms Today: " + todaysForms.size();
-        rSumText += "\r\n";
-        rSumText += "    Forms List: \r\n";
-        String iStatus = "";
-//        for (FormsContract fc : todaysForms) {
-//
-//            switch (fc.getiStatus()) {
-//                case "1":
-//                    iStatus = "Complete";
-//                    break;
-//                case "2":
-//                    iStatus = "House Locked";
-//                    break;
-//                case "3":
-//                    iStatus = "Refused";
-//                    break;
-//                case "4":
-//                    iStatus = "Refused";
-//                    break;
-//            }
-//
-//            rSumText += fc.getLhwCode() + " " + fc.getHouseHold() + " " + iStatus;
-//            rSumText += "\r\n";
-//
-//        }
 
-        rSumText += "--------------------------------------------------\r\n";
+        rSumText += "=======================\r\n";
+        rSumText += "\r\n";
+        rSumText += "Total Forms Today: " + todaysForms.size() + "\r\n";
+        rSumText += "\r\n";
+        if (todaysForms.size() > 0) {
+            rSumText += "\tFORMS' LIST: \r\n";
+            String iStatus;
+            rSumText += "--------------------------------------------------\r\n";
+            rSumText += "[ DSS_ID ] \t[Form Status] \t[Sync Status]----------\r\n";
+            rSumText += "--------------------------------------------------\r\n";
+
+            for (FormsContract fc : todaysForms) {
+                if (fc.getiStatus() != null) {
+                    switch (fc.getiStatus()) {
+                        case "1":
+                            iStatus = "\tComplete";
+                            break;
+                        case "2":
+                            iStatus = "\tIncomplete";
+                            break;
+                        case "3":
+                            iStatus = "\tRefused";
+                            break;
+                        case "4":
+                            iStatus = "\tRefused";
+                            break;
+                        default:
+                            iStatus = "\tN/A";
+                    }
+                }else {
+                    iStatus = "\tN/A";
+                }
+
+                rSumText += fc.getChildId();
+
+                rSumText += " " + iStatus + " ";
+
+                rSumText += (fc.getSynced() == null ? "\t\tNot Synced" : "\t\tSynced");
+                rSumText += "\r\n";
+                rSumText += "--------------------------------------------------\r\n";
+            }
+        }
         if (AppMain.admin) {
             adminsec.setVisibility(View.VISIBLE);
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
-            rSumText += "Last Update: " + syncPref.getString("LastUpdate", "Never Updated");
+            rSumText += "Last Data Download: \t" + syncPref.getString("LastDownSyncServer", "Never Updated");
             rSumText += "\r\n";
-            rSumText += "Last Synced(DB): " + syncPref.getString("LastSyncDB", "Never Synced");
+            rSumText += "Last Data Upload: \t" + syncPref.getString("LastUpSyncServer", "Never Synced");
+            rSumText += "\r\n";
+            rSumText += "\r\n";
+            rSumText += "Unsynced Forms: \t" + unsyncedForms.size();
             rSumText += "\r\n";
         }
+        Log.d(TAG, "onCreate: " + rSumText);
         recordSummary.setText(rSumText);
 
         //        Sync Spinners
@@ -257,6 +276,12 @@ public class MainActivity extends Activity {
 
             }
         });
+
+    }
+
+    public void CheckCluster(View v) {
+        Intent childList = new Intent(getApplicationContext(), FormsList.class);
+        startActivity(childList);
 
     }
 
@@ -380,12 +405,6 @@ public class MainActivity extends Activity {
         startActivity(dbmanager);
     }
 
-    /*public void CheckCluster(View v) {
-        Intent cluster_list = new Intent(getApplicationContext(), FormsList.class);
-        cluster_list.putExtra("clusterno", clusterNo.getText().toString());
-        startActivity(cluster_list);
-
-    }*/
     public void syncServer(View view) {
 
         // Require permissions INTERNET & ACCESS_NETWORK_STATE

@@ -125,6 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
+            android:visibility="gone"
             android:onClick="getChildrens"
             android:text="Get Childrens" />
 
@@ -132,21 +133,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layoutDirection="ltr"
+            android:gravity="center">
 
-            <EditText
-                android:id="@+id/clusterNo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="PSU No."
-                android:inputType="number" />
+            <!--<EditText-->
+                <!--android:id="@+id/clusterNo"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:hint="PSU No."-->
+                <!--android:inputType="number" />-->
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="CheckCluster"
-                android:text="Check PSU" />
+                android:text="Check Forms" />
         </LinearLayout>
 
         <Button

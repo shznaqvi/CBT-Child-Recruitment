@@ -7,6 +7,7 @@
     <color name="colorText">#050505</color>
 
     <color name="black_overlay">#66000000</color>
+    <color name="grayOverlay">#7f7f7f7f</color>
     <color name="white">#efefef</color>
 
     <color name="grey_dialog_box">#808080</color>

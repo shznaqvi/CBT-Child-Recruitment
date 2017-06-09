@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.FormsContract.FormsTable;
@@ -406,22 +407,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Collection<FormsContract> getTodayForms() {
-
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                FormsTable._ID
-        };
+                FormsTable._ID,
+                FormsTable.COLUMN_CHILDID,
+                FormsTable.COLUMN_HHDT,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_SYNCED,
 
-        String whereClause = FormsTable.COLUMN_HHDT + " LIKE ?";
-        String[] whereArgs = {spDateT};
+        };
+        String whereClause = FormsTable.COLUMN_HHDT + " Like ? ";
+        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                FormsTable._ID + " ASC";
+                FormsTable.COLUMN_ID + " ASC";
 
-        Collection<FormsContract> formList = new ArrayList<FormsContract>();
+        Collection<FormsContract> allFC = new ArrayList<>();
         try {
             c = db.query(
                     FormsTable.TABLE_NAME,  // The table to query
@@ -434,7 +438,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
-                formList.add(fc.hydrate(c));
+                fc.setID(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
+                fc.setChildId(c.getString(c.getColumnIndex(FormsTable.COLUMN_CHILDID)));
+                fc.setHhDT(c.getString(c.getColumnIndex(FormsTable.COLUMN_HHDT)));
+                fc.setiStatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
+                fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
+                allFC.add(fc);
             }
         } finally {
             if (c != null) {
@@ -444,7 +453,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
+        return allFC;
+    }
 
+
+    public List<FormsContract> getFormsByT_HF_LHW(String tehsil,String hf,String lhw) {
+        List<FormsContract> formList = new ArrayList<FormsContract>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + FormsTable.TABLE_NAME +" where "
+                +FormsTable.COLUMN_TEHSIL+ "='"+tehsil+"' and "
+                +FormsTable.COLUMN_HFACILITY+ "='"+hf+"' and "
+                +FormsTable.COLUMN_LHWCODE+ "='"+lhw+"'";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (c.moveToFirst()) {
+            do {
+                FormsContract fc = new FormsContract();
+                formList.add(fc.hydrate(c));
+            } while (c.moveToNext());
+        }
 
         // return contact list
         return formList;
