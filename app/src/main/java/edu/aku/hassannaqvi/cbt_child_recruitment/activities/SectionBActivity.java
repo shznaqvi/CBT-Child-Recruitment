@@ -1,14 +1,13 @@
 package edu.aku.hassannaqvi.cbt_child_recruitment.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -21,7 +20,6 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,8 +27,9 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
+import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class SectionBActivity extends Activity {
+public class SectionBActivity extends AppCompatActivity {
 
     private static final String TAG = SectionBActivity.class.getSimpleName();
 
@@ -53,7 +52,7 @@ public class SectionBActivity extends Activity {
     @BindView(R.id.fldGrpcrbdob)
     LinearLayout fldGrpcrbdob;
     @BindView(R.id.crb03)
-    DatePicker crb03;
+    DatePickerInputEditText crb03;
     @BindView(R.id.fldGrpcrbAge)
     LinearLayout fldGrpcrbAge;
     @BindView(R.id.crb0401)
@@ -384,9 +383,19 @@ public class SectionBActivity extends Activity {
         setContentView(R.layout.activity_section_b);
         ButterKnife.bind(this);
 
-        crb03.setMaxDate(new Date().getTime());
+        String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        String maxDate6Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_6_MONTHS) + (AppMain.MILLISECONDS_IN_DAY)));
 
-        crb03.setMinDate(new Date().getTime() - ((AppMain.MILLISECONDS_IN_6_MONTHS) + (AppMain.MILLISECONDS_IN_DAY)));
+        crb03.setManager(getSupportFragmentManager());
+        crb03.setMaxDate(dateToday);
+        crb03.setMinDate(maxDate6Months);
+
+        crb03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crb03.onFocusChange(v, true);
+            }
+        });
 
 //************************************Section B*********************************************************************
         crbdob.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -795,7 +804,7 @@ public class SectionBActivity extends Activity {
 //************************************Section B*********************************************************************
         sb.put("crb01", crb01.getText().toString());
         sb.put("crb02", crb0201.isChecked() ? "1" : crb0202.isChecked() ? "2" : "0");
-        sb.put("crb03", new SimpleDateFormat("dd-MM-yyyy").format(crb03.getCalendarView().getDate()));
+        sb.put("crb03", crb03.getText().toString());
         sb.put("crb0401", crb0401.getText().toString());
         sb.put("crb0402", crb0402.getText().toString());
         sb.put("crb05", crb0501.isChecked() ? "1" : crb0502.isChecked() ? "2" : "0");
@@ -947,6 +956,16 @@ public class SectionBActivity extends Activity {
                 return false;
             } else {
                 crb0402.setError(null);
+            }
+        } else {
+            // =================== Q4 ====================
+            if (crb03.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crb03), Toast.LENGTH_SHORT).show();
+                crb03.setError("This data is required");
+                Log.d(TAG, "empty: crb03  ");
+                return false;
+            } else {
+                crb03.setError(null);
             }
         }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_section_b"
     android:layout_width="match_parent"
@@ -129,16 +130,27 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/crb03" />
 
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/crb03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:focusable="false"
+                android:hint="@string/crb03"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
 
-        <DatePicker
-            android:id="@+id/crb03"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:ems="10"
-            android:spinnersShown="true" />
+
+            <!--<DatePicker
+                android:id="@+id/crb03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:ems="10"
+                android:spinnersShown="true" />-->
 
         </LinearLayout>
 
