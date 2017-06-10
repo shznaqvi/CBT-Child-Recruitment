@@ -498,7 +498,7 @@ public class FormsContract {
         public static final String COLUMN_TEHSIL = "tehsil";
         public static final String COLUMN_HFACILITY = "hfacility";
         public static final String COLUMN_LHWCODE = "lhwcode";
-        public static final String COLUMN_HOUSEHOLD = "istatus";
+        public static final String COLUMN_HOUSEHOLD = "household";
         public static final String COLUMN_CHILDID = "childid";
         public static final String COLUMN_UCCODE = "uccode";
         public static final String COLUMN_VILLAGENAME = "villagename";
