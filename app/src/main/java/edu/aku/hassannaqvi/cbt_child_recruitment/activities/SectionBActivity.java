@@ -654,43 +654,31 @@ public class SectionBActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (cre01a01.isChecked()) {
                     fldGrpBcg.setVisibility(View.VISIBLE);
-                    fldGrpBcgM.setVisibility(View.GONE);
-                    cre0201b.clearCheck();
-                    cre0202b.clearCheck();
+                    fldGrpBcgM.setVisibility(View.VISIBLE);
                     fldGrpPolio.setVisibility(View.VISIBLE);
-                    fldGrpPolioM.setVisibility(View.GONE);
-                    cre0301b.clearCheck();
-                    cre0302b.clearCheck();
-                    cre0303b.clearCheck();
+                    fldGrpPolioM.setVisibility(View.VISIBLE);
                     fldGrpPenta1.setVisibility(View.VISIBLE);
-                    fldGrpPenta1M.setVisibility(View.GONE);
-                    cre0401b.clearCheck();
-                    cre0402b.clearCheck();
-                    cre0403b.clearCheck();
+                    fldGrpPenta1M.setVisibility(View.VISIBLE);
                     fldGrppcv1.setVisibility(View.VISIBLE);
-                    fldGrppcv1M.setVisibility(View.GONE);
-                    cre0501b.clearCheck();
-                    cre0502b.clearCheck();
-                    cre0503b.clearCheck();
+                    fldGrppcv1M.setVisibility(View.VISIBLE);
                     fldGrpopv1.setVisibility(View.VISIBLE);
-                    fldGrpopv1M.setVisibility(View.GONE);
-                    cre0601b.clearCheck();
+                    fldGrpopv1M.setVisibility(View.VISIBLE);
                     fldGrppenta2.setVisibility(View.VISIBLE);
-                    fldGrppenta2M.setVisibility(View.GONE);
+                    fldGrppenta2M.setVisibility(View.VISIBLE);
                     fldGrppcv2.setVisibility(View.VISIBLE);
-                    fldGrppcv2M.setVisibility(View.GONE);
+                    fldGrppcv2M.setVisibility(View.VISIBLE);
                     fldGrpopv2.setVisibility(View.VISIBLE);
-                    fldGrpopv2M.setVisibility(View.GONE);
+                    fldGrpopv2M.setVisibility(View.VISIBLE);
                     fldGrpenta3.setVisibility(View.VISIBLE);
-                    fldGrpPenta3M.setVisibility(View.GONE);
+                    fldGrpPenta3M.setVisibility(View.VISIBLE);
                     fldGrppcv3.setVisibility(View.VISIBLE);
-                    fldGrppcv3M.setVisibility(View.GONE);
+                    fldGrppcv3M.setVisibility(View.VISIBLE);
                     fldGrpopv3.setVisibility(View.VISIBLE);
-                    fldGrpopv3M.setVisibility(View.GONE);
+                    fldGrpopv3M.setVisibility(View.VISIBLE);
                     fldGrpipv.setVisibility(View.VISIBLE);
-                    fldGrpipvM.setVisibility(View.GONE);
+                    fldGrpipvM.setVisibility(View.VISIBLE);
                     fldGrpVitaminA.setVisibility(View.VISIBLE);
-                    fldGrpVitaminAM.setVisibility(View.GONE);
+                    fldGrpVitaminAM.setVisibility(View.VISIBLE);
                 } else {
                     fldGrpBcg.setVisibility(View.GONE);
                     fldGrpBcgM.setVisibility(View.VISIBLE);
@@ -1474,7 +1462,7 @@ public class SectionBActivity extends AppCompatActivity {
                     cre0601a02.setError(null);
                 }
 
-            } else {
+            }
                 //============ BCG / Mother ==========
                 if (cre0201b.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.cre02bcg), Toast.LENGTH_SHORT).show();
@@ -1605,7 +1593,7 @@ public class SectionBActivity extends AppCompatActivity {
                 } else {
                     cre0601b02.setError(null);
                 }
-            }
+
         }
 
 

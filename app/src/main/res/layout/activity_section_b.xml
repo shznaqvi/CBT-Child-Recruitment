@@ -1001,21 +1001,22 @@
             android:text="@string/cre02bcg"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="100">-->
+                android:weightSum="100">
 
             <LinearLayout
                 android:id="@+id/fldGrpBcgM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="72dp"
                     android:layout_marginTop="5dp"
                     android:background="#efefef"
                     android:gravity="center"
@@ -1056,6 +1057,7 @@
                 android:id="@+id/fldGrpBcg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical">
 
                 <TextView
@@ -1092,7 +1094,7 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>-->
+            </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1101,16 +1103,17 @@
             android:text="@string/cre02polio"
             android:textAlignment="center" />
 
-            <!-- <LinearLayout
+            <LinearLayout
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:orientation="horizontal"
-                 android:weightSum="100">-->
+                android:weightSum="100">
 
             <LinearLayout
                 android:id="@+id/fldGrpPolioM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -1156,6 +1159,7 @@
                 android:id="@+id/fldGrpPolio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -1192,7 +1196,7 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>-->
+            </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1212,16 +1216,17 @@
             android:text="@string/cre03penta"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="100">
-    -->
+
             <LinearLayout
                 android:id="@+id/fldGrpPenta1M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -1267,6 +1272,7 @@
                 android:id="@+id/fldGrpPenta1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -1303,7 +1309,7 @@
 
             </LinearLayout>
 
-            <!--        </LinearLayout>-->
+            </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1312,16 +1318,17 @@
             android:text="@string/cre03pcv"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="100">
-    -->
+
             <LinearLayout
                 android:id="@+id/fldGrppcv1M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -1367,6 +1374,7 @@
                 android:id="@+id/fldGrppcv1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -1403,7 +1411,7 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>-->
+            </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1412,16 +1420,17 @@
             android:text="@string/cre03opv"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="100">
-    -->
-            <LinearLayout
+
+                <LinearLayout
                 android:id="@+id/fldGrpopv1M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                    android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -1467,6 +1476,7 @@
                 android:id="@+id/fldGrpopv1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -1503,9 +1513,9 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>
-    -->
-        <TextView
+            </LinearLayout>
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -1523,16 +1533,17 @@
             android:text="@string/cre04penta"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="100">-->
+                android:weightSum="100">
 
             <LinearLayout
                 android:id="@+id/fldGrppenta2M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -1578,6 +1589,7 @@
                 android:id="@+id/fldGrppenta2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -1614,7 +1626,7 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>-->
+            </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1623,16 +1635,17 @@
             android:text="@string/cre04pcv"
             android:textAlignment="center" />
 
-            <!-- <LinearLayout
+            <LinearLayout
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:orientation="horizontal"
                  android:weightSum="100">
-     -->
+
             <LinearLayout
                 android:id="@+id/fldGrppcv2M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -1678,6 +1691,7 @@
                 android:id="@+id/fldGrppcv2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -1714,25 +1728,26 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>
-    -->
-        <TextView
+            </LinearLayout>
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/cre04opv"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="100">-->
+                android:weightSum="100">
 
             <LinearLayout
                 android:id="@+id/fldGrpopv2M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -1778,6 +1793,7 @@
                 android:id="@+id/fldGrpopv2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -1814,7 +1830,7 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>-->
+            </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -1834,16 +1850,17 @@
             android:text="@string/cre05penta"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="100">-->
+                android:weightSum="100">
 
             <LinearLayout
                 android:id="@+id/fldGrpPenta3M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -1889,6 +1906,7 @@
                 android:id="@+id/fldGrpenta3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -1925,25 +1943,26 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>
-    -->
-        <TextView
+            </LinearLayout>
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/cre05pcv"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="100">
-    -->
+
             <LinearLayout
                 android:id="@+id/fldGrppcv3M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -1989,6 +2008,7 @@
                 android:id="@+id/fldGrppcv3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -2025,7 +2045,7 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>-->
+            </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -2034,16 +2054,17 @@
             android:text="@string/cre05opv"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="100">-->
+                android:weightSum="100">
 
             <LinearLayout
                 android:id="@+id/fldGrpopv3M"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -2089,6 +2110,7 @@
                 android:id="@+id/fldGrpopv3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -2125,25 +2147,26 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>
-    -->
-        <TextView
+            </LinearLayout>
+
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/cre05ipv"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="100">-->
+                android:weightSum="100">
 
             <LinearLayout
                 android:id="@+id/fldGrpipvM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -2189,6 +2212,7 @@
                 android:id="@+id/fldGrpipv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -2225,8 +2249,8 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>
-    -->
+            </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -2246,16 +2270,17 @@
             android:text="@string/cre06Vitamin"
             android:textAlignment="center" />
 
-            <!--<LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="100">-->
+                android:weightSum="100">
 
             <LinearLayout
                 android:id="@+id/fldGrpVitaminAM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="60"
                 android:orientation="vertical">
 
                 <TextView
@@ -2301,6 +2326,7 @@
                 android:id="@+id/fldGrpVitaminA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="40"
                 android:orientation="vertical"
                 android:visibility="visible">
 
@@ -2337,7 +2363,7 @@
 
             </LinearLayout>
 
-            <!--</LinearLayout>-->
+            </LinearLayout>
 
         </LinearLayout>
 
