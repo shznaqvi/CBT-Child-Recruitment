@@ -582,7 +582,6 @@ public class SectionMActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_m);
         ButterKnife.bind(this);
 
-        //now.add(Calendar.DAY_OF_MONTH, -28);
 
         dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
         maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_YEAR));
@@ -590,9 +589,6 @@ public class SectionMActivity extends AppCompatActivity {
         maxDate49Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_49Years));
         maxDate15Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_15Years));
 
-
-
-        //crn04dob1.setMaxDate(dateToday);
 
         for (DatePickerInputEditText de : crndates) {
             de.setManager(getSupportFragmentManager());
@@ -629,7 +625,7 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                crn04dod1.setMinDate(crn04dob1.getText().toString());
+                crn04dod1.setMinDate(convertDateFormat(crn04dob1.getText().toString())); // Needed dd/MM/yyyy and converted to dd-MM-yyyy
                 Calendar cal = getCalendarDate(crn04dob1.getText().toString());
                 cal.add(Calendar.DAY_OF_MONTH, 7);
                 crn04dod1.setMaxDate(sdf.format(cal.getTime()));
@@ -653,7 +649,7 @@ public class SectionMActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                crn04dod2.setMinDate(crn04dob2.getText().toString());
+                crn04dod2.setMinDate(convertDateFormat(crn04dob2.getText().toString()));
                 Calendar cal = getCalendarDate(crn04dob2.getText().toString());
                 cal.add(Calendar.DAY_OF_MONTH, 7);
                 crn04dod2.setMaxDate(sdf.format(cal.getTime()));
@@ -801,197 +797,6 @@ public class SectionMActivity extends AppCompatActivity {
                 crn07dod1.setMinDate(maxDateyear);
                 crn07dod1.setEnabled(true);
 
-            }
-        });
-
-        crn01dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn01dod1.onFocusChange(v, true);
-            }
-        });
-
-        crn01dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn01dod2.onFocusChange(v, true);
-            }
-        });
-
-        crn02dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn02dod1.onFocusChange(v, true);
-            }
-        });
-
-        crn02dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn02dod2.onFocusChange(v, true);
-            }
-        });
-
-        crn03dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn03dob1.onFocusChange(v, true);
-            }
-        });
-
-        crn03dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn03dob2.onFocusChange(v, true);
-            }
-        });
-
-        crn03dob3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn03dob3.onFocusChange(v, true);
-            }
-        });
-
-        crn04dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn04dob1.onFocusChange(v, true);
-            }
-        });
-
-
-        crn04dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn04dob2.onFocusChange(v, true);
-            }
-        });
-
-        crn04dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn04dod1.onFocusChange(v, true);
-
-            }
-        });
-
-        crn04dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn04dod2.onFocusChange(v, true);
-            }
-        });
-
-        crn05dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn05dob1.onFocusChange(v, true);
-            }
-        });
-
-        crn05dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn05dob2.onFocusChange(v, true);
-            }
-        });
-
-        crn05dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn05dod1.onFocusChange(v, true);
-            }
-        });
-
-        crn05dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn05dod2.onFocusChange(v, true);
-            }
-        });
-
-        crn06dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn06dob1.onFocusChange(v, true);
-            }
-        });
-
-        crn06dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn06dob2.onFocusChange(v, true);
-            }
-        });
-
-        crn06dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn06dod1.onFocusChange(v, true);
-            }
-        });
-
-        crn06dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn06dod2.onFocusChange(v, true);
-            }
-        });
-
-        crn07dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn07dob1.onFocusChange(v, true);
-            }
-        });
-
-        crn07dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn07dob2.onFocusChange(v, true);
-            }
-        });
-
-        crn07dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn07dod1.onFocusChange(v, true);
-            }
-        });
-
-        crn07dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn07dod2.onFocusChange(v, true);
-            }
-        });
-
-        crn08dob1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn08dob1.onFocusChange(v, true);
-            }
-        });
-
-        crn08dob2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn08dob2.onFocusChange(v, true);
-            }
-        });
-
-        crn08dod1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn08dod1.onFocusChange(v, true);
-            }
-        });
-
-        crn08dod2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crn08dod2.onFocusChange(v, true);
             }
         });
 
@@ -2805,7 +2610,7 @@ public class SectionMActivity extends AppCompatActivity {
     }
 
     public Calendar getCalendarDate(String value) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Calendar calendar = Calendar.getInstance();
         try {
             Date date = sdf.parse(value);
@@ -2817,6 +2622,19 @@ public class SectionMActivity extends AppCompatActivity {
         }
         return calendar;
     }
+
+    public String convertDateFormat(String dateStr) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            Date d = sdf.parse(dateStr);
+            return new SimpleDateFormat("dd/MM/yyyy").format(d);
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        return "";
+    }
+
 
 
 
