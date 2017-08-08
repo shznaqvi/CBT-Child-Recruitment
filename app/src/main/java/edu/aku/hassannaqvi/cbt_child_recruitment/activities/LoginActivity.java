@@ -55,6 +55,7 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
+import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetHFacilities;
 import edu.aku.hassannaqvi.cbt_child_recruitment.getclasses.GetUsers;
 
 
@@ -333,6 +334,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         if (networkInfo != null && networkInfo.isConnected()) {
             Toast.makeText(getApplicationContext(), "Syncing Users", Toast.LENGTH_SHORT).show();
             new GetUsers(this).execute();
+            Toast.makeText(getApplicationContext(), "Syncing Health Facilities", Toast.LENGTH_SHORT).show();
+            new GetHFacilities(this).execute();
 
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
