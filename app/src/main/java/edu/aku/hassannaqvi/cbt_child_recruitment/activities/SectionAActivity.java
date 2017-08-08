@@ -30,6 +30,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -282,6 +283,7 @@ public class SectionAActivity extends Activity {
         for (UCsContract aUCs : allUcs) {
             getAllUCs.put(aUCs.getUcName(), aUCs.getUcCode());
             UCs.add(aUCs.getUcName());
+            Collections.sort(UCs);
         }
 
         crauc.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, UCs));

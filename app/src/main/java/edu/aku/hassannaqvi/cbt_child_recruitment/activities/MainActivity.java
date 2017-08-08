@@ -25,6 +25,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -225,6 +226,7 @@ public class MainActivity extends Activity {
                 for (HFacilitiesContract hf : hfc) {
                     hfNames.add(hf.gethFacilityName());
                     hfCodes.add(hf.gethFacilityCode());
+                    Collections.sort(hfNames);
                 }
 
                 // attaching data adapter to spinner
@@ -249,6 +251,8 @@ public class MainActivity extends Activity {
                 for (LHWsContract lhw : lhwc) {
                     lhws.put("" + (lhw.getLHWName() + " (" + lhw.getLHWCode() + ")"), lhw.getLHWCode());
                     lhwName.add(lhw.getLHWName() + " (" + lhw.getLHWCode() + ")");
+                    Collections.sort(lhwName);
+
                 }
                 ArrayAdapter<String> psuAdapter = new ArrayAdapter<>(getBaseContext(),
                         android.R.layout.simple_spinner_dropdown_item, lhwName);
