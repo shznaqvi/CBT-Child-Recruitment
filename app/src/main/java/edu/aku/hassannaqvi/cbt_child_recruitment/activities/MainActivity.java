@@ -211,13 +211,15 @@ public class MainActivity extends Activity {
 
         mN01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Tname));
 
-        final List<String> hfCodes = new ArrayList<>();
+        hfCodes = new ArrayList<>();
 
         mN01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // Spinner Drop down elements
                 List<String> hfNames = new ArrayList<>();
+
+                hfCodes = new ArrayList<>();
 
                 AppMain.tehsilCode = tehsils.get(Tname.get(position));
 
@@ -295,6 +297,7 @@ public class MainActivity extends Activity {
         if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
 
             if (mN01.getSelectedItem() != null) {
+                finish();
                 Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
                 startActivity(oF);
             } else {
