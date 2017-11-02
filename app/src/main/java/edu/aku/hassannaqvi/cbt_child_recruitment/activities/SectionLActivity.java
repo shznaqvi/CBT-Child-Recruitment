@@ -498,6 +498,7 @@ public class SectionLActivity extends Activity {
         sl.put("crl1096x", crl1096x.getText().toString());
         sl.put("crl11", crl1101.isChecked() ? "1" : crl1102.isChecked() ? "2" : crl1103.isChecked() ? "3"
                 : crl1196.isChecked() ? "96" : "0");
+        sl.put("crl1196x", crl1196x.getText().toString());
         sl.put("crl1201", crl1201.getText().toString());
         sl.put("crl1202", crl1202.getText().toString());
         sl.put("crl1203", crl1203.getText().toString());
@@ -505,6 +506,7 @@ public class SectionLActivity extends Activity {
         sl.put("crl13", crl1301.isChecked() ? "1" : crl1302.isChecked() ? "2" : crl1303.isChecked() ? "3" : crl1304.isChecked() ? "4"
                 : crl1305.isChecked() ? "5" : crl1306.isChecked() ? "6" : crl1307.isChecked() ? "7" : crl1308.isChecked() ? "8"
                 : crl1396.isChecked() ? "96" : "0");
+        sl.put("crl1396x", crl1396x.getText().toString());
 
         AppMain.fc.setsL(String.valueOf(sl));
 

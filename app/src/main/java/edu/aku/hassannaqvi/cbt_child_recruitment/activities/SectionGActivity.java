@@ -1064,16 +1064,19 @@ public class SectionGActivity extends Activity {
                 : crg21a07.isChecked() ? "7" : crg21a08.isChecked() ? "8" : crg21a09.isChecked() ? "9"
                 : crg21a10.isChecked() ? "10" : crg21a11.isChecked() ? "11" : crg21a12.isChecked() ? "12"
                 : crg21a13.isChecked() ? "13" : crg21a96.isChecked() ? "96" : "0");
+        sg.put("crg21a96x", crg21a96x.getText().toString());
         sg.put("crg21b", crg21b01.isChecked() ? "1" : crg21b02.isChecked() ? "2" : crg21b03.isChecked() ? "3"
                 : crg21b04.isChecked() ? "4" : crg21b05.isChecked() ? "5" : crg21b06.isChecked() ? "6"
                 : crg21b07.isChecked() ? "7" : crg21b08.isChecked() ? "8" : crg21b09.isChecked() ? "9"
                 : crg21b10.isChecked() ? "10" : crg21b11.isChecked() ? "11" : crg21b12.isChecked() ? "12"
                 : crg21b13.isChecked() ? "13" : crg21b96.isChecked() ? "96" : "0");
+        sg.put("crg21b96x", crg21b96x.getText().toString());
         sg.put("crg21c", crg21c01.isChecked() ? "1" : crg21c02.isChecked() ? "2" : crg21c03.isChecked() ? "3"
                 : crg21c04.isChecked() ? "4" : crg21c05.isChecked() ? "5" : crg21c06.isChecked() ? "6"
                 : crg21c07.isChecked() ? "7" : crg21c08.isChecked() ? "8" : crg21c09.isChecked() ? "9"
                 : crg21c10.isChecked() ? "10" : crg21c11.isChecked() ? "11" : crg21c12.isChecked() ? "12"
                 : crg21c13.isChecked() ? "13" : crg21c96.isChecked() ? "96" : "0");
+        sg.put("crg21c96x", crg21c96x.getText().toString());
         sg.put("crg22", crg2201.isChecked() ? "1" : crg2202.isChecked() ? "2" : "0");
         sg.put("crg22a", crg22a01.isChecked() ? "1" : crg22a02.isChecked() ? "2" : crg22a03.isChecked() ? "3" : "0");
 

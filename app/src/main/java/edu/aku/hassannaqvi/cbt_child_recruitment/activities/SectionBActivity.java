@@ -771,7 +771,7 @@ public class SectionBActivity extends AppCompatActivity {
 //        updcount = db.updateSE();
 
         int updcount = db.updateSB() == 1 ?
-                (db.updateSC() == 1 ? (db.updateSD() == 1 ? (db.updateSE() == 1 ? 1 : db.updateSE()) : db.updateSD()) : db.updateSC()) : db.updateSB();
+                (db.updateSC() == 1 ? (db.updateSD() == 1 ? (db.updateSE()) : db.updateSD()) : db.updateSC()) : db.updateSB();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -832,6 +832,7 @@ public class SectionBActivity extends AppCompatActivity {
         sd.put("crd0306", crd0306.isChecked() ? "1" : "0");
         sd.put("crd0307", crd0307.isChecked() ? "1" : "0");
         sd.put("crd0308", crd0308.isChecked() ? "1" : "0");
+        sd.put("crd0396", crd0396.isChecked() ? "96" : "0");
         sd.put("crd0396x", crd0396x.getText().toString());
 //************************************Section E*********************************************************************
         se.put("cre01", cre0101.isChecked() ? "1" : cre0102.isChecked() ? "2" : "0");
