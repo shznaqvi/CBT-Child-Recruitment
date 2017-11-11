@@ -372,6 +372,8 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
     RadioButton crf0202;
     @BindView(R.id.fldGrpcrf08)
     LinearLayout fldGrpcrf08;
+    @BindView(R.id.crf06ix)
+    EditText crf06ix;
 
 
     @BindViews({R.id.crf07a, R.id.crf07b, R.id.crf07c, R.id.crf07d, R.id.crf07e, R.id.crf07f, R.id.crf07g,
@@ -460,6 +462,21 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
                 }
             }
         });
+
+        crf06i.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (crf06i01.isChecked()) {
+                    crf06ix.setVisibility(View.VISIBLE);
+                } else {
+                    crf06ix.setVisibility(View.GONE);
+                    crf06ix.setText(null);
+                }
+            }
+        });
+
+
 
 
         //=============== Q8 Skip Pattern===============
@@ -888,6 +905,15 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
             crf06i99.setError(null);
         }
 
+        if (crf06i01.isChecked() && crf06ix.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf06i), Toast.LENGTH_SHORT).show();
+            crf06ix.setError("This data is Required!");
+            Log.i(TAG, "crf06ix: This data is Required!");
+            return false;
+        } else {
+            crf06ix.setError(null);
+        }
+
         //============ Q 7a ==========
         if (crf07a.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.crf07a), Toast.LENGTH_SHORT).show();
@@ -1244,7 +1270,9 @@ public class SectionFActivity extends Activity implements RadioGroup.OnCheckedCh
         sf.put("crf06ftime", crf06ftime.getText().toString());
         sf.put("crf06g", crf06g01.isChecked() ? "1" : crf06g02.isChecked() ? "2" : crf06g99.isChecked() ? "99" : "0");
         sf.put("crf06h", crf06h01.isChecked() ? "1" : crf06h02.isChecked() ? "2" : crf06h99.isChecked() ? "99" : "0");
-        sf.put("crf06f", crf06i01.isChecked() ? "1" : crf06i02.isChecked() ? "2" : crf06i99.isChecked() ? "99" : "0");
+        sf.put("crf06i", crf06i01.isChecked() ? "1" : crf06i02.isChecked() ? "2" : crf06i99.isChecked() ? "99" : "0");
+        sf.put("crf06ix", crf06ix.getText().toString());
+
         sf.put("crf07a", crf07a01.isChecked() ? "1" : crf07a02.isChecked() ? "2" : crf07a99.isChecked() ? "99" : "0");
         sf.put("crf07b", crf07b01.isChecked() ? "1" : crf07b02.isChecked() ? "2" : crf07b99.isChecked() ? "99" : "0");
         sf.put("crf07c", crf07c01.isChecked() ? "1" : crf07c02.isChecked() ? "2" : crf07c99.isChecked() ? "99" : "0");

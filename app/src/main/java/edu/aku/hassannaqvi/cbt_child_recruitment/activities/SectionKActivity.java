@@ -475,6 +475,7 @@ public class SectionKActivity extends Activity {
         sk.put("crk03", crk0301.isChecked() ? "1" : crk0302.isChecked() ? "2" : crk0399.isChecked() ? "99" : "0");
         sk.put("crk0401", crk0401.isChecked() ? "1" : "2");
         sk.put("crk0402", crk0402.isChecked() ? "1" : "2");
+        sk.put("crk0499", crk0499.isChecked() ? "1" : "2");
         sk.put("crk0496", crk0496.isChecked() ? "1" : "2");
         sk.put("crk0496x", crk0496x.getText().toString());
         sk.put("crk05", crk0501.isChecked() ? "1" : crk0502.isChecked() ? "2" : crk0599.isChecked() ? "99" : "0");

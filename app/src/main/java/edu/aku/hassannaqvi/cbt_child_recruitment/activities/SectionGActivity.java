@@ -1058,7 +1058,7 @@ public class SectionGActivity extends Activity {
         sg.put("crg2004", crg2004.getText().toString());
         sg.put("crg2005", crg2005.getText().toString());
         sg.put("crg2006", crg2006.getText().toString());
-        sg.put("crg2007", crg2006.getText().toString());
+        sg.put("crg2007", crg2007.getText().toString());
         sg.put("crg21a", crg21a01.isChecked() ? "1" : crg21a02.isChecked() ? "2" : crg21a03.isChecked() ? "3"
                 : crg21a04.isChecked() ? "4" : crg21a05.isChecked() ? "5" : crg21a06.isChecked() ? "6"
                 : crg21a07.isChecked() ? "7" : crg21a08.isChecked() ? "8" : crg21a09.isChecked() ? "9"

@@ -34,7 +34,6 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.R;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.SourceNGOContract;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract;
 
 public class SectionHActivity extends Activity {
 
@@ -799,7 +798,7 @@ public class SectionHActivity extends Activity {
         si.put("cri02e", cri02e.getText().toString());
         si.put("cri02f", cri02f.getText().toString());
         si.put("cri02g", cri02g.getText().toString());
-        si.put("cri02g", cri02h.getText().toString());
+        si.put("cri02h", cri02h.getText().toString());
         si.put("cri02i", cri02i.getText().toString());
         si.put("cri02j", cri02j.getText().toString());
         si.put("cri02k", cri02k.getText().toString());
@@ -1662,7 +1661,7 @@ public class SectionHActivity extends Activity {
 //        updcount = db.updateSI();
 //        updcount = db.updateSJ();
         int updcount = db.updateSH() == 1 ?
-                (db.updateSI() == 1 ? (db.updateSJ() == 1 ? 1 : db.updateSJ()) : db.updateSI()) : db.updateSH();
+                (db.updateSI() == 1 ? (db.updateSJ()) : db.updateSI()) : db.updateSH();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

@@ -655,6 +655,15 @@
                     android:text="@string/dkn"/>
 
             </RadioGroup>
+
+
+            <EditText
+                android:id="@+id/crf06ix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:hint="@string/crf06i"
+                android:inputType="text"/>
         </LinearLayout>
 
         <TextView
