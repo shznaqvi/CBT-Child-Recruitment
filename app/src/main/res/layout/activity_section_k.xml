@@ -135,6 +135,13 @@
                 android:text="@string/crk02e" />
 
             <CheckBox
+                android:id="@+id/crk0298"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/nr" />
+
+            <CheckBox
                 android:id="@+id/crk0299"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -566,6 +573,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:text="@string/crk1106" />
+
+        <CheckBox
+            android:id="@+id/crk1199"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="@string/dkn" />
 
         <CheckBox
             android:id="@+id/crk1196"

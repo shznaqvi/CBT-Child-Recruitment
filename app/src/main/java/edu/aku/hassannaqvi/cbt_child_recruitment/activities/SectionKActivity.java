@@ -51,6 +51,8 @@ public class SectionKActivity extends Activity {
     CheckBox crk0204;
     @BindView(R.id.crk0205)
     CheckBox crk0205;
+    @BindView(R.id.crk0298)
+    CheckBox crk0298;
     @BindView(R.id.crk0299)
     CheckBox crk0299;
     @BindView(R.id.crk0296)
@@ -155,6 +157,8 @@ public class SectionKActivity extends Activity {
     CheckBox crk1105;
     @BindView(R.id.crk1106)
     CheckBox crk1106;
+    @BindView(R.id.crk1199)
+    CheckBox crk1199;
     @BindView(R.id.crk1196)
     CheckBox crk1196;
     @BindView(R.id.crk1196x)
@@ -192,6 +196,7 @@ public class SectionKActivity extends Activity {
                     crk0203.setChecked(false);
                     crk0204.setChecked(false);
                     crk0205.setChecked(false);
+                    crk0298.setChecked(false);
                     crk0299.setChecked(false);
                     crk0296.setChecked(false);
                     crk0296x.setText(null);
@@ -286,6 +291,37 @@ public class SectionKActivity extends Activity {
             }
         });
 
+        crk1199.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    crk1101.setEnabled(false);
+                    crk1101.setChecked(false);
+                    crk1102.setEnabled(false);
+                    crk1102.setChecked(false);
+                    crk1103.setEnabled(false);
+                    crk1103.setChecked(false);
+                    crk1104.setEnabled(false);
+                    crk1104.setChecked(false);
+                    crk1105.setEnabled(false);
+                    crk1105.setChecked(false);
+                    crk1106.setEnabled(false);
+                    crk1106.setChecked(false);
+                    crk1196.setEnabled(false);
+                    crk1196.setChecked(false);
+                    crk1196x.setText(null);
+                }else {
+                    crk1101.setEnabled(true);
+                    crk1102.setEnabled(true);
+                    crk1103.setEnabled(true);
+                    crk1104.setEnabled(true);
+                    crk1105.setEnabled(true);
+                    crk1106.setEnabled(true);
+                    crk1196.setEnabled(true);
+                }
+            }
+        });
+
         crk0496.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -335,6 +371,37 @@ public class SectionKActivity extends Activity {
             }
         });
 
+        crk0298.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    crk0201.setEnabled(false);
+                    crk0201.setChecked(false);
+                    crk0202.setEnabled(false);
+                    crk0202.setChecked(false);
+                    crk0203.setEnabled(false);
+                    crk0203.setChecked(false);
+                    crk0204.setEnabled(false);
+                    crk0204.setChecked(false);
+                    crk0205.setEnabled(false);
+                    crk0205.setChecked(false);
+                    crk0299.setEnabled(false);
+                    crk0299.setChecked(false);
+                    crk0296.setEnabled(false);
+                    crk0296.setChecked(false);
+                    crk0296x.setText(null);
+                } else {
+                    crk0201.setEnabled(true);
+                    crk0202.setEnabled(true);
+                    crk0203.setEnabled(true);
+                    crk0204.setEnabled(true);
+                    crk0205.setEnabled(true);
+                    crk0296.setEnabled(true);
+                    crk0299.setEnabled(true);
+                }
+            }
+        });
+
         crk0299.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -351,6 +418,8 @@ public class SectionKActivity extends Activity {
                     crk0205.setChecked(false);
                     crk0296.setEnabled(false);
                     crk0296.setChecked(false);
+                    crk0298.setEnabled(false);
+                    crk0298.setChecked(false);
                     crk0296x.setText(null);
                 } else {
                     crk0201.setEnabled(true);
@@ -359,6 +428,7 @@ public class SectionKActivity extends Activity {
                     crk0204.setEnabled(true);
                     crk0205.setEnabled(true);
                     crk0296.setEnabled(true);
+                    crk0298.setEnabled(true);
                 }
             }
         });
@@ -469,6 +539,7 @@ public class SectionKActivity extends Activity {
         sk.put("crk0203", crk0203.isChecked() ? "1" : "2");
         sk.put("crk0204", crk0204.isChecked() ? "1" : "2");
         sk.put("crk0205", crk0205.isChecked() ? "1" : "2");
+        sk.put("crk0298", crk0298.isChecked() ? "1" : "2");
         sk.put("crk0299", crk0299.isChecked() ? "1" : "2");
         sk.put("crk0296", crk0296.isChecked() ? "1" : "2");
         sk.put("crk0296x", crk0296x.getText().toString());
@@ -506,6 +577,7 @@ public class SectionKActivity extends Activity {
         sk.put("crk1104", crk1104.isChecked() ? "1" : "0");
         sk.put("crk1105", crk1105.isChecked() ? "1" : "0");
         sk.put("crk1106", crk1106.isChecked() ? "1" : "0");
+        sk.put("crk1199", crk1199.isChecked() ? "1" : "0");
         sk.put("crk1196", crk1196.isChecked() ? "1" : "0");
         sk.put("crk1196x", crk1196x.getText().toString());
         sk.put("crk12", crk1201.isChecked() ? "1" : crk1202.isChecked() ? "2" : "0");
@@ -532,7 +604,7 @@ public class SectionKActivity extends Activity {
         if (crk0101.isChecked()) {
             // =================== Q2 ====================
             if (!(crk0201.isChecked() || crk0202.isChecked() || crk0203.isChecked() || crk0204.isChecked()
-                    || crk0205.isChecked() || crk0296.isChecked() || crk0299.isChecked())) {
+                    || crk0205.isChecked() || crk0296.isChecked() || crk0298.isChecked() || crk0299.isChecked())) {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk02), Toast.LENGTH_SHORT).show();
                 crk0296.setError("This Data is Required");
                 Log.d(TAG, "crk02 :This Data is Required");
@@ -540,7 +612,7 @@ public class SectionKActivity extends Activity {
                 crk0296.setError(null);
         }
 
-            if (!crk0299.isChecked()) {
+            if (!crk0299.isChecked() && !crk0298.isChecked()) {
                 if (!(crk0201.isChecked() || crk0202.isChecked() || crk0203.isChecked() || crk0204.isChecked()
                         || crk0205.isChecked() || crk0296.isChecked())) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.crk02), Toast.LENGTH_SHORT).show();
@@ -693,24 +765,26 @@ public class SectionKActivity extends Activity {
         }
 
         if (crk1002.isChecked()) {
-            // =================== Q11 ====================
-            if (!(crk1101.isChecked() || crk1102.isChecked() || crk1103.isChecked() || crk1104.isChecked()
-                    || crk1105.isChecked() || crk1106.isChecked() || crk1196.isChecked())) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crk11), Toast.LENGTH_LONG).show();
-                crk1196.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "crk11: This data is Required!");
-                return false;
-            } else {
-                crk1196.setError(null);
-            }
+            if (!crk1199.isChecked()) {
+                // =================== Q11 ====================
+                if (!(crk1101.isChecked() || crk1102.isChecked() || crk1103.isChecked() || crk1104.isChecked()
+                        || crk1105.isChecked() || crk1106.isChecked() || crk1196.isChecked())) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crk11), Toast.LENGTH_LONG).show();
+                    crk1199.setError("This data is Required!");    // Set Error on last radio button
+                    Log.i(TAG, "crk11: This data is Required!");
+                    return false;
+                } else {
+                    crk1199.setError(null);
+                }
 
-            if (crk1196.isChecked() && crk1196x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.crk11) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                crk1196x.setError("This data is Required!");    // Set Error on last radio button
-                Log.d(TAG, "crk1196: This data is Required!");
-                return false;
-            } else {
-                crk1196x.setError(null);
+                if (crk1196.isChecked() && crk1196x.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.crk11) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                    crk1196x.setError("This data is Required!");    // Set Error on last radio button
+                    Log.d(TAG, "crk1196: This data is Required!");
+                    return false;
+                } else {
+                    crk1196x.setError(null);
+                }
             }
         }
 
