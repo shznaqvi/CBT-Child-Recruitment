@@ -582,9 +582,28 @@ public class SectionMActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_m);
         ButterKnife.bind(this);
 
+        try {
+            String s1 = "2016-12-31";
+            Date d = (new SimpleDateFormat("yyyy-MM-dd")).parse(s1);
+            dateToday = (new SimpleDateFormat("dd/MM/yyyy")).format(d);
 
-        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
-        maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_YEAR));
+            String s2 = "2016-01-01";
+            Date d1 = (new SimpleDateFormat("yyyy-MM-dd")).parse(s2);
+            maxDateyear = (new SimpleDateFormat("dd/MM/yyyy")).format(d1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        Calendar c = Calendar.getInstance();
+        c.set(2016, Calendar.DECEMBER, 31);
+
+        Calendar c1 = Calendar.getInstance();
+        c1.set(2016, Calendar.JANUARY, 01);
+
+
+        //dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        //maxDateyear = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_YEAR));
         maxDate5Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_5Years));
         maxDate49Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_49Years));
         maxDate15Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - (AppMain.MILLISECONDS_IN_15Years));
@@ -2447,7 +2466,7 @@ public class SectionMActivity extends AppCompatActivity {
         }
 
         if (Integer.valueOf(crn06s.getText().toString()) == 1) {
-            if (crn04dob1.getText().toString().isEmpty()) {
+            if (crn06dob1.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.crn06), Toast.LENGTH_SHORT).show();
                 crn06dob1.setError("This data is Required!");
                 Log.i(TAG, "crn06dob1: This data is Required!");
@@ -2598,7 +2617,7 @@ public class SectionMActivity extends AppCompatActivity {
 
 //        int updcount = db.updateSM();
         int updcount = db.updateSM() == 1 ?
-                (db.updateSN() == 1 ? 1 : db.updateSN()) : db.updateSM();
+                (db.updateSN()) : db.updateSM();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();

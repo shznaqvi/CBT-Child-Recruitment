@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CBT-Child-Recruitment.iml" filepath="$PROJECT_DIR$/CBT-Child-Recruitment.iml" />
       <module fileurl="file://E:\Hassan\Android\Cash-BasedTransfer(ChildRecruitment)\CBT-Child-Recruitment.iml" filepath="E:\Hassan\Android\Cash-BasedTransfer(ChildRecruitment)\CBT-Child-Recruitment.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Cash-BasedTransfer(ChildRecruitment).iml" filepath="$PROJECT_DIR$/Cash-BasedTransfer(ChildRecruitment).iml" />
       <module fileurl="file://C:\Ali Work\Projects\CBT-Child-Recruitment\Cash-BasedTransfer(ChildRecruitment).iml" filepath="C:\Ali Work\Projects\CBT-Child-Recruitment\Cash-BasedTransfer(ChildRecruitment).iml" />
+      <module fileurl="file://E:\Android\CBT-Child-Recruitment\Cash-BasedTransfer(ChildRecruitment).iml" filepath="E:\Android\CBT-Child-Recruitment\Cash-BasedTransfer(ChildRecruitment).iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
