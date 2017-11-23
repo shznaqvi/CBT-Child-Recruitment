@@ -44,7 +44,7 @@ public class UsersContract {
         this.ROW_PASSWORD = password;
     }
 
-    public static abstract class singleUser implements BaseColumns {
+    public static abstract class UsersTable implements BaseColumns {
 
         public static final String URI = "/getusers.php";
 
