@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import edu.aku.hassannaqvi.cbt_child_recruitment.AppMain;
 import edu.aku.hassannaqvi.cbt_child_recruitment.DatabaseHelper;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract.singleUser;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract.UsersTable;
 
 /**
  * Created by hassan.naqvi on 4/28/2016.
@@ -56,7 +56,7 @@ public class GetUsers extends AsyncTask<String, String, String> {
         StringBuilder result = new StringBuilder();
 
         try {
-            URL url = new URL(AppMain.PROJECT_URI + singleUser.URI);
+            URL url = new URL(AppMain.PROJECT_URI + UsersTable.URI);
             urlConnection = (HttpURLConnection) url.openConnection();
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());

@@ -33,7 +33,7 @@ import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.TehsilsContract.Tehsi
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UCsContract.UcTable;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract;
-import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract.singleUser;
+import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.UsersContract.UsersTable;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.VillagesContract;
 import edu.aku.hassannaqvi.cbt_child_recruitment.contracts.VillagesContract.VillageTable;
 
@@ -50,10 +50,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleChild.COLUMN_HH03 + " TEXT,"
             + singleChild.COLUMN_HH07 + " TEXT,"
             + singleChild.COLUMN_CHILD_NAME + " TEXT );";
-    public static final String SQL_CREATE_USERS = "CREATE TABLE " + singleUser.TABLE_NAME + "("
-            + singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + singleUser.ROW_USERNAME + " TEXT,"
-            + singleUser.ROW_PASSWORD + " TEXT );";
+    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersTable.TABLE_NAME + "("
+            + UsersContract.UsersTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UsersTable.ROW_USERNAME + " TEXT,"
+            + UsersContract.UsersTable.ROW_PASSWORD + " TEXT );";
     public static final String DATABASE_NAME = "cbt.db";
     public static final String DB_NAME = "cbt_copy.db";
     private static final int DATABASE_VERSION = 1;
@@ -95,7 +95,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
     private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
-    private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
+    private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + UsersContract.UsersTable.TABLE_NAME;
     private static final String SQL_DELETE_PSUS = "DROP TABLE IF EXISTS " + singleChild.TABLE_NAME;
     public static String DB_FORM_ID;
     public static String DB_IMS_ID;
@@ -457,13 +457,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public List<FormsContract> getFormsByT_HF_LHW(String tehsil,String hf,String lhw) {
+    public List<FormsContract> getFormsByT_HF_LHW(String tehsil, String hf, String lhw) {
         List<FormsContract> formList = new ArrayList<FormsContract>();
         // Select All Query
-        String selectQuery = "SELECT  * FROM " + FormsTable.TABLE_NAME +" where "
-                +FormsTable.COLUMN_TEHSIL+ "='"+tehsil+"' and "
-                +FormsTable.COLUMN_HFACILITY+ "='"+hf+"' and "
-                +FormsTable.COLUMN_LHWCODE+ "='"+lhw+"'";
+        String selectQuery = "SELECT  * FROM " + FormsTable.TABLE_NAME + " where "
+                + FormsTable.COLUMN_TEHSIL + "='" + tehsil + "' and "
+                + FormsTable.COLUMN_HFACILITY + "='" + hf + "' and "
+                + FormsTable.COLUMN_LHWCODE + "='" + lhw + "'";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
@@ -753,9 +753,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             ContentValues values = new ContentValues();
 
-            values.put(singleUser.ROW_USERNAME, userscontract.getUserName());
-            values.put(singleUser.ROW_PASSWORD, userscontract.getPassword());
-            db.insert(singleUser.TABLE_NAME, null, values);
+            values.put(UsersTable.ROW_USERNAME, userscontract.getUserName());
+            values.put(UsersContract.UsersTable.ROW_PASSWORD, userscontract.getPassword());
+            db.insert(UsersTable.TABLE_NAME, null, values);
             db.close();
 
         } catch (Exception e) {
@@ -764,7 +764,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void syncUser(JSONArray userlist) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(UsersContract.singleUser.TABLE_NAME, null, null);
+        db.delete(UsersContract.UsersTable.TABLE_NAME, null, null);
 
         try {
             JSONArray jsonArray = userlist;
@@ -776,9 +776,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 ContentValues values = new ContentValues();
 
-                values.put(singleUser.ROW_USERNAME, userName);
-                values.put(singleUser.ROW_PASSWORD, password);
-                db.insert(singleUser.TABLE_NAME, null, values);
+                values.put(UsersContract.UsersTable.ROW_USERNAME, userName);
+                values.put(UsersContract.UsersTable.ROW_PASSWORD, password);
+                db.insert(UsersContract.UsersTable.TABLE_NAME, null, values);
             }
             db.close();
 
@@ -791,7 +791,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ArrayList<UsersContract> userList = null;
         try {
             userList = new ArrayList<UsersContract>();
-            String QUERY = "SELECT * FROM " + singleUser.TABLE_NAME;
+            String QUERY = "SELECT * FROM " + UsersContract.UsersTable.TABLE_NAME;
             Cursor cursor = db.rawQuery(QUERY, null);
             int num = cursor.getCount();
             if (!cursor.isLast()) {
@@ -810,15 +810,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean Login(String username, String password) throws SQLException {
+
+        // Cursor mCursor = db.rawQuery("SELECT * FROM " + UsersContract.UsersTable.TABLE_NAME + " WHERE " + UsersContract.UsersTable.ROW_USERNAME +
+        // "= ? AND " + UsersContract.UsersTable.ROW_PASSWORD + "=?", new String[]{username, password});
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor mCursor = db.rawQuery("SELECT * FROM " + singleUser.TABLE_NAME + " WHERE " + singleUser.ROW_USERNAME + "=? AND " + singleUser.ROW_PASSWORD + "=?", new String[]{username, password});
-        if (mCursor != null) {
-            if (mCursor.getCount() > 0) {
-                return true;
-            }
-        }
-        return false;
+// New value for one column
+        String[] columns = {
+                UsersContract.UsersTable._ID
+        };
+
+// Which row to update, based on the ID
+        String selection = UsersContract.UsersTable.ROW_USERNAME + " = ?" + " AND " + UsersTable.ROW_PASSWORD + " = ?";
+        String[] selectionArgs = {username, password};
+        Cursor cursor = db.query(UsersContract.UsersTable.TABLE_NAME, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                       //filter by row groups
+                null);                      //The sort order
+
+        int cursorCount = cursor.getCount();
+
+        cursor.close();
+        db.close();
+        return cursorCount > 0;
+
+
     }
 
     public Collection<HFacilitiesContract> getAllHFacilitiesByTehsil(String tehsil_code) {
