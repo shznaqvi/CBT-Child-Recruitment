@@ -390,12 +390,12 @@ public class SectionBActivity extends AppCompatActivity {
         crb03.setMaxDate(dateToday);
         crb03.setMinDate(maxDate6Months);
 
-        crb03.setOnClickListener(new View.OnClickListener() {
+        /*crb03.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 crb03.onFocusChange(v, true);
             }
-        });
+        });*/
 
 //************************************Section B*********************************************************************
         crbdob.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

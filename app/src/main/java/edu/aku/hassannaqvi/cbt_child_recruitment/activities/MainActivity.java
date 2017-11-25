@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
     LinearLayout adminsec;
     @BindView(R.id.recordSummary)
     TextView recordSummary;
-//    @BindView(R.id.clusterNo)
+    //    @BindView(R.id.clusterNo)
 //    EditText clusterNo;
     @BindView(R.id.MN01)
     Spinner mN01;
@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
     Spinner mN02;
     @BindView(R.id.MN03)
     Spinner mN03;
-    Map<String, String> tehsils, lhws;
+    Map<String, String> tehsils, lhws, hfList;
     DatabaseHelper db;
     List<String> hfCodes;
     SharedPreferences sharedPref;
@@ -168,7 +168,7 @@ public class MainActivity extends Activity {
                         default:
                             iStatus = "\tN/A";
                     }
-                }else {
+                } else {
                     iStatus = "\tN/A";
                 }
 
@@ -211,15 +211,14 @@ public class MainActivity extends Activity {
 
         mN01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Tname));
 
-        hfCodes = new ArrayList<>();
-
         mN01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // Spinner Drop down elements
                 List<String> hfNames = new ArrayList<>();
 
-                hfCodes = new ArrayList<>();
+//                hfCodes = new ArrayList<>();
+                hfList = new HashMap<>();
 
                 AppMain.tehsilCode = tehsils.get(Tname.get(position));
 
@@ -227,8 +226,11 @@ public class MainActivity extends Activity {
                 Log.d(TAG, "onCreate: " + hfc.size());
                 for (HFacilitiesContract hf : hfc) {
                     hfNames.add(hf.gethFacilityName());
-                    hfCodes.add(hf.gethFacilityCode());
-                    Collections.sort(hfNames);
+//                    hfCodes.add(hf.gethFacilityCode());
+
+                    hfList.put(hf.gethFacilityName(), hf.gethFacilityCode());
+
+//                    Collections.sort(hfNames);
                 }
 
                 // attaching data adapter to spinner
@@ -245,11 +247,11 @@ public class MainActivity extends Activity {
         mN02.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                AppMain.hfCode = hfCodes.get(position);
+                AppMain.hfCode = hfList.get(mN02.getSelectedItem());
 
                 lhwName = new ArrayList<String>();
                 lhws = new HashMap<String, String>();
-                Collection<LHWsContract> lhwc = db.getAllLhwsByHf(hfCodes.get(position));
+                Collection<LHWsContract> lhwc = db.getAllLhwsByHf(hfList.get(mN02.getSelectedItem()));
                 for (LHWsContract lhw : lhwc) {
                     lhws.put("" + (lhw.getLHWName() + " (" + lhw.getLHWCode() + ")"), lhw.getLHWCode());
                     lhwName.add(lhw.getLHWName() + " (" + lhw.getLHWCode() + ")");
@@ -538,7 +540,8 @@ public class MainActivity extends Activity {
                             // Spinner Drop down elements
                             List<String> hfNames = new ArrayList<>();
 
-                            hfCodes = new ArrayList<>();
+//                            hfCodes = new ArrayList<>();
+                            hfList = new HashMap<>();
 
                             AppMain.tehsilCode = tehsils.get(Tname.get(position));
 
@@ -546,13 +549,16 @@ public class MainActivity extends Activity {
                             Log.d(TAG, "onCreate: " + hfc.size());
                             for (HFacilitiesContract hf : hfc) {
                                 hfNames.add(hf.gethFacilityName());
-                                hfCodes.add(hf.gethFacilityCode());
+//                    hfCodes.add(hf.gethFacilityCode());
+
+                                hfList.put(hf.gethFacilityName(), hf.gethFacilityCode());
+
+//                    Collections.sort(hfNames);
                             }
 
                             // attaching data adapter to spinner
                             mN02.setAdapter(new ArrayAdapter<>(getBaseContext(),
                                     android.R.layout.simple_spinner_dropdown_item, hfNames));
-
                         }
 
                         @Override
@@ -564,17 +570,19 @@ public class MainActivity extends Activity {
                     mN02.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            AppMain.hfCode = hfCodes.get(position);
+                            AppMain.hfCode = hfList.get(mN02.getSelectedItem());
 
                             lhwName = new ArrayList<String>();
                             lhws = new HashMap<String, String>();
-                            Collection<LHWsContract> lhwc = db.getAllLhwsByHf(hfCodes.get(position));
+                            Collection<LHWsContract> lhwc = db.getAllLhwsByHf(hfList.get(mN02.getSelectedItem()));
                             for (LHWsContract lhw : lhwc) {
                                 lhws.put("" + (lhw.getLHWName() + " (" + lhw.getLHWCode() + ")"), lhw.getLHWCode());
                                 lhwName.add(lhw.getLHWName() + " (" + lhw.getLHWCode() + ")");
+                                Collections.sort(lhwName);
+
                             }
-                            ArrayAdapter<String> psuAdapter = new ArrayAdapter<String>(MainActivity.this,
-                                    android.R.layout.simple_spinner_item, lhwName);
+                            ArrayAdapter<String> psuAdapter = new ArrayAdapter<>(getBaseContext(),
+                                    android.R.layout.simple_spinner_dropdown_item, lhwName);
 
                             psuAdapter
                                     .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -592,22 +600,6 @@ public class MainActivity extends Activity {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                             AppMain.lhwCode = lhws.get(lhwName.get(position));
-                /*Collection<LHWsContract> lhwc = db.getAllLhwsByHf(AppMain.hh01txt);
-                for (LHWsContract l : lhwc) {
-                    Log.d(TAG, "onItemSelected: " + l.getLHWCode() + " -" + AppMain.hh02txt);
-
-                    if (l.getLHWCode().equals(AppMain.hh02txt)) {
-                        Log.d(TAG, "onItemSelected: " + l.getLHWName());
-                        String[] psuNameS = l.getLHWName().toString().split("\\|");
-                        districtN.setText(psuNameS[0]);
-                        Log.d(TAG, "onItemSelected: " + psuNameS[0]);
-                        ucN.setText(psuNameS[1]);
-                        Log.d(TAG, "onItemSelected: " + psuNameS[1]);
-                        psuN.setText(psuNameS[2]);
-                        Log.d(TAG, "onItemSelected: " + psuNameS[2]);
-
-                    }
-                }*/
                         }
 
                         @Override

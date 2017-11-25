@@ -65,7 +65,7 @@ public class AppMain extends Application {
     public static SharedPreferences sharedPref;
     //    Ali
     public static String tehsilCode;
-    public static String hfCode = "0000";  //hf code
+    public static String hfCode;  //hf code
     public static String lhwCode;   //LHW code
     public static Boolean UCsCodeFlag = true;
     public static int UCsCode;
